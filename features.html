@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore ZyncSpace features: team chat, Kanban boards, calendar sync, AI assistant, video conferencing, and more. Everything your team needs in one powerful workspace.">
+  <meta name="keywords" content="team chat features, kanban boards, calendar sync, AI assistant, task management, video conferencing, enterprise security, file sharing, team collaboration">
+  <meta name="author" content="ZyncSpace">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Features - ZyncSpace | Everything Your Team Needs">
+  <meta property="og:description" content="Everything your team needs in one powerful workspace. Chat, tasks, calendar, and AI tools combined.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyncspace.com/features">
+  <meta property="og:image" content="https://zyncspace.com/assets/images/hero-dashboard.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ZyncSpace Features - All-in-One Team Workspace">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@zyncspace">
+  <meta name="twitter:title" content="Features - ZyncSpace | Everything Your Team Needs">
+  <meta name="twitter:description" content="Everything your team needs in one powerful workspace. Chat, tasks, calendar, and AI tools combined.">
+  <meta name="twitter:image" content="https://zyncspace.com/assets/images/hero-dashboard.png">
+  <meta name="pinterest-rich-pin" content="true">
+  <title>Features - ZyncSpace | All-in-One Team Workspace</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ZyncSpace Features",
+    "description": "Explore ZyncSpace features: team chat, Kanban boards, calendar sync, AI assistant, video conferencing, and more.",
+    "url": "https://zyncspace.com/features",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zyncspace.com"},
+        {"@type": "ListItem", "position": 2, "name": "Features"}
+      ]
+    }
+  }
+  </script>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <style>
+    .features-page .hero {
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .features-page .header {
+      border-bottom: 1px solid var(--border);
+    }
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(79, 70, 229, 0.15);
+      border-color: var(--primary);
+    }
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover .feature-icon {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    }
+    .feature-card:hover .feature-icon svg {
+      stroke: white;
+    }
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .feature-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .feature-visual {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+    .feature-visual::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
+      border-radius: 18px;
+      z-index: -1;
+      opacity: 0.3;
+    }
+    .feature-section {
+      position: relative;
+    }
+    .feature-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      background: var(--bg-secondary);
+      font-weight: 600;
+    }
+    .comparison-table tr:hover td {
+      background: rgba(79, 70, 229, 0.05);
+    }
+    .check-icon {
+      color: var(--success);
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      overflow-x: auto;
+    }
+    .nav-tab {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      background: transparent;
+      border: 1px solid transparent;
+    }
+    .nav-tab:hover {
+      background: var(--bg-secondary);
+    }
+    .nav-tab.active {
+      background: var(--primary);
+      color: white;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @media (max-width: 1024px) {
+      .feature-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .feature-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .security-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      #messaging > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .grid[style*="repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .feature-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .security-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .hero {
+        padding: 6rem 0 3rem !important;
+      }
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .hero-subtitle {
+        font-size: 1rem !important;
+      }
+      .comparison-table {
+        font-size: 0.875rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 0.75rem 0.5rem;
+      }
+      .stat-number {
+        font-size: 2.5rem;
+      }
+      [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      [style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+      .section-header p {
+        font-size: 0.9375rem;
+      }
+      .feature-card {
+        padding: 1.5rem !important;
+      }
+      .cta-section {
+        padding: 2rem 1.5rem !important;
+      }
+      .cta-section h2 {
+        font-size: 1.5rem !important;
+      }
+    }
+    @media (max-width: 576px) {
+      .nav-tabs {
+        gap: 0.5rem;
+      }
+      .nav-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+      .hero-content {
+        padding: 0 1rem;
+      }
+      .feature-grid-2 > div {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      .security-grid .stat-card {
+        text-align: center;
+      }
+      .security-grid .feature-icon {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .section {
+        padding: 3rem 0 !important;
+      }
+      .section-header {
+        margin-bottom: 2rem !important;
+      }
+      .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+      }
+    }
+    @media (max-width: 480px) {
+      [style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      #messaging .section-header + div > div:first-child {
+        order: 2;
+      }
+      #messaging .section-header + div > div:last-child {
+        order: 1;
+      }
+    }
+    
+    @media (max-width: 375px) {
+      .section-header h2 {
+        font-size: 1.25rem;
+      }
+      .feature-card h3 {
+        font-size: 1rem !important;
+      }
+      .feature-card p {
+        font-size: 0.875rem !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section.section {
+        padding: 3rem 0 !important;
+      }
+      #messaging {
+        padding: 3rem 0 !important;
+      }
+      #messaging [style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body class="features-page">
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <img src="assets/images/zyncspace-logo.png" alt="ZyncSpace Logo" width="140">
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="features" class="nav-link active">Features</a></li>
+            <li><a href="use-cases" class="nav-link">Use Cases</a></li>
+            <li><a href="pricing" class="nav-link">Pricing</a></li>
+            <li><a href="blogs" class="nav-link">Blog</a></li>
+          </ul>
+          <div class="header-actions">
+            <a href="https://chat.zyncspace.com/signup" class="btn btn-primary">Get Started <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+          </div>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav">
+    <ul class="mobile-nav-list">
+      <li><a href="features" class="mobile-nav-link active">Features</a></li>
+      <li><a href="use-cases" class="mobile-nav-link">Use Cases</a></li>
+      <li><a href="pricing" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="blogs" class="mobile-nav-link">Blog</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="https://chat.zyncspace.com/signup" class="btn btn-primary btn-lg">Get Started Free <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" style="padding: 8rem 0 5rem;">
+      <div class="container">
+        <div class="hero-content" style="text-align: center; max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+          <div class="badge badge-primary mb-4 fade-in">Powerful Features</div>
+          <h1 class="fade-in" style="margin-bottom: 1.5rem;">Everything Your Team Needs to <span class="text-gradient">Succeed</span></h1>
+          <p class="hero-subtitle fade-in delay-100" style="font-size: 1.25rem; margin-bottom: 2rem;">From real-time messaging to AI-powered assistance, ZyncSpace brings all your team communication and collaboration tools into one seamless workspace.</p>
+          <div class="hero-actions fade-in delay-200" style="justify-content: center; flex-wrap: wrap; gap: 16px;">
+            <a href="https://chat.zyncspace.com/signup" class="btn btn-primary btn-lg">Start Free Trial <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <a href="#messaging" class="btn btn-secondary btn-lg">Explore Features</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="messaging" class="section feature-section" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom: 4rem;">
+          <div class="badge badge-primary mb-3">01. Messaging</div>
+          <h2>Real-Time <span class="text-gradient">Team Communication</span></h2>
+          <p>Stay connected with your team through Channels, direct messages, and threaded conversations that keep everyone in the loop.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+          <div class="fade-in">
+            <div class="feature-visual">
+              <img src="assets/images-compressed/home-hero-section.png" alt="ZyncSpace Messaging Interface" style="width: 100%; height: auto; display: block; border-radius: 16px;">
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size: 1.75rem; margin-bottom: 1.25rem;">Channels & Direct Messages</h3>
+            <p class="text-secondary" style="margin-bottom: 2rem; line-height: 1.8; font-size: 1.0625rem;">Organize conversations by topic, project, or team. Create public channels for company-wide announcements or private channels for focused discussions.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+              <div class="feature-card card" style="padding: 1.5rem;">
+                <div class="feature-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h4 style="font-size: 1.0625rem; margin-bottom: 0.5rem;">Threaded Replies</h4>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">Keep conversations organized with threaded replies that don't clutter main channels.</p>
+              </div>
+              
+              <div class="feature-card card" style="padding: 1.5rem;">
+                <div class="feature-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                </div>
+                <h4 style="font-size: 1.0625rem; margin-bottom: 0.5rem;">Reactions & Emoji</h4>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">React to messages with emoji for quick feedback without sending a new message.</p>
+              </div>
+              
+              <div class="feature-card card" style="padding: 1.5rem;">
+                <div class="feature-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <h4 style="font-size: 1.0625rem; margin-bottom: 0.5rem;">@Mentions</h4>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">Get someone's attention instantly with @mentions or notify an entire channel.</p>
+              </div>
+              
+              <div class="feature-card card" style="padding: 1.5rem;">
+                <div class="feature-icon" style="width: 48px; height: 48px; margin-bottom: 1rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11l-9-9"></path><path d="M21 21V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path></svg>
+                </div>
+                <h4 style="font-size: 1.0625rem; margin-bottom: 0.5rem;">Pinned Messages</h4>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">Pin important messages to channels for easy reference by the entire team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary); padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom: 4rem;">
+          <div class="badge badge-primary mb-3">02. Task Management</div>
+          <h2>Visual <span class="text-gradient">Kanban Boards</span></h2>
+          <p>Organize projects with intuitive Kanban boards. Drag-and-drop cards between columns to track progress at a glance.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;" class="fade-in">
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Customizable Columns</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">Create columns that match your workflow - from "To Do" to "In Progress" to "Done" or any stages your team needs.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 9 2 12 5 15"></polyline><polyline points="9 5 12 2 15 5"></polyline><polyline points="15 19 12 22 9 19"></polyline><polyline points="19 9 22 12 19 15"></polyline><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Drag-and-Drop</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">Easily move tasks between columns with simple drag-and-drop. Update task status in seconds, not minutes.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Task Assignment</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">Assign tasks to team members, set due dates, and add descriptions. Everyone knows exactly what they need to do.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Due Dates & Reminders</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">Never miss a deadline. Set due dates and receive automatic reminders as deadlines approach.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Attachments</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">Attach files, images, and documents directly to tasks. Keep all related information in one place.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Progress Tracking</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">Visualize project progress with completion percentages and status indicators on each board.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom: 4rem;">
+          <div class="badge badge-success mb-3">03. AI-Powered</div>
+          <h2>Built-in <span class="text-gradient">AI Assistant</span></h2>
+          <p>Let artificial intelligence enhance your team's productivity with smart writing assistance and instant summaries.</p>
+        </div>
+        
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div>
+            <div class="feature-grid-2" style="gap: 1.5rem;">
+              <div class="feature-card card" style="padding: 1.75rem;">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </div>
+                <h3 style="font-size: 1.125rem;">AI Rewrite</h3>
+                <p style="font-size: 0.9375rem;">Instantly improve your message tone, clarity, and professionalism with one click. Perfect for important communications.</p>
+              </div>
+              
+              <div class="feature-card card" style="padding: 1.75rem;">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </div>
+                <h3 style="font-size: 1.125rem;">AI Summarize</h3>
+                <p style="font-size: 0.9375rem;">Get quick recaps of long conversation threads. Catch up on what you missed without reading every message.</p>
+              </div>
+              
+              <div class="feature-card card" style="padding: 1.75rem;">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </div>
+                <h3 style="font-size: 1.125rem;">Smart Suggestions</h3>
+                <p style="font-size: 0.9375rem;">AI provides context-aware suggestions to help you communicate more effectively.</p>
+              </div>
+              
+              <div class="feature-card card" style="padding: 1.75rem;">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3 style="font-size: 1.125rem;">Grammar Check</h3>
+                <p style="font-size: 0.9375rem;">Automatically detects and fixes grammar, spelling, and punctuation errors before sending.</p>
+              </div>
+            </div>
+          </div>
+          <div class="fade-in delay-200">
+            <div class="feature-visual">
+              <img src="assets/images-compressed/airewrite-home.png" alt="AI-powered features in ZyncSpace" style="width: 100%; height: auto; display: block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 5rem 0; background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom: 4rem;">
+          <div class="badge badge-primary mb-3">04. Video & Calendar</div>
+          <h2>Built-in <span class="text-gradient">Huddles & Calendar</span></h2>
+          <p>Start video calls instantly and sync your calendar for seamless scheduling.</p>
+        </div>
+        
+        <div class="feature-grid-3 fade-in">
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            </div>
+            <h3>HD Video Calls</h3>
+            <p>Crystal-clear video meetings with screen sharing, recording, and up to 50 participants.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l5 5-5 5"></path><path d="M4 4v7a4 4 0 0 0 4 4h12"></path></svg>
+            </div>
+            <h3>Instant Huddles</h3>
+            <p>One-click video huddles from any chat or channel. No scheduling required for quick sync-ups.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <h3>Calendar Sync</h3>
+            <p>Sync with Google Calendar and Outlook. See all your meetings in one unified view.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </div>
+            <h3>Smart Reminders</h3>
+            <p>Automatic reminders for meetings and tasks. Never let important events slip through the cracks.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3>Screen Sharing</h3>
+            <p>Share your screen during video calls for presentations, code reviews, or collaborative work.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <h3>Meeting Recording</h3>
+            <p>Record meetings for later reference. Perfect for teams across different time zones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom: 4rem;">
+          <div class="badge badge-primary mb-3">05. Security & Admin</div>
+          <h2>Enterprise-Grade <span class="text-gradient">Security</span></h2>
+          <p>Your data is protected with industry-leading security measures and advanced privacy controls.</p>
+        </div>
+        
+        <div class="security-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+          <div class="stat-card fade-in">
+            <div class="feature-icon" style="margin: 0 auto 1rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 style="font-size: 1rem;">End-to-End Encryption</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary);">All messages and files are encrypted, ensuring only intended recipients can access them.</p>
+          </div>
+          
+          <div class="stat-card fade-in delay-100">
+            <div class="feature-icon" style="margin: 0 auto 1rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 style="font-size: 1rem;">Role-Based Access</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary);">Define custom roles and permissions to control who can access what.</p>
+          </div>
+          
+          <div class="stat-card fade-in delay-200">
+            <div class="feature-icon" style="margin: 0 auto 1rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <h3 style="font-size: 1rem;">Privacy Controls</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary);">Advanced privacy settings let you control your visibility and notification preferences.</p>
+          </div>
+          
+          <div class="stat-card fade-in delay-300">
+            <div class="feature-icon" style="margin: 0 auto 1rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+            </div>
+            <h3 style="font-size: 1rem;">Data Ownership</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary);">Your data belongs to you. Export or delete your data anytime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 5rem 0; background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header fade-in" style="margin-bottom: 4rem;">
+          <div class="badge badge-primary mb-3">06. More Features</div>
+          <h2>Everything <span class="text-gradient">You Need</span></h2>
+          <p>Additional tools to make your team more productive and organized.</p>
+        </div>
+        
+        <div class="feature-grid-3 fade-in">
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <h3>File Sharing</h3>
+            <p>Share documents, images, and files instantly. Version tracking ensures you always have the latest files.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <h3>Powerful Search</h3>
+            <p>Find any message, file, or task instantly with our powerful search across all channels and workspaces.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <h3>Multi-Workspace</h3>
+            <p>Manage multiple workspaces from one account. Switch between teams, projects, or organizations seamlessly.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            </div>
+            <h3>Real-Time Sync</h3>
+            <p>Changes sync instantly across all devices. Desktop, mobile, or web - your data is always up to date.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <h3>Mobile Apps</h3>
+            <p>Native iOS and Android apps keep you connected on the go. Full-featured mobile experience.</p>
+          </div>
+          
+          <div class="feature-card card" style="padding: 2rem;">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            </div>
+            <h3>Voice Messages</h3>
+            <p>Record and send voice messages when typing takes too long. Express tone and context more naturally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 5rem 0; background: var(--bg-secondary);">
+      <div class="container">
+        <div class="cta-section fade-in" style="text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: var(--radius-lg);">
+          <h2 style="color: white; margin-bottom: 1rem;">Ready to Transform Your Team's Workflow?</h2>
+          <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-bottom: 2rem;">Get started with ZyncSpace today. Free during beta, no credit card required.</p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://chat.zyncspace.com/signup" class="btn btn-lg" style="background: white; color: var(--primary);">Start Free <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <a href="https://forms.gle/QVfnCHigc7NS3Z2K6" class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="assets/images/zyncspace-footer-logo.svg" alt="ZyncSpace Logo" width="140">
+          </a>
+          <p>The all-in-one workspace for modern teams. Chat, tasks, and scheduling - finally together.</p>
+          <div class="footer-social" style="margin-top: 1rem; display: flex; gap: 12px;">
+            <a href="https://wa.me/917359943259" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 8px; color: rgba(255,255,255,0.7); transition: all 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+            <a href="https://twitter.com/zyncspace" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 8px; color: rgba(255,255,255,0.7); transition: all 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://facebook.com/zyncspace" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 8px; color: rgba(255,255,255,0.7); transition: all 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://instagram.com/zyncspace" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 8px; color: rgba(255,255,255,0.7); transition: all 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com/@zyncspace" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 8px; color: rgba(255,255,255,0.7); transition: all 0.2s;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Product</h4>
+          <ul class="footer-links">
+            <li><a href="features" class="footer-link">Features</a></li>
+            <li><a href="use-cases" class="footer-link">Use Cases</a></li>
+            <li><a href="pricing" class="footer-link">Pricing</a></li>
+            <li><a href="blogs" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about" class="footer-link">About Us</a></li>
+            <li><a href="careers" class="footer-link">Careers</a></li>
+            <li><a href="contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms-of-service" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 ZyncSpace. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

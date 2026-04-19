@@ -1,0 +1,116 @@
+# ============================================
+# GLOBAL RULES
+# ============================================
+User-agent: *
+Allow: /
+
+# Block sensitive/system paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /internal/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /cdn-cgi/
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /*.sql$
+
+# Allow important assets
+Allow: /assets/
+Allow: /static/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Crawl delay (optional, mostly for smaller bots)
+Crawl-delay: 2
+
+
+# ============================================
+# GOOGLE
+# ============================================
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+
+# ============================================
+# BING / MICROSOFT
+# ============================================
+User-agent: Bingbot
+Allow: /
+
+User-agent: MSNBot
+Allow: /
+
+
+# ============================================
+# AI / LLM CRAWLERS (IMPORTANT 🚀)
+# ============================================
+
+# OpenAI (ChatGPT browsing, GPTBot)
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# Google AI (Gemini / Bard related)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Amazon AI
+User-agent: Amazonbot
+Allow: /
+
+# Apple AI
+User-agent: Applebot
+Allow: /
+
+# Common AI dataset crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+
+# ============================================
+# BAD / AGGRESSIVE BOTS (OPTIONAL HARDENING)
+# ============================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+
+# ============================================
+# SITEMAP
+# ============================================
+Sitemap: https://zyncspace.com/sitemap.xml
