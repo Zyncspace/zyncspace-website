@@ -15,6 +15,10 @@ aws s3 cp --recursive \
   --exclude "js/*" \
   --exclude "assets/images/*" \
   --exclude "assets/images-compressed/*" \
+  --exclude ".git/*" \
+  --exclude ".github/*" \
+  --exclude ".DS_Store" \
+  --exclude "deploy.sh" \
   --cache-control "max-age=3600, public" \
   . s3://$BUCKET/
 
