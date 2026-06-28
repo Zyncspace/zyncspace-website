@@ -13,7 +13,7 @@ You are working on the **ZyncSpace** B2B marketing site (Next.js 15 static expor
 - **Typography**: H1/H2 = Playfair serif; H3–H6/UI/body = Inter sans; code = JetBrains mono. Use tokens from `styles/tokens.css`.
 - **Messaging**: Outcomes and ROI, not feature lists, on marketing pages.
 - **SEO**: Every page needs title, description, canonical, OG, JSON-LD. Site URL from `NEXT_PUBLIC_SITE_URL`.
-- **Staging**: `https://zyncspace.in` · **Production**: `https://zyncspace.com`
+- **Staging**: `https://www.zyncspace.in` · **Production**: `https://www.zyncspace.com`
 - **One H1 per page**. Meaningful `alt` on all images.
 - **Do not** add fake testimonials, logos, awards, or project counts.
 

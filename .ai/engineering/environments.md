@@ -4,8 +4,8 @@
 
 | Environment | URL | Purpose |
 |-------------|-----|---------|
-| **Staging** | https://zyncspace.in | Current live preview / QA |
-| **Production** | https://zyncspace.com | Production when ready |
+| **Staging** | https://www.zyncspace.in | Current live preview / QA |
+| **Production** | https://www.zyncspace.com | Production when ready |
 
 ## How it works
 
@@ -25,7 +25,7 @@ All of these update automatically:
 Copy `.env.example` → `.env.local`:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://zyncspace.in
+NEXT_PUBLIC_SITE_URL=https://www.zyncspace.in
 ```
 
 ## GitHub Actions deploy
@@ -41,13 +41,13 @@ Priority order (`.github/workflows/deploy-to-s3.yml`):
 Set repository variable:
 
 ```
-SITE_URL = https://zyncspace.in
+SITE_URL = https://www.zyncspace.in
 ```
 
 ### Production cutover
 
 ```
-SITE_URL = https://zyncspace.com
+SITE_URL = https://www.zyncspace.com
 ```
 
 Redeploy. Update DNS/S3 bucket if switching hosts.
@@ -57,15 +57,15 @@ Redeploy. Update DNS/S3 bucket if switching hosts.
 ```typescript
 // lib/site-url.ts
 export const SITE_URL = getSiteUrl(); // from NEXT_PUBLIC_SITE_URL
-export const PRODUCTION_SITE_URL = 'https://zyncspace.com';
-export const STAGING_SITE_URL = 'https://zyncspace.in';
+export const PRODUCTION_SITE_URL = 'https://www.zyncspace.com';
+export const STAGING_SITE_URL = 'https://www.zyncspace.in';
 ```
 
 ## Verify after deploy
 
 ```bash
-curl -s https://zyncspace.in/robots.txt | grep Sitemap
-curl -sI https://zyncspace.in/sitemap.xml | grep content-type
+curl -s https://www.zyncspace.in/robots.txt | grep Sitemap
+curl -sI https://www.zyncspace.in/sitemap.xml | grep content-type
 # Canonical on homepage should match deployed domain
 ```
 

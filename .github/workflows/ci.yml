@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL != '' && vars.SITE_URL || 'https://zyncspace.in' }}
+      NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL != '' && vars.SITE_URL || 'https://www.zyncspace.in' }}
 
     steps:
       - name: Checkout

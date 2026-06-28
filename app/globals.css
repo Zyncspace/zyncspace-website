@@ -2,6 +2,7 @@
 @import '../styles/typography.css';
 @import '../styles/aetheris.css';
 @import '../styles/product.css';
+@import '../styles/enterprise-sections.css';
 
 /* Next.js font variables → design system stacks */
 :root {

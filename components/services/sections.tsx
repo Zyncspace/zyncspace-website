@@ -269,6 +269,14 @@ export function ProductShowcaseSection() {
               <Link href={serviceRoutes.product.features} className="btn btn-dark">Explore the Platform ↗</Link>
               <Link href={siteContact.signupUrl} className="btn btn-outline-light">Start for Free</Link>
             </div>
+            <div className="product-showcase-visual">
+              <img
+                src="/assets/images/home-hero-section.png"
+                alt="ZyncSpace workspace overview with chat, tasks, and collaboration"
+                width={640}
+                height={400}
+              />
+            </div>
           </div>
           <div>
             {c.productShowcase.features.map((f) => (

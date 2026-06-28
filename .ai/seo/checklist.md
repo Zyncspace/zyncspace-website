@@ -28,8 +28,8 @@
 
 | Environment | URL | Set via |
 |-------------|-----|---------|
-| Staging | `https://zyncspace.in` | `NEXT_PUBLIC_SITE_URL` or GitHub `SITE_URL` var |
-| Production | `https://zyncspace.com` | Same |
+| Staging | `https://www.zyncspace.in` | `NEXT_PUBLIC_SITE_URL` or GitHub `SITE_URL` var |
+| Production | `https://www.zyncspace.com` | Same |
 
 All canonical, sitemap, robots, JSON-LD, and llms.txt URLs must match the build environment.
 
@@ -49,7 +49,7 @@ All canonical, sitemap, robots, JSON-LD, and llms.txt URLs must match the build 
 ## Verification
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://zyncspace.in npm run build
+NEXT_PUBLIC_SITE_URL=https://www.zyncspace.in npm run build
 # Includes SEO audit — must pass before deploy
 ```
 

@@ -136,7 +136,9 @@ function patchSitemapUrls() {
   let xml = fs.readFileSync(sitemapPath, 'utf8');
   // Replace any hardcoded production URLs if build used wrong env
   xml = xml.replace(/https:\/\/zyncspace\.com/g, SITE_URL);
+  xml = xml.replace(/https:\/\/www\.zyncspace\.com/g, SITE_URL);
   xml = xml.replace(/https:\/\/zyncspace\.in/g, SITE_URL);
+  xml = xml.replace(/https:\/\/www\.zyncspace\.in/g, SITE_URL);
   fs.writeFileSync(sitemapPath, xml);
 }
 

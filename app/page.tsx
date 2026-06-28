@@ -1,4 +1,5 @@
-import { buildMetadata, JsonLd, jsonLdGraph, professionalServiceSchema, webPageSchema } from '@/lib/metadata';
+import { buildMetadata, JsonLd, faqSchema, jsonLdGraph, professionalServiceSchema, webPageSchema } from '@/lib/metadata';
+import { faq } from '@/content/enterprise-sections';
 import HomePageContent from '@/components/services/HomePageContent';
 
 const HOME_TITLE = 'ZyncSpace | AI-Driven Technology Consulting & Team Workspace';
@@ -21,6 +22,7 @@ export default function HomePage() {
           professionalServiceSchema()
         )}
       />
+      <JsonLd data={faqSchema(faq.items.map((i) => ({ question: i.question, answer: i.answer })))} />
       <HomePageContent />
     </>
   );

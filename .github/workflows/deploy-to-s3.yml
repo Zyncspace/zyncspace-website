@@ -36,9 +36,9 @@ jobs:
           elif [ -n "${{ vars.SITE_URL }}" ]; then
             echo "url=${{ vars.SITE_URL }}" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.ref_name }}" = "main" ]; then
-            echo "url=https://zyncspace.com" >> "$GITHUB_OUTPUT"
+            echo "url=https://www.zyncspace.com" >> "$GITHUB_OUTPUT"
           else
-            echo "url=https://zyncspace.in" >> "$GITHUB_OUTPUT"
+            echo "url=https://www.zyncspace.in" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Setup Node.js
@@ -138,4 +138,4 @@ jobs:
           echo "- **Commit:** \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "#### Production cutover" >> "$GITHUB_STEP_SUMMARY"
-          echo "Set GitHub repo variable \`SITE_URL\` to \`https://zyncspace.com\` or deploy from \`main\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "Set GitHub repo variable \`SITE_URL\` to \`https://www.zyncspace.com\` or deploy from \`main\`." >> "$GITHUB_STEP_SUMMARY"

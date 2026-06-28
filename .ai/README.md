@@ -12,6 +12,7 @@ This folder is the **single source of truth** for how we design, write, build, a
 | SEO changes | [seo/checklist.md](./seo/checklist.md) |
 | Deploy staging vs production | [engineering/environments.md](./engineering/environments.md) |
 | Products vs services pages | [content/products-vs-services.md](./content/products-vs-services.md) |
+| Full homepage structure & feel | [structure/website-structure.md](./structure/website-structure.md) |
 
 ## Folder structure
 
@@ -37,6 +38,8 @@ This folder is the **single source of truth** for how we design, write, build, a
     ├── project-structure.md
     ├── environments.md       ← zyncspace.in vs zyncspace.com
     └── fonts-and-css.md      ← how CSS is organized
+└── structure/
+    └── website-structure.md  ← full homepage map & content status
 ```
 
 ## Design principles (summary)
