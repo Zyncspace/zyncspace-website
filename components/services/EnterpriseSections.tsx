@@ -200,29 +200,63 @@ export function MediaShowcaseSection() {
   );
 }
 
-export function CustomerJourneySection() {
+export function DeliveryProcessSection() {
+  const phases = ['Discover', 'Build', 'Operate'] as const;
+
   return (
-    <section className="section-padding journey-section">
+    <section className="section-padding process-section" id="process">
       <div className="container">
-        <span className="label">{deliveryProcess.label}</span>
-        <h2>{deliveryProcess.title}</h2>
-        <div className="journey-track">
-          {deliveryProcess.steps.map((step, i) => (
-            <div key={step.num} className="journey-step">
-              <div className="journey-icon">{step.icon}</div>
-              <span className="journey-num">{step.num}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              {i < deliveryProcess.steps.length - 1 ? (
-                <span className="journey-connector" aria-hidden />
-              ) : null}
-            </div>
-          ))}
+        <div className="process-layout">
+          <div className="process-intro">
+            <span className="label">{deliveryProcess.label}</span>
+            <h2>{deliveryProcess.title}</h2>
+            <p className="section-lead">{deliveryProcess.description}</p>
+            <ul className="process-phases-legend" aria-label="Delivery phases">
+              {phases.map((phase) => (
+                <li key={phase}>
+                  <span className="process-phases-legend-dot" aria-hidden />
+                  {phase}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <ol className="process-timeline">
+            {deliveryProcess.steps.map((step, index) => {
+              const prev = deliveryProcess.steps[index - 1];
+              const showPhase = !prev || prev.phase !== step.phase;
+
+              return (
+                <li key={step.num} className="process-timeline-item">
+                  {showPhase ? (
+                    <div className="process-phase-label" data-phase={step.phase}>
+                      {step.phase}
+                    </div>
+                  ) : null}
+                  <div className="process-step">
+                    <div className="process-step-rail" aria-hidden="true">
+                      <span className="process-step-marker">{step.num}</span>
+                      {index < deliveryProcess.steps.length - 1 ? (
+                        <span className="process-step-line" />
+                      ) : null}
+                    </div>
+                    <div className="process-step-body">
+                      <h3>{step.title}</h3>
+                      <p>{step.description}</p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>
   );
 }
+
+/** @deprecated Use DeliveryProcessSection */
+export const CustomerJourneySection = DeliveryProcessSection;
 
 export function ReferenceArchitectureSection() {
   return (

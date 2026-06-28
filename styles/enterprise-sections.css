@@ -495,50 +495,197 @@
   }
 }
 
-/* ── Customer journey ── */
-.journey-track {
+/* ── Delivery process timeline ── */
+.process-section {
+  background: var(--light-bg);
+}
+
+.process-layout {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--space-4);
-  margin-top: var(--space-10);
+  grid-template-columns: minmax(260px, 34%) 1fr;
+  gap: var(--space-12);
+  align-items: start;
 }
 
-.journey-step {
-  position: relative;
-  padding: var(--space-6);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  background: #fff;
-  text-align: center;
+.process-intro {
+  position: sticky;
+  top: 7rem;
 }
 
-.journey-icon {
-  font-size: 1.5rem;
-  color: var(--accent-brand);
-  margin-bottom: var(--space-2);
+.process-intro h2 {
+  margin-bottom: var(--space-4);
 }
 
-.journey-num {
+.process-intro .section-lead {
+  margin-bottom: var(--space-8);
+}
+
+.process-phases-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-light);
+}
+
+.process-phases-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
   color: var(--muted-text);
-  display: block;
-  margin-bottom: var(--space-2);
 }
 
-.journey-step h3 {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-2);
+.process-phases-legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--light-text);
+  flex-shrink: 0;
 }
 
-.journey-step p {
+.process-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.process-timeline-item {
+  list-style: none;
+}
+
+.process-phase-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--muted-text);
+  padding-left: 4.5rem;
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.process-timeline-item:first-child .process-phase-label {
+  margin-top: 0;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  padding-bottom: var(--space-8);
+}
+
+.process-timeline-item:last-child .process-step {
+  padding-bottom: 0;
+}
+
+.process-step-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 100%;
+}
+
+.process-step-marker {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--light-text);
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.process-step-line {
+  flex: 1;
+  width: 1px;
+  min-height: 2rem;
+  margin-top: var(--space-3);
+  background: var(--border-light);
+}
+
+.process-step-body {
+  padding: var(--space-2) var(--space-6) var(--space-2) 0;
+  border-bottom: 1px solid transparent;
+  transition: opacity 0.25s ease;
+}
+
+.process-timeline-item:not(:last-child) .process-step-body {
+  border-bottom-color: var(--border-light);
+  padding-bottom: var(--space-8);
+}
+
+.process-step-body h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-3);
+  color: var(--light-text);
+}
+
+.process-step-body p {
   font-size: var(--text-sm);
-  color: var(--muted-text);
   line-height: var(--leading-relaxed);
+  color: var(--muted-text);
+  max-width: 36rem;
 }
 
-.journey-connector {
-  display: none;
+.process-step:hover .process-step-marker {
+  border-color: var(--light-text);
+  background: var(--light-text);
+  color: #fff;
+}
+
+.process-step:hover .process-step-body h3 {
+  color: var(--light-text);
+}
+
+@media (max-width: 900px) {
+  .process-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .process-intro {
+    position: static;
+  }
+
+  .process-phases-legend {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-6);
+  }
+
+  .process-phase-label {
+    padding-left: 3.75rem;
+  }
+
+  .process-step {
+    grid-template-columns: 3.75rem 1fr;
+    gap: var(--space-4);
+  }
+
+  .process-step-marker {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .process-step-body {
+    padding-right: 0;
+  }
 }
 
 /* ── Portfolio ── */
@@ -872,10 +1019,6 @@
     grid-template-columns: 1fr;
   }
 
-  .journey-track {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -897,10 +1040,6 @@
 }
 
 @media (max-width: 640px) {
-  .journey-track {
-    grid-template-columns: 1fr;
-  }
-
   .team-grid {
     grid-template-columns: 1fr;
   }

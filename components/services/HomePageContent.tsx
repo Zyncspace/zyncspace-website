@@ -17,7 +17,7 @@ import {
   ValuePropositionSection,
   WhyChooseSection,
   MediaShowcaseSection,
-  CustomerJourneySection,
+  DeliveryProcessSection,
   ReferenceArchitectureSection,
   PortfolioSection,
   ClientStoriesSection,
@@ -47,7 +47,7 @@ export default function HomePageContent() {
       <CapabilityMatrixSection />
       <MediaShowcaseSection />
       <FrameworkSection />
-      <CustomerJourneySection />
+      <DeliveryProcessSection />
       <TechStackSection />
       <IndustriesSection />
       <CaseStudySection />

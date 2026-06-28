@@ -102,14 +102,51 @@ export const mediaShowcase = {
 export const deliveryProcess = {
   label: 'Our Process',
   title: 'How We Deliver',
+  description:
+    'A structured path from first conversation to production — with clear gates, documentation, and stakeholder visibility at every stage.',
   steps: [
-    { num: '01', title: 'Discovery & Strategy', description: 'Audit systems, quantify business impact, and align stakeholders on ROI.', icon: '◎' },
-    { num: '02', title: 'Architecture & Planning', description: 'Reference architectures, risk matrix, and phased roadmap with TCO models.', icon: '◈' },
-    { num: '03', title: 'Design & Prototyping', description: 'Figma systems, API contracts, and interactive prototypes for sign-off.', icon: '◆' },
-    { num: '04', title: 'Development', description: 'Production-grade code, AI integration, and CI/CD with daily visibility.', icon: '▣' },
-    { num: '05', title: 'Testing & Security', description: 'Automated tests, penetration reviews, and compliance-aligned hardening.', icon: '◉' },
-    { num: '06', title: 'Deployment', description: 'Canary rollouts, load testing, and zero-downtime migration runbooks.', icon: '▶' },
-    { num: '07', title: 'Continuous Optimization', description: 'Performance tuning, cost optimization, and quarterly innovation sprints.', icon: '→' },
+    {
+      num: '01',
+      phase: 'Discover',
+      title: 'Discovery & Strategy',
+      description: 'Audit systems, quantify business impact, and align stakeholders on ROI.',
+    },
+    {
+      num: '02',
+      phase: 'Discover',
+      title: 'Architecture & Planning',
+      description: 'Reference architectures, risk matrix, and phased roadmap with TCO models.',
+    },
+    {
+      num: '03',
+      phase: 'Build',
+      title: 'Design & Prototyping',
+      description: 'Figma systems, API contracts, and interactive prototypes for sign-off.',
+    },
+    {
+      num: '04',
+      phase: 'Build',
+      title: 'Development',
+      description: 'Production-grade code, AI integration, and CI/CD with daily visibility.',
+    },
+    {
+      num: '05',
+      phase: 'Build',
+      title: 'Testing & Security',
+      description: 'Automated tests, penetration reviews, and compliance-aligned hardening.',
+    },
+    {
+      num: '06',
+      phase: 'Operate',
+      title: 'Deployment',
+      description: 'Canary rollouts, load testing, and zero-downtime migration runbooks.',
+    },
+    {
+      num: '07',
+      phase: 'Operate',
+      title: 'Continuous Optimization',
+      description: 'Performance tuning, cost optimization, and quarterly innovation sprints.',
+    },
   ],
 };
 
