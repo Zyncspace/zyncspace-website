@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/manifest.webmanifest/route": "/manifest.webmanifest",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/(product)/about/page": "/about",
+  "/(product)/careers/page": "/careers",
+  "/(product)/features/page": "/features",
+  "/(product)/pricing/page": "/pricing",
+  "/(product)/blogs/page": "/blogs",
+  "/(product)/privacy-policy/page": "/privacy-policy",
+  "/(product)/terms-of-service/page": "/terms-of-service",
+  "/(product)/contact/page": "/contact",
+  "/(product)/use-cases/page": "/use-cases",
+  "/page": "/",
+  "/services/case-studies/page": "/services/case-studies",
+  "/services/framework/page": "/services/framework",
+  "/services/industries/page": "/services/industries",
+  "/services/page": "/services",
+  "/(product)/blogs/[slug]/page": "/blogs/[slug]",
+  "/services/pricing/page": "/services/pricing",
+  "/services/technology/page": "/services/technology"
+}
