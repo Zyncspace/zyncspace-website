@@ -3,6 +3,7 @@ import { servicesContent as c } from '@/content/services';
 import { serviceRoutes, siteContact } from '@/content/site';
 import { finalCta } from '@/content/enterprise-sections';
 import FrameworkPipeline from '@/components/services/FrameworkPipeline';
+import PartnerLogo from '@/components/services/PartnerLogo';
 
 export function HeroSection() {
   return (
@@ -37,18 +38,21 @@ export function HeroSection() {
 }
 
 export function PartnersSection() {
-  const { label, items } = c.partners;
+  const { label, note, items } = c.partners;
   const marqueeItems = [...items, ...items];
 
   return (
     <section className="logo-wall">
       <div className="container">
-        <span className="label partners-label">{label}</span>
+        <div className="partners-header">
+          <span className="label partners-label">{label}</span>
+          {note ? <p className="partners-note">{note}</p> : null}
+        </div>
         <div className="partners-marquee" aria-label="Technology partners and platforms">
           <div className="partners-marquee-track">
             {marqueeItems.map((name, index) => (
               <span key={`${name}-${index}`} className="partners-marquee-item">
-                {name}
+                <PartnerLogo name={name} />
               </span>
             ))}
           </div>
