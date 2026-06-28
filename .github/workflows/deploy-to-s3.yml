@@ -4,15 +4,19 @@ on:
   push:
     branches:
       - main
+      - zyncspace_v2-website
   workflow_dispatch:
 
 concurrency:
-  group: deploy-production
-  cancel-in-progress: false
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
-  deploy:
-    name: Build & Sync to S3
+  build-and-deploy:
+    name: Build & Deploy to S3
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +35,18 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          if [ ! -d out ]; then
+            echo "Error: out/ directory was not created by the build."
+            exit 1
+          fi
+          if [ ! -f out/index.html ]; then
+            echo "Error: out/index.html is missing."
+            exit 1
+          fi
+          echo "Build OK — $(find out -type f | wc -l) files ready to deploy"
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -39,12 +55,20 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync build output to S3
-        run: |
-          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync out/ "s3://${{ secrets.S3_BUCKET_NAME }}/" --delete
 
       - name: Invalidate CloudFront cache
         if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+        env:
+          DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --distribution-id "$DISTRIBUTION_ID" \
             --paths "/*"
+
+      - name: Deploy summary
+        run: |
+          echo "### Deployed to S3" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Branch:** \`${{ github.ref_name }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Commit:** \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Bucket:** configured S3 bucket" >> "$GITHUB_STEP_SUMMARY"
