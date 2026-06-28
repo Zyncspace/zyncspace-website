@@ -1,43 +1,15 @@
-/* --- CSS Reset & Variables --- */
-:root {
-    /* Theme Colors */
-    --dark-bg: #0d0d0c;
-    --dark-text: #ffffff;
-    --light-bg: #f3f2eb;
-    --light-text: #1a1a1a;
-    --muted-text: #666666;
-    --border-light: #dcdbce;
-    --border-dark: #333333;
-    --accent-brand: #4F46E5; 
-    
-    /* Typography */
-    --font-sans: 'Inter', sans-serif;
-    --font-serif: 'Playfair Display', serif;
-    --font-mono: 'JetBrains Mono', monospace;
-}
-
-/* --- Scroll Behavior Fix --- */
-html {
-    scroll-behavior: smooth;
-}
-
+/* --- CSS Reset (tokens in styles/tokens.css, typography in styles/typography.css) --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: var(--font-sans);
     background-color: var(--light-bg);
     color: var(--light-text);
-    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    line-height: 1.6;
 }
-
-h1, h2, h3, h4, h5 { font-family: var(--font-serif); font-weight: 400; line-height: 1.2; }
-.serif-italic { font-style: italic; }
 a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 ul { list-style: none; }
 
-.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
 
 /* --- Anchor Offset Fix --- */
 section {
@@ -61,8 +33,8 @@ section {
 .btn-full { width: 100%; }
 
 /* --- Section Defaults --- */
-.section-padding { padding: 120px 0; border-bottom: 1px solid var(--border-light); }
-.label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-text); margin-bottom: 15px; display: block; font-weight: 600; }
+.section-padding { padding: var(--space-section) 0; border-bottom: 1px solid var(--border-light); }
+.label { color: var(--muted-text); margin-bottom: 15px; display: block; }
 
 /* --- Navigation (Dynamic Glassmorphism) --- */
 .navbar {
@@ -229,11 +201,10 @@ section {
     z-index: 1;
 }
 .hero-content { position: relative; z-index: 2; max-width: 900px; }
-.hero-label { color: #aaaaaa; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; margin-bottom: 20px; display: block; }
+.hero-label { color: #aaaaaa; font-size: var(--text-sm); margin-bottom: 20px; display: block; }
 
-/* Fluid typography for Hero */
-.hero h1 { font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05; margin-bottom: 30px; letter-spacing: -0.02em; }
-.hero p { font-size: clamp(1rem, 2vw, 1.25rem); color: #cccccc; max-width: 700px; margin-bottom: 50px; font-weight: 300; }
+.hero h1 { margin-bottom: 30px; }
+.hero p { font-size: clamp(var(--text-base), 2vw, var(--text-lg)); color: #cccccc; max-width: 700px; margin-bottom: 50px; font-weight: var(--weight-light); }
 .hero-btns { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 80px; }
 
 .hero-stats {
@@ -257,8 +228,8 @@ section {
     border-color: rgba(255, 255, 255, 0.15);
     transform: translateY(-3px);
 }
-.stat-num { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 8px; line-height: 1; }
-.stat-label { font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; line-height: 1.4; }
+.stat-num { font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 8px; }
+.stat-label { font-size: var(--text-sm); color: #999; }
 
 /* --- Logo Wall / Partners Marquee (Light) --- */
 .logo-wall {
@@ -341,7 +312,7 @@ section {
 .feature-item:hover { opacity: 0.8; }
 .feature-item:first-child { padding-top: 0; }
 .feature-icon { font-family: var(--font-mono); color: var(--muted-text); margin-top: 4px; font-size: 0.9rem; }
-.feature-content h3 { font-family: var(--font-sans); font-size: 1.25rem; font-weight: 500; margin-bottom: 15px; }
+.feature-content h3 { font-size: var(--text-xl); margin-bottom: 15px; }
 .feature-content p { color: var(--muted-text); font-size: 1.05rem; }
 
 /* --- Active Node / Capability Matrix (Dark Terminal Style) --- */
@@ -638,7 +609,8 @@ section {
 .pricing-card.recommended { background: var(--dark-bg); color: #fff; border-color: var(--dark-bg); padding: 60px 40px; transform: scale(1.03); box-shadow: 0 20px 50px rgba(0,0,0,0.15); z-index: 2; }
 .pricing-card.recommended:hover { transform: scale(1.03) translateY(-5px); }
 
-.pricing-card h3 { font-family: var(--font-sans); font-size: 1.5rem; font-weight: 500; margin-bottom: 15px; }
+.pricing-card h3 { font-size: var(--text-2xl); margin-bottom: 15px; }
+.form-box-title { font-family: var(--font-sans); font-size: var(--text-2xl); font-weight: var(--weight-medium); margin-bottom: 10px; }
 .pricing-price { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 20px; }
 .pricing-desc { color: var(--muted-text); font-size: 0.95rem; margin-bottom: 30px; min-height: 60px; }
 .pricing-card.recommended .pricing-desc { color: #ccc; }

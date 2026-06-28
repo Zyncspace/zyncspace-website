@@ -88,7 +88,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
             {isPartner ? (
               <>
                 <span className="label" style={{ color: '#888' }}>{c.contact.form.step}</span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.5rem', marginBottom: 10, fontWeight: 500 }}>
+                <h3 className="form-box-title">
                   {c.contact.form.title}
                 </h3>
                 <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 24 }}>
@@ -111,7 +111,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
             ) : (
               <>
                 <span className="label" style={{ color: '#888' }}>Send a message</span>
-                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.5rem', marginBottom: 10, fontWeight: 500 }}>
+                <h3 className="form-box-title">
                   How can we help?
                 </h3>
                 <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 24 }}>

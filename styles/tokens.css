@@ -1,0 +1,65 @@
+/**
+ * ZyncSpace design tokens — single source for colors, type scale, spacing.
+ * Font family stacks are wired in app/globals.css (Next.js font variables).
+ */
+:root {
+  /* ── Brand colors ── */
+  --dark-bg: #0d0d0c;
+  --dark-text: #ffffff;
+  --light-bg: #f3f2eb;
+  --light-text: #1a1a1a;
+  --muted-text: #666666;
+  --border-light: #dcdbce;
+  --border-dark: #333333;
+  --accent-brand: #4f46e5;
+
+  /* ── Type scale (rem) ── */
+  --text-xs: 0.75rem; /* 12px — labels, captions */
+  --text-sm: 0.875rem; /* 14px — small UI */
+  --text-base: 1rem; /* 16px — body */
+  --text-md: 1.0625rem; /* 17px — lead paragraphs */
+  --text-lg: 1.125rem; /* 18px — intro copy */
+  --text-xl: 1.25rem; /* 20px — card titles */
+  --text-2xl: 1.5rem; /* 24px — section subheads */
+  --text-3xl: clamp(2rem, 4vw, 3rem);
+  --text-4xl: clamp(2.5rem, 4vw, 3.5rem);
+  --text-display: clamp(3rem, 7vw, 5.5rem);
+
+  /* ── Line height ── */
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.7;
+
+  /* ── Letter spacing ── */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.08em;
+  --tracking-widest: 0.1em;
+
+  /* ── Font weight ── */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* ── Spacing scale ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-section: 7.5rem; /* 120px section padding */
+
+  /* ── Layout ── */
+  --container-max: 1400px;
+  --container-padding: 40px;
+  --nav-height: 90px;
+}

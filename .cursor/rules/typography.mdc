@@ -1,0 +1,29 @@
+---
+description: Typography and font system — serif/sans/mono roles
+globs: "{styles/**/*.css,app/globals.css,**/*.tsx}"
+alwaysApply: false
+---
+
+# Typography System
+
+Full spec: `.ai/design-system/typography.md`
+
+## Font roles (never mix)
+
+| Role | Font | Elements |
+|------|------|----------|
+| Serif | Playfair | H1, H2, display, stat numbers |
+| Sans | Inter | H3–H6, body, nav, buttons, labels, forms |
+| Mono | JetBrains | code, tech stack, terminal |
+
+## Rules
+
+- Use `var(--font-serif|sans|mono)` — never hardcode font names
+- Use `--text-*` tokens from `styles/tokens.css` for sizes
+- H3+ must be **sans**; H1/H2 must be **serif**
+- No inline `fontFamily` / `fontSize` in TSX — use CSS classes (e.g. `.form-box-title`, `.label`)
+- Add new text styles to `styles/typography.css`, not component files
+
+## CSS import order
+
+`tokens.css` → `typography.css` → `aetheris.css` → `product.css` (via `globals.css`)

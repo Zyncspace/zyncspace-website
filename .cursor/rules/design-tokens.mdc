@@ -1,0 +1,26 @@
+---
+description: Design tokens — colors, spacing, no hardcoded values
+globs: "styles/**/*.css"
+alwaysApply: false
+---
+
+# Design Tokens
+
+Full spec: `.ai/design-system/colors-spacing.md`
+
+## Use tokens from `styles/tokens.css`
+
+- Colors: `--light-bg`, `--dark-bg`, `--accent-brand`, `--muted-text`, etc.
+- Spacing: `--space-*`, `--space-section`
+- Type scale: `--text-xs` through `--text-display`
+- Layout: `--container-max`, `--container-padding`
+
+## Do not
+
+- Add new hex colors inline in components
+- Hardcode `120px` section padding — use `--space-section`
+- Redefine `--font-*` outside `app/globals.css`
+
+## Whitespace
+
+Enterprise B2B = generous section padding, clear visual hierarchy, minimal palette.
