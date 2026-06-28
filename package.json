@@ -1,0 +1,74 @@
+{
+  "name": "zyncspace-india",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/extract-product-content.mjs && next build && node scripts/generate-rss.mjs",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && biome check .",
+    "lint:fix": "eslint . --fix && biome check --write .",
+    "format": "biome format --write .",
+    "test": "tsx --test lib/metadata.test.ts",
+    "test:e2e": "playwright test",
+    "check:knip": "knip",
+    "check:jscpd": "jscpd .",
+    "check:circular": "madge --circular --extensions ts,tsx app components lib",
+    "check:deps": "depcruise app components lib --config .dependency-cruiser.cjs",
+    "check:seo": "node scripts/seo-audit.mjs",
+    "extract": "node scripts/extract-product-content.mjs",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.21.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reading-time": "^1.5.0",
+    "schema-dts": "^2.0.0",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@biomejs/biome": "^2.5.1",
+    "@commitlint/cli": "^21.1.0",
+    "@commitlint/config-conventional": "^21.1.0",
+    "@eslint/eslintrc": "^3.3.5",
+    "@playwright/test": "^1.61.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.5.2",
+    "dependency-cruiser": "^18.0.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.9",
+    "husky": "^9.1.7",
+    "jscpd": "^5.0.11",
+    "jsdom": "^29.1.1",
+    "knip": "^6.22.0",
+    "lint-staged": "^17.0.8",
+    "madge": "^8.0.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.1",
+    "tsx": "^4.22.4",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.62.0",
+    "vitest": "^4.1.9"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,tsx,json}": [
+      "biome check --write --no-errors-on-unmatched"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}
