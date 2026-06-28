@@ -278,7 +278,7 @@ export const servicesContent = {
         metric: "Multi-tenant",
         metricLabel: "SaaS-ready architecture",
         imageUrl:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800",
+          "/assets/images/stock/analytics-dashboard.webp",
       },
       {
         title: "FinTech & AI Startups",
@@ -287,7 +287,7 @@ export const servicesContent = {
         metric: "Secure APIs",
         metricLabel: "Compliance-aware design",
         imageUrl:
-          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800",
+          "/assets/images/stock/payment-retail.webp",
       },
       {
         title: "EdTech & HealthTech",
@@ -296,7 +296,7 @@ export const servicesContent = {
         metric: "Data isolation",
         metricLabel: "Privacy-first patterns",
         imageUrl:
-          "https://images.unsplash.com/photo-1576091160550-2173ff94031d?q=80&w=800",
+          "/assets/images/stock/healthcare-edtech.webp",
       },
       {
         title: "Logistics, Retail & E-Commerce",
@@ -305,7 +305,7 @@ export const servicesContent = {
         metric: "Edge + CDN",
         metricLabel: "Performance at scale",
         imageUrl:
-          "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+          "/assets/images/stock/logistics-warehouse.webp",
       },
       {
         title: "Manufacturing & Enterprise Software",
@@ -314,7 +314,7 @@ export const servicesContent = {
         metric: "Enterprise",
         metricLabel: "Integration-ready delivery",
         imageUrl:
-          "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800",
+          "/assets/images/stock/manufacturing-factory.webp",
       },
       {
         title: "MarTech & Growth Platforms",
@@ -323,7 +323,7 @@ export const servicesContent = {
         metric: "Attribution",
         metricLabel: "Growth-engine delivery",
         imageUrl:
-          "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800",
+          "/assets/images/stock/marketing-team.webp",
       },
     ],
   },

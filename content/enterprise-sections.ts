@@ -215,7 +215,7 @@ export const portfolio = {
     {
       title: 'FinTech Core Replatform',
       category: 'Platform Engineering',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800',
+      image: '/assets/images/stock/analytics-dashboard.webp',
       metric: 'Microservices',
       metricLabel: 'Migration pattern',
       description:
@@ -225,7 +225,7 @@ export const portfolio = {
     {
       title: 'Healthcare Intake Automation',
       category: 'AI Consulting',
-      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800',
+      image: '/assets/images/stock/healthcare-team.webp',
       metric: 'RAG Pipeline',
       metricLabel: 'HIPAA-aligned design',
       description:
@@ -235,7 +235,7 @@ export const portfolio = {
     {
       title: 'Retail Checkout Modernization',
       category: 'Digital Transformation',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800',
+      image: '/assets/images/stock/payment-retail.webp',
       metric: 'Edge + API',
       metricLabel: 'Performance focus',
       description:
@@ -400,21 +400,21 @@ export const resources = {
       title: 'Enterprise RAG Playbook',
       description: 'Indexing strategies, chunking, and zero-retention LLM integration patterns.',
       href: '/blogs',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600',
+      image: '/assets/images/stock/ai-technology.webp',
     },
     {
       type: 'Article',
       title: 'AI in Operations',
       description: 'Multi-agent workflows for back-office automation — with governance guardrails.',
       href: '/blogs/ai-in-workplace-communication',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600',
+      image: '/assets/images/stock/office-meeting.webp',
     },
     {
       type: 'Report',
       title: 'Core Web Vitals for B2B',
       description: 'Performance budgets that improve conversion and search visibility.',
       href: '/blogs',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600',
+      image: '/assets/images/stock/laptop-analytics.webp',
     },
   ],
 };
