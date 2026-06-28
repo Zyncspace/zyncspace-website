@@ -1,4 +1,5 @@
 import { buildMetadata } from '@/lib/metadata';
+import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { FrameworkSection } from '@/components/services/sections';
@@ -14,6 +15,12 @@ export const metadata = buildMetadata({
 export default function FrameworkPage() {
   return (
     <>
+      <ServiceDetailJsonLd
+        title={c.framework.title}
+        description={c.framework.description}
+        path="/services/framework"
+        serviceType="Consulting Framework"
+      />
       <ServicePageHeader
         label={c.framework.label}
         title={c.framework.title}

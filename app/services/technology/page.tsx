@@ -1,4 +1,5 @@
 import { buildMetadata } from '@/lib/metadata';
+import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { TechStackSection } from '@/components/services/sections';
@@ -14,6 +15,12 @@ export const metadata = buildMetadata({
 export default function TechnologyPage() {
   return (
     <>
+      <ServiceDetailJsonLd
+        title={c.techStack.title}
+        description={c.techStack.description}
+        path="/services/technology"
+        serviceType="Technology Stack & Engineering"
+      />
       <ServicePageHeader
         label={c.techStack.label}
         title={c.techStack.title}

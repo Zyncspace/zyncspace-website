@@ -1,4 +1,5 @@
 import { buildMetadata } from '@/lib/metadata';
+import { ServiceHubJsonLd } from '@/components/seo/PageJsonLd';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { CapabilitiesSection, CapabilityMatrixSection } from '@/components/services/sections';
@@ -15,6 +16,7 @@ export const metadata = buildMetadata({
 export default function ServicesPage() {
   return (
     <>
+      <ServiceHubJsonLd title="Services" description={c.capabilities.description} />
       <ServicePageHeader
         label={c.capabilities.label}
         title={c.capabilities.title}

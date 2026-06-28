@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { buildSiteMetadata, JsonLd, organizationSchema, websiteSchema } from '@/lib/metadata';
+import { buildSiteMetadata, JsonLd, jsonLdGraph, organizationSchema, websiteSchema } from '@/lib/metadata';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
@@ -15,8 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrains.variable}`}>
       <body>
-        <JsonLd data={organizationSchema()} />
-        <JsonLd data={websiteSchema()} />
+        <JsonLd data={jsonLdGraph(organizationSchema(), websiteSchema())} />
         <Navbar />
         {children}
         <Footer />

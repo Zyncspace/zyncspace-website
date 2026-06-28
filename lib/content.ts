@@ -58,15 +58,4 @@ export function getAllBlogSlugs(): string[] {
 
 export const SITE_URL = 'https://zyncspace.com';
 
-export const STATIC_ROUTES = [
-  { path: '/', priority: 1.0, changeFrequency: 'weekly' as const },
-  { path: '/features', priority: 0.9, changeFrequency: 'weekly' as const },
-  { path: '/use-cases', priority: 0.9, changeFrequency: 'weekly' as const },
-  { path: '/pricing', priority: 0.9, changeFrequency: 'weekly' as const },
-  { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/careers', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/privacy-policy', priority: 0.5, changeFrequency: 'yearly' as const },
-  { path: '/terms-of-service', priority: 0.5, changeFrequency: 'yearly' as const },
-  { path: '/blogs', priority: 0.9, changeFrequency: 'weekly' as const },
-];
+export { SEO_ROUTES as STATIC_ROUTES } from '@/lib/seo-config';

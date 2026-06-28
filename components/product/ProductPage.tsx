@@ -1,5 +1,5 @@
 import { getProductPage, type ProductSlug } from '@/lib/product-pages';
-import { buildMetadata, JsonLd, breadcrumbSchema } from '@/lib/metadata';
+import { buildMetadata, JsonLd, breadcrumbSchema, webPageSchema } from '@/lib/metadata';
 import ProductPageBody from '@/components/product/ProductPageBody';
 import type { Metadata } from 'next';
 
@@ -18,15 +18,23 @@ export function generateProductMetadata(slug: ProductSlug): Metadata {
 
 export default function ProductPage({ slug }: { slug: ProductSlug }) {
   const page = getProductPage(slug);
-  const jsonLd = page.metadata.jsonLd;
+  const m = page.metadata;
+  const pageTitle = m.title.split(' - ')[0].split(' | ')[0];
   const breadcrumbs = breadcrumbSchema([
     { name: 'Home', path: '/' },
-    { name: page.metadata.title.split(' - ')[0].split(' | ')[0] },
+    { name: pageTitle },
   ]);
+  const webPage = webPageSchema({
+    title: m.title,
+    description: m.description,
+    path: `/${slug}`,
+  });
 
   return (
     <>
-      {jsonLd ? <JsonLd data={jsonLd} /> : <JsonLd data={breadcrumbs} />}
+      {page.metadata.jsonLd ? <JsonLd data={page.metadata.jsonLd} /> : null}
+      <JsonLd data={breadcrumbs} />
+      <JsonLd data={webPage} />
       <ProductPageBody page={page} />
     </>
   );

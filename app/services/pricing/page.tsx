@@ -1,4 +1,5 @@
 import { buildMetadata } from '@/lib/metadata';
+import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { ConsultingPricingSection } from '@/components/services/sections';
@@ -14,6 +15,12 @@ export const metadata = buildMetadata({
 export default function ConsultingPricingPage() {
   return (
     <>
+      <ServiceDetailJsonLd
+        title={c.consultingPricing.title}
+        description={c.consultingPricing.description}
+        path="/services/pricing"
+        serviceType="Consulting Pricing"
+      />
       <ServicePageHeader
         label={c.consultingPricing.label}
         title={c.consultingPricing.title}

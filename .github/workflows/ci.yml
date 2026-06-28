@@ -40,6 +40,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: SEO audit
+        run: npm run check:seo
+
       - name: Knip (dead code)
         run: npm run check:knip
 

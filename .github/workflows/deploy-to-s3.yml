@@ -35,6 +35,9 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: SEO audit
+        run: npm run check:seo
+
       - name: Verify build output
         run: |
           if [ ! -d out ]; then

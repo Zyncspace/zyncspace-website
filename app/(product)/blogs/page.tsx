@@ -1,19 +1,23 @@
 import Link from 'next/link';
 import { getAllBlogPosts } from '@/lib/content';
-import { buildMetadata } from '@/lib/metadata';
+import { buildMetadata, JsonLd, collectionPageSchema } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Blog - ZyncSpace | Team Communication Insights',
-  description: 'Insights on team communication, productivity, and the future of workplace collaboration.',
+  title: 'Blog',
+  description: 'Insights on team communication, productivity, AI consulting, and the future of workplace collaboration.',
   path: '/blogs',
-  keywords: 'team communication, workplace blog, productivity tips, remote work',
+  keywords: 'team communication, workplace blog, productivity tips, remote work, AI consulting',
 });
 
 export default function BlogsPage() {
   const posts = getAllBlogPosts();
+  const title = 'Team Communication Insights';
+  const description =
+    'Expert guides on workplace communication, collaboration, productivity, and AI from the ZyncSpace team.';
 
   return (
     <>
+      <JsonLd data={collectionPageSchema({ title, description, path: '/blogs' })} />
       <header className="blog-page-header">
         <div className="container">
           <span className="label" style={{ color: '#aaa' }}>Product Blog</span>

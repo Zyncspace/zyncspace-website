@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { SITE_URL } from '@/lib/metadata';
+import { AI_CRAWLER_AGENTS, SITE_URL } from '@/lib/seo-config';
 
 export const dynamic = 'force-static';
 
@@ -9,10 +9,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/', '/preview/', '/*?*'],
+        disallow: ['/admin/', '/api/', '/preview/', '/_next/'],
       },
-      { userAgent: 'GPTBot', allow: '/' },
-      { userAgent: 'ClaudeBot', allow: '/' },
+      ...AI_CRAWLER_AGENTS.map((userAgent) => ({
+        userAgent,
+        allow: '/' as const,
+      })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

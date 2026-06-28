@@ -1,4 +1,5 @@
 import { buildMetadata } from '@/lib/metadata';
+import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { CaseStudySection } from '@/components/services/sections';
@@ -12,12 +13,21 @@ export const metadata = buildMetadata({
 });
 
 export default function CaseStudiesPage() {
+  const pageTitle = 'Client Case Studies';
+  const pageDescription = 'Proven outcomes from our consulting and engineering engagements.';
+
   return (
     <>
+      <ServiceDetailJsonLd
+        title={pageTitle}
+        description={pageDescription}
+        path="/services/case-studies"
+        serviceType="Case Studies"
+      />
       <ServicePageHeader
         label={c.caseStudy.label}
-        title="Client Case Studies"
-        description="Proven outcomes from our consulting and engineering engagements."
+        title={pageTitle}
+        description={pageDescription}
       />
       <CaseStudySection />
       <ServicePageExtended sections={servicePageExtended.caseStudies} />
