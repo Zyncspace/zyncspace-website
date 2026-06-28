@@ -95,10 +95,14 @@ export function WhyChooseSection() {
 
 export function MediaShowcaseSection() {
   const [activeFeature, setActiveFeature] = useState(0);
+  const [scrollScrollyEnabled, setScrollScrollyEnabled] = useState(false);
   const active = mediaShowcase.features[activeFeature];
   const navRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const segmentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const isScrollingToFeature = useRef(false);
   const [marker, setMarker] = useState({ top: 0, height: 0 });
+  const featureCount = mediaShowcase.features.length;
 
   const updateMarker = useCallback(() => {
     const tab = tabRefs.current[activeFeature];
@@ -121,6 +125,66 @@ export function MediaShowcaseSection() {
     return () => window.cancelAnimationFrame(id);
   }, [activeFeature, updateMarker]);
 
+  useEffect(() => {
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const widthQuery = window.matchMedia('(min-width: 901px)');
+
+    const syncScrolly = () => {
+      setScrollScrollyEnabled(widthQuery.matches && !motionQuery.matches);
+    };
+
+    syncScrolly();
+    motionQuery.addEventListener('change', syncScrolly);
+    widthQuery.addEventListener('change', syncScrolly);
+    return () => {
+      motionQuery.removeEventListener('change', syncScrolly);
+      widthQuery.removeEventListener('change', syncScrolly);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!scrollScrollyEnabled) return;
+
+    const segments = segmentRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (!segments.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isScrollingToFeature.current) return;
+
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visible) return;
+
+        const index = Number((visible.target as HTMLElement).dataset.index);
+        if (!Number.isNaN(index)) {
+          setActiveFeature(index);
+        }
+      },
+      { root: null, rootMargin: '-42% 0px -42% 0px', threshold: [0, 0.15, 0.35, 0.55, 0.75, 1] },
+    );
+
+    segments.forEach((segment) => observer.observe(segment));
+    return () => observer.disconnect();
+  }, [scrollScrollyEnabled, featureCount]);
+
+  const handleFeatureSelect = (index: number) => {
+    setActiveFeature(index);
+
+    if (!scrollScrollyEnabled) return;
+
+    const segment = segmentRefs.current[index];
+    if (!segment) return;
+
+    isScrollingToFeature.current = true;
+    segment.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    window.setTimeout(() => {
+      isScrollingToFeature.current = false;
+    }, 700);
+  };
+
   return (
     <section className="section-padding media-showcase-section" id="platform-preview">
       <div className="container">
@@ -130,70 +194,94 @@ export function MediaShowcaseSection() {
           <p className="section-lead">{mediaShowcase.description}</p>
         </div>
 
-        <div className="feature-hub">
-          <div className="feature-hub-nav-wrap" ref={navRef}>
-            <div className="feature-hub-rail" aria-hidden="true">
-              <span className="feature-hub-rail-track" />
-              <span
-                className="feature-hub-rail-marker"
-                style={{ transform: `translateY(${marker.top}px)`, height: marker.height }}
-              />
-            </div>
+        <div
+          className={`feature-hub-scrolly-track${scrollScrollyEnabled ? ' is-scrolly' : ''}`}
+          style={
+            scrollScrollyEnabled ? { height: `${featureCount * 100}vh` } : undefined
+          }
+        >
+          <div className="feature-hub-scrolly-pin">
+            <div className="feature-hub">
+              <div className="feature-hub-nav-wrap" ref={navRef}>
+                <div className="feature-hub-rail" aria-hidden="true">
+                  <span className="feature-hub-rail-track" />
+                  <span
+                    className="feature-hub-rail-marker"
+                    style={{ transform: `translateY(${marker.top}px)`, height: marker.height }}
+                  />
+                </div>
 
-            <div
-              className="feature-hub-nav"
-              role="tablist"
-              aria-label="ZyncSpace platform capabilities"
-            >
-              {mediaShowcase.features.map((feature, index) => {
-                const isActive = index === activeFeature;
-                return (
-                  <button
+                <div
+                  className="feature-hub-nav"
+                  role="tablist"
+                  aria-label="ZyncSpace platform capabilities"
+                >
+                  {mediaShowcase.features.map((feature, index) => {
+                    const isActive = index === activeFeature;
+                    return (
+                      <button
+                        key={feature.id}
+                        ref={(el) => {
+                          tabRefs.current[index] = el;
+                        }}
+                        type="button"
+                        role="tab"
+                        id={`feature-tab-${feature.id}`}
+                        aria-selected={isActive}
+                        aria-controls={`feature-panel-${feature.id}`}
+                        tabIndex={isActive ? 0 : -1}
+                        className={`feature-hub-tab${isActive ? ' active' : ''}`}
+                        onClick={() => handleFeatureSelect(index)}
+                      >
+                        <span className="feature-hub-tab-index">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span className="feature-hub-tab-body">
+                          <span className="feature-hub-tab-title">{feature.title}</span>
+                          <span className="feature-hub-tab-desc">{feature.description}</span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div
+                className="feature-hub-visual"
+                role="tabpanel"
+                id={`feature-panel-${active.id}`}
+                aria-labelledby={`feature-tab-${active.id}`}
+              >
+                {mediaShowcase.features.map((feature, index) => (
+                  <img
                     key={feature.id}
-                    ref={(el) => {
-                      tabRefs.current[index] = el;
-                    }}
-                    type="button"
-                    role="tab"
-                    id={`feature-tab-${feature.id}`}
-                    aria-selected={isActive}
-                    aria-controls={`feature-panel-${feature.id}`}
-                    tabIndex={isActive ? 0 : -1}
-                    className={`feature-hub-tab${isActive ? ' active' : ''}`}
-                    onClick={() => setActiveFeature(index)}
-                  >
-                    <span className="feature-hub-tab-index">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span className="feature-hub-tab-body">
-                      <span className="feature-hub-tab-title">{feature.title}</span>
-                      <span className="feature-hub-tab-desc">{feature.description}</span>
-                    </span>
-                  </button>
-                );
-              })}
+                    src={feature.src}
+                    alt={feature.alt}
+                    width={1280}
+                    height={720}
+                    className={`feature-hub-frame${index === activeFeature ? ' active' : ''}`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          <div
-            className="feature-hub-visual"
-            role="tabpanel"
-            id={`feature-panel-${active.id}`}
-            aria-labelledby={`feature-tab-${active.id}`}
-          >
-            {mediaShowcase.features.map((feature, index) => (
-              <img
-                key={feature.id}
-                src={feature.src}
-                alt={feature.alt}
-                width={1280}
-                height={720}
-                className={`feature-hub-frame${index === activeFeature ? ' active' : ''}`}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                decoding="async"
-              />
-            ))}
-          </div>
+          {scrollScrollyEnabled ? (
+            <div className="feature-hub-scrolly-segments" aria-hidden="true">
+              {mediaShowcase.features.map((feature, index) => (
+                <div
+                  key={feature.id}
+                  ref={(el) => {
+                    segmentRefs.current[index] = el;
+                  }}
+                  className="feature-hub-scrolly-segment"
+                  data-index={index}
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

@@ -462,6 +462,31 @@
   pointer-events: auto;
 }
 
+/* Scrollytelling — sticky hub while scrolling (matches process section) */
+.feature-hub-scrolly-track {
+  position: relative;
+}
+
+.feature-hub-scrolly-track.is-scrolly {
+  margin-bottom: var(--space-8);
+}
+
+.feature-hub-scrolly-pin {
+  position: sticky;
+  top: 7rem;
+  z-index: 2;
+}
+
+.feature-hub-scrolly-segments {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.feature-hub-scrolly-segment {
+  height: 100vh;
+}
+
 @media (max-width: 900px) {
   .feature-hub {
     grid-template-columns: 1fr;
@@ -492,6 +517,30 @@
 
   .feature-hub-tab.active .feature-hub-tab-desc {
     margin-top: var(--space-3);
+  }
+
+  .feature-hub-scrolly-pin {
+    position: static;
+  }
+
+  .feature-hub-scrolly-track.is-scrolly {
+    height: auto !important;
+    margin-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-hub-scrolly-pin {
+    position: static;
+  }
+
+  .feature-hub-scrolly-track.is-scrolly {
+    height: auto !important;
+    margin-bottom: 0;
+  }
+
+  .feature-hub-scrolly-segments {
+    display: none;
   }
 }
 
