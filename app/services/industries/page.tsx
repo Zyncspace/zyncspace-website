@@ -1,7 +1,9 @@
 import { buildMetadata } from '@/lib/metadata';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
+import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { IndustriesSection } from '@/components/services/sections';
 import { servicesContent as c } from '@/content/services';
+import { servicePageExtended } from '@/content/service-pages';
 
 export const metadata = buildMetadata({
   title: 'Industries',
@@ -18,6 +20,7 @@ export default function IndustriesPage() {
         description={c.industries.description}
       />
       <IndustriesSection embedded />
+      <ServicePageExtended sections={servicePageExtended.industries} />
     </>
   );
 }

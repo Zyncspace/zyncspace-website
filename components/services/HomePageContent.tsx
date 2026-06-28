@@ -1,9 +1,15 @@
 import {
   HeroSection,
   PartnersSection,
-  ProductShowcaseSection,
+  CapabilitiesSection,
+  CapabilityMatrixSection,
+  FrameworkSection,
+  TechStackSection,
+  IndustriesSection,
+  CaseStudySection,
+  ConsultingPricingSection,
   InsightsSection,
-  ServicesCtaBand,
+  ProductShowcaseSection,
 } from '@/components/services/sections';
 import ContactSection from '@/components/services/ContactSection';
 
@@ -12,10 +18,16 @@ export default function HomePageContent() {
     <>
       <HeroSection />
       <PartnersSection />
-      <ProductShowcaseSection />
+      <CapabilitiesSection />
+      <CapabilityMatrixSection />
+      <FrameworkSection />
+      <TechStackSection />
+      <IndustriesSection />
+      <CaseStudySection />
+      <ConsultingPricingSection />
       <InsightsSection limit={3} />
-      <ServicesCtaBand />
-      <ContactSection compact />
+      <ProductShowcaseSection />
+      <ContactSection variant="partner" />
     </>
   );
 }

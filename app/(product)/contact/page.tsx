@@ -1,5 +1,7 @@
 import { buildMetadata } from '@/lib/metadata';
 import { ContactPageContent } from '@/components/services/ContactSection';
+import ServicePageExtended from '@/components/services/ServicePageExtended';
+import { servicePageExtended } from '@/content/service-pages';
 
 export const metadata = buildMetadata({
   title: 'Contact Us',
@@ -9,5 +11,10 @@ export const metadata = buildMetadata({
 });
 
 export default function ContactPage() {
-  return <ContactPageContent />;
+  return (
+    <>
+      <ContactPageContent />
+      <ServicePageExtended sections={servicePageExtended.contact} />
+    </>
+  );
 }

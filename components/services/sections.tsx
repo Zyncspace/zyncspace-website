@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { servicesContent as c } from '@/content/services';
 import { serviceRoutes, siteContact } from '@/content/site';
+import FrameworkPipeline from '@/components/services/FrameworkPipeline';
 
 export function HeroSection() {
   return (
@@ -16,7 +17,7 @@ export function HeroSection() {
         </div>
         <div className="hero-stats">
           {c.hero.stats.map((s) => (
-            <div key={s.label}>
+            <div key={s.label} className="hero-stat-card">
               <div className="stat-num">{s.value}</div>
               <div className="stat-label">{s.label}</div>
             </div>
@@ -28,12 +29,20 @@ export function HeroSection() {
 }
 
 export function PartnersSection() {
+  const marqueeItems = [...c.partners, ...c.partners];
+
   return (
     <section className="logo-wall">
       <div className="container">
-        <span className="label" style={{ textAlign: 'center', marginBottom: 30 }}>Strategic Integration Partners</span>
-        <div className="logos-container">
-          {c.partners.map((p) => <span key={p}>{p}</span>)}
+        <span className="label partners-label">Trusted by Leading Global Enterprises</span>
+        <div className="partners-marquee" aria-label="Global enterprise partners">
+          <div className="partners-marquee-track">
+            {marqueeItems.map((name, index) => (
+              <span key={`${name}-${index}`} className="partners-marquee-item">
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -111,48 +120,7 @@ export function CapabilityMatrixSection() {
 }
 
 export function FrameworkSection({ embedded = false }: { embedded?: boolean }) {
-  return (
-    <section className="section-padding">
-      <div className="container">
-        {!embedded ? (
-          <div className="methodology-header">
-            <span className="label">{c.framework.label}</span>
-            <h2>{c.framework.title}</h2>
-            <p className="section-lead">{c.framework.description}</p>
-          </div>
-        ) : null}
-        <div className="timeline-grid">
-          {c.framework.stages.map((stage) => {
-            const highlighted = 'highlighted' in stage && stage.highlighted;
-            return (
-              <div key={stage.num} className="stage-box" style={highlighted ? { background: 'var(--dark-bg)', color: '#fff', borderColor: 'var(--dark-bg)' } : undefined}>
-                <div className="stage-num" style={highlighted ? { color: '#fff' } : undefined}>{stage.num}</div>
-                <div className="stage-title">{stage.title}</div>
-              </div>
-            );
-          })}
-        </div>
-        <div className="deep-dive-card">
-          <div className="dd-left">
-            <span className="label">{c.framework.deepDive.stageLabel}</span>
-            <h3 className="deep-dive-title">{c.framework.deepDive.title}</h3>
-            <p className="deep-dive-desc"><strong>{c.framework.deepDive.timeline}</strong><br /><br />{c.framework.deepDive.description}</p>
-            <div style={{ marginBottom: 35 }}>
-              <strong style={{ display: 'block', marginBottom: 5 }}>{c.framework.deepDive.leadRole.label}:</strong>
-              <span style={{ color: 'var(--muted-text)' }}>{c.framework.deepDive.leadRole.value}</span>
-            </div>
-            <Link href={serviceRoutes.framework} className="btn btn-outline-dark dd-cta">View full framework ↗</Link>
-          </div>
-          <div className="dd-right">
-            <h4>{c.framework.deepDive.deliverablesTitle}</h4>
-            <ul className="dd-list">
-              {c.framework.deepDive.deliverables.map((d) => <li key={d}>{d}</li>)}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <FrameworkPipeline embedded={embedded} />;
 }
 
 export function TechStackSection({ embedded = false }: { embedded?: boolean }) {

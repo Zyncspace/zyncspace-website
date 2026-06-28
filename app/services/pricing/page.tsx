@@ -1,7 +1,9 @@
 import { buildMetadata } from '@/lib/metadata';
 import ServicePageHeader from '@/components/services/ServicePageHeader';
+import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { ConsultingPricingSection } from '@/components/services/sections';
 import { servicesContent as c } from '@/content/services';
+import { servicePageExtended } from '@/content/service-pages';
 
 export const metadata = buildMetadata({
   title: 'Consulting Pricing',
@@ -18,6 +20,7 @@ export default function ConsultingPricingPage() {
         description={c.consultingPricing.description}
       />
       <ConsultingPricingSection embedded />
+      <ServicePageExtended sections={servicePageExtended.pricing} />
     </>
   );
 }

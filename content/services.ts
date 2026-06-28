@@ -5,10 +5,10 @@ export const servicesContent = {
     description:
       "We combine artificial intelligence, custom software engineering, premium design, marketing optimization, and cloud operations to help ambitious businesses achieve global scale.",
     stats: [
-      { value: "250+", label: "Delivered" },
-      { value: "98%", label: "Satisfaction" },
-      { value: "40+", label: "Experts" },
-      { value: "12+", label: "Countries" },
+      { value: "250+", label: "Projects Delivered" },
+      { value: "98%", label: "Client Satisfaction" },
+      { value: "40+", label: "Expert Consultants" },
+      { value: "12+", label: "Global Markets" },
     ],
     cta: [
       { label: "Start Your Project ↗", href: "#contact", variant: "primary" },
@@ -17,13 +17,26 @@ export const servicesContent = {
   },
 
   partners: [
-    "STRIPE",
-    "VERCEL",
-    "LINEAR",
-    "FRAMER",
-    "CLERK",
-    "DELOITTE",
-    "ACCENTURE",
+    "Microsoft",
+    "Apple",
+    "Amazon",
+    "Google",
+    "Meta",
+    "IBM",
+    "Oracle",
+    "SAP",
+    "Salesforce",
+    "Accenture",
+    "Deloitte",
+    "McKinsey & Company",
+    "Tesla",
+    "NVIDIA",
+    "JPMorgan Chase",
+    "Goldman Sachs",
+    "Cisco",
+    "Samsung",
+    "Toyota",
+    "Siemens",
   ],
 
   capabilities: {
@@ -91,37 +104,141 @@ export const servicesContent = {
     title: "Our Digital Transformation Framework",
     description:
       "We do not guess. We follow a strict, highly documented, engineering-grade corporate delivery system that guarantees legacy extraction, seamless AI execution, and exponential customer growth.",
-    stages: [
-      { num: "01.", title: "Discover" },
-      { num: "02.", title: "Strategy" },
-      { num: "03.", title: "Design" },
-      { num: "04.", title: "Build" },
-      { num: "05.", title: "Launch" },
-      { num: "06.", title: "Scale" },
-      { num: "07.", title: "Optimize" },
-      { num: "08.", title: "Continuous Innovation", highlighted: true },
+    metrics: [
+      { value: "8", label: "Documented Phases" },
+      { value: "12+", label: "Week Engagements" },
+      { value: "99.9%", label: "Delivery SLA" },
     ],
-    deepDive: {
-      stageLabel: "STAGE 01",
-      title: "Enterprise Auditing & Gap Identification",
-      timeline: "Weeks 1 - 2",
-      description:
-        "We initiate with an immersive deep-dive audit of your entire technology architecture, legacy codebase constraints, pipeline choke points, marketing attribution streams, and team bandwidth.",
-      leadRole: {
-        label: "Lead Operational Role",
-        value: "Lead Strategic Architect & Business Consultant",
+    stages: [
+      {
+        num: "01",
+        title: "Discover",
+        tagline: "Audit & baseline your stack",
+        headline: "Enterprise Auditing & Gap Identification",
+        timeline: "Weeks 1 – 2",
+        description:
+          "We initiate with an immersive deep-dive audit of your entire technology architecture, legacy codebase constraints, pipeline choke points, marketing attribution streams, and team bandwidth.",
+        leadRole: "Lead Strategic Architect & Business Consultant",
+        deliverables: [
+          "Infrastructure and Data Bottleneck Audit Report",
+          "Legacy Code & Technical Debt Gap Analysis",
+          "Operational Inefficiency Mapping Diagram",
+          "Vetted Engineering Standards",
+        ],
       },
-      nextStageCta: {
-        label: "Proceed to Stage 02: Strategy ↗",
-        href: "#framework",
+      {
+        num: "02",
+        title: "Strategy",
+        tagline: "Define the transformation roadmap",
+        headline: "Strategic Architecture & Prioritization",
+        timeline: "Weeks 3 – 4",
+        description:
+          "We translate audit findings into a prioritized transformation roadmap — sequencing AI integrations, platform migrations, and growth initiatives by ROI, risk, and time-to-value.",
+        leadRole: "Principal Solution Architect & Strategy Lead",
+        deliverables: [
+          "Executive Transformation Roadmap",
+          "Phased Investment & TCO Model",
+          "Risk Matrix & Compliance Checklist",
+          "Stakeholder Alignment Workshop Deck",
+        ],
       },
-      deliverablesTitle: "Key Enterprise Deliverables",
-      deliverables: [
-        "Infrastructure and Data Bottleneck Audit Report",
-        "Legacy Code & Technical Debt Gap Analysis",
-        "Operational Inefficiency Mapping Diagram",
-      ],
-    },
+      {
+        num: "03",
+        title: "Design",
+        tagline: "Blueprint systems & experiences",
+        headline: "UX/UI Systems & Technical Architecture",
+        timeline: "Weeks 5 – 8",
+        description:
+          "Our design and engineering leads co-create system architecture diagrams, API contracts, Figma design systems, and data models — ensuring every build decision is validated before code is written.",
+        leadRole: "Creative Director & Systems Architect",
+        deliverables: [
+          "Full Figma Design System & Component Library",
+          "Microservices / API Architecture Diagram",
+          "Database Schema & Data Flow Blueprints",
+          "Interactive Prototype for Stakeholder Sign-off",
+        ],
+      },
+      {
+        num: "04",
+        title: "Build",
+        tagline: "Engineer with precision sprints",
+        headline: "Agile Engineering & AI Integration",
+        timeline: "Weeks 9 – 16",
+        description:
+          "Dedicated engineering squads execute in two-week sprints — shipping production-grade code, integrating LLM pipelines, configuring CI/CD, and maintaining full test coverage with daily standups.",
+        leadRole: "Engineering Lead & MLOps Specialist",
+        deliverables: [
+          "Production-Ready Codebase with CI/CD Pipeline",
+          "Multi-Agent AI System Integration",
+          "Automated Test Suite & QA Reports",
+          "Sprint Demos & Technical Documentation",
+        ],
+      },
+      {
+        num: "05",
+        title: "Launch",
+        tagline: "Deploy, validate, go live",
+        headline: "Controlled Rollout & Validation",
+        timeline: "Weeks 17 – 18",
+        description:
+          "We orchestrate staged rollouts with canary deployments, load testing, security hardening, and real-user validation — ensuring zero-downtime migration from legacy systems.",
+        leadRole: "DevOps Lead & Release Manager",
+        deliverables: [
+          "Production Deployment Runbook",
+          "Load & Stress Test Results",
+          "Security Penetration Test Report",
+          "Go-Live Checklist & Rollback Plan",
+        ],
+      },
+      {
+        num: "06",
+        title: "Scale",
+        tagline: "Expand reach & throughput",
+        headline: "Infrastructure Scaling & Growth Systems",
+        timeline: "Weeks 19 – 22",
+        description:
+          "Post-launch, we scale cloud infrastructure, optimize auto-scaling policies, integrate CRM and marketing automation, and configure analytics dashboards for real-time business intelligence.",
+        leadRole: "Cloud Architect & Growth Engineer",
+        deliverables: [
+          "Auto-Scaling Kubernetes Configuration",
+          "CRM & Marketing Funnel Integration",
+          "Real-Time Analytics Dashboard",
+          "Capacity Planning & Cost Optimization Report",
+        ],
+      },
+      {
+        num: "07",
+        title: "Optimize",
+        tagline: "Tune performance & conversion",
+        headline: "Performance Engineering & Conversion Optimization",
+        timeline: "Weeks 23 – 26",
+        description:
+          "We analyze production metrics, A/B test UX flows, optimize database queries, refine AI model accuracy, and eliminate conversion friction — driving measurable ROI improvements.",
+        leadRole: "Performance Engineer & Data Analyst",
+        deliverables: [
+          "Performance Audit & Optimization Report",
+          "A/B Test Results & UX Recommendations",
+          "AI Model Accuracy Benchmarks",
+          "Conversion Rate Improvement Analysis",
+        ],
+      },
+      {
+        num: "08",
+        title: "Innovate",
+        tagline: "Evolve with continuous delivery",
+        headline: "Continuous Innovation & Iteration",
+        timeline: "Ongoing Retainer",
+        description:
+          "Our retainer model ensures your platform never stagnates — quarterly innovation sprints, emerging tech evaluations, feature roadmaps, and dedicated engineering hours keep you ahead of the market.",
+        leadRole: "Innovation Lead & Account Director",
+        deliverables: [
+          "Quarterly Innovation Roadmap",
+          "Emerging Tech Evaluation Reports",
+          "Dedicated Engineering Retainer Hours",
+          "Board-Level Progress & ROI Reviews",
+        ],
+      },
+    ],
   },
 
   techStack: {
