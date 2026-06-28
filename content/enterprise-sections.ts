@@ -1,217 +1,298 @@
 /**
- * Enterprise homepage sections — real data where available, lorem ipsum placeholders elsewhere.
- * Replace placeholder blocks when stakeholder content is ready.
+ * Enterprise homepage sections — outcome-focused, trust-safe copy.
+ * No unverified client logos, fake testimonials, or invented metrics.
  */
+
+export const aboutSection = {
+  label: 'About ZyncSpace',
+  title: 'Your Strategic Technology Partner',
+  description:
+    'ZyncSpace is a technology consulting and product engineering company helping startups, SMBs, and enterprises modernize their digital ecosystem. We combine AI, cloud, software engineering, automation, and design to transform ideas into scalable digital products.',
+  cta: { label: 'Learn About Our Practice ↗', href: '/about' },
+};
 
 export const valueProposition = {
   label: 'Business Impact',
   title: ['FROM LEGACY FRICTION', 'TO MEASURABLE OUTCOMES.'],
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. We help executives reduce operational cost, accelerate time-to-market, and de-risk digital transformation — not just ship more code.',
+    'We translate engineering decisions into executive outcomes — reduced operational cost, faster time-to-market, and de-risked transformation. Every engagement ties technical work to business value.',
   pillars: [
     {
       stat: '40%',
-      label: 'Avg. cost reduction',
+      label: 'Target cost reduction',
       title: 'Operational efficiency',
+      context: 'Typical drivers: cloud resource right-sizing, legacy decommissioning, and workflow automation.',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Automate manual workflows and consolidate fragmented tooling into unified platforms.',
+        'Consolidate fragmented tooling and automate manual processes so teams ship faster with less overhead.',
     },
     {
       stat: '3×',
       label: 'Faster delivery cycles',
       title: 'Engineering velocity',
+      context: 'Achieved through dedicated squads, CI/CD pipelines, and incremental migration — not big-bang rewrites.',
       description:
-        'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dedicated squads, CI/CD, and AI-assisted development shorten release windows.',
+        'Structured sprints, automated quality gates, and AI-assisted development shorten release windows.',
     },
     {
       stat: '99.9%',
-      label: 'Uptime targets',
+      label: 'Availability target',
       title: 'Platform reliability',
+      context: 'Cloud-native architecture with observability, auto-scaling, and documented runbooks.',
       description:
-        'Ut enim ad minim veniam, quis nostrud exercitation. Cloud-native architecture with observability, security scanning, and SLA-backed operations.',
+        'Design for resilience so applications stay online during traffic spikes and infrastructure events.',
     },
   ],
-  cta: { label: 'Book Discovery Call ↗', href: '/contact' },
+  cta: { label: 'Schedule a Discovery Call ↗', href: '/contact' },
+};
+
+export const whyChoose = {
+  label: 'Why ZyncSpace',
+  title: 'Why Choose ZyncSpace',
+  items: [
+    { title: 'AI-First Engineering', description: 'RAG, agents, and LLM pipelines built with zero-retention data handling by default.' },
+    { title: 'Cloud-Native Architecture', description: 'AWS, GCP, Azure, and Kubernetes — designed to scale without re-architecting every quarter.' },
+    { title: 'Enterprise Security', description: 'IAM enforcement, isolated environments, and security scanning in every CI pipeline.' },
+    { title: 'Agile Delivery', description: 'Two-week sprints, documented gates, and stakeholder demos — no black-box development.' },
+    { title: 'Scalable Solutions', description: 'Microservices, event-driven patterns, and platform engineering that grow with your business.' },
+    { title: 'Long-Term Partnership', description: 'Retainer models, knowledge transfer, and runbooks so your team owns the outcome.' },
+  ],
 };
 
 export const mediaShowcase = {
   label: 'Platform Preview',
   title: 'See How Teams Work in ZyncSpace',
   description:
-    'Lorem ipsum — unified chat, tasks, and AI in one workspace. Explore product screenshots and a walkthrough of the platform experience.',
-  video: {
-    poster: '/assets/images/hero-dashboard.png',
-    /** Placeholder — replace with real demo URL */
-    embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    title: 'ZyncSpace platform overview (placeholder video)',
-    caption: 'Placeholder demo — replace with official product walkthrough.',
-  },
-  screenshots: [
+    'One workspace for chat, tasks, voice, and AI — select a capability to preview how teams stay aligned without switching tools.',
+  features: [
     {
+      id: 'team-chat',
+      icon: '◎',
+      title: 'Team Chat',
+      description:
+        'Organized channels and threads keep conversations searchable and actionable — context never gets lost in the scroll.',
       src: '/assets/images/features-chat.png',
       alt: 'ZyncSpace team chat interface with channels and threads',
-      title: 'Team Chat',
-      description: 'Lorem ipsum — organized channels, threads, and searchable history.',
     },
     {
+      id: 'kanban',
+      icon: '▣',
+      title: 'Kanban Boards',
+      description:
+        'Turn messages into tasks in one click and track work where your team already communicates.',
       src: '/assets/images/kanban-home.png',
       alt: 'Kanban board integrated per channel in ZyncSpace',
-      title: 'Kanban Boards',
-      description: 'Dolor sit amet — turn messages into tasks with one click.',
     },
     {
+      id: 'huddles',
+      icon: '◉',
+      title: 'Huddles',
+      description:
+        'Start voice collaboration instantly without leaving the conversation — no separate meeting links.',
       src: '/assets/images/huddle-home.png',
       alt: 'Instant huddles and voice collaboration in ZyncSpace',
-      title: 'Huddles',
-      description: 'Consectetur adipiscing — instant voice rooms without leaving chat.',
     },
     {
+      id: 'ai-assistant',
+      icon: '◈',
+      title: 'AI Assistant',
+      description:
+        'Summarize threads and refine tone in context — your data stays within your workspace.',
       src: '/assets/images/airewrite-home.png',
       alt: 'Built-in AI assistant rewriting messages in ZyncSpace',
-      title: 'AI Assistant',
-      description: 'Sed do eiusmod — summarize threads and rewrite tone in context.',
     },
   ],
 };
 
-export const customerJourney = {
-  label: 'How We Engage',
-  title: 'Your Path From Problem to Proof',
+export const deliveryProcess = {
+  label: 'Our Process',
+  title: 'How We Deliver',
   steps: [
-    { num: '01', title: 'Problem', description: 'Lorem ipsum — audit legacy systems, bottlenecks, and business impact.', icon: '◎' },
-    { num: '02', title: 'Impact', description: 'Quantify cost, risk, and opportunity with executive-ready metrics.', icon: '◈' },
-    { num: '03', title: 'Solution', description: 'Architecture, AI integration, and delivery roadmap aligned to ROI.', icon: '◆' },
-    { num: '04', title: 'Proof', description: 'Case studies, pilots, and measurable outcomes before full scale.', icon: '◉' },
-    { num: '05', title: 'Process', description: 'Eight-phase framework with documented gates and SLA guarantees.', icon: '▣' },
-    { num: '06', title: 'Contact', description: 'Discovery call, proposal, and dedicated engagement team.', icon: '→' },
+    { num: '01', title: 'Discovery & Strategy', description: 'Audit systems, quantify business impact, and align stakeholders on ROI.', icon: '◎' },
+    { num: '02', title: 'Architecture & Planning', description: 'Reference architectures, risk matrix, and phased roadmap with TCO models.', icon: '◈' },
+    { num: '03', title: 'Design & Prototyping', description: 'Figma systems, API contracts, and interactive prototypes for sign-off.', icon: '◆' },
+    { num: '04', title: 'Development', description: 'Production-grade code, AI integration, and CI/CD with daily visibility.', icon: '▣' },
+    { num: '05', title: 'Testing & Security', description: 'Automated tests, penetration reviews, and compliance-aligned hardening.', icon: '◉' },
+    { num: '06', title: 'Deployment', description: 'Canary rollouts, load testing, and zero-downtime migration runbooks.', icon: '▶' },
+    { num: '07', title: 'Continuous Optimization', description: 'Performance tuning, cost optimization, and quarterly innovation sprints.', icon: '→' },
+  ],
+};
+
+export const referenceArchitectures = {
+  label: 'Reference Architectures',
+  title: 'How We Build — Not Just What We Use',
+  description:
+    'High-level patterns we deploy for enterprise clients. Detailed diagrams and runbooks are shared during discovery and engagement.',
+  items: [
+    {
+      title: 'Multi-Agent AI Pipeline',
+      subtitle: 'RAG + orchestration layer',
+      description:
+        'Isolated VPC, vector store (pgvector or managed), API gateway with strict IAM, and agent workers that never persist client prompts to public model training.',
+      layers: ['Client Apps', 'API Gateway', 'Agent Orchestrator', 'Vector DB', 'LLM Provider (zero-retention)'],
+    },
+    {
+      title: 'Cloud-Native SaaS Platform',
+      subtitle: 'Kubernetes on AWS / GCP',
+      description:
+        'Microservices behind ingress, horizontal pod autoscaling for traffic spikes, Terraform-managed infra, and observability (metrics, traces, logs) from day one.',
+      layers: ['CDN + WAF', 'EKS / GKE', 'Services + Jobs', 'RDS / Cloud SQL', 'S3 / GCS'],
+    },
+    {
+      title: 'Legacy Migration Pattern',
+      subtitle: 'Strangler fig incremental cutover',
+      description:
+        'Parallel run of legacy and new services, feature flags for routing, database sync with validation gates, and rollback plans documented before go-live.',
+      layers: ['Legacy Monolith', 'Anti-Corruption Layer', 'New Services', 'Event Bus', 'Cutover Gate'],
+    },
   ],
 };
 
 export const portfolio = {
-  label: 'Portfolio Preview',
-  title: 'Selected Engagements',
+  label: 'Engagement Patterns',
+  title: 'Representative Work — Anonymized',
   description:
-    'Lorem ipsum dolor sit amet — representative project snapshots. Client names anonymized until approved for publication.',
+    'Illustrative outcomes from consulting patterns we deliver. Client names withheld until approved for publication. Metrics vary by scope and baseline.',
   items: [
     {
       title: 'FinTech Core Replatform',
       category: 'Platform Engineering',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800',
-      metric: '+62%',
-      metricLabel: 'Transaction throughput',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Legacy monolith to microservices on AWS.',
-      tags: ['Next.js', 'Kubernetes', 'PostgreSQL'],
+      metric: 'Microservices',
+      metricLabel: 'Migration pattern',
+      description:
+        'Monolith decomposed into bounded contexts on AWS EKS — IAM roles per service, Terraform state locking, and blue-green deploys.',
+      tags: ['EKS', 'Terraform', 'PostgreSQL'],
     },
     {
-      title: 'Healthcare AI Triage',
+      title: 'Healthcare Intake Automation',
       category: 'AI Consulting',
       image: 'https://images.unsplash.com/photo-1576091160550-2173ff94031d?q=80&w=800',
-      metric: '-48%',
-      metricLabel: 'Triage wait time',
-      description: 'Sed do eiusmod tempor incididunt. HIPAA-aware RAG pipeline for clinical intake.',
-      tags: ['Python', 'RAG', 'FastAPI'],
+      metric: 'RAG Pipeline',
+      metricLabel: 'HIPAA-aligned design',
+      description:
+        'Private vector index, audit logging, and human-in-the-loop review — client data never used for public model training.',
+      tags: ['FastAPI', 'RAG', 'Private VPC'],
     },
     {
-      title: 'Retail Checkout Optimization',
+      title: 'Retail Checkout Modernization',
       category: 'Digital Transformation',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800',
-      metric: '+340%',
-      metricLabel: 'Conversion rate',
-      description: 'Ut labore et dolore magna aliqua. Edge-cached APIs and UX conversion engineering.',
-      tags: ['React', 'Edge', 'Stripe'],
+      metric: 'Edge + API',
+      metricLabel: 'Performance focus',
+      description:
+        'Edge-cached checkout APIs, rigorous load testing before peak season, and CORS policies locked per environment.',
+      tags: ['Next.js', 'CloudFront', 'Stripe'],
     },
     {
-      title: 'Enterprise Workspace Rollout',
+      title: 'Team Workspace Rollout',
       category: 'Product + Services',
       image: '/assets/images/home-hero-section.png',
-      metric: '12K+',
-      metricLabel: 'Active seats',
-      description: 'Duis aute irure dolor. ZyncSpace deployment with SSO and custom integrations.',
+      metric: 'SSO + SCIM',
+      metricLabel: 'Enterprise rollout',
+      description:
+        'ZyncSpace deployment with SSO integration, channel templates, and admin runbooks for IT teams.',
       tags: ['ZyncSpace', 'SSO', 'Integrations'],
     },
   ],
-  cta: { label: 'View All Case Studies ↗', href: '/services/case-studies' },
+  cta: { label: 'Discuss Your Use Case ↗', href: '/contact' },
 };
 
-export const testimonials = {
+export const clientStories = {
   label: 'Client Perspectives',
-  title: 'What Partners Say',
-  disclaimer: 'Placeholder testimonials — replace with verified client quotes before publication.',
-  items: [
-    {
-      quote:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ZyncSpace reduced our toolchain sprawl and cut onboarding time dramatically.',
-      name: 'Jordan Ellis',
-      role: 'VP Engineering',
-      company: '[Placeholder Corp]',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&fit=crop',
-    },
-    {
-      quote:
-        'Sed do eiusmod tempor incididunt ut labore. The consulting team delivered a production AI pipeline in weeks, not quarters.',
-      name: 'Priya Sharma',
-      role: 'Chief Digital Officer',
-      company: '[Placeholder Ltd]',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&fit=crop',
-    },
-    {
-      quote:
-        'Ut enim ad minim veniam, quis nostrud exercitation. Their framework gave our board confidence in every phase of migration.',
-      name: 'Marcus Chen',
-      role: 'CTO',
-      company: '[Placeholder Global]',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop',
-    },
-  ],
+  title: 'Verified Stories — Coming Soon',
+  description:
+    'We do not publish anonymous or fabricated testimonials. As client engagements conclude with approval, verified quotes with names, titles, and LinkedIn profiles will appear here.',
+  cta: { label: 'View Case Studies ↗', href: '/services/case-studies' },
 };
 
 export const trustCompliance = {
   label: 'Trust & Security',
-  title: 'Built for Enterprise Expectations',
+  title: 'Built for Enterprise Procurement',
   description:
-    'Lorem ipsum — security-first development practices. We do not claim certifications we have not earned; see our privacy policy for data handling.',
+    'We align with SOC 2 and ISO 27001 frameworks in our delivery practices. We do not display certification badges until formally audited and achieved.',
+  aiPrivacy: {
+    title: 'Zero-Retention AI Pipelines',
+    description:
+      'Your proprietary data never trains public models. Client prompts, documents, and embeddings stay in your isolated environment or approved private endpoints — with contractual data-handling terms.',
+  },
   badges: [
-    { title: 'Secure SDLC', description: 'Semgrep, CodeQL, and gitleaks in every pipeline.' },
-    { title: 'Privacy by Design', description: 'GDPR-aligned data minimization and consent flows.' },
-    { title: 'Accessibility', description: 'WCAG 2.2 AA targets on all client deliverables.' },
-    { title: 'Uptime SLA', description: '99.9%+ architecture availability on Scale engagements.' },
-    { title: 'Vulnerability Scanning', description: 'Trivy container and dependency scanning in CI.' },
-    { title: 'Audit-Ready Docs', description: 'Runbooks, architecture diagrams, and change logs.' },
+    { title: 'IAM & Least Privilege', description: 'Role-based access, MFA enforcement, and scoped service accounts across all environments.' },
+    { title: 'Network Isolation', description: 'VPC-isolated workloads, private subnets for data stores, and strict security group policies.' },
+    { title: 'CORS & Environment Controls', description: 'Explicit allowlists per environment — no wildcard origins in production.' },
+    { title: 'Secure SDLC', description: 'Semgrep, CodeQL, gitleaks, and Trivy in CI on every merge.' },
+    { title: 'GDPR-Aligned Privacy', description: 'Data minimization, consent flows, and documented retention policies.' },
+    { title: 'Audit-Ready Deliverables', description: 'Architecture diagrams, runbooks, change logs, and penetration test reports.' },
   ],
-  partnersNote: 'Technology partners and certifications displayed only when formally verified.',
+  frameworksNote:
+    'SOC 2 Type II and ISO 27001: we implement controls aligned to these frameworks; formal certification is pursued per client and organizational roadmap.',
 };
 
-export const team = {
+export const leadershipTeam = {
   label: 'Leadership',
   title: 'The Team Behind the Work',
-  disclaimer: 'Placeholder profiles — replace with verified team bios and photos.',
+  disclaimer: 'Placeholder headshots — replace with professional photos when ready.',
   members: [
     {
-      name: 'Alex Morgan',
-      role: 'Principal Architect',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 15+ years in platform engineering and cloud architecture.',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=400&fit=crop',
+      name: 'Atul Tiwari',
+      role: 'CEO',
+      bio: 'Leads company vision, client partnerships, and delivery strategy across consulting and product engineering.',
+      image: '/assets/team/atul-tiwari.svg',
     },
     {
-      name: 'Sarah Okonkwo',
-      role: 'Head of AI Practice',
-      bio: 'Sed do eiusmod tempor incididunt. Leads multi-agent systems, RAG pipelines, and MLOps for enterprise clients.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=400&fit=crop',
+      name: 'Hemal Buha',
+      role: 'Co-Founder',
+      bio: 'Technical leadership across backend architecture, cloud scaling, AI pipelines, and platform engineering.',
+      image: '/assets/team/hemal-buha.svg',
     },
     {
-      name: 'David Park',
-      role: 'Creative Director',
-      bio: 'Ut labore et dolore magna aliqua. Design systems, motion, and conversion-focused UX for global brands.',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&h=400&fit=crop',
+      name: 'L. Gouri Sankar',
+      role: 'Co-Founder',
+      bio: 'Drives product engineering, solution architecture, and end-to-end delivery for enterprise engagements.',
+      image: '/assets/team/gouri-sankar.svg',
     },
     {
-      name: 'Elena Vasquez',
-      role: 'Client Success Director',
-      bio: 'Duis aute irure dolor in reprehenderit. Account strategy, SLA governance, and long-term partnership delivery.',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&h=400&fit=crop',
+      name: 'Archita Hirapara',
+      role: 'Human Resources',
+      bio: 'Builds the people operations, hiring pipeline, and culture that support high-performing engineering teams.',
+      image: '/assets/team/archita-hirapara.svg',
     },
   ],
-  cta: { label: 'Meet the Full Team ↗', href: '/about' },
+};
+
+export const engineeringPractice = {
+  label: 'Who Builds With You',
+  title: 'Engineering-Led Delivery',
+  description:
+    'Enterprises buy the people solving the problem — not just a logo. Our founders and engineers embed with your team: architects, AI engineers, platform engineers, and design systems specialists.',
+  highlights: [
+    { title: 'Backend & Platform', description: 'Distributed systems, API design, database scaling, and cloud cost optimization.' },
+    { title: 'AI & Data', description: 'RAG pipelines, agent orchestration, MLOps, and responsible AI governance.' },
+    { title: 'Frontend & Design Systems', description: 'Next.js product surfaces, accessibility, and conversion-focused UX.' },
+  ],
+  links: [
+    { label: 'Engineering Blog', href: '/blogs' },
+    { label: 'Open Source (GitHub)', href: 'https://github.com/zyncspace' },
+    { label: 'About Our Practice', href: '/about' },
+  ],
+};
+
+export const productLines = {
+  label: 'Products',
+  title: 'Platforms That Accelerate Services',
+  items: [
+    {
+      title: 'AI Business Automation',
+      description: 'Automate repetitive workflows using AI agents and intelligent integrations — scoped to your data boundary.',
+    },
+    {
+      title: 'Enterprise Analytics',
+      description: 'Transform operational data into actionable insights with pipelines you control.',
+    },
+    {
+      title: 'ZyncSpace Workspace',
+      description: 'Custom SaaS team platform — chat, tasks, calendar, and AI in one place. Accelerates adoption after we build.',
+    },
+  ],
 };
 
 export const faq = {
@@ -221,61 +302,69 @@ export const faq = {
     {
       question: 'How do consulting services differ from the ZyncSpace product?',
       answer:
-        'Services cover custom engineering, AI consulting, and digital transformation. ZyncSpace is our SaaS team workspace — chat, tasks, calendar, and AI. Many clients use both: we build on services, then run teams on the product.',
+        'Services cover custom engineering, AI consulting, and digital transformation. ZyncSpace is our SaaS team workspace. Many clients use both: we build on services, then run teams on the product.',
+    },
+    {
+      question: 'How is our data handled in AI engagements?',
+      answer:
+        'Zero-retention by default: your data stays in isolated environments or approved private endpoints. We contractually prohibit using client data to train public models. Details are documented in our SOW and privacy policy.',
+    },
+    {
+      question: 'Do you have SOC 2 or ISO 27001 certification?',
+      answer:
+        'We implement controls aligned with SOC 2 and ISO 27001 frameworks. We do not claim formal certification until audits are complete. We provide architecture docs, security scan results, and compliance checklists during procurement.',
     },
     {
       question: 'What is a typical engagement timeline?',
       answer:
-        'Lorem ipsum — discovery takes 2–4 weeks; full transformation programs run 12–26+ weeks depending on scope. Retainer models available for ongoing innovation.',
-    },
-    {
-      question: 'Do you work with startups or only enterprise?',
-      answer:
-        'Sed do eiusmod tempor. We serve mid-market and enterprise clients; Growth tier starts at $10k/month for teams establishing modern digital operations.',
-    },
-    {
-      question: 'Where is your team located?',
-      answer:
-        'We are remote-first with presence in India and global delivery capability. Contact us for timezone-aligned squad options.',
-    },
-    {
-      question: 'How do you handle security and compliance?',
-      answer:
-        'Security-first SDLC with automated scanning in CI. We implement compliance controls as required by your industry — we only claim certifications that are formally achieved.',
+        'Discovery takes 2–4 weeks. Full programs run 12–26+ weeks depending on scope. Growth tier starts at $10k/month; Scale at $25k/month for dedicated engineering squads.',
     },
     {
       question: 'Can we start with a pilot before a full contract?',
       answer:
-        'Ut enim ad minim veniam. Yes — discovery audits and proof-of-concept sprints are available before Scale or Enterprise engagements.',
+        'Yes — discovery audits and proof-of-concept sprints are available before Scale or Enterprise engagements.',
+    },
+    {
+      question: 'Where is your team located?',
+      answer:
+        'Remote-first with engineering presence in India and global delivery capability. We align squads to your timezone and compliance requirements.',
     },
   ],
 };
 
 export const resources = {
   label: 'Resources',
-  title: 'Insights & Downloads',
-  description: 'Lorem ipsum — webinars, whitepapers, and engineering reports.',
+  title: 'Insights & Engineering Reports',
+  description: 'Architecture guides, AI governance notes, and performance engineering — from our engineering blog.',
   items: [
     {
-      type: 'Whitepaper',
+      type: 'Guide',
       title: 'Enterprise RAG Playbook',
-      description: 'Lorem ipsum dolor sit amet — indexing strategies for legal and ops documents.',
+      description: 'Indexing strategies, chunking, and zero-retention LLM integration patterns.',
       href: '/blogs',
       image: 'https://images.unsplash.com/photo-1456324507049-3fe979c873fb?q=80&w=600',
     },
     {
-      type: 'Webinar',
-      title: 'AI in Operations: 2026 Outlook',
-      description: 'Sed do eiusmod — multi-agent workflows for back-office automation.',
-      href: '/blogs',
+      type: 'Article',
+      title: 'AI in Operations',
+      description: 'Multi-agent workflows for back-office automation — with governance guardrails.',
+      href: '/blogs/ai-in-workplace-communication',
       image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600',
     },
     {
       type: 'Report',
-      title: 'Core Web Vitals for B2B Sites',
-      description: 'Ut labore et dolore — performance budgets that improve conversion.',
+      title: 'Core Web Vitals for B2B',
+      description: 'Performance budgets that improve conversion and search visibility.',
       href: '/blogs',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600',
     },
   ],
+};
+
+export const finalCta = {
+  title: 'Ready to Accelerate Your Digital Transformation?',
+  description:
+    'Whether you are building a new product, modernizing legacy systems, or adopting AI — we help you deliver secure, scalable, and future-ready technology solutions.',
+  primary: { label: 'Schedule a Discovery Call ↗', href: '/contact' },
+  secondary: { label: 'View Case Studies', href: '/services/case-studies' },
 };

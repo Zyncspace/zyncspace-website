@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { servicesContent as c } from '@/content/services';
 import { serviceRoutes, siteContact } from '@/content/site';
+import { finalCta } from '@/content/enterprise-sections';
 import FrameworkPipeline from '@/components/services/FrameworkPipeline';
 
 export function HeroSection() {
@@ -12,8 +13,15 @@ export function HeroSection() {
         <h1>{c.hero.title[0]}<br />{c.hero.title[1]}</h1>
         <p>{c.hero.description}</p>
         <div className="hero-btns">
-          <Link href={serviceRoutes.contact} className="btn btn-white">Start Your Project ↗</Link>
-          <Link href={serviceRoutes.services} className="btn btn-outline-dark">Explore Services</Link>
+          {c.hero.cta.map((btn) => (
+            <Link
+              key={btn.label}
+              href={btn.href}
+              className={`btn ${btn.variant === 'primary' ? 'btn-white' : 'btn-outline-dark'}`}
+            >
+              {btn.label}
+            </Link>
+          ))}
         </div>
         <div className="hero-stats">
           {c.hero.stats.map((s) => (
@@ -29,13 +37,14 @@ export function HeroSection() {
 }
 
 export function PartnersSection() {
-  const marqueeItems = [...c.partners, ...c.partners];
+  const { label, items } = c.partners;
+  const marqueeItems = [...items, ...items];
 
   return (
     <section className="logo-wall">
       <div className="container">
-        <span className="label partners-label">Trusted by Leading Global Enterprises</span>
-        <div className="partners-marquee" aria-label="Global enterprise partners">
+        <span className="label partners-label">{label}</span>
+        <div className="partners-marquee" aria-label="Technology partners and platforms">
           <div className="partners-marquee-track">
             {marqueeItems.map((name, index) => (
               <span key={`${name}-${index}`} className="partners-marquee-item">
@@ -184,6 +193,19 @@ export function CaseStudySection() {
               <p>{c.caseStudy.solution.description}</p>
             </div>
           </div>
+          {'architecture' in c.caseStudy && c.caseStudy.architecture ? (
+            <div className="case-architecture">
+              <h4>{c.caseStudy.architecture.title}</h4>
+              <ul className="case-arch-list">
+                {c.caseStudy.architecture.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {'disclaimer' in c.caseStudy && c.caseStudy.disclaimer ? (
+            <p className="case-disclaimer">{c.caseStudy.disclaimer}</p>
+          ) : null}
           <div className="case-tags">
             {c.caseStudy.technologies.map((tag) => (
               <span key={tag} className="case-tag">{tag}</span>
@@ -299,13 +321,13 @@ export function ServicesCtaBand() {
   return (
     <section className="section-padding services-cta-band">
       <div className="container" style={{ textAlign: 'center' }}>
-        <h2>Ready to modernize your stack?</h2>
+        <h2>{finalCta.title}</h2>
         <p className="section-lead" style={{ margin: '0 auto 2rem' }}>
-          From AI consulting to the ZyncSpace workspace — one team, one partner.
+          {finalCta.description}
         </p>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href={serviceRoutes.contact} className="btn btn-dark">Talk to us ↗</Link>
-          <Link href={siteContact.signupUrl} className="btn btn-outline-light">Try ZyncSpace free</Link>
+          <Link href={finalCta.primary.href} className="btn btn-dark">{finalCta.primary.label}</Link>
+          <Link href={finalCta.secondary.href} className="btn btn-outline-light">{finalCta.secondary.label}</Link>
         </div>
       </div>
     </section>

@@ -50,6 +50,9 @@ export default function TechStackSection({ embedded = false }: TechStackSectionP
                 <span className="tech-cat">{card.category}</span>
               </div>
               <p className="tech-desc">{card.description}</p>
+              {'outcome' in card && card.outcome ? (
+                <p className="tech-outcome">{card.outcome}</p>
+              ) : null}
             </article>
           ))}
         </div>

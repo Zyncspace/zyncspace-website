@@ -13,30 +13,36 @@ import {
   ServicesCtaBand,
 } from '@/components/services/sections';
 import {
+  AboutSection,
   ValuePropositionSection,
+  WhyChooseSection,
   MediaShowcaseSection,
   CustomerJourneySection,
+  ReferenceArchitectureSection,
   PortfolioSection,
-  TestimonialsSection,
+  ClientStoriesSection,
   TrustComplianceSection,
-  TeamSection,
+  LeadershipTeamSection,
+  EngineeringPracticeSection,
   FaqSection,
   ResourcesSection,
 } from '@/components/services/EnterpriseSections';
 import ContactSection from '@/components/services/ContactSection';
 
 /**
- * Full enterprise homepage — customer journey order:
- * Hero → Trust → Impact → Capabilities → Preview → Framework → Journey →
- * Tech → Industries → Case Study → Portfolio → Testimonials → Security →
- * Pricing → Product → Team → Insights → Resources → FAQ → CTA → Contact
+ * Enterprise homepage — trust-safe, outcome-focused flow:
+ * Hero → Partners → About → Impact → Why Us → Services → Preview → Process →
+ * Tech → Industries → Case Study → Portfolio → Architectures → Client Stories →
+ * Security → Pricing → Product → Engineering Practice → Insights → Resources → FAQ → CTA → Contact
  */
 export default function HomePageContent() {
   return (
     <>
       <HeroSection />
       <PartnersSection />
+      <AboutSection />
       <ValuePropositionSection />
+      <WhyChooseSection />
       <CapabilitiesSection />
       <CapabilityMatrixSection />
       <MediaShowcaseSection />
@@ -46,11 +52,13 @@ export default function HomePageContent() {
       <IndustriesSection />
       <CaseStudySection />
       <PortfolioSection />
-      <TestimonialsSection />
+      <ReferenceArchitectureSection />
+      <ClientStoriesSection />
       <TrustComplianceSection />
       <ConsultingPricingSection />
       <ProductShowcaseSection />
-      <TeamSection />
+      <LeadershipTeamSection />
+      <EngineeringPracticeSection />
       <InsightsSection limit={3} />
       <ResourcesSection />
       <FaqSection />

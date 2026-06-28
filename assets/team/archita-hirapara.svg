@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Archita Hirapara placeholder portrait">
+  <defs>
+    <linearGradient id="bg-ah" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg-ah)"/>
+  <circle cx="200" cy="150" r="68" fill="#4c1d95"/>
+  <path d="M130 210 Q200 175 270 210 L270 320 Q200 355 130 320 Z" fill="#4c1d95"/>
+  <text x="200" y="163" text-anchor="middle" fill="#ede9fe" font-family="system-ui,sans-serif" font-size="44" font-weight="600">AH</text>
+</svg>

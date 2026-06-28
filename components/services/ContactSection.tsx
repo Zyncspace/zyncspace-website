@@ -50,9 +50,15 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                   <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
                     {office.address}
                     <br />
-                    <a href={`tel:${office.phone.replace(/\s/g, '')}`} style={{ color: '#fff' }}>
-                      {office.phone}
-                    </a>
+                    {'email' in office && typeof office.email === 'string' ? (
+                      <a href={`mailto:${office.email}`} style={{ color: '#fff' }}>
+                        {office.email}
+                      </a>
+                    ) : 'phone' in office && typeof office.phone === 'string' ? (
+                      <a href={`tel:${office.phone.replace(/\s/g, '')}`} style={{ color: '#fff' }}>
+                        {office.phone}
+                      </a>
+                    ) : null}
                   </p>
                 </div>
               ))

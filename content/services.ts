@@ -1,79 +1,81 @@
 export const servicesContent = {
   hero: {
-    label: "AI-Driven Technology Consulting",
-    title: ["WE BUILD DIGITAL", "BUSINESSES THAT SCALE."],
+    label: "Technology Consulting & Product Engineering",
+    title: ["ENGINEERING THE FUTURE", "OF DIGITAL BUSINESS."],
     description:
-      "We combine artificial intelligence, custom software engineering, premium design, marketing optimization, and cloud operations to help ambitious businesses achieve global scale.",
+      "We help ambitious businesses build scalable software, AI-powered automation, cloud infrastructure, and digital platforms that accelerate growth, reduce operational costs, and deliver measurable business outcomes.",
     stats: [
-      { value: "250+", label: "Projects Delivered" },
-      { value: "98%", label: "Client Satisfaction" },
-      { value: "40+", label: "Expert Consultants" },
-      { value: "12+", label: "Global Markets" },
+      { value: "99.9%", label: "Platform Availability Target" },
+      { value: "40+", label: "Technologies in Production" },
+      { value: "AI", label: "Powered Delivery" },
+      { value: "Cloud", label: "Native Architecture" },
     ],
     cta: [
-      { label: "Start Your Project ↗", href: "#contact", variant: "primary" },
-      { label: "Book Free Strategy Call", href: "#contact", variant: "outline" },
+      { label: "Start Your Transformation ↗", href: "/contact", variant: "primary" },
+      { label: "Explore Our Solutions", href: "/services", variant: "outline" },
     ],
   },
 
-  partners: [
-    "Microsoft",
-    "Apple",
-    "Amazon",
-    "Google",
-    "Meta",
-    "IBM",
-    "Oracle",
-    "SAP",
-    "Salesforce",
-    "Accenture",
-    "Deloitte",
-    "McKinsey & Company",
-    "Tesla",
-    "NVIDIA",
-    "JPMorgan Chase",
-    "Goldman Sachs",
-    "Cisco",
-    "Samsung",
-    "Toyota",
-    "Siemens",
-  ],
+  /** Technology platforms & certifications — not unverified client logos */
+  partners: {
+    label: "Technology Partners & Platforms",
+    items: [
+      "AWS",
+      "Google Cloud",
+      "Microsoft Azure",
+      "Kubernetes",
+      "Terraform",
+      "Docker",
+      "PostgreSQL",
+      "Next.js",
+      "OpenAI API",
+      "Anthropic",
+      "GitHub Actions",
+      "Vercel",
+    ],
+  },
 
   capabilities: {
-    label: "Software Engineering & AI Consulting",
-    title: "COMPREHENSIVE DIGITAL ARCHITECTURE",
+    label: "Services",
+    title: "OUTCOMES-DRIVEN CAPABILITIES",
     description:
-      "We operate at the convergence of cutting-edge software engineering, creative direction, performance marketing, and proprietary artificial intelligence. We design the infrastructure of tomorrow, today.",
+      "Every service line maps to a business outcome — reduced cost, faster delivery, lower risk, or new revenue — not just a technology deliverable.",
     items: [
       {
         num: "01",
-        title: "AI & Cognitive Automation",
+        title: "AI Solutions",
         description:
-          "Harness next-generation LLM pipelines, RAG frameworks, and multi-agent systems to supercharge decision-making and automate complex operational workflows.",
+          "Build intelligent systems using Generative AI, LLMs, AI agents, RAG, and workflow automation — with zero-retention data handling by default.",
       },
       {
         num: "02",
-        title: "Core Technology & Cloud Systems",
+        title: "Product Engineering",
         description:
-          "Architect and build high-performance, fault-tolerant cloud platforms, custom SaaS infrastructures, and robust APIs designed to process global transactions seamlessly.",
+          "Design, develop, and scale web platforms, SaaS applications, and enterprise software with modern engineering practices and documented architecture.",
       },
       {
         num: "03",
-        title: "UX/UI Design & Digital Systems",
+        title: "Cloud & DevOps",
         description:
-          "Craft premium, intuitive digital experiences that combine pixel-perfect visual balance, elegant motion patterns, and highly structural design languages.",
+          "AWS, Azure, GCP, Kubernetes, CI/CD, observability, and infrastructure automation — so your application stays online during traffic spikes.",
       },
       {
         num: "04",
-        title: "Performance Digital Marketing",
+        title: "Digital Transformation",
         description:
-          "Deploy data-backed marketing engines that scale search traffic, maximize paid ad acquisition, and orchestrate hyper-targeted multi-channel growth campaigns.",
+          "Modernize legacy systems, automate business processes, and improve operational efficiency using incremental migration — not risky big-bang cutovers.",
       },
       {
         num: "05",
-        title: "Enterprise Sales & CRM Automation",
+        title: "UI/UX Design",
         description:
-          "Streamline customer acquisition and lifecycle pipelines. Integrate and optimize high-end CRM workflows to capture, score, and close high-value enterprise leads.",
+          "Intuitive, accessible digital experiences focused on usability, conversion, and business outcomes — not decoration.",
+      },
+      {
+        num: "06",
+        title: "Managed Services",
+        description:
+          "Continuous monitoring, maintenance, optimization, security patching, and support for mission-critical applications after launch.",
       },
     ],
   },
@@ -245,7 +247,7 @@ export const servicesContent = {
     label: "Vetted Engineering Standards",
     title: "Our Production Technology Stack",
     description:
-      "We ship modern web products with a battle-tested toolchain — from Next.js and React 19 through SEO, accessibility, security scanning, and CI quality gates. Every layer is chosen for performance, maintainability, and enterprise-grade delivery.",
+      "We ship modern web products with a battle-tested toolchain. Each technology is chosen for a business reason — uptime, velocity, security, or scale.",
     filters: [
       "All Technologies",
       "Core Platform",
@@ -258,17 +260,32 @@ export const servicesContent = {
       {
         name: "Next.js 16",
         category: "Core Platform",
-        description: "App Router, static export, and edge-ready production deployments.",
+        description: "App Router, static export, and SEO-ready production deployments.",
+        outcome: "Faster page loads and search visibility — reducing bounce rates and improving lead conversion.",
       },
       {
         name: "React 19",
         category: "Core Platform",
         description: "Concurrent rendering, server components, and modern UI patterns.",
+        outcome: "Responsive interfaces that stay fast as features grow — less rework as products scale.",
       },
       {
         name: "TypeScript",
         category: "Core Platform",
         description: "End-to-end type safety across apps, APIs, and shared libraries.",
+        outcome: "Fewer production defects and faster onboarding — changes are caught before deploy.",
+      },
+      {
+        name: "Kubernetes",
+        category: "Core Platform",
+        description: "Container orchestration for production workloads on AWS, GCP, or Azure.",
+        outcome: "Your application stays online and scales automatically during traffic spikes — preventing lost revenue.",
+      },
+      {
+        name: "Terraform",
+        category: "Security & CI",
+        description: "Infrastructure as code with reviewable, repeatable environment provisioning.",
+        outcome: "Auditable infra changes and faster disaster recovery — critical for enterprise procurement.",
       },
       {
         name: "Tailwind CSS",
@@ -433,8 +450,8 @@ export const servicesContent = {
         title: "Finance & Wealth-Tech",
         description:
           "We re-architect critical banking backends and deploy secure LLM risk analyzers. Integrating automated compliance routing.",
-        metric: "$4.2B+",
-        metricLabel: "Secure Transaction Flow",
+        metric: "Secure APIs",
+        metricLabel: "Compliance-ready design",
         imageUrl:
           "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800",
       },
@@ -442,8 +459,8 @@ export const servicesContent = {
         title: "Healthcare & Med-Tech",
         description:
           "Implementing HIPAA-compliant AI medical data retrieval systems and real-time appointment optimization tools.",
-        metric: "+180%",
-        metricLabel: "Patient Triage Acceleration",
+        metric: "HIPAA-aligned",
+        metricLabel: "Data isolation patterns",
         imageUrl:
           "https://images.unsplash.com/photo-1576091160550-2173ff94031d?q=80&w=800",
       },
@@ -451,8 +468,8 @@ export const servicesContent = {
         title: "Global Retail & E-Commerce",
         description:
           "Scaling high-performance checkout APIs, integrating headless e-commerce structures, and hyper-personalized marketing models.",
-        metric: "+340%",
-        metricLabel: "Checkout Conversion Index",
+        metric: "Edge + CDN",
+        metricLabel: "Checkout performance",
         imageUrl:
           "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800",
       },
@@ -460,27 +477,38 @@ export const servicesContent = {
   },
 
   caseStudy: {
-    label: "Client Case Study #01 • Supply Chain & IoT",
-    client: "AeroGlobal Logistics Corp",
-    metricLabel: "Mean Processing Turnaround",
+    label: "Case Study • Supply Chain (Anonymized)",
+    client: "Global Logistics Client",
+    metricLabel: "Routing processing time",
     before: { value: "22 Hours", strikethrough: true },
     after: { value: "1.4 Hours" },
+    disclaimer: "Representative engagement pattern — metrics vary by baseline and scope.",
     challenge: {
       title: "The Legacy Challenge",
       description:
-        "Legacy coordinate spreadsheets and manual warehouse sorting were generating a 22-hour routing latency, leading to lost client shipments and massive operational penalties.",
+        "Manual warehouse routing relied on spreadsheets and batch jobs — 22-hour latency caused missed SLAs and penalty fees. Network segmentation was flat; no audit trail for routing decisions.",
     },
     solution: {
-      title: "The Modernization Solution",
+      title: "The Architecture Response",
       description:
-        "Deployed a custom multi-agent automated orchestration network running on Edge containers, connected directly to dynamic IoT conveyor belts. Implemented real-time shortest-path algorithms.",
+        "Strangler migration: edge containers on AWS EKS ingesting IoT conveyor events via private API gateway. Multi-agent orchestration for route optimization, Terraform-managed infra, IAM roles per microservice, and CloudWatch + distributed tracing. Pre-launch penetration test closed three critical network exposure findings.",
+    },
+    architecture: {
+      title: "Reference Stack",
+      points: [
+        "Private VPC with public/private subnet separation",
+        "EKS + Karpenter for workload scaling during peak sort windows",
+        "FastAPI event processors + Redis queue for backpressure",
+        "Terraform state in S3 with DynamoDB locking",
+        "Zero-retention LLM calls for exception handling only",
+      ],
     },
     technologies: [
-      "Next.js",
-      "Python FastAPIs",
+      "Python FastAPI",
       "AWS EKS",
       "Terraform",
       "Docker",
+      "IoT Gateway",
     ],
   },
 
@@ -528,14 +556,14 @@ export const servicesContent = {
         price: "Custom Contract",
         period: null,
         description:
-          "Comprehensive transformational consulting and engineering systems for Fortune 500 multinationals requiring complex migrations.",
+          "Comprehensive transformation programs for regulated industries and complex multi-system environments.",
         features: [
-          "Full Infrastructure Legacy Diagnostic Auditing",
-          "HIPAA / SOC2 compliance-hardened setups",
-          "Infinite scaling Kubernetes orchestration",
-          "Unlimited custom AI agent installations",
-          "Strategic board workshops",
-          "99.99% Architecture uptime SLA",
+          "Full infrastructure and legacy diagnostic auditing",
+          "SOC 2– and HIPAA-aligned security hardening",
+          "Kubernetes platform engineering at scale",
+          "Custom AI agent systems with zero-retention pipelines",
+          "Executive architecture workshops",
+          "99.9% availability target with documented runbooks",
         ],
         recommended: false,
         cta: { label: "Inquire For This Build", href: "#contact", variant: "outline" },
@@ -554,7 +582,7 @@ export const servicesContent = {
         title: "Hardening Enterprise Microservices for SOC2 Compliance",
         description:
           "A comprehensive deep dive into configuring multi-tenant Kubernetes clusters, designing zero-trust mesh layers, and auditing serverless API gateways.",
-        author: "Helena Vance, principal architect",
+        author: "ZyncSpace Engineering",
         readTime: "7 min read",
       },
       {
@@ -564,16 +592,16 @@ export const servicesContent = {
           "Enterprise RAG: High-Performance Indexing with pgvector and Gemini Models",
         description:
           "We outline the exact mathematical strategies used to chunk semi-structured legal documents, index them into pgvector Cloud databases, and orchestrate LLMs.",
-        author: "Marcus Thorne, MLOps lead",
+        author: "ZyncSpace Engineering",
         readTime: "11 min read",
       },
       {
         category: "Growth",
         date: "May 29, 2026",
-        title: "Conversion Engineering: How We Accelerated Checkouts by 340%",
+        title: "Conversion Engineering: Checkout Performance Patterns",
         description:
-          "Analyzing the visual layouts, edge cache API routing, custom stripe billing gateways, and micro-motions that consolidated checkout friction.",
-        author: "Serena Joy, creative director",
+          "Edge cache API routing, payment gateway integration, and UX patterns that reduce checkout friction for B2B and retail platforms.",
+        author: "ZyncSpace Engineering",
         readTime: "5 min read",
       },
     ],
@@ -618,24 +646,9 @@ export const servicesContent = {
       "Connect directly with our principal strategic consultants and technologists. We analyze your requirements to formulate custom software, database, and AI pipeline proposals.",
     offices: [
       {
-        city: "NEW YORK",
-        address: "Suite 440, Hudson Yards",
-        phone: "+1 (212) 555-8910",
-      },
-      {
-        city: "LONDON",
-        address: "Level 12, The Shard",
-        phone: "+44 (20) 7946 0882",
-      },
-      {
-        city: "SINGAPORE",
-        address: "Tower 3, Marina Bay Sands",
-        phone: "+65 6789 5432",
-      },
-      {
-        city: "TOKYO",
-        address: "Roppongi Hills Mori Tower",
-        phone: "+81 (3) 5555-0143",
+        city: "GLOBAL DELIVERY",
+        address: "Remote-first engineering team · India HQ",
+        email: "atul.zync@gmail.com",
       },
     ],
     form: {

@@ -3,17 +3,42 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import {
+  aboutSection,
   valueProposition,
+  whyChoose,
   mediaShowcase,
-  customerJourney,
+  deliveryProcess,
+  referenceArchitectures,
   portfolio,
-  testimonials,
+  clientStories,
   trustCompliance,
-  team,
+  engineeringPractice,
+  leadershipTeam,
   faq,
   resources,
 } from '@/content/enterprise-sections';
 import { serviceRoutes } from '@/content/site';
+
+export function AboutSection() {
+  return (
+    <section className="section-padding about-section" id="about">
+      <div className="container split-grid">
+        <div className="split-left">
+          <span className="label">{aboutSection.label}</span>
+          <h2>{aboutSection.title}</h2>
+        </div>
+        <div className="split-right">
+          <p className="section-lead" style={{ marginBottom: 'var(--space-8)' }}>
+            {aboutSection.description}
+          </p>
+          <Link href={aboutSection.cta.href} className="btn btn-outline-light">
+            {aboutSection.cta.label}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function ValuePropositionSection() {
   return (
@@ -32,6 +57,9 @@ export function ValuePropositionSection() {
               <div className="value-pillar-stat">{p.stat}</div>
               <div className="value-pillar-label">{p.label}</div>
               <h3>{p.title}</h3>
+              {'context' in p && p.context ? (
+                <p className="value-pillar-context">{p.context}</p>
+              ) : null}
               <p>{p.description}</p>
             </article>
           ))}
@@ -46,60 +74,88 @@ export function ValuePropositionSection() {
   );
 }
 
+export function WhyChooseSection() {
+  return (
+    <section className="section-padding why-choose-section">
+      <div className="container">
+        <span className="label">{whyChoose.label}</span>
+        <h2>{whyChoose.title}</h2>
+        <div className="why-choose-grid">
+          {whyChoose.items.map((item) => (
+            <article key={item.title} className="why-choose-card">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function MediaShowcaseSection() {
-  const [activeShot, setActiveShot] = useState(0);
-  const shot = mediaShowcase.screenshots[activeShot];
+  const [activeFeature, setActiveFeature] = useState(0);
+  const active = mediaShowcase.features[activeFeature];
 
   return (
     <section className="section-padding media-showcase-section" id="platform-preview">
       <div className="container">
         <div className="media-showcase-header">
-          <div>
-            <span className="label">{mediaShowcase.label}</span>
-            <h2>{mediaShowcase.title}</h2>
-            <p className="section-lead">{mediaShowcase.description}</p>
-          </div>
+          <span className="label">{mediaShowcase.label}</span>
+          <h2>{mediaShowcase.title}</h2>
+          <p className="section-lead">{mediaShowcase.description}</p>
         </div>
-        <div className="media-showcase-grid">
-          <div className="media-video-wrap">
-            <div className="media-video-poster">
-              <img
-                src={mediaShowcase.video.poster}
-                alt="ZyncSpace platform dashboard preview"
-                width={800}
-                height={450}
-              />
-              <a
-                href={mediaShowcase.video.embedUrl}
-                className="media-play-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Play platform demo video"
-              >
-                ▶
-              </a>
-            </div>
-            <p className="media-video-caption">{mediaShowcase.video.caption}</p>
-          </div>
-          <div className="media-screenshots">
-            <div className="media-screenshot-main">
-              <img src={shot.src} alt={shot.alt} width={720} height={480} />
-            </div>
-            <div className="media-screenshot-tabs">
-              {mediaShowcase.screenshots.map((s, i) => (
+
+        <div className="feature-hub">
+          <div
+            className="feature-hub-nav"
+            role="tablist"
+            aria-label="ZyncSpace platform capabilities"
+          >
+            {mediaShowcase.features.map((feature, index) => {
+              const isActive = index === activeFeature;
+              return (
                 <button
-                  key={s.title}
+                  key={feature.id}
                   type="button"
-                  className={`media-tab${i === activeShot ? ' active' : ''}`}
-                  onClick={() => setActiveShot(i)}
+                  role="tab"
+                  id={`feature-tab-${feature.id}`}
+                  aria-selected={isActive}
+                  aria-controls={`feature-panel-${feature.id}`}
+                  tabIndex={isActive ? 0 : -1}
+                  className={`feature-hub-tab${isActive ? ' active' : ''}`}
+                  onClick={() => setActiveFeature(index)}
                 >
-                  <img src={s.src} alt={`${s.title} preview`} width={64} height={40} />
-                  <span>{s.title}</span>
+                  <span className="feature-hub-tab-icon" aria-hidden>
+                    {feature.icon}
+                  </span>
+                  <span className="feature-hub-tab-copy">
+                    <span className="feature-hub-tab-title">{feature.title}</span>
+                    <span className="feature-hub-tab-desc">{feature.description}</span>
+                  </span>
                 </button>
-              ))}
-            </div>
-            <h3>{shot.title}</h3>
-            <p className="text-small">{shot.description}</p>
+              );
+            })}
+          </div>
+
+          <div
+            className="feature-hub-visual"
+            role="tabpanel"
+            id={`feature-panel-${active.id}`}
+            aria-labelledby={`feature-tab-${active.id}`}
+          >
+            {mediaShowcase.features.map((feature, index) => (
+              <img
+                key={feature.id}
+                src={feature.src}
+                alt={feature.alt}
+                width={1280}
+                height={720}
+                className={`feature-hub-frame${index === activeFeature ? ' active' : ''}`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -111,19 +167,52 @@ export function CustomerJourneySection() {
   return (
     <section className="section-padding journey-section">
       <div className="container">
-        <span className="label">{customerJourney.label}</span>
-        <h2>{customerJourney.title}</h2>
+        <span className="label">{deliveryProcess.label}</span>
+        <h2>{deliveryProcess.title}</h2>
         <div className="journey-track">
-          {customerJourney.steps.map((step, i) => (
+          {deliveryProcess.steps.map((step, i) => (
             <div key={step.num} className="journey-step">
               <div className="journey-icon">{step.icon}</div>
               <span className="journey-num">{step.num}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
-              {i < customerJourney.steps.length - 1 ? (
+              {i < deliveryProcess.steps.length - 1 ? (
                 <span className="journey-connector" aria-hidden />
               ) : null}
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ReferenceArchitectureSection() {
+  return (
+    <section className="section-padding reference-arch-section" id="architectures">
+      <div className="container">
+        <span className="label">{referenceArchitectures.label}</span>
+        <h2>{referenceArchitectures.title}</h2>
+        <p className="section-lead">{referenceArchitectures.description}</p>
+        <div className="reference-arch-grid">
+          {referenceArchitectures.items.map((item) => (
+            <article key={item.title} className="reference-arch-card">
+              <span className="reference-arch-subtitle">{item.subtitle}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <div className="reference-arch-layers" aria-label={`${item.title} architecture layers`}>
+                {item.layers.map((layer, i) => (
+                  <span key={layer} className="reference-arch-layer">
+                    {layer}
+                    {i < item.layers.length - 1 ? (
+                      <span className="reference-arch-arrow" aria-hidden>
+                        →
+                      </span>
+                    ) : null}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </div>
@@ -177,29 +266,16 @@ export function PortfolioSection() {
   );
 }
 
-export function TestimonialsSection() {
+export function ClientStoriesSection() {
   return (
-    <section className="section-padding testimonials-section">
-      <div className="container">
-        <span className="label">{testimonials.label}</span>
-        <h2>{testimonials.title}</h2>
-        <p className="placeholder-disclaimer">{testimonials.disclaimer}</p>
-        <div className="testimonials-grid">
-          {testimonials.items.map((t) => (
-            <blockquote key={t.name} className="testimonial-card">
-              <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
-              <footer className="testimonial-author">
-                <img src={t.avatar} alt={`${t.name} portrait`} width={48} height={48} />
-                <div>
-                  <cite>{t.name}</cite>
-                  <span>
-                    {t.role}, {t.company}
-                  </span>
-                </div>
-              </footer>
-            </blockquote>
-          ))}
-        </div>
+    <section className="section-padding client-stories-section">
+      <div className="container client-stories-inner">
+        <span className="label">{clientStories.label}</span>
+        <h2>{clientStories.title}</h2>
+        <p className="section-lead">{clientStories.description}</p>
+        <Link href={clientStories.cta.href} className="btn btn-outline-light">
+          {clientStories.cta.label}
+        </Link>
       </div>
     </section>
   );
@@ -212,6 +288,10 @@ export function TrustComplianceSection() {
         <span className="label">{trustCompliance.label}</span>
         <h2>{trustCompliance.title}</h2>
         <p className="section-lead">{trustCompliance.description}</p>
+        <div className="trust-ai-privacy">
+          <h3>{trustCompliance.aiPrivacy.title}</h3>
+          <p>{trustCompliance.aiPrivacy.description}</p>
+        </div>
         <div className="trust-badges-grid">
           {trustCompliance.badges.map((b) => (
             <div key={b.title} className="trust-badge">
@@ -220,33 +300,60 @@ export function TrustComplianceSection() {
             </div>
           ))}
         </div>
-        <p className="trust-note">{trustCompliance.partnersNote}</p>
+        <p className="trust-note">{trustCompliance.frameworksNote}</p>
       </div>
     </section>
   );
 }
 
-export function TeamSection() {
+export function LeadershipTeamSection() {
   return (
-    <section className="section-padding team-section">
+    <section className="section-padding team-section" id="team">
       <div className="container">
-        <span className="label">{team.label}</span>
-        <h2>{team.title}</h2>
-        <p className="placeholder-disclaimer">{team.disclaimer}</p>
+        <span className="label">{leadershipTeam.label}</span>
+        <h2>{leadershipTeam.title}</h2>
+        <p className="placeholder-disclaimer">{leadershipTeam.disclaimer}</p>
         <div className="team-grid">
-          {team.members.map((m) => (
-            <article key={m.name} className="team-card">
-              <img src={m.image} alt={`${m.name}, ${m.role}`} width={280} height={280} />
-              <h3>{m.name}</h3>
-              <p className="team-role">{m.role}</p>
-              <p className="team-bio">{m.bio}</p>
+          {leadershipTeam.members.map((member) => (
+            <article key={member.name} className="team-card">
+              <img src={member.image} alt={`${member.name}, ${member.role}`} width={280} height={280} />
+              <h3>{member.name}</h3>
+              <p className="team-role">{member.role}</p>
+              <p className="team-bio">{member.bio}</p>
             </article>
           ))}
         </div>
-        <div className="section-cta-row">
-          <Link href={team.cta.href} className="btn btn-outline-light">
-            {team.cta.label}
-          </Link>
+      </div>
+    </section>
+  );
+}
+
+export function EngineeringPracticeSection() {
+  return (
+    <section className="section-padding engineering-practice-section">
+      <div className="container">
+        <span className="label">{engineeringPractice.label}</span>
+        <h2>{engineeringPractice.title}</h2>
+        <p className="section-lead">{engineeringPractice.description}</p>
+        <div className="engineering-highlights">
+          {engineeringPractice.highlights.map((h) => (
+            <article key={h.title} className="engineering-highlight-card">
+              <h3>{h.title}</h3>
+              <p>{h.description}</p>
+            </article>
+          ))}
+        </div>
+        <div className="engineering-links">
+          {engineeringPractice.links.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="btn btn-outline-light"
+              {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              {link.label} ↗
+            </Link>
+          ))}
         </div>
       </div>
     </section>
@@ -263,10 +370,10 @@ export function FaqSection() {
           <span className="label">{faq.label}</span>
           <h2>{faq.title}</h2>
           <p className="section-lead">
-            Lorem ipsum — quick answers. Contact us for detailed proposals.
+            Procurement, security, and engagement questions — answered directly.
           </p>
           <Link href={serviceRoutes.contact} className="btn btn-dark">
-            Contact Sales ↗
+            Schedule a Discovery Call ↗
           </Link>
         </div>
         <div className="faq-list">
