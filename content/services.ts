@@ -256,9 +256,9 @@ export const servicesContent = {
     ],
     cards: [
       {
-        name: "Next.js 15",
+        name: "Next.js 16",
         category: "Core Platform",
-        description: "App Router, SSR/SSG, and edge-ready production deployments.",
+        description: "App Router, static export, and edge-ready production deployments.",
       },
       {
         name: "React 19",

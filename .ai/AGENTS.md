@@ -1,6 +1,11 @@
 # Agent Instructions — ZyncSpace Website
 
-You are working on the **ZyncSpace** B2B marketing site (Next.js 15 static export): **Products + Services** for an enterprise technology company.
+You are working on the **ZyncSpace** B2B marketing site (Next.js 16 static export): **Products + Services** for an enterprise technology company.
+
+## Runtime
+
+- **Node.js 22.13.1** — use `nvm use` (see `.nvmrc`)
+- **Next.js 16.x** (latest)
 
 ## Before you code
 

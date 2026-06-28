@@ -46,6 +46,18 @@ zyncspace-website/
 └── public/assets/            # Static images, favicons
 ```
 
+## Node.js & runtime
+
+- **Node.js:** `22.13.1` (`.nvmrc` — run `nvm use` locally)
+- **Next.js:** 16.x (latest)
+- **React:** 19
+
+```bash
+nvm use
+npm ci
+npm run dev
+```
+
 ## Key commands
 
 ```bash
