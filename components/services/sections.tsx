@@ -38,16 +38,13 @@ export function HeroSection() {
 }
 
 export function PartnersSection() {
-  const { label, note, items } = c.partners;
+  const { label, items } = c.partners;
   const marqueeItems = [...items, ...items];
 
   return (
     <section className="logo-wall">
       <div className="container">
-        <div className="partners-header">
-          <span className="label partners-label">{label}</span>
-          {note ? <p className="partners-note">{note}</p> : null}
-        </div>
+        <span className="label partners-label">{label}</span>
         <div className="partners-marquee" aria-label="Technology partners and platforms">
           <div className="partners-marquee-track">
             {marqueeItems.map((name, index) => (

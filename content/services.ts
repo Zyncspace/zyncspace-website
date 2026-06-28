@@ -21,7 +21,6 @@ export const servicesContent = {
   /** Technology platforms we build on — not unverified client logos */
   partners: {
     label: "Powered by Industry-Leading Platforms",
-    note: "Technologies we build with — not affiliated endorsements",
     items: [
       "AWS",
       "Microsoft Azure",
