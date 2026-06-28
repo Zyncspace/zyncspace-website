@@ -19,98 +19,50 @@ function categorySlug(category: string) {
 }
 
 function TechStackPreview() {
-  const featured = c.techStack.cards.filter((card) => 'featured' in card && card.featured);
-  const marqueeItems = [...c.techStack.cards, ...c.techStack.cards];
-
-  const layers = useMemo(
-    () =>
-      CATEGORIES.map((category) => ({
-        category,
-        slug: categorySlug(category),
-        tools: c.techStack.cards.filter((card) => card.category === category),
-      })),
-    [],
-  );
+  const homepage =
+    'homepage' in c.techStack && c.techStack.homepage
+      ? c.techStack.homepage
+      : {
+          intro: c.techStack.description,
+          highlights: [],
+          stats: [
+            { value: String(c.techStack.cards.length), label: 'Production tools' },
+            { value: String(CATEGORIES.length), label: 'Engineering layers' },
+            { value: 'CI', label: 'Security gated' },
+          ],
+        };
 
   return (
-    <section className="stack-atlas" id="technology">
+    <section className="stack-atlas stack-atlas-brief" id="technology">
       <div className="stack-atlas-glow" aria-hidden />
       <div className="container stack-atlas-inner">
         <header className="stack-atlas-header">
           <span className="label">{c.techStack.label}</span>
           <h2>{c.techStack.title}</h2>
-          <p>{c.techStack.description}</p>
+          <p>{homepage.intro}</p>
         </header>
 
-        <div className="stack-atlas-layout">
-          <div className="stack-atlas-pillars">
-            {featured.slice(0, 3).map((card, index) => (
-              <article key={card.name} className="stack-pillar">
-                <span className="stack-pillar-index">{String(index + 1).padStart(2, '0')}</span>
-                <h3>{card.name}</h3>
-                {'outcome' in card && card.outcome ? <p>{card.outcome}</p> : null}
-              </article>
-            ))}
-          </div>
-
-          <div className="stack-atlas-panel">
-            <div className="stack-atlas-panel-bar">
-              <span className="stack-atlas-panel-dot" />
-              <span className="stack-atlas-panel-dot" />
-              <span className="stack-atlas-panel-dot" />
-              <span className="stack-atlas-panel-title">production-stack.config</span>
-            </div>
-            <div className="stack-atlas-layers">
-              {layers.map((layer) => (
-                <div key={layer.category} className="stack-atlas-layer">
-                  <div className="stack-atlas-layer-meta">
-                    <span className="stack-atlas-layer-name">{layer.category}</span>
-                    <span className="stack-atlas-layer-count">{layer.tools.length}</span>
-                  </div>
-                  <div className="stack-atlas-chips">
-                    {layer.tools.map((tool) => (
-                      <Link
-                        key={tool.name}
-                        href={`${c.techStack.cta.href}#${layer.slug}`}
-                        className="stack-atlas-chip"
-                      >
-                        {tool.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="stack-atlas-brief-grid">
+          {homepage.highlights.map((item, index) => (
+            <article key={item.title} className="stack-atlas-brief-card">
+              <span className="stack-atlas-brief-index">{String(index + 1).padStart(2, '0')}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
         </div>
 
-        <div className="stack-atlas-marquee" aria-hidden>
-          <div className="stack-atlas-marquee-track">
-            {marqueeItems.map((card, index) => (
-              <span key={`${card.name}-${index}`} className="stack-atlas-marquee-item">
-                {card.name}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <footer className="stack-atlas-footer">
+        <footer className="stack-atlas-footer stack-atlas-brief-footer">
           <div className="stack-atlas-metrics">
-            <div>
-              <span className="stack-metric-value">{c.techStack.cards.length}</span>
-              <span className="stack-metric-label">Production tools</span>
-            </div>
-            <div>
-              <span className="stack-metric-value">{CATEGORIES.length}</span>
-              <span className="stack-metric-label">Engineering layers</span>
-            </div>
-            <div>
-              <span className="stack-metric-value">CI</span>
-              <span className="stack-metric-label">Security gated</span>
-            </div>
+            {homepage.stats.map((stat) => (
+              <div key={stat.label}>
+                <span className="stack-metric-value">{stat.value}</span>
+                <span className="stack-metric-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
           <Link href={c.techStack.cta.href} className="stack-atlas-cta">
-            <span>Explore full technology index</span>
+            <span>{c.techStack.cta.label}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path
                 d="M5 12h14M13 6l6 6-6 6"

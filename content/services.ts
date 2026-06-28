@@ -1,3 +1,5 @@
+import { techStackContent } from './tech-stack';
+
 export const servicesContent = {
   hero: {
     label: "Technology Consulting & Product Engineering",
@@ -6,7 +8,7 @@ export const servicesContent = {
       "We help ambitious businesses build scalable software, AI-powered automation, cloud infrastructure, and digital platforms that accelerate growth, reduce operational costs, and deliver measurable business outcomes.",
     stats: [
       { value: "99.9%", label: "Platform Availability Target" },
-      { value: "40+", label: "Technologies in Production" },
+      { value: "150+", label: "Technologies in Production" },
       { value: "AI", label: "Powered Delivery" },
       { value: "Cloud", label: "Native Architecture" },
     ],
@@ -243,244 +245,58 @@ export const servicesContent = {
     ],
   },
 
-  techStack: {
-    label: "Vetted Engineering Standards",
-    title: "Our Production Technology Stack",
-    description:
-      "We ship modern web products with a battle-tested toolchain. Each technology is chosen for a business reason — uptime, velocity, security, or scale.",
-    cta: {
-      label: 'Explore Full Technology Stack ↗',
-      href: '/services/technology',
-    },
-    filters: [
-      "All Technologies",
-      "Core Platform",
-      "UI & Motion",
-      "SEO & Content",
-      "Testing & Quality",
-      "Security & CI",
-    ],
-    cards: [
-      {
-        name: "Next.js 16",
-        category: "Core Platform",
-        description: "App Router, static export, and SEO-ready production deployments.",
-        outcome: "Faster page loads and search visibility — reducing bounce rates and improving lead conversion.",
-        featured: true,
-      },
-      {
-        name: "React 19",
-        category: "Core Platform",
-        description: "Concurrent rendering, server components, and modern UI patterns.",
-        outcome: "Responsive interfaces that stay fast as features grow — less rework as products scale.",
-        featured: true,
-      },
-      {
-        name: "TypeScript",
-        category: "Core Platform",
-        description: "End-to-end type safety across apps, APIs, and shared libraries.",
-        outcome: "Fewer production defects and faster onboarding — changes are caught before deploy.",
-        featured: true,
-      },
-      {
-        name: "Kubernetes",
-        category: "Core Platform",
-        description: "Container orchestration for production workloads on AWS, GCP, or Azure.",
-        outcome: "Your application stays online and scales automatically during traffic spikes — preventing lost revenue.",
-        featured: true,
-      },
-      {
-        name: "Terraform",
-        category: "Security & CI",
-        description: "Infrastructure as code with reviewable, repeatable environment provisioning.",
-        outcome: "Auditable infra changes and faster disaster recovery — critical for enterprise procurement.",
-        featured: true,
-      },
-      {
-        name: "Tailwind CSS",
-        category: "Core Platform",
-        description: "Utility-first styling with design tokens and responsive layouts.",
-      },
-      {
-        name: "next/font",
-        category: "Core Platform",
-        description: "Self-hosted, optimized fonts with zero layout shift.",
-      },
-      {
-        name: "shadcn/ui",
-        category: "UI & Motion",
-        description: "Accessible, composable component primitives built on Radix UI.",
-      },
-      {
-        name: "Motion",
-        category: "UI & Motion",
-        description: "Declarative React animations for polished micro-interactions.",
-      },
-      {
-        name: "GSAP",
-        category: "UI & Motion",
-        description: "High-performance timeline animations for hero and scroll experiences.",
-      },
-      {
-        name: "Lucide React",
-        category: "UI & Motion",
-        description: "Consistent, lightweight icon system across the product UI.",
-      },
-      {
-        name: "Sonner",
-        category: "UI & Motion",
-        description: "Elegant toast notifications for form feedback and system alerts.",
-      },
-      {
-        name: "next-seo",
-        category: "SEO & Content",
-        description: "Centralized metadata, Open Graph, and Twitter card management.",
-      },
-      {
-        name: "next-sitemap",
-        category: "SEO & Content",
-        description: "Automated sitemap and robots.txt generation at build time.",
-      },
-      {
-        name: "schema-dts",
-        category: "SEO & Content",
-        description: "Type-safe JSON-LD structured data for rich search results.",
-      },
-      {
-        name: "MDX",
-        category: "SEO & Content",
-        description: "Blog, docs, and marketing pages as code with embedded components.",
-      },
-      {
-        name: "Contentlayer",
-        category: "SEO & Content",
-        description: "Typed content pipeline from Markdown and MDX into the app layer.",
-      },
-      {
-        name: "Fuse.js",
-        category: "SEO & Content",
-        description: "Fast client-side fuzzy search for docs, blogs, and resources.",
-      },
-      {
-        name: "next-pwa",
-        category: "Core Platform",
-        description: "Offline-ready progressive web app support and install prompts.",
-      },
-      {
-        name: "react-hook-form",
-        category: "Core Platform",
-        description: "Performant forms with minimal re-renders and excellent DX.",
-      },
-      {
-        name: "zod",
-        category: "Core Platform",
-        description: "Runtime schema validation synced with TypeScript types.",
-      },
-      {
-        name: "Vitest",
-        category: "Testing & Quality",
-        description: "Unit and integration tests with Vite-speed feedback loops.",
-      },
-      {
-        name: "Playwright",
-        category: "Testing & Quality",
-        description: "Cross-browser E2E coverage for critical user journeys.",
-      },
-      {
-        name: "axe-core",
-        category: "Testing & Quality",
-        description: "Automated accessibility regression checks in CI pipelines.",
-      },
-      {
-        name: "ESLint",
-        category: "Testing & Quality",
-        description: "Next.js-aligned lint rules for consistent code standards.",
-      },
-      {
-        name: "Biome",
-        category: "Testing & Quality",
-        description: "Fast formatter and linter for zero-friction developer workflows.",
-      },
-      {
-        name: "JSCPD",
-        category: "Testing & Quality",
-        description: "Duplicate code detection to keep the codebase DRY.",
-      },
-      {
-        name: "Knip",
-        category: "Testing & Quality",
-        description: "Dead code and unused dependency pruning.",
-      },
-      {
-        name: "Madge",
-        category: "Testing & Quality",
-        description: "Circular dependency analysis across modules.",
-      },
-      {
-        name: "Dependency Cruiser",
-        category: "Testing & Quality",
-        description: "Architecture boundary enforcement and import graph validation.",
-      },
-      {
-        name: "Semgrep",
-        category: "Security & CI",
-        description: "Static analysis for security anti-patterns and OWASP risks.",
-      },
-      {
-        name: "CodeQL",
-        category: "Security & CI",
-        description: "Deep semantic code scanning for vulnerability classes.",
-      },
-      {
-        name: "Gitleaks",
-        category: "Security & CI",
-        description: "Secret scanning in commits, branches, and CI artifacts.",
-      },
-      {
-        name: "Trivy",
-        category: "Security & CI",
-        description: "Container and dependency vulnerability scanning.",
-      },
-      {
-        name: "Lighthouse CI",
-        category: "Security & CI",
-        description: "Performance, SEO, and best-practice budgets on every deploy.",
-      },
-    ],
-  },
+  techStack: techStackContent,
 
   industries: {
-    label: "Corporate Verticals",
-    title: ["Transforming High-Scale", "Global Industries"],
+    label: "Industries We Serve",
+    title: ["Built for High-Growth", "B2B Verticals"],
     description:
-      "We adapt our core capabilities to your specific operational constraints, regulations, and industry-standard compliance paradigms. Review actual, proven metrics achieved for our marquee partners.",
+      "We adapt platform engineering, AI, and SaaS delivery to the compliance, scale, and go-to-market constraints of your industry.",
     items: [
       {
-        title: "Finance & Wealth-Tech",
+        title: "SaaS & B2B Platforms",
         description:
-          "We re-architect critical banking backends and deploy secure LLM risk analyzers. Integrating automated compliance routing.",
-        metric: "Secure APIs",
-        metricLabel: "Compliance-ready design",
+          "Multi-tenant architecture, subscription billing, and product-led growth infrastructure for software companies.",
+        metric: "Multi-tenant",
+        metricLabel: "SaaS-ready architecture",
         imageUrl:
           "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800",
       },
       {
-        title: "Healthcare & Med-Tech",
+        title: "FinTech & AI Startups",
         description:
-          "Implementing HIPAA-compliant AI medical data retrieval systems and real-time appointment optimization tools.",
-        metric: "HIPAA-aligned",
-        metricLabel: "Data isolation patterns",
+          "Secure APIs, payment integrations, LLM pipelines, and rapid MVP-to-production delivery for regulated and AI-native products.",
+        metric: "Secure APIs",
+        metricLabel: "Compliance-aware design",
+        imageUrl:
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800",
+      },
+      {
+        title: "EdTech & HealthTech",
+        description:
+          "LMS platforms, HIPAA-aligned data handling, video integrations, and scalable learning and care delivery systems.",
+        metric: "Data isolation",
+        metricLabel: "Privacy-first patterns",
         imageUrl:
           "https://images.unsplash.com/photo-1576091160550-2173ff94031d?q=80&w=800",
       },
       {
-        title: "Global Retail & E-Commerce",
+        title: "Logistics, Retail & E-Commerce",
         description:
-          "Scaling high-performance checkout APIs, integrating headless e-commerce structures, and hyper-personalized marketing models.",
+          "High-performance checkout, inventory systems, CDN delivery, and real-time tracking for operational scale.",
         metric: "Edge + CDN",
-        metricLabel: "Checkout performance",
+        metricLabel: "Performance at scale",
         imageUrl:
-          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800",
+          "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+      },
+      {
+        title: "Manufacturing & Enterprise Software",
+        description:
+          "Internal tools, ERP integrations, legacy modernization, and enterprise-grade platforms for complex organizations.",
+        metric: "Enterprise",
+        metricLabel: "Integration-ready delivery",
+        imageUrl:
+          "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800",
       },
     ],
   },

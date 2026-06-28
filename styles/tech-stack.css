@@ -57,26 +57,82 @@
   color: #a3a3a3;
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
-  max-width: 560px;
+  max-width: 640px;
+}
+
+/* Homepage informative brief — no tool listing */
+.stack-atlas-brief .stack-atlas-header {
+  margin-bottom: var(--space-10);
+}
+
+.stack-atlas-brief-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.stack-atlas-brief-card {
+  padding: var(--space-8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.stack-atlas-brief-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stack-atlas-brief-index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  color: #525252;
+  margin-bottom: var(--space-4);
+}
+
+.stack-atlas-brief-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: var(--weight-regular);
+  color: #fafafa;
+  margin-bottom: var(--space-3);
+}
+
+.stack-atlas-brief-card p {
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: #737373;
+}
+
+.stack-atlas-brief-footer {
+  margin-top: 0;
 }
 
 .stack-atlas-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 28%) 1fr;
-  gap: var(--space-10);
-  align-items: start;
-  margin-bottom: var(--space-10);
+  grid-template-columns: minmax(260px, 30%) 1fr;
+  gap: var(--space-12);
+  align-items: stretch;
+  margin-bottom: var(--space-12);
 }
 
 .stack-atlas-pillars {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
-  padding-top: var(--space-2);
+  gap: var(--space-10);
+  padding-top: var(--space-3);
+  justify-content: center;
+  height: 100%;
 }
 
 .stack-pillar {
-  padding-left: var(--space-5);
+  padding-left: var(--space-6);
   border-left: 1px solid rgba(255, 255, 255, 0.12);
   transition: border-color 0.25s ease;
 }
@@ -91,24 +147,29 @@
   font-size: 0.6875rem;
   letter-spacing: 0.12em;
   color: #525252;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .stack-pillar h3 {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: var(--weight-regular);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   color: #fafafa;
 }
 
 .stack-pillar p {
   font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
+  line-height: 1.65;
   color: #737373;
+  max-width: 28ch;
 }
 
 .stack-atlas-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
@@ -121,6 +182,7 @@
 }
 
 .stack-atlas-panel-bar {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -156,18 +218,72 @@
   letter-spacing: 0.02em;
 }
 
+.stack-atlas-layers-scroll {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .stack-atlas-layers {
-  padding: var(--space-2) 0;
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-3) var(--space-2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.stack-atlas-layers-scroll::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3rem;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(10, 10, 9, 0.98), transparent);
+}
+
+.stack-atlas-scroll-hint {
+  position: absolute;
+  right: var(--space-6);
+  bottom: var(--space-3);
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #525252;
+  pointer-events: none;
+}
+
+.stack-atlas-layers::-webkit-scrollbar {
+  width: 6px;
+}
+
+.stack-atlas-layers::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
 }
 
 .stack-atlas-layer {
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-6) var(--space-8);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.2s ease;
 }
 
+.stack-atlas-layer:first-child {
+  padding-top: var(--space-5);
+}
+
 .stack-atlas-layer:last-child {
   border-bottom: none;
+  padding-bottom: var(--space-5);
 }
 
 .stack-atlas-layer:hover {
@@ -176,9 +292,12 @@
 
 .stack-atlas-layer-meta {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  margin-bottom: var(--space-4);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .stack-atlas-layer-name {
@@ -198,14 +317,16 @@
 .stack-atlas-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: var(--space-3);
+  align-items: center;
 }
 
 .stack-atlas-chip {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
+  line-height: 1.4;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   color: #d4d4d4;
@@ -233,7 +354,7 @@
   display: flex;
   gap: var(--space-8);
   width: max-content;
-  animation: stack-marquee 48s linear infinite;
+  animation: stack-marquee 120s linear infinite;
 }
 
 .stack-atlas-marquee-item {
@@ -632,21 +753,38 @@
 }
 
 @media (max-width: 1024px) {
+  .stack-atlas-brief-grid {
+    grid-template-columns: 1fr;
+  }
+
   .stack-atlas-layout {
     grid-template-columns: 1fr;
     gap: var(--space-8);
   }
 
   .stack-atlas-pillars {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: var(--space-6);
-    padding-bottom: var(--space-2);
-    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    overflow: visible;
+    justify-content: flex-start;
+    height: auto;
   }
 
   .stack-pillar {
-    flex: 0 0 min(280px, 80vw);
+    flex: none;
+    max-width: none;
+  }
+
+  .stack-atlas-panel {
+    min-height: auto;
+  }
+
+  .stack-atlas-layers-scroll {
+    flex: none;
+  }
+
+  .stack-atlas-layers {
+    flex: none;
+    height: min(22rem, 55vh);
   }
 
   .stack-index-layout {
