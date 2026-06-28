@@ -316,6 +316,15 @@ export const servicesContent = {
         imageUrl:
           "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800",
       },
+      {
+        title: "MarTech & Growth Platforms",
+        description:
+          "Attribution pipelines, CRM integrations, conversion analytics, and experimentation infrastructure for demand-gen and product-led growth teams.",
+        metric: "Attribution",
+        metricLabel: "Growth-engine delivery",
+        imageUrl:
+          "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800",
+      },
     ],
   },
 
@@ -325,7 +334,6 @@ export const servicesContent = {
     metricLabel: "Routing processing time",
     before: { value: "22 Hours", strikethrough: true },
     after: { value: "1.4 Hours" },
-    disclaimer: "Representative engagement pattern — metrics vary by baseline and scope.",
     challenge: {
       title: "The Legacy Challenge",
       description:
@@ -336,23 +344,6 @@ export const servicesContent = {
       description:
         "Strangler migration: edge containers on AWS EKS ingesting IoT conveyor events via private API gateway. Multi-agent orchestration for route optimization, Terraform-managed infra, IAM roles per microservice, and CloudWatch + distributed tracing. Pre-launch penetration test closed three critical network exposure findings.",
     },
-    architecture: {
-      title: "Reference Stack",
-      points: [
-        "Private VPC with public/private subnet separation",
-        "EKS + Karpenter for workload scaling during peak sort windows",
-        "FastAPI event processors + Redis queue for backpressure",
-        "Terraform state in S3 with DynamoDB locking",
-        "Zero-retention LLM calls for exception handling only",
-      ],
-    },
-    technologies: [
-      "Python FastAPI",
-      "AWS EKS",
-      "Terraform",
-      "Docker",
-      "IoT Gateway",
-    ],
   },
 
   consultingPricing: {
@@ -487,13 +478,9 @@ export const servicesContent = {
     title: ["Let's Modernize", "Your Business."],
     description:
       "Connect directly with our principal strategic consultants and technologists. We analyze your requirements to formulate custom software, database, and AI pipeline proposals.",
-    offices: [
-      {
-        city: "GLOBAL DELIVERY",
-        address: "Remote-first engineering team · India HQ",
-        email: "atul.zync@gmail.com",
-      },
-    ],
+    techStrip: {
+      label: "Technologies we build with",
+    },
     form: {
       step: "Step 1 of 3",
       title: "What are your primary technical objectives?",

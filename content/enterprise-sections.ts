@@ -225,7 +225,7 @@ export const portfolio = {
     {
       title: 'Healthcare Intake Automation',
       category: 'AI Consulting',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173ff94031d?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800',
       metric: 'RAG Pipeline',
       metricLabel: 'HIPAA-aligned design',
       description:
@@ -289,31 +289,30 @@ export const trustCompliance = {
 export const leadershipTeam = {
   label: 'Leadership',
   title: 'The Team Behind the Work',
-  disclaimer: 'Placeholder headshots — replace with professional photos when ready.',
   members: [
     {
       name: 'Atul Tiwari',
       role: 'CEO',
       bio: 'Leads company vision, client partnerships, and delivery strategy across consulting and product engineering.',
-      image: '/assets/team/atul-tiwari.svg',
+      image: '/assets/team/atul-tiwari.webp',
     },
     {
       name: 'Hemal Buha',
       role: 'Co-Founder',
       bio: 'Technical leadership across backend architecture, cloud scaling, AI pipelines, and platform engineering.',
-      image: '/assets/team/hemal-buha.svg',
+      image: '/assets/team/hemal-buha.webp',
     },
     {
       name: 'L. Gouri Sankar',
       role: 'Co-Founder',
       bio: 'Drives product engineering, solution architecture, and end-to-end delivery for enterprise engagements.',
-      image: '/assets/team/gouri-sankar.svg',
+      image: '/assets/team/gouri-sankar.webp',
     },
     {
       name: 'Archita Hirapara',
       role: 'Human Resources',
       bio: 'Builds the people operations, hiring pipeline, and culture that support high-performing engineering teams.',
-      image: '/assets/team/archita-hirapara.svg',
+      image: '/assets/team/archita-hirapara.webp',
     },
   ],
 };
@@ -401,7 +400,7 @@ export const resources = {
       title: 'Enterprise RAG Playbook',
       description: 'Indexing strategies, chunking, and zero-retention LLM integration patterns.',
       href: '/blogs',
-      image: 'https://images.unsplash.com/photo-1456324507049-3fe979c873fb?q=80&w=600',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600',
     },
     {
       type: 'Article',

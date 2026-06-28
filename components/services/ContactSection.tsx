@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { servicesContent as c } from '@/content/services';
 import { siteContact } from '@/content/site';
+import PartnerLogo from '@/components/services/PartnerLogo';
 
 type ContactSectionProps = {
   variant?: 'partner' | 'compact' | 'page';
@@ -10,8 +11,8 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
   const isPartner = variant === 'partner';
 
   return (
-    <section id="contact" className="contact-section">
-      <div className="container contact-grid">
+    <section id="contact" className={`contact-section${isPartner ? ' contact-section-partner' : ''}`}>
+      <div className={`container contact-grid${isPartner ? ' contact-grid-partner' : ''}`}>
         <div>
           <span className="label" style={{ color: '#aaa' }}>
             {isPartner ? c.contact.label : 'Get In Touch'}
@@ -37,54 +38,44 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
               </>
             )}
           </h2>
-          <p style={{ color: '#aaa', fontSize: '1.15rem', maxWidth: 450, lineHeight: 1.7 }}>
+          <p className="contact-lead">
             {isPartner
               ? c.contact.description
               : 'Whether you need consulting, a custom build, or help with the ZyncSpace platform — reach our team directly.'}
           </p>
-          <div className={`office-list${isPartner ? ' office-list-partner' : ''}`}>
-            {isPartner ? (
-              c.contact.offices.map((office) => (
-                <div key={office.city} className="office">
-                  <h4>{office.city}</h4>
-                  <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                    {office.address}
-                    <br />
-                    {'email' in office && typeof office.email === 'string' ? (
-                      <a href={`mailto:${office.email}`} style={{ color: '#fff' }}>
-                        {office.email}
-                      </a>
-                    ) : 'phone' in office && typeof office.phone === 'string' ? (
-                      <a href={`tel:${office.phone.replace(/\s/g, '')}`} style={{ color: '#fff' }}>
-                        {office.phone}
-                      </a>
-                    ) : null}
-                  </p>
-                </div>
-              ))
-            ) : (
-              <>
-                <div className="office">
-                  <h4>Email</h4>
-                  <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                    <a href={`mailto:${siteContact.email}`} style={{ color: '#fff' }}>
-                      {siteContact.email}
-                    </a>
-                    <br />
-                    <a href={`mailto:${siteContact.supportEmail}`} style={{ color: '#aaa' }}>
-                      {siteContact.supportEmail}
-                    </a>
-                  </p>
-                </div>
-                <div className="office">
-                  <h4>{siteContact.location.city}</h4>
-                  <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                    {siteContact.location.address}
-                  </p>
-                </div>
-              </>
-            )}
-          </div>
+          {isPartner ? (
+            <div className="contact-tech-strip">
+              <span className="contact-tech-strip-label">{c.contact.techStrip.label}</span>
+              <div className="contact-tech-logos" aria-label="Technologies we build with">
+                {c.partners.items.map((name) => (
+                  <span key={name} className="contact-tech-logo">
+                    <PartnerLogo name={name} />
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="office-list">
+              <div className="office">
+                <h4>Email</h4>
+                <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                  <a href={`mailto:${siteContact.email}`} style={{ color: '#fff' }}>
+                    {siteContact.email}
+                  </a>
+                  <br />
+                  <a href={`mailto:${siteContact.supportEmail}`} style={{ color: '#aaa' }}>
+                    {siteContact.supportEmail}
+                  </a>
+                </p>
+              </div>
+              <div className="office">
+                <h4>{siteContact.location.city}</h4>
+                <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                  {siteContact.location.address}
+                </p>
+              </div>
+            </div>
+          )}
           {!isPartner && variant !== 'page' ? (
             <p style={{ color: '#888', fontSize: '0.9rem', marginTop: 24 }}>{siteContact.responseTime}</p>
           ) : null}

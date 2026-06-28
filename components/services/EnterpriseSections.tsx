@@ -414,8 +414,8 @@ export function PortfolioSection() {
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <div className="portfolio-metric">
-                  <span className="stat-num">{item.metric}</span>
-                  <span className="stat-label">{item.metricLabel}</span>
+                  <span className="portfolio-metric-value">{item.metric}</span>
+                  <span className="portfolio-metric-label">{item.metricLabel}</span>
                 </div>
                 <div className="case-tags">
                   {item.tags.map((tag) => (
@@ -479,7 +479,6 @@ export function LeadershipTeamSection() {
       <div className="container">
         <span className="label">{leadershipTeam.label}</span>
         <h2>{leadershipTeam.title}</h2>
-        <p className="placeholder-disclaimer">{leadershipTeam.disclaimer}</p>
         <div className="team-grid">
           {leadershipTeam.members.map((member) => (
             <article key={member.name} className="team-card">

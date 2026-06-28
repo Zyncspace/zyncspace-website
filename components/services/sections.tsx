@@ -194,24 +194,6 @@ export function CaseStudySection() {
               <p>{c.caseStudy.solution.description}</p>
             </div>
           </div>
-          {'architecture' in c.caseStudy && c.caseStudy.architecture ? (
-            <div className="case-architecture">
-              <h4>{c.caseStudy.architecture.title}</h4>
-              <ul className="case-arch-list">
-                {c.caseStudy.architecture.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-          {'disclaimer' in c.caseStudy && c.caseStudy.disclaimer ? (
-            <p className="case-disclaimer">{c.caseStudy.disclaimer}</p>
-          ) : null}
-          <div className="case-tags">
-            {c.caseStudy.technologies.map((tag) => (
-              <span key={tag} className="case-tag">{tag}</span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -656,8 +656,48 @@ section {
 /* --- Contact / Footer --- */
 .contact-section { background-color: var(--dark-bg); color: var(--dark-text); padding: 120px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.contact-grid-partner { align-items: start; gap: 64px; }
+.contact-lead { color: #aaa; font-size: 1.15rem; max-width: 450px; line-height: 1.7; margin: 0; }
+.contact-tech-strip {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 520px;
+}
+.contact-tech-strip-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #666;
+    margin-bottom: 22px;
+}
+.contact-tech-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 26px;
+}
+.contact-tech-logo {
+    display: flex;
+    align-items: center;
+    opacity: 0.75;
+    transition: opacity 0.25s ease;
+}
+.contact-tech-logo:hover { opacity: 1; }
+.contact-section .partner-logo {
+    height: 22px;
+    color: #888;
+    transition: color 0.25s ease;
+}
+.contact-section .partner-logo--wordmark {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+}
+.contact-tech-logo:hover .partner-logo { color: #ccc; }
 .office-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
-.office-list-partner { grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
 .office h4 { font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 10px; }
 
 .form-box { background: #111; padding: 50px; border-radius: 16px; border: 1px solid #333; }
@@ -736,7 +776,6 @@ section {
     .framework-metrics { gap: 28px; }
     .case-study-banner { padding: 40px 30px; }
     .form-box { padding: 30px 20px; }
-    .office-list-partner { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
 }
