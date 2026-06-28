@@ -123,37 +123,7 @@ export function FrameworkSection({ embedded = false }: { embedded?: boolean }) {
   return <FrameworkPipeline embedded={embedded} />;
 }
 
-export function TechStackSection({ embedded = false }: { embedded?: boolean }) {
-  return (
-    <section className="section-padding">
-      <div className="container">
-        {!embedded ? (
-          <div className="stack-header">
-            <span className="label">{c.techStack.label}</span>
-            <h2>{c.techStack.title}</h2>
-            <p className="section-lead">{c.techStack.description}</p>
-          </div>
-        ) : null}
-        <div className="tech-filters">
-          {c.techStack.filters.map((f, i) => (
-            <span key={f} className={`btn ${i === 0 ? 'btn-dark' : 'btn-outline-light'}`} style={{ padding: '10px 20px' }}>{f}</span>
-          ))}
-        </div>
-        <div className="bento-grid">
-          {c.techStack.cards.map((card) => (
-            <div key={card.name} className="tech-card">
-              <div className="tech-top">
-                <span className="tech-name">{card.name}</span>
-                <span className="tech-cat">{card.category}</span>
-              </div>
-              <div className="tech-desc">{card.description}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+export { default as TechStackSection } from '@/components/services/TechStackSection';
 
 export function IndustriesSection({ embedded = false }: { embedded?: boolean }) {
   return (

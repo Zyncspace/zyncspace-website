@@ -243,71 +243,182 @@ export const servicesContent = {
 
   techStack: {
     label: "Vetted Engineering Standards",
-    title: "Our Enterprise Technology Stack",
+    title: "Our Production Technology Stack",
     description:
-      "We operate exclusively with premium, industry-vetted platforms and programming patterns. We avoid experimental and volatile software, ensuring your corporate architectures remain compliant, highly scalable, and completely secure.",
+      "We ship modern web products with a battle-tested toolchain — from Next.js and React 19 through SEO, accessibility, security scanning, and CI quality gates. Every layer is chosen for performance, maintainability, and enterprise-grade delivery.",
     filters: [
       "All Technologies",
-      "Frontend",
-      "Backend",
-      "Cloud & DevOps",
-      "Data Stores",
-      "Artificial Intelligence",
+      "Core Platform",
+      "UI & Motion",
+      "SEO & Content",
+      "Testing & Quality",
+      "Security & CI",
     ],
     cards: [
       {
-        name: "React",
-        category: "Frontend",
-        description:
-          "Standard component library for ultra-responsive rendering architectures.",
+        name: "Next.js 15",
+        category: "Core Platform",
+        description: "App Router, SSR/SSG, and edge-ready production deployments.",
       },
       {
-        name: "Next.js",
-        category: "Frontend",
-        description:
-          "Hybrid static/SSR framework optimized for high SEO performance indexes.",
+        name: "React 19",
+        category: "Core Platform",
+        description: "Concurrent rendering, server components, and modern UI patterns.",
       },
       {
-        name: "Node.js",
-        category: "Backend",
-        description:
-          "High-throughput asynchronous backends and serverless endpoints.",
+        name: "TypeScript",
+        category: "Core Platform",
+        description: "End-to-end type safety across apps, APIs, and shared libraries.",
       },
       {
-        name: "Python",
-        category: "Backend",
-        description:
-          "Robust data analysis pipelines, web microservices, and AI integrations.",
+        name: "Tailwind CSS",
+        category: "Core Platform",
+        description: "Utility-first styling with design tokens and responsive layouts.",
       },
       {
-        name: "AWS",
-        category: "Cloud",
-        description:
-          "Global fault-tolerant hosting clusters, load-balancers, and S3 CDN buckets.",
+        name: "next/font",
+        category: "Core Platform",
+        description: "Self-hosted, optimized fonts with zero layout shift.",
       },
       {
-        name: "Kubernetes",
-        category: "Cloud",
-        description:
-          "Production-grade orchestration layer managing automatic scaling and health monitoring.",
+        name: "shadcn/ui",
+        category: "UI & Motion",
+        description: "Accessible, composable component primitives built on Radix UI.",
       },
       {
-        name: "PostgreSQL",
-        category: "Data",
-        description:
-          "Robust relational database with full pgvector capabilities for AI indexing.",
+        name: "Motion",
+        category: "UI & Motion",
+        description: "Declarative React animations for polished micro-interactions.",
       },
       {
-        name: "OpenAI / Claude",
-        category: "AI",
-        description:
-          "Elite analytical model integration with massive context windows.",
+        name: "GSAP",
+        category: "UI & Motion",
+        description: "High-performance timeline animations for hero and scroll experiences.",
       },
       {
-        name: "LangChain",
-        category: "AI",
-        description:
-          "Standard orchestration library managing complex multi-agent LLM chains.",
+        name: "Lucide React",
+        category: "UI & Motion",
+        description: "Consistent, lightweight icon system across the product UI.",
+      },
+      {
+        name: "Sonner",
+        category: "UI & Motion",
+        description: "Elegant toast notifications for form feedback and system alerts.",
+      },
+      {
+        name: "next-seo",
+        category: "SEO & Content",
+        description: "Centralized metadata, Open Graph, and Twitter card management.",
+      },
+      {
+        name: "next-sitemap",
+        category: "SEO & Content",
+        description: "Automated sitemap and robots.txt generation at build time.",
+      },
+      {
+        name: "schema-dts",
+        category: "SEO & Content",
+        description: "Type-safe JSON-LD structured data for rich search results.",
+      },
+      {
+        name: "MDX",
+        category: "SEO & Content",
+        description: "Blog, docs, and marketing pages as code with embedded components.",
+      },
+      {
+        name: "Contentlayer",
+        category: "SEO & Content",
+        description: "Typed content pipeline from Markdown and MDX into the app layer.",
+      },
+      {
+        name: "Fuse.js",
+        category: "SEO & Content",
+        description: "Fast client-side fuzzy search for docs, blogs, and resources.",
+      },
+      {
+        name: "next-pwa",
+        category: "Core Platform",
+        description: "Offline-ready progressive web app support and install prompts.",
+      },
+      {
+        name: "react-hook-form",
+        category: "Core Platform",
+        description: "Performant forms with minimal re-renders and excellent DX.",
+      },
+      {
+        name: "zod",
+        category: "Core Platform",
+        description: "Runtime schema validation synced with TypeScript types.",
+      },
+      {
+        name: "Vitest",
+        category: "Testing & Quality",
+        description: "Unit and integration tests with Vite-speed feedback loops.",
+      },
+      {
+        name: "Playwright",
+        category: "Testing & Quality",
+        description: "Cross-browser E2E coverage for critical user journeys.",
+      },
+      {
+        name: "axe-core",
+        category: "Testing & Quality",
+        description: "Automated accessibility regression checks in CI pipelines.",
+      },
+      {
+        name: "ESLint",
+        category: "Testing & Quality",
+        description: "Next.js-aligned lint rules for consistent code standards.",
+      },
+      {
+        name: "Biome",
+        category: "Testing & Quality",
+        description: "Fast formatter and linter for zero-friction developer workflows.",
+      },
+      {
+        name: "JSCPD",
+        category: "Testing & Quality",
+        description: "Duplicate code detection to keep the codebase DRY.",
+      },
+      {
+        name: "Knip",
+        category: "Testing & Quality",
+        description: "Dead code and unused dependency pruning.",
+      },
+      {
+        name: "Madge",
+        category: "Testing & Quality",
+        description: "Circular dependency analysis across modules.",
+      },
+      {
+        name: "Dependency Cruiser",
+        category: "Testing & Quality",
+        description: "Architecture boundary enforcement and import graph validation.",
+      },
+      {
+        name: "Semgrep",
+        category: "Security & CI",
+        description: "Static analysis for security anti-patterns and OWASP risks.",
+      },
+      {
+        name: "CodeQL",
+        category: "Security & CI",
+        description: "Deep semantic code scanning for vulnerability classes.",
+      },
+      {
+        name: "Gitleaks",
+        category: "Security & CI",
+        description: "Secret scanning in commits, branches, and CI artifacts.",
+      },
+      {
+        name: "Trivy",
+        category: "Security & CI",
+        description: "Container and dependency vulnerability scanning.",
+      },
+      {
+        name: "Lighthouse CI",
+        category: "Security & CI",
+        description: "Performance, SEO, and best-practice budgets on every deploy.",
       },
     ],
   },

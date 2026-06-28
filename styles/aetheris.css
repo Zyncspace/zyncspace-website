@@ -599,6 +599,15 @@ section {
 /* --- Tech Stack Grid --- */
 .stack-header h2 { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 20px; }
 .tech-filters { display: flex; gap: 10px; margin-top: 40px; flex-wrap: wrap; }
+.tech-filter-btn {
+    padding: 10px 20px;
+    border: none;
+    font-family: var(--font-sans);
+    cursor: pointer;
+}
+.tech-stack-section .bento-grid {
+    margin-top: 40px;
+}
 .bento-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 50px; }
 
 .tech-card { background: #fff; border: 1px solid var(--border-light); padding: 30px; border-radius: 12px; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
