@@ -84,29 +84,115 @@
 }
 
 /* ── Why choose ── */
-.why-choose-grid {
+.why-choose-section {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  border-bottom: none;
+}
+
+.why-choose-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-12);
+}
+
+.why-choose-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin-bottom: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: #aaa;
+}
+
+.why-choose-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--dark-text);
+  margin-bottom: var(--space-5);
+}
+
+.why-choose-header p {
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: #ccc;
+}
+
+.why-choose-bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: var(--space-6);
-  margin-top: var(--space-10);
 }
 
 .why-choose-card {
-  padding: var(--space-6);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  background: #fff;
+  grid-column: span 2;
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  background: #0a0a0a;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 72px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.why-choose-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  margin-bottom: var(--space-6);
+}
+
+.why-choose-icon svg {
+  width: 80px;
+  height: auto;
 }
 
 .why-choose-card h3 {
   margin-bottom: var(--space-3);
-  font-size: var(--text-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--dark-text);
 }
 
 .why-choose-card p {
   font-size: var(--text-sm);
-  color: var(--muted-text);
+  color: #aaa;
   line-height: var(--leading-relaxed);
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .why-choose-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-choose-bento {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Reference architectures ── */
@@ -1062,7 +1148,6 @@
 @media (max-width: 1100px) {
   .value-pillars,
   .trust-badges-grid,
-  .why-choose-grid,
   .reference-arch-grid,
   .engineering-highlights {
     grid-template-columns: 1fr;

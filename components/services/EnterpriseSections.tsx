@@ -18,6 +18,7 @@ import {
   resources,
 } from '@/content/enterprise-sections';
 import { serviceRoutes } from '@/content/site';
+import WhyChooseIcon from '@/components/services/WhyChooseIcons';
 
 export function AboutSection() {
   return (
@@ -76,13 +77,20 @@ export function ValuePropositionSection() {
 
 export function WhyChooseSection() {
   return (
-    <section className="section-padding why-choose-section">
+    <section className="section-padding why-choose-section" id="why-choose">
       <div className="container">
-        <span className="label">{whyChoose.label}</span>
-        <h2>{whyChoose.title}</h2>
-        <div className="why-choose-grid">
+        <header className="why-choose-header">
+          <span className="why-choose-badge">{whyChoose.label}</span>
+          <h2>{whyChoose.title}</h2>
+          <p>{whyChoose.description}</p>
+        </header>
+
+        <div className="why-choose-bento">
           {whyChoose.items.map((item) => (
-            <article key={item.title} className="why-choose-card">
+            <article key={item.id} className="why-choose-card">
+              <div className="why-choose-icon" aria-hidden>
+                <WhyChooseIcon id={item.id} />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>

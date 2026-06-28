@@ -46,15 +46,41 @@ export const valueProposition = {
 };
 
 export const whyChoose = {
-  label: 'Why ZyncSpace',
-  title: 'Why Choose ZyncSpace',
+  label: 'Why Choose Us',
+  title: 'Where Engineering Meets Business Outcomes',
+  description:
+    'We combine AI-first delivery, cloud-native architecture, and enterprise-grade security to remove delivery risk — and help you ship products your stakeholders can trust.',
   items: [
-    { title: 'AI-First Engineering', description: 'RAG, agents, and LLM pipelines built with zero-retention data handling by default.' },
-    { title: 'Cloud-Native Architecture', description: 'AWS, GCP, Azure, and Kubernetes — designed to scale without re-architecting every quarter.' },
-    { title: 'Enterprise Security', description: 'IAM enforcement, isolated environments, and security scanning in every CI pipeline.' },
-    { title: 'Agile Delivery', description: 'Two-week sprints, documented gates, and stakeholder demos — no black-box development.' },
-    { title: 'Scalable Solutions', description: 'Microservices, event-driven patterns, and platform engineering that grow with your business.' },
-    { title: 'Long-Term Partnership', description: 'Retainer models, knowledge transfer, and runbooks so your team owns the outcome.' },
+    {
+      id: 'ai',
+      title: 'AI-First Engineering',
+      description: 'Intelligent systems with zero-retention pipelines — your data never trains public models.',
+    },
+    {
+      id: 'cloud',
+      title: 'Cloud-Native Architecture',
+      description: 'AWS, GCP, Azure, and Kubernetes — built to scale without re-architecting every quarter.',
+    },
+    {
+      id: 'security',
+      title: 'Enterprise Security',
+      description: 'IAM enforcement, isolated VPCs, and automated security scanning in every CI pipeline.',
+    },
+    {
+      id: 'agile',
+      title: 'Agile Delivery',
+      description: 'Two-week sprints, documented gates, and stakeholder demos — no black-box development.',
+    },
+    {
+      id: 'scale',
+      title: 'Scalable Solutions',
+      description: 'Microservices and event-driven patterns that grow with your traffic and team.',
+    },
+    {
+      id: 'partnership',
+      title: 'Long-Term Partnership',
+      description: 'Retainer models, knowledge transfer, and runbooks so your team owns the outcome.',
+    },
   ],
 };
 
