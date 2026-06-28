@@ -95,7 +95,7 @@ export const mediaShowcase = {
       title: 'Team Chat',
       description:
         'Organized channels and threads keep conversations searchable and actionable — context never gets lost in the scroll.',
-      src: '/assets/images/platform-preview/platform-preview-team-chat.png',
+      src: '/assets/images/platform-preview/platform-preview-team-chat.webp',
       alt: 'Team collaborating around ZyncSpace team chat with channels and threads',
     },
     {
@@ -103,7 +103,7 @@ export const mediaShowcase = {
       title: 'Kanban Boards',
       description:
         'Turn messages into tasks in one click and track work where your team already communicates.',
-      src: '/assets/images/platform-preview/platform-preview-kanban.png',
+      src: '/assets/images/platform-preview/platform-preview-kanban.webp',
       alt: 'Team reviewing a Kanban board integrated in ZyncSpace',
     },
     {
@@ -111,7 +111,7 @@ export const mediaShowcase = {
       title: 'Huddles',
       description:
         'Start voice collaboration instantly without leaving the conversation — no separate meeting links.',
-      src: '/assets/images/platform-preview/platform-preview-huddles.png',
+      src: '/assets/images/platform-preview/platform-preview-huddles.webp',
       alt: 'Remote team in an instant voice huddle inside ZyncSpace',
     },
     {
@@ -119,7 +119,7 @@ export const mediaShowcase = {
       title: 'AI Assistant',
       description:
         'Summarize threads and refine tone in context — your data stays within your workspace.',
-      src: '/assets/images/platform-preview/platform-preview-ai-assistant.png',
+      src: '/assets/images/platform-preview/platform-preview-ai-assistant.webp',
       alt: 'Colleagues using the built-in AI assistant in ZyncSpace',
     },
   ],
@@ -245,7 +245,7 @@ export const portfolio = {
     {
       title: 'Team Workspace Rollout',
       category: 'Product + Services',
-      image: '/assets/images/home-hero-section.png',
+      image: '/assets/images/home-hero-section.webp',
       metric: 'SSO + SCIM',
       metricLabel: 'Enterprise rollout',
       description:

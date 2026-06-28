@@ -293,7 +293,7 @@ export function ProductShowcaseSection() {
             </div>
             <div className="product-showcase-visual">
               <img
-                src="/assets/images/home-hero-section.png"
+                src="/assets/images/home-hero-section.webp"
                 alt="ZyncSpace workspace overview with chat, tasks, and collaboration"
                 width={640}
                 height={400}

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "node scripts/check-node.mjs && node scripts/prepare-dev.mjs && next dev",
+    "compress:assets": "node scripts/compress-assets.mjs",
     "build": "node scripts/check-node.mjs && node scripts/extract-product-content.mjs && next build && node scripts/generate-seo-files.mjs && node scripts/seo-audit.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
@@ -61,6 +62,7 @@
     "lint-staged": "^16.2.7",
     "madge": "^8.0.0",
     "postcss": "^8.5.15",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.3.1",
     "tsx": "^4.22.4",
     "typescript": "^5.7.0",

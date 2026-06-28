@@ -50,6 +50,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Compress asset images
+        run: npm run compress:assets
+
       - name: Print build environment
         run: |
           echo "NEXT_PUBLIC_SITE_URL=${{ steps.site.outputs.url }}"
