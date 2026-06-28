@@ -1,0 +1,15 @@
+{
+  "threshold": 15,
+  "minLines": 12,
+  "minTokens": 80,
+  "reporters": ["console"],
+  "ignore": [
+    ".next/**",
+    "out/**",
+    "node_modules/**",
+    "service-based-website/**",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "content/blog/**"
+  ]
+}
