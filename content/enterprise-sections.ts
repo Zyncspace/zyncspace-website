@@ -66,7 +66,6 @@ export const mediaShowcase = {
   features: [
     {
       id: 'team-chat',
-      icon: '◎',
       title: 'Team Chat',
       description:
         'Organized channels and threads keep conversations searchable and actionable — context never gets lost in the scroll.',
@@ -75,7 +74,6 @@ export const mediaShowcase = {
     },
     {
       id: 'kanban',
-      icon: '▣',
       title: 'Kanban Boards',
       description:
         'Turn messages into tasks in one click and track work where your team already communicates.',
@@ -84,7 +82,6 @@ export const mediaShowcase = {
     },
     {
       id: 'huddles',
-      icon: '◉',
       title: 'Huddles',
       description:
         'Start voice collaboration instantly without leaving the conversation — no separate meeting links.',
@@ -93,7 +90,6 @@ export const mediaShowcase = {
     },
     {
       id: 'ai-assistant',
-      icon: '◈',
       title: 'AI Assistant',
       description:
         'Summarize threads and refine tone in context — your data stays within your workspace.',

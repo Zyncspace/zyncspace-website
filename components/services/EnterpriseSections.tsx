@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import {
   aboutSection,
@@ -96,6 +96,30 @@ export function WhyChooseSection() {
 export function MediaShowcaseSection() {
   const [activeFeature, setActiveFeature] = useState(0);
   const active = mediaShowcase.features[activeFeature];
+  const navRef = useRef<HTMLDivElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [marker, setMarker] = useState({ top: 0, height: 0 });
+
+  const updateMarker = useCallback(() => {
+    const tab = tabRefs.current[activeFeature];
+    const nav = navRef.current;
+    if (!tab || !nav) return;
+    setMarker({
+      top: tab.offsetTop,
+      height: tab.offsetHeight,
+    });
+  }, [activeFeature]);
+
+  useEffect(() => {
+    updateMarker();
+    window.addEventListener('resize', updateMarker);
+    return () => window.removeEventListener('resize', updateMarker);
+  }, [updateMarker]);
+
+  useEffect(() => {
+    const id = window.requestAnimationFrame(updateMarker);
+    return () => window.cancelAnimationFrame(id);
+  }, [activeFeature, updateMarker]);
 
   return (
     <section className="section-padding media-showcase-section" id="platform-preview">
@@ -107,35 +131,48 @@ export function MediaShowcaseSection() {
         </div>
 
         <div className="feature-hub">
-          <div
-            className="feature-hub-nav"
-            role="tablist"
-            aria-label="ZyncSpace platform capabilities"
-          >
-            {mediaShowcase.features.map((feature, index) => {
-              const isActive = index === activeFeature;
-              return (
-                <button
-                  key={feature.id}
-                  type="button"
-                  role="tab"
-                  id={`feature-tab-${feature.id}`}
-                  aria-selected={isActive}
-                  aria-controls={`feature-panel-${feature.id}`}
-                  tabIndex={isActive ? 0 : -1}
-                  className={`feature-hub-tab${isActive ? ' active' : ''}`}
-                  onClick={() => setActiveFeature(index)}
-                >
-                  <span className="feature-hub-tab-icon" aria-hidden>
-                    {feature.icon}
-                  </span>
-                  <span className="feature-hub-tab-copy">
-                    <span className="feature-hub-tab-title">{feature.title}</span>
-                    <span className="feature-hub-tab-desc">{feature.description}</span>
-                  </span>
-                </button>
-              );
-            })}
+          <div className="feature-hub-nav-wrap" ref={navRef}>
+            <div className="feature-hub-rail" aria-hidden="true">
+              <span className="feature-hub-rail-track" />
+              <span
+                className="feature-hub-rail-marker"
+                style={{ transform: `translateY(${marker.top}px)`, height: marker.height }}
+              />
+            </div>
+
+            <div
+              className="feature-hub-nav"
+              role="tablist"
+              aria-label="ZyncSpace platform capabilities"
+            >
+              {mediaShowcase.features.map((feature, index) => {
+                const isActive = index === activeFeature;
+                return (
+                  <button
+                    key={feature.id}
+                    ref={(el) => {
+                      tabRefs.current[index] = el;
+                    }}
+                    type="button"
+                    role="tab"
+                    id={`feature-tab-${feature.id}`}
+                    aria-selected={isActive}
+                    aria-controls={`feature-panel-${feature.id}`}
+                    tabIndex={isActive ? 0 : -1}
+                    className={`feature-hub-tab${isActive ? ' active' : ''}`}
+                    onClick={() => setActiveFeature(index)}
+                  >
+                    <span className="feature-hub-tab-index">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="feature-hub-tab-body">
+                      <span className="feature-hub-tab-title">{feature.title}</span>
+                      <span className="feature-hub-tab-desc">{feature.description}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div

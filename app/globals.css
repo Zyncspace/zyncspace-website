@@ -13,8 +13,11 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--dark-bg);
+  overscroll-behavior: none;
 }
 
 body {
   margin: 0;
+  overscroll-behavior: none;
 }
