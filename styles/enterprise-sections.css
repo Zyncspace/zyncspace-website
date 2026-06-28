@@ -521,13 +521,13 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #050505;
+  border: 1px solid var(--border-dark);
+  background: var(--dark-bg);
   aspect-ratio: 16 / 9;
   box-shadow:
     0 24px 64px rgba(0, 0, 0, 0.55),
-    0 0 80px rgba(99, 102, 241, 0.1),
-    0 0 140px rgba(139, 92, 246, 0.06);
+    0 0 80px rgba(79, 70, 229, 0.12),
+    0 0 140px rgba(79, 70, 229, 0.06);
   isolation: isolate;
 }
 
@@ -537,8 +537,8 @@
   inset: 0;
   background: radial-gradient(
     ellipse 70% 60% at 50% 45%,
-    rgba(99, 102, 241, 0.12) 0%,
-    rgba(139, 92, 246, 0.06) 35%,
+    rgba(79, 70, 229, 0.15) 0%,
+    rgba(79, 70, 229, 0.05) 40%,
     transparent 70%
   );
   pointer-events: none;
