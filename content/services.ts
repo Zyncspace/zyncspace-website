@@ -248,6 +248,10 @@ export const servicesContent = {
     title: "Our Production Technology Stack",
     description:
       "We ship modern web products with a battle-tested toolchain. Each technology is chosen for a business reason — uptime, velocity, security, or scale.",
+    cta: {
+      label: 'Explore Full Technology Stack ↗',
+      href: '/services/technology',
+    },
     filters: [
       "All Technologies",
       "Core Platform",
@@ -262,30 +266,35 @@ export const servicesContent = {
         category: "Core Platform",
         description: "App Router, static export, and SEO-ready production deployments.",
         outcome: "Faster page loads and search visibility — reducing bounce rates and improving lead conversion.",
+        featured: true,
       },
       {
         name: "React 19",
         category: "Core Platform",
         description: "Concurrent rendering, server components, and modern UI patterns.",
         outcome: "Responsive interfaces that stay fast as features grow — less rework as products scale.",
+        featured: true,
       },
       {
         name: "TypeScript",
         category: "Core Platform",
         description: "End-to-end type safety across apps, APIs, and shared libraries.",
         outcome: "Fewer production defects and faster onboarding — changes are caught before deploy.",
+        featured: true,
       },
       {
         name: "Kubernetes",
         category: "Core Platform",
         description: "Container orchestration for production workloads on AWS, GCP, or Azure.",
         outcome: "Your application stays online and scales automatically during traffic spikes — preventing lost revenue.",
+        featured: true,
       },
       {
         name: "Terraform",
         category: "Security & CI",
         description: "Infrastructure as code with reviewable, repeatable environment provisioning.",
         outcome: "Auditable infra changes and faster disaster recovery — critical for enterprise procurement.",
+        featured: true,
       },
       {
         name: "Tailwind CSS",

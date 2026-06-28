@@ -1,10 +1,9 @@
 import { buildMetadata } from '@/lib/metadata';
 import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
-import ServicePageHeader from '@/components/services/ServicePageHeader';
-import ServicePageExtended from '@/components/services/ServicePageExtended';
-import { TechStackSection } from '@/components/services/sections';
+import ServicePageHeader, { ServiceBreadcrumb } from '@/components/services/ServicePageHeader';
+import TechStackSection, { TechStackPageCta } from '@/components/services/TechStackSection';
 import { servicesContent as c } from '@/content/services';
-import { servicePageExtended } from '@/content/service-pages';
+import { serviceRoutes } from '@/content/site';
 
 export const metadata = buildMetadata({
   title: 'Technology Stack',
@@ -25,9 +24,17 @@ export default function TechnologyPage() {
         label={c.techStack.label}
         title={c.techStack.title}
         description={c.techStack.description}
-      />
-      <TechStackSection embedded />
-      <ServicePageExtended sections={servicePageExtended.technology} />
+      >
+        <ServiceBreadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Services', href: serviceRoutes.services },
+            { label: 'Technology Stack' },
+          ]}
+        />
+      </ServicePageHeader>
+      <TechStackSection variant="full" embedded />
+      <TechStackPageCta />
     </>
   );
 }

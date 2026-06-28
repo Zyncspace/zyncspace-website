@@ -3,6 +3,7 @@
 @import '../styles/aetheris.css';
 @import '../styles/product.css';
 @import '../styles/enterprise-sections.css';
+@import '../styles/tech-stack.css';
 
 /* Next.js font variables → design system stacks */
 :root {
