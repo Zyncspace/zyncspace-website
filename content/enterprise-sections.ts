@@ -95,32 +95,32 @@ export const mediaShowcase = {
       title: 'Team Chat',
       description:
         'Organized channels and threads keep conversations searchable and actionable — context never gets lost in the scroll.',
-      src: '/assets/images/features-chat.png',
-      alt: 'ZyncSpace team chat interface with channels and threads',
+      src: '/assets/images/platform-preview/platform-preview-team-chat.png',
+      alt: 'Team collaborating around ZyncSpace team chat with channels and threads',
     },
     {
       id: 'kanban',
       title: 'Kanban Boards',
       description:
         'Turn messages into tasks in one click and track work where your team already communicates.',
-      src: '/assets/images/kanban-home.png',
-      alt: 'Kanban board integrated per channel in ZyncSpace',
+      src: '/assets/images/platform-preview/platform-preview-kanban.png',
+      alt: 'Team reviewing a Kanban board integrated in ZyncSpace',
     },
     {
       id: 'huddles',
       title: 'Huddles',
       description:
         'Start voice collaboration instantly without leaving the conversation — no separate meeting links.',
-      src: '/assets/images/huddle-home.png',
-      alt: 'Instant huddles and voice collaboration in ZyncSpace',
+      src: '/assets/images/platform-preview/platform-preview-huddles.png',
+      alt: 'Remote team in an instant voice huddle inside ZyncSpace',
     },
     {
       id: 'ai-assistant',
       title: 'AI Assistant',
       description:
         'Summarize threads and refine tone in context — your data stays within your workspace.',
-      src: '/assets/images/airewrite-home.png',
-      alt: 'Built-in AI assistant rewriting messages in ZyncSpace',
+      src: '/assets/images/platform-preview/platform-preview-ai-assistant.png',
+      alt: 'Colleagues using the built-in AI assistant in ZyncSpace',
     },
   ],
 };
