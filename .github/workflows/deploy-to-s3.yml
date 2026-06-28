@@ -55,7 +55,27 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync build output to S3
-        run: aws s3 sync out/ "s3://${{ secrets.S3_BUCKET_NAME }}/" --delete
+        run: |
+          aws s3 sync out/ "s3://${{ secrets.S3_BUCKET_NAME }}/" \
+            --delete \
+            --only-show-errors
+
+          # Ensure HTML entry points are served correctly
+          aws s3 cp out/index.html "s3://${{ secrets.S3_BUCKET_NAME }}/index.html" \
+            --content-type "text/html; charset=utf-8" \
+            --cache-control "public,max-age=0,must-revalidate"
+
+          if [ -f out/404.html ]; then
+            aws s3 cp out/404.html "s3://${{ secrets.S3_BUCKET_NAME }}/404.html" \
+              --content-type "text/html; charset=utf-8" \
+              --cache-control "public,max-age=0,must-revalidate"
+          fi
+
+      - name: Configure S3 static website (index + error document)
+        run: |
+          aws s3 website "s3://${{ secrets.S3_BUCKET_NAME }}" \
+            --index-document index.html \
+            --error-document 404.html
 
       - name: Invalidate CloudFront cache
         if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
@@ -71,4 +91,7 @@ jobs:
           echo "### Deployed to S3" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Branch:** \`${{ github.ref_name }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Commit:** \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Bucket:** configured S3 bucket" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "> If you see **Access Denied**, apply a public bucket policy once:" >> "$GITHUB_STEP_SUMMARY"
+          echo "> \`./scripts/setup-s3-public-website.sh YOUR_BUCKET\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "> Or use CloudFront OAC — see \`infra/s3-cloudfront-oac-bucket-policy.json\`" >> "$GITHUB_STEP_SUMMARY"
