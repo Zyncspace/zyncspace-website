@@ -6,6 +6,11 @@ on:
       - main
       - zyncspace_v2-website
   workflow_dispatch:
+    inputs:
+      site_url:
+        description: 'Site URL (overrides branch default)'
+        required: false
+        default: ''
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -23,6 +28,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Resolve site URL
+        id: site
+        run: |
+          if [ -n "${{ inputs.site_url }}" ]; then
+            echo "url=${{ inputs.site_url }}" >> "$GITHUB_OUTPUT"
+          elif [ -n "${{ vars.SITE_URL }}" ]; then
+            echo "url=${{ vars.SITE_URL }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.ref_name }}" = "main" ]; then
+            echo "url=https://zyncspace.com" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://zyncspace.in" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,8 +50,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Print build environment
+        run: |
+          echo "NEXT_PUBLIC_SITE_URL=${{ steps.site.outputs.url }}"
+          echo "Branch: ${{ github.ref_name }}"
+
       - name: Build static site
         run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ steps.site.outputs.url }}
+          NEXT_PUBLIC_GA_ID: ${{ vars.GA_ID }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
 
       - name: SEO audit
         run: npm run check:seo
@@ -48,7 +75,13 @@ jobs:
             echo "Error: out/index.html is missing."
             exit 1
           fi
-          echo "Build OK — $(find out -type f | wc -l) files ready to deploy"
+          for f in robots.txt sitemap.xml feed.xml llms.txt; do
+            if [ ! -f "out/$f" ]; then
+              echo "Error: out/$f is missing."
+              exit 1
+            fi
+          done
+          echo "Build OK — $(find out -type f | wc -l) files for ${{ steps.site.outputs.url }}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -61,17 +94,25 @@ jobs:
         run: |
           aws s3 sync out/ "s3://${{ secrets.S3_BUCKET_NAME }}/" \
             --delete \
-            --only-show-errors
+            --only-show-errors \
+            --exclude "_next/*" \
+            --exclude "assets/*"
 
-          # Ensure HTML entry points are served correctly
+      - name: Upload SEO files and cache static assets
+        run: chmod +x scripts/upload-seo-assets.sh && ./scripts/upload-seo-assets.sh "${{ secrets.S3_BUCKET_NAME }}"
+
+      - name: Set HTML cache headers
+        run: |
           aws s3 cp out/index.html "s3://${{ secrets.S3_BUCKET_NAME }}/index.html" \
             --content-type "text/html; charset=utf-8" \
-            --cache-control "public,max-age=0,must-revalidate"
+            --cache-control "public,max-age=0,must-revalidate" \
+            --only-show-errors
 
           if [ -f out/404.html ]; then
             aws s3 cp out/404.html "s3://${{ secrets.S3_BUCKET_NAME }}/404.html" \
               --content-type "text/html; charset=utf-8" \
-              --cache-control "public,max-age=0,must-revalidate"
+              --cache-control "public,max-age=0,must-revalidate" \
+              --only-show-errors
           fi
 
       - name: Configure S3 static website (index + error document)
@@ -92,9 +133,9 @@ jobs:
       - name: Deploy summary
         run: |
           echo "### Deployed to S3" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Site URL:** \`${{ steps.site.outputs.url }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Branch:** \`${{ github.ref_name }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Commit:** \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "> If you see **Access Denied**, apply a public bucket policy once:" >> "$GITHUB_STEP_SUMMARY"
-          echo "> \`./scripts/setup-s3-public-website.sh YOUR_BUCKET\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "> Or use CloudFront OAC — see \`infra/s3-cloudfront-oac-bucket-policy.json\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "#### Production cutover" >> "$GITHUB_STEP_SUMMARY"
+          echo "Set GitHub repo variable \`SITE_URL\` to \`https://zyncspace.com\` or deploy from \`main\`." >> "$GITHUB_STEP_SUMMARY"

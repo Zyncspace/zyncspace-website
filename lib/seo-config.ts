@@ -1,6 +1,9 @@
 /** Central SEO constants — single source for metadata, sitemap, and audits */
 
-export const SITE_URL = 'https://zyncspace.com';
+import { SITE_URL } from '@/lib/site-url';
+
+export { SITE_URL, PRODUCTION_SITE_URL, STAGING_SITE_URL, IS_PRODUCTION, IS_STAGING } from '@/lib/site-url';
+
 export const SITE_NAME = 'ZyncSpace';
 
 export const SITE_DESCRIPTION =
@@ -14,6 +17,7 @@ export const DEFAULT_KEYWORDS = [
   'team workspace',
   'SaaS development',
   'cloud engineering',
+  'custom software',
   'ZyncSpace',
 ].join(', ');
 
@@ -23,6 +27,8 @@ export const SOCIAL = {
   twitter: '@zyncspace',
   linkedin: 'https://linkedin.com/company/zyncspace',
   twitterUrl: 'https://twitter.com/zyncspace',
+  github: 'https://github.com/zyncspace',
+  youtube: 'https://www.youtube.com/@zyncspace',
 } as const;
 
 export const THEME_COLOR = '#4F46E5';

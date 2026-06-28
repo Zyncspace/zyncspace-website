@@ -3,79 +3,159 @@
 > AI-driven technology consulting and unified team workspace platform.
 
 ## Overview
-ZyncSpace combines AI-driven technology consulting with a unified team workspace — chat, tasks, calendar, and AI in one platform. The site covers consulting services, product features, pricing, blog content, and contact information.
+ZyncSpace combines AI-driven technology consulting with a unified team workspace — chat, tasks, calendar, and AI in one platform.
 
 ## Main Pages
 
 ### Home
-- URL: https://zyncspace.com/
-- Description: Landing page for AI consulting, capabilities, framework, tech stack, industries, case studies, pricing, and product showcase.
+- URL: https://zyncspace.in/
+- Description: AI consulting, software engineering, capabilities, framework, tech stack, and product showcase.
 
 ### Consulting Services
-- URL: https://zyncspace.com/services
-- Description: Technology consulting capabilities — AI automation, cloud engineering, UX, and custom SaaS builds.
+- URL: https://zyncspace.in/services
+- Description: Technology consulting — AI automation, cloud engineering, UX, custom SaaS.
 
 ### Our Framework
-- URL: https://zyncspace.com/services/framework
-- Description: ZyncSpace consulting delivery framework and methodology.
+- URL: https://zyncspace.in/services/framework
+- Description: Consulting delivery framework and methodology.
 
 ### Technology Stack
-- URL: https://zyncspace.com/services/technology
-- Description: Engineering toolchain and technologies used for client delivery.
+- URL: https://zyncspace.in/services/technology
+- Description: Software engineering toolchain and cloud platform standards.
 
 ### Industries
-- URL: https://zyncspace.com/services/industries
-- Description: Industry-specific consulting solutions.
+- URL: https://zyncspace.in/services/industries
+- Description: Industry-specific consulting and platform solutions.
 
 ### Case Studies
-- URL: https://zyncspace.com/services/case-studies
-- Description: Client outcomes and consulting case studies.
+- URL: https://zyncspace.in/services/case-studies
+- Description: Client outcomes from consulting and engineering engagements.
 
 ### Consulting Pricing
-- URL: https://zyncspace.com/services/pricing
-- Description: Consulting engagement models and pricing tiers.
+- URL: https://zyncspace.in/services/pricing
+- Description: Consulting engagement models and pricing.
 
 ### Features
-- URL: https://zyncspace.com/features
-- Description: ZyncSpace product features — chat, tasks, calendar, and AI workspace.
+- URL: https://zyncspace.in/features
+- Description: Team workspace — chat, tasks, calendar, and AI.
 
 ### Use Cases
-- URL: https://zyncspace.com/use-cases
-- Description: How teams use ZyncSpace for collaboration and productivity.
+- URL: https://zyncspace.in/use-cases
+- Description: How teams use ZyncSpace for collaboration.
 
 ### Pricing
-- URL: https://zyncspace.com/pricing
-- Description: ZyncSpace product pricing plans.
+- URL: https://zyncspace.in/pricing
+- Description: Product pricing plans.
 
-### About Us
-- URL: https://zyncspace.com/about
-- Description: ZyncSpace mission and team.
+### About
+- URL: https://zyncspace.in/about
+- Description: Mission, team, and company story.
 
 ### Careers
-- URL: https://zyncspace.com/careers
-- Description: Open roles and company culture.
+- URL: https://zyncspace.in/careers
+- Description: Open roles and culture.
 
 ### Contact
-- URL: https://zyncspace.com/contact
+- URL: https://zyncspace.in/contact
 - Description: Consulting, support, and partnership inquiries.
 
 ### Blog
-- URL: https://zyncspace.com/blogs
-- Description: Articles on team communication, productivity, AI, and workplace collaboration.
-
-### Terms of Service
-- URL: https://zyncspace.com/terms-of-service
+- URL: https://zyncspace.in/blogs
+- Description: Articles on AI, software engineering, communication, and productivity.
 
 ### Privacy Policy
-- URL: https://zyncspace.com/privacy-policy
+- URL: https://zyncspace.in/privacy-policy
+- Description: Data collection and privacy practices.
+
+### Terms of Service
+- URL: https://zyncspace.in/terms-of-service
+- Description: Terms and conditions.
+
+## Blog Posts
+
+- evolution-of-workplace-communication
+  - URL: https://zyncspace.in/blogs/evolution-of-workplace-communication
+  - Description: >-
+- building-trust-through-communication
+  - URL: https://zyncspace.in/blogs/building-trust-through-communication
+  - Description: >-
+- cross-cultural-communication
+  - URL: https://zyncspace.in/blogs/cross-cultural-communication
+  - Description: >-
+- clear-communication-team-success
+  - URL: https://zyncspace.in/blogs/clear-communication-team-success
+  - Description: >-
+- psychology-of-effective-communication
+  - URL: https://zyncspace.in/blogs/psychology-of-effective-communication
+  - Description: >-
+- remote-work-communication
+  - URL: https://zyncspace.in/blogs/remote-work-communication
+  - Description: >-
+- written-communication-digital-age
+  - URL: https://zyncspace.in/blogs/written-communication-digital-age
+  - Description: >-
+- top-communication-tools
+  - URL: https://zyncspace.in/blogs/top-communication-tools
+  - Description: >-
+- meeting-culture-problem
+  - URL: https://zyncspace.in/blogs/meeting-culture-problem
+  - Description: >-
+- navigating-difficult-conversations
+  - URL: https://zyncspace.in/blogs/navigating-difficult-conversations
+  - Description: >-
+- future-workplace-communication
+  - URL: https://zyncspace.in/blogs/future-workplace-communication
+  - Description: >-
+- non-verbal-communication-techniques
+  - URL: https://zyncspace.in/blogs/non-verbal-communication-techniques
+  - Description: >-
+- email-writing-that-get-results
+  - URL: https://zyncspace.in/blogs/email-writing-that-get-results
+  - Description: >-
+- feedback-frameworks-for-growth
+  - URL: https://zyncspace.in/blogs/feedback-frameworks-for-growth
+  - Description: >-
+- presentation-skills-guide
+  - URL: https://zyncspace.in/blogs/presentation-skills-guide
+  - Description: >-
+- team-collaboration-strategies
+  - URL: https://zyncspace.in/blogs/team-collaboration-strategies
+  - Description: >-
+- crisis-communication-guide
+  - URL: https://zyncspace.in/blogs/crisis-communication-guide
+  - Description: >-
+- performance-review-conversations
+  - URL: https://zyncspace.in/blogs/performance-review-conversations
+  - Description: >-
+- top-free-alternatives-for-slack
+  - URL: https://zyncspace.in/blogs/top-free-alternatives-for-slack
+  - Description: >-
+- >-
+  - URL: https://zyncspace.in/blogs/the-best-free-slack-alternative-for-training-teams-in-2025-and-why-we-built-zyncspace-copy
+  - Description: >-
+- the-future-of-workplace-messaging
+  - URL: https://zyncspace.in/blogs/the-future-of-workplace-messaging
+  - Description: >-
+- communication-models-workplace
+  - URL: https://zyncspace.in/blogs/communication-models-workplace
+  - Description: >-
+- ai-in-workplace-communication
+  - URL: https://zyncspace.in/blogs/ai-in-workplace-communication
+  - Description: >-
+- building-inclusive-communication
+  - URL: https://zyncspace.in/blogs/building-inclusive-communication
+  - Description: >-
+- active-listening
+  - URL: https://zyncspace.in/blogs/active-listening
+  - Description: >-
 
 ## Machine-Readable Feeds
-- Sitemap: https://zyncspace.com/sitemap.xml
-- RSS Feed: https://zyncspace.com/feed.xml
-- Robots: https://zyncspace.com/robots.txt
+- Sitemap: https://zyncspace.in/sitemap.xml
+- RSS Feed: https://zyncspace.in/feed.xml
+- Robots: https://zyncspace.in/robots.txt
 
-## Contact Information
-- Website: https://zyncspace.com
+## Contact
+- Website: https://zyncspace.in
 - Consulting: atul.zync@gmail.com
 - Support: support@zyncspace.com
 

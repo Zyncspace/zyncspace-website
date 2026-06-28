@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import Analytics from '@/components/seo/Analytics';
 import { buildSiteMetadata, JsonLd, jsonLdGraph, organizationSchema, websiteSchema } from '@/lib/metadata';
 import './globals.css';
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrains.variable}`}>
       <body>
+        <Analytics />
         <JsonLd data={jsonLdGraph(organizationSchema(), websiteSchema())} />
         <Navbar />
         {children}

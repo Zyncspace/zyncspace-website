@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { SITE_URL } from '@/lib/site-url';
 import type { BlogPost, PageContent } from './types';
 
 const ROOT = process.cwd();
@@ -36,7 +37,7 @@ export function getAllBlogPosts(): BlogPost[] {
         description: String(data.description || ''),
         keywords: String(data.keywords || ''),
         datePublished: String(data.datePublished || ''),
-        ogImage: String(data.ogImage || 'https://zyncspace.com/assets/images/hero-dashboard.png'),
+        ogImage: String(data.ogImage || `${SITE_URL}/assets/images/hero-dashboard.png`),
         jsonLd: (data.jsonLd as Record<string, unknown>) || null,
         content,
         styles: '',
@@ -56,6 +57,6 @@ export function getAllBlogSlugs(): string[] {
   return getAllBlogPosts().map((p) => p.slug);
 }
 
-export const SITE_URL = 'https://zyncspace.com';
+export { SITE_URL } from '@/lib/site-url';
 
 export { SEO_ROUTES as STATIC_ROUTES } from '@/lib/seo-config';

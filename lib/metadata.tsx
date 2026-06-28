@@ -196,7 +196,7 @@ export function organizationSchema(): WithContext<Organization> {
     },
     description: SITE_DESCRIPTION,
     email: siteContact.email,
-    sameAs: [SOCIAL.twitterUrl, SOCIAL.linkedin],
+    sameAs: [SOCIAL.twitterUrl, SOCIAL.linkedin, SOCIAL.github, SOCIAL.youtube],
     contactPoint: [
       {
         '@type': 'ContactPoint',

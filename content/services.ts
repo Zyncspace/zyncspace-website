@@ -40,7 +40,7 @@ export const servicesContent = {
   ],
 
   capabilities: {
-    label: "Capabilities & Competencies",
+    label: "Software Engineering & AI Consulting",
     title: "COMPREHENSIVE DIGITAL ARCHITECTURE",
     description:
       "We operate at the convergence of cutting-edge software engineering, creative direction, performance marketing, and proprietary artificial intelligence. We design the infrastructure of tomorrow, today.",
@@ -700,6 +700,7 @@ export const servicesContent = {
     social: [
       { label: "LinkedIn", href: "https://linkedin.com/company/zyncspace" },
       { label: "Twitter (X)", href: "https://twitter.com/zyncspace" },
+      { label: "YouTube", href: "https://www.youtube.com/@zyncspace" },
       { label: "GitHub", href: "https://github.com/zyncspace" },
     ],
   },

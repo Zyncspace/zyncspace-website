@@ -145,7 +145,7 @@ export default function Navbar() {
         <Link href="/" className="logo" aria-label="Home" onClick={closeMobile}>
           <img
             src="/assets/images/zyncspace-logo.png"
-            alt=""
+            alt="ZyncSpace logo"
             width={132}
             height={36}
             className="logo-img"

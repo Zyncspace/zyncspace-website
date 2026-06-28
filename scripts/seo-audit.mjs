@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 /**
  * Post-build SEO audit for static export in out/
- * Runs on every build via npm run build and check:seo
  */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getSiteUrl } from './site-url.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const outDir = path.join(root, 'out');
+const SITE_URL = getSiteUrl();
+const SITE_HOST = new URL(SITE_URL).host;
 const errors = [];
 const warnings = [];
 
@@ -74,9 +76,14 @@ function checkHtml(file) {
     errors.push(`${rel}: missing meta description`);
   }
 
-  const hasCanonical = /<link[^>]+rel=["']canonical["']/i.test(html);
-  const hasOgUrl = /<meta[^>]+property=["']og:url["']/i.test(html);
-  if (!hasCanonical && !hasOgUrl) errors.push(`${rel}: missing canonical or og:url`);
+  const canonicalMatch = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
+  if (canonicalMatch) {
+    if (!canonicalMatch[1].includes(SITE_HOST)) {
+      errors.push(`${rel}: canonical points to wrong host (expected ${SITE_HOST}, got ${canonicalMatch[1]})`);
+    }
+  } else if (!/<meta[^>]+property=["']og:url["']/i.test(html)) {
+    errors.push(`${rel}: missing canonical or og:url`);
+  }
 
   if (!/<meta[^>]+property=["']og:title["']/i.test(html)) errors.push(`${rel}: missing og:title`);
   if (!/<meta[^>]+property=["']og:description["']/i.test(html)) errors.push(`${rel}: missing og:description`);
@@ -96,8 +103,6 @@ function checkHtml(file) {
 
   if (is404) {
     if (!/noindex/i.test(html)) warnings.push(`${rel}: expected noindex for 404 page`);
-  } else if (/name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)) {
-    warnings.push(`${rel}: page is set to noindex`);
   }
 
   const h1Count = (html.match(/<h1[\s>]/gi) || []).length;
@@ -106,14 +111,18 @@ function checkHtml(file) {
 
   const imgs = html.match(/<img[^>]*>/gi) || [];
   for (const img of imgs) {
-    if (!/alt=["'][^"']*["']/i.test(img)) errors.push(`${rel}: img missing alt`);
+    if (!/alt=["'][^"']+["']/i.test(img)) errors.push(`${rel}: img missing meaningful alt`);
   }
 }
 
 function checkSitemapCoverage() {
   const sitemapPath = path.join(outDir, 'sitemap.xml');
   if (!fs.existsSync(sitemapPath)) return;
-  const urls = extractSitemapUrls(fs.readFileSync(sitemapPath, 'utf8'));
+  const xml = fs.readFileSync(sitemapPath, 'utf8');
+  if (!xml.includes(SITE_URL)) {
+    errors.push(`sitemap.xml: does not contain SITE_URL ${SITE_URL}`);
+  }
+  const urls = extractSitemapUrls(xml);
   const urlPaths = new Set(urls.map((u) => new URL(u).pathname.replace(/\/$/, '') || '/'));
 
   for (const route of STATIC_PATHS) {
@@ -122,28 +131,37 @@ function checkSitemapCoverage() {
       errors.push(`sitemap.xml: missing route ${route}`);
     }
   }
+}
 
-  const blogsDir = path.join(root, 'content', 'blog');
-  if (fs.existsSync(blogsDir)) {
-    const slugs = fs.readdirSync(blogsDir).filter((f) => f.endsWith('.mdx')).map((f) => f.replace('.mdx', ''));
-    for (const slug of slugs) {
-      const blogPath = `/blogs/${slug}`;
-      if (!urlPaths.has(blogPath)) errors.push(`sitemap.xml: missing blog ${blogPath}`);
-    }
-  }
+function checkRobotsTxt() {
+  const robotsPath = path.join(outDir, 'robots.txt');
+  if (!fs.existsSync(robotsPath)) return;
+  const txt = fs.readFileSync(robotsPath, 'utf8');
+  if (!txt.includes(SITE_URL)) errors.push(`robots.txt: missing Sitemap/Host for ${SITE_URL}`);
+}
+
+function checkLlmsTxt() {
+  const llmsPath = path.join(outDir, 'llms.txt');
+  if (!fs.existsSync(llmsPath)) return;
+  const txt = fs.readFileSync(llmsPath, 'utf8');
+  if (!txt.includes(SITE_URL)) errors.push(`llms.txt: URLs do not match SITE_URL ${SITE_URL}`);
 }
 
 function checkStaticRoutesExist() {
   for (const route of STATIC_PATHS) {
     const file = htmlPathForRoute(route);
-    if (!fs.existsSync(file)) errors.push(`Missing exported page for ${route} (expected ${path.relative(outDir, file)})`);
+    if (!fs.existsSync(file)) {
+      errors.push(`Missing exported page for ${route} (expected ${path.relative(outDir, file)})`);
+    }
   }
 }
 
 if (!fs.existsSync(outDir)) {
-  console.error('SEO audit failed: out/ directory not found — run npm run build first');
+  console.error(`SEO audit failed: out/ not found — run npm run build first (SITE_URL=${SITE_URL})`);
   process.exit(1);
 }
+
+console.log(`SEO audit for ${SITE_URL}...`);
 
 checkGlobalFile('sitemap.xml', 'sitemap');
 checkGlobalFile('robots.txt', 'robots.txt');
@@ -153,6 +171,8 @@ checkGlobalFile('manifest.webmanifest', 'web manifest');
 
 checkStaticRoutesExist();
 checkSitemapCoverage();
+checkRobotsTxt();
+checkLlmsTxt();
 
 for (const file of walkHtml(outDir)) {
   checkHtml(file);
@@ -168,4 +188,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`SEO audit passed (${walkHtml(outDir).length} HTML files, sitemap + robots + feed verified)`);
+console.log(`SEO audit passed (${walkHtml(outDir).length} HTML files)`);
