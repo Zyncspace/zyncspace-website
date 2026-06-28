@@ -7,7 +7,6 @@
     ".next/**",
     "out/**",
     "node_modules/**",
-    "service-based-website/**",
     "**/*.test.ts",
     "**/*.test.tsx",
     "content/blog/**"

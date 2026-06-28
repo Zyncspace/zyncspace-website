@@ -20,8 +20,6 @@ module.exports = {
         'node_modules',
         '\\.next',
         '^out',
-        'service-based-website',
-        'playwright-report',
         'coverage',
       ],
     },
