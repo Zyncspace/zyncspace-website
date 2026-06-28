@@ -1,0 +1,180 @@
+1:"$Sreact.fragment"
+2:I[5865,["619","static/chunks/619-ba102abea3e3d0e4.js","177","static/chunks/app/layout-af13f8896b74776a.js"],"default"]
+3:I[9766,[],""]
+4:I[8924,[],""]
+5:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","883","static/chunks/app/(product)/blogs/%5Bslug%5D/page-d9475eaa2a201f7f.js"],""]
+e:I[7150,[],""]
+:HL["/_next/static/media/bb3ef058b751a6ad-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/eaead17c7dbfcd5d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/6ba8a6bf556329bb.css","style"]
+0:{"P":null,"b":"_AE7Ita-pV4xemnk2X_wQ","p":"","c":["","blogs","written-communication-digital-age"],"i":false,"f":[[["",{"children":["(product)",{"children":["blogs",{"children":[["slug","written-communication-digital-age","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/6ba8a6bf556329bb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_f367f3 __variable_0a80b4 __variable_3c557b","children":["$","body",null,{"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"ZyncSpace\",\"url\":\"https://zyncspace.com\",\"logo\":\"https://zyncspace.com/assets/images/zyncspace-logo.png\",\"sameAs\":[\"https://twitter.com/zyncspace\",\"https://linkedin.com/company/zyncspace\"]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"ZyncSpace\",\"url\":\"https://zyncspace.com\"}"}}],["$","$L2",null,{}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","footer",null,{"className":"footer","children":["$","div",null,{"className":"container","children":[["$","div",null,{"className":"footer-top","children":[["$","div",null,{"className":"footer-brand","children":[["$","$L5",null,{"href":"/","className":"logo","children":["$","img",null,{"src":"/assets/images/zyncspace-footer-logo.svg","alt":"ZyncSpace","width":140}]}],["$","p",null,{"children":"We combine advanced artificial intelligence pipelines, robust backend engineering, pixel-perfect UX/UI design systems, and hyper-targeted conversion funnels to scale businesses globally."}]]}],[["$","div","Services",{"className":"footer-col","children":[["$","h4",null,{"children":"Services"}],["$","ul",null,{"children":[["$","li","/services",{"children":["$","$L5",null,{"href":"/services","children":"Capabilities"}]}],["$","li","/services/framework",{"children":["$","$L5",null,{"href":"/services/framework","children":"Framework"}]}],["$","li","/services/technology",{"children":["$","$L5",null,{"href":"/services/technology","children":"Technology Stack"}]}],["$","li","/services/industries",{"children":["$","$L5",null,{"href":"/services/industries","children":"Industries"}]}],["$","li","/services/case-studies",{"children":["$","$L5",null,{"href":"/services/case-studies","children":"Case Studies"}]}],["$","li","/services/pricing",{"children":["$","$L5",null,{"href":"/services/pricing","children":"Consulting Pricing"}]}]]}]]}],["$","div","Product",{"className":"footer-col","children":[["$","h4",null,{"children":"Product"}],["$","ul",null,{"children":[["$","li","/features",{"children":["$","$L5",null,{"href":"/features","children":"Features"}]}],["$","li","/use-cases",{"children":["$","$L5",null,{"href":"/use-cases","children":"Use Cases"}]}],["$","li","/pricing",{"children":["$","$L5",null,{"href":"/pricing","children":"Pricing"}]}],["$","li","/blogs",{"children":["$","$L5",null,{"href":"/blogs","children":"Blog"}]}],["$","li","/about",{"children":["$","$L5",null,{"href":"/about","children":"About"}]}],["$","li","/careers",{"children":["$","$L5",null,{"href":"/careers","children":"Careers"}]}]]}]]}],"$L6"],"$L7"]}],"$L8"]}]}]]}]}]]}],{"children":["(product)","$L9",{"children":["blogs","$La",{"children":[["slug","written-communication-digital-age","d"],"$Lb",{"children":["__PAGE__","$Lc",{},null,false]},null,false]},null,false]},null,false]},null,false],"$Ld",false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+10:I[4431,[],"OutletBoundary"]
+12:I[5278,[],"AsyncMetadataOutlet"]
+14:I[4431,[],"ViewportBoundary"]
+16:I[4431,[],"MetadataBoundary"]
+17:"$Sreact.suspense"
+6:["$","div","Company",{"className":"footer-col","children":[["$","h4",null,{"children":"Company"}],["$","ul",null,{"children":[["$","li","/contact",{"children":["$","$L5",null,{"href":"/contact","children":"Contact"}]}],["$","li","/privacy-policy",{"children":["$","$L5",null,{"href":"/privacy-policy","children":"Privacy Policy"}]}],["$","li","/terms-of-service",{"children":["$","$L5",null,{"href":"/terms-of-service","children":"Terms of Service"}]}]]}]]}]
+7:["$","div",null,{"className":"footer-col","children":[["$","h4",null,{"children":"SUBSCRIBE TO INTEL REPORTS"}],["$","p",null,{"style":{"color":"#888","fontSize":"0.95rem","marginBottom":10},"children":"SUBSCRIBE TO INTEL REPORTS"}],["$","div",null,{"className":"subscribe-input","children":[["$","input",null,{"type":"email","placeholder":"Corporate Email","aria-label":"Email for newsletter"}],["$","button",null,{"type":"button","children":"Subscribe"}]]}]]}]
+8:["$","div",null,{"className":"footer-bottom","children":[["$","p",null,{"children":"© 2026 ZyncSpace AI-Driven Technology Consulting."}],["$","div",null,{"style":{"display":"flex","gap":16},"children":[["$","a","https://linkedin.com/company/zyncspace",{"href":"https://linkedin.com/company/zyncspace","target":"_blank","rel":"noopener noreferrer","style":{"color":"#888"},"children":"LinkedIn"}],["$","a","https://twitter.com/zyncspace",{"href":"https://twitter.com/zyncspace","target":"_blank","rel":"noopener noreferrer","style":{"color":"#888"},"children":"Twitter (X)"}],["$","a","https://github.com/zyncspace",{"href":"https://github.com/zyncspace","target":"_blank","rel":"noopener noreferrer","style":{"color":"#888"},"children":"GitHub"}]]}]]}]
+9:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:3:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:f:0:1:1:props:children:1:props:children:props:children:3:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:3:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:3:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+a:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+b:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+c:["$","$1","c",{"children":["$Lf",null,["$","$L10",null,{"children":["$L11",["$","$L12",null,{"promise":"$@13"}]]}]]}]
+d:["$","$1","h",{"children":[null,[["$","$L14",null,{"children":"$L15"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L16",null,{"children":["$","div",null,{"hidden":true,"children":["$","$17",null,{"fallback":null,"children":"$L18"}]}]}]]}]
+19:T26b6,
+    <article>
+      <header class="blog-header">
+        <div class="container">
+          <a href="/blogs" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Blog
+          </a>
+          <h2>Mastering Written Communication in the Digital Age</h2>
+          <div class="blog-meta">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              January 5, 2026
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              8 min read
+            </span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              Writing Skills
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <section class="blog-content">
+        <div class="container">
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=1200&h=600&fit=crop" alt="Written communication digital age" class="blog-image">
+          
+          <div class="blog-body">
+            <p>In today's digital workplace, most of our communication happens through written channels—emails, chat messages, documents, and collaboration tools. The ability to convey ideas clearly in writing has become one of the most valuable professional skills.</p>
+
+            <h2>Why Written Communication Matters More Than Ever</h2>
+            <p>Consider this: the average professional receives 121 emails per day and sends around 40. In chat platforms, that number is even higher. Your written words represent you when you're not in the room—and they often form the lasting record of decisions and agreements.</p>
+
+            <p>Poor written communication leads to:</p>
+            <ul>
+              <li>Misunderstood instructions and missed expectations</li>
+              <li>Damaged professional relationships</li>
+              <li>Wasted time on clarification</li>
+              <li>Lost opportunities and sales</li>
+              <li>Confusion and frustration for everyone involved</li>
+            </ul>
+
+            <blockquote>"The difference between the right word and the almost right word is the difference between lightning and a lightning bug." — Mark Twain</blockquote>
+
+            <h2>The Principles of Clear Writing</h2>
+
+            <h3>1. Know Your Audience</h3>
+            <p>Before you write, consider who will read your message. A technical explanation for engineers differs greatly from one for executives. Adjust your vocabulary, detail level, and tone accordingly.</p>
+
+            <h3>2. Lead with the Point</h3>
+            <p>In professional communication, don't bury the lede. Start with your main message, request, or conclusion. Readers often scan messages and may miss critical information hidden at the bottom.</p>
+
+            <h3>3. Use Simple Language</h3>
+            <p>Clear writing isn't about sounding smart—it's about being understood. Use common words, short sentences, and active voice. If a 10-year-old could understand your message, it's probably clear enough.</p>
+
+            <h3>4. Structure for Scanning</h3>
+            <p>Break long messages into sections with clear headings. Use bullet points for lists. Highlight key information. Most readers will skim first and read deeply only if something catches their attention.</p>
+
+            <div class="dos-donts">
+              <div class="dos">
+                <h4>Do</h4>
+                <ul>
+                  <li>Use clear subject lines</li>
+                  <li>Get to the point quickly</li>
+                  <li>Break up long text</li>
+                  <li>Use bullet points</li>
+                  <li>Proofread before sending</li>
+                </ul>
+              </div>
+              <div class="donts">
+                <h4>Don't</h4>
+                <ul>
+                  <li>Use vague subject lines</li>
+                  <li>Write walls of text</li>
+                  <li>Use jargon unnecessarily</li>
+                  <li>Skip the greeting</li>
+                  <li>Send without reviewing</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Common Writing Mistakes to Avoid</h2>
+
+            <h3>Ambiguous Pronouns</h3>
+            <p>"They told us the deadline was moved" doesn't clarify who made the decision. Be specific about who did what.</p>
+
+            <h3>Missing Context</h3>
+            <p>Don't assume readers have the same background information you do. Provide enough context for your message to stand alone.</p>
+
+            <h3>Tone Deafness</h3>
+            <p>Written words lack vocal tone and body language. What's clearly a joke in your head may read as rude. When in doubt, err on the side of professionalism.</p>
+
+            <h3>Passive Aggressive Language</h3>
+            <p>Phrases like "As I mentioned before" or "Per my last email" create tension. Be direct without being hostile.</p>
+
+            <h2>Writing for Different Channels</h2>
+            <p>Each communication channel has its own conventions:</p>
+
+            <ul>
+              <li><strong>Email:</strong> More formal, best for detailed information and documentation</li>
+              <li><strong>Chat:</strong> Casual, concise, best for quick questions and updates</li>
+              <li><strong>Documentation:</strong> Structured, thorough, optimized for future reference</li>
+              <li><strong>Video descriptions:</strong> Clear agenda, action items, and context</li>
+            </ul>
+
+            <h2>The Art of the Difficult Message</h2>
+            <p>Some messages are harder to write than others. Here's how to handle sensitive communications:</p>
+
+            <ol>
+              <li><strong>Delay sending:</strong> Write the message, then wait before reviewing</li>
+              <li><strong>Be kind but clear:</strong> Don't soften to the point of confusion</li>
+              <li><strong>Focus on facts:</strong> Stick to observable behaviors rather than judgments</li>
+              <li><strong>Offer next steps:</strong> End with clear direction or an open question</li>
+            </ol>
+
+            <h2>Practical Exercises to Improve</h2>
+            <p>Like any skill, written communication improves with practice:</p>
+            <ul>
+              <li>Edit one sentence from your last email to be clearer</li>
+              <li>Practice summarizing long messages in one sentence</li>
+              <li>Read your messages out loud before sending</li>
+              <li>Study examples of excellent business writing</li>
+              <li>Ask for feedback on your communication style</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>In the digital age, your written words are your ambassador. They represent you in your absence and often remain long after the conversation ends. Investing in your written communication skills pays dividends in every aspect of professional life.</p>
+
+            <p>At ZyncSpace, we believe great tools should help—not hinder—clear communication. That's why we've designed our platform to encourage thoughtful, organized, and effective written exchanges.</p>
+          </div>
+
+          <div class="blog-share">
+            <span>Share this article:</span>
+            <a href="#" class="share-btn" title="Share on Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="share-btn" title="Share on LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="share-btn" title="Copy link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </article>
+  
+f:[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"written-communication-digital-age\",\"description\":\"Master the art of written communication in the digital age with these essential tips for effective team collaboration.\",\"url\":\"https://zyncspace.com/blogs/written-communication-digital-age\",\"datePublished\":\"2026-04-08\",\"author\":{\"@type\":\"Organization\",\"name\":\"ZyncSpace\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ZyncSpace\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://zyncspace.com/assets/images/zyncspace-logo.png\"}}}"}}],["$","header",null,{"className":"blog-page-header","children":["$","div",null,{"className":"container","children":[["$","$L5",null,{"href":"/blogs","className":"btn btn-outline-dark","style":{"marginBottom":"2rem","display":"inline-flex"},"children":"← Back to Blog"}],["$","h1",null,{"children":"written-communication-digital-age"}],["$","p",null,{"style":{"color":"#ccc"},"children":"April 8, 2026"}]]}]}],["$","article",null,{"className":"blog-article-body","children":["$","div",null,{"className":"container","dangerouslySetInnerHTML":{"__html":"$19"}}]}]]
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+11:null
+1a:I[622,[],"IconMark"]
+13:{"metadata":[["$","title","0",{"children":"written-communication-digital-age - ZyncSpace Blog | ZyncSpace"}],["$","meta","1",{"name":"description","content":"Master the art of written communication in the digital age with these essential tips for effective team collaboration."}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","3",{"name":"keywords","content":"written communication, digital communication, workplace writing, email etiquette, messaging skills, professional writing"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","link","5",{"rel":"canonical","href":"https://zyncspace.com/blogs/written-communication-digital-age"}],["$","meta","6",{"property":"og:title","content":"written-communication-digital-age - ZyncSpace Blog"}],["$","meta","7",{"property":"og:description","content":"Master the art of written communication in the digital age with these essential tips for effective team collaboration."}],["$","meta","8",{"property":"og:url","content":"https://zyncspace.com/blogs/written-communication-digital-age"}],["$","meta","9",{"property":"og:site_name","content":"ZyncSpace"}],["$","meta","10",{"property":"og:image","content":"https://zyncspace.com/assets/images/hero-dashboard.png"}],["$","meta","11",{"property":"og:image:width","content":"1200"}],["$","meta","12",{"property":"og:image:height","content":"630"}],["$","meta","13",{"property":"og:image:alt","content":"written-communication-digital-age - ZyncSpace Blog"}],["$","meta","14",{"property":"og:type","content":"article"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:site","content":"@zyncspace"}],["$","meta","17",{"name":"twitter:title","content":"written-communication-digital-age - ZyncSpace Blog"}],["$","meta","18",{"name":"twitter:description","content":"Master the art of written communication in the digital age with these essential tips for effective team collaboration."}],["$","meta","19",{"name":"twitter:image","content":"https://zyncspace.com/assets/images/hero-dashboard.png"}],["$","link","20",{"rel":"icon","href":"/assets/images/favicon/favicon.ico"}],["$","link","21",{"rel":"apple-touch-icon","href":"/assets/images/favicon/apple-touch-icon.png"}],["$","$L1a","22",{}]],"error":null,"digest":"$undefined"}
+18:"$13:metadata"

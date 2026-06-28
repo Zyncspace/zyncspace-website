@@ -1,0 +1,15 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /preview/
+Disallow: /*?*
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+Host: https://zyncspace.com
+Sitemap: https://zyncspace.com/sitemap.xml

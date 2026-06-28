@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/(product)/about/page": "app/(product)/about/page.js",
+  "/(product)/careers/page": "app/(product)/careers/page.js",
+  "/(product)/blogs/page": "app/(product)/blogs/page.js",
+  "/(product)/contact/page": "app/(product)/contact/page.js",
+  "/(product)/pricing/page": "app/(product)/pricing/page.js",
+  "/(product)/privacy-policy/page": "app/(product)/privacy-policy/page.js",
+  "/(product)/terms-of-service/page": "app/(product)/terms-of-service/page.js",
+  "/(product)/features/page": "app/(product)/features/page.js",
+  "/(product)/blogs/[slug]/page": "app/(product)/blogs/[slug]/page.js",
+  "/(product)/use-cases/page": "app/(product)/use-cases/page.js",
+  "/page": "app/page.js",
+  "/services/case-studies/page": "app/services/case-studies/page.js",
+  "/services/framework/page": "app/services/framework/page.js",
+  "/services/industries/page": "app/services/industries/page.js",
+  "/services/page": "app/services/page.js",
+  "/services/pricing/page": "app/services/pricing/page.js",
+  "/services/technology/page": "app/services/technology/page.js"
+}

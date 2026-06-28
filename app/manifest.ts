@@ -1,0 +1,19 @@
+import type { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'ZyncSpace',
+    short_name: 'ZyncSpace',
+    description: 'AI-driven technology consulting and unified team workspace.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#f3f2eb',
+    theme_color: '#4F46E5',
+    icons: [
+      { src: '/assets/images/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { src: '/assets/images/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  };
+}
