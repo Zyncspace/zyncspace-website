@@ -1,11 +1,11 @@
 /** ZyncSpace Chat — industry use cases and vertical solutions */
 
-export type UseCaseHighlight = {
+type UseCaseHighlight = {
   title: string;
   description: string;
 };
 
-export type UseCaseWorkflowStep = {
+type UseCaseWorkflowStep = {
   title: string;
   description: string;
 };
