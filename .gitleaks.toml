@@ -1,0 +1,31 @@
+# Gitleaks config — extends defaults and allowlists known false positives.
+# See: https://github.com/gitleaks/gitleaks#configuration
+
+[extend]
+useDefault = true
+
+# Build output and caches (Next.js ephemeral keys are not real secrets).
+[[allowlists]]
+description = "Next.js and static export build artifacts"
+paths = [
+  '''(?i)\.next/''',
+  '''(?i)^out/''',
+  '''(?i)node_modules/''',
+]
+
+# Next.js auto-generated preview/RSC encryption keys in build manifests.
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Next.js preview and encryption key fields in build output"
+paths = [
+  '''(?i)\.next/''',
+]
+regexTarget = "match"
+regexes = [
+  '''previewModeSigningKey''',
+  '''previewModeEncryptionKey''',
+  '''encryptionKey''',
+  '''encryption\.key''',
+]
