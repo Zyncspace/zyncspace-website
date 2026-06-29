@@ -505,7 +505,6 @@
   line-height: var(--leading-normal);
 }
 
-
 @media (max-width: 900px) {
   .use-cases-pillar-grid,
   .use-cases-industries-grid,

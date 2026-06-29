@@ -545,7 +545,6 @@
   color: var(--muted-text);
 }
 
-
 @media (max-width: 900px) {
   .product-pricing-tier-grid,
   .product-pricing-calculator-results,

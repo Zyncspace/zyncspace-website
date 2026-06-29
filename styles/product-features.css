@@ -280,7 +280,6 @@
   line-height: var(--leading-normal);
 }
 
-
 @media (max-width: 900px) {
   .product-features-pillar-grid,
   .product-features-security-grid,
