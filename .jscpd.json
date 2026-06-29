@@ -9,6 +9,9 @@
     "node_modules/**",
     "**/*.test.ts",
     "**/*.test.tsx",
-    "content/blog/**"
+    "content/blog/**",
+    "content/product/**",
+    "css/v1/**",
+    "package-lock.json"
   ]
 }

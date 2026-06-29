@@ -263,25 +263,27 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  border: none;
 }
 
 .product-pricing-preset {
   padding: 0.4rem 0.9rem;
-  border: 1px solid var(--border-light);
+  border: none;
   border-radius: 999px;
-  background: #fff;
+  background: transparent;
   font-size: var(--text-sm);
+  color: var(--muted-text);
   cursor: pointer;
   transition:
-    border-color 0.2s,
-    background 0.2s;
+    background 0.2s,
+    color 0.2s;
 }
 
 .product-pricing-preset:hover,
 .product-pricing-preset.is-active {
-  border-color: var(--accent-brand);
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(79, 70, 229, 0.1);
   color: var(--accent-brand);
 }
 
@@ -543,35 +545,6 @@
   color: var(--muted-text);
 }
 
-/* ── CTA ── */
-.product-pricing-cta {
-  background: linear-gradient(135deg, #0d0d0c 0%, #1e1b4b 100%);
-  color: #fff;
-}
-
-.product-pricing-cta-inner {
-  text-align: center;
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.product-pricing-cta-inner h2 {
-  font-family: var(--font-serif);
-  font-size: var(--text-3xl);
-  margin-bottom: 1rem;
-}
-
-.product-pricing-cta-inner p {
-  color: #bbb;
-  margin-bottom: 2rem;
-}
-
-.product-pricing-cta-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
 
 @media (max-width: 900px) {
   .product-pricing-tier-grid,

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ProductPageCta from '@/components/product/ProductPageCta';
 import { productFeaturesContent as c } from '@/content/product-features';
 
 export default function FeaturesPageContent() {
@@ -118,20 +119,12 @@ export default function FeaturesPageContent() {
         </div>
       </section>
 
-      <section className="section-padding product-features-cta">
-        <div className="container product-features-cta-inner">
-          <h2>{c.cta.title}</h2>
-          <p>{c.cta.description}</p>
-          <div className="product-features-cta-actions">
-            <Link href={c.cta.primary.href} className="btn btn-white">
-              {c.cta.primary.label}
-            </Link>
-            <Link href={c.cta.secondary.href} className="btn btn-outline-dark">
-              {c.cta.secondary.label}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProductPageCta
+        title={c.cta.title}
+        description={c.cta.description}
+        primary={c.cta.primary}
+        secondary={c.cta.secondary}
+      />
     </>
   );
 }

@@ -1,0 +1,11 @@
+name: Download static site
+description: Download the static-site build artifact from the quality job
+
+runs:
+  using: composite
+  steps:
+    - name: Download build artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: static-site
+        path: out/

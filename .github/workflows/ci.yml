@@ -19,17 +19,7 @@ jobs:
       NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL != '' && vars.SITE_URL || 'https://www.zyncspace.in' }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.13.1
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
+      - uses: ./.github/actions/node-setup
 
       - name: Compress asset images
         run: npm run compress:assets
@@ -74,23 +64,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.13.1
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: static-site
-          path: out/
+      - uses: ./.github/actions/node-setup
+      - uses: ./.github/actions/download-site
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
@@ -106,23 +81,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.13.1
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: static-site
-          path: out/
+      - uses: ./.github/actions/node-setup
+      - uses: ./.github/actions/download-site
 
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12

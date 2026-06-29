@@ -23,7 +23,7 @@
 .service-page-header {
   background: linear-gradient(135deg, #0d0d0c 0%, #1a1a18 100%);
   color: #fff;
-  padding: 9rem 0 4rem;
+  padding: 9rem 0 clamp(4.5rem, 7vw, 6rem);
   text-align: center;
 }
 
@@ -52,6 +52,38 @@
 
 .product-page-inner {
   background: var(--light-bg);
+}
+
+/* Shared bottom CTA band for product pages */
+.product-page-cta {
+  background: linear-gradient(135deg, #0d0d0c 0%, #1e1b4b 100%);
+  color: #fff;
+}
+
+.product-page-cta-inner {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.product-page-cta-inner h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  margin-bottom: 1rem;
+}
+
+.product-page-cta-inner p {
+  color: #bbb;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 2rem;
+}
+
+.product-page-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .product-page-body .hero {
