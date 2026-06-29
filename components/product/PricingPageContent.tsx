@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PricingCalculator from '@/components/product/PricingCalculator';
+import ProductPageCta from '@/components/product/ProductPageCta';
 import { type ComparisonCell, productPricingContent as c } from '@/content/product-pricing';
 
 function ComparisonCellIcon({ value }: { value: ComparisonCell | string }) {
@@ -175,20 +176,12 @@ export default function PricingPageContent() {
         </div>
       </section>
 
-      <section className="section-padding product-pricing-cta">
-        <div className="container product-pricing-cta-inner">
-          <h2>{c.cta.title}</h2>
-          <p>{c.cta.description}</p>
-          <div className="product-pricing-cta-actions">
-            <Link href={c.cta.primary.href} className="btn btn-white">
-              {c.cta.primary.label}
-            </Link>
-            <Link href={c.cta.secondary.href} className="btn btn-outline-dark">
-              {c.cta.secondary.label}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProductPageCta
+        title={c.cta.title}
+        description={c.cta.description}
+        primary={c.cta.primary}
+        secondary={c.cta.secondary}
+      />
     </>
   );
 }

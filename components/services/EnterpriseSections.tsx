@@ -270,6 +270,7 @@ export function MediaShowcaseSection() {
                     className={`feature-hub-frame${index === activeFeature ? ' active' : ''}`}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
+                    fetchPriority={index === 0 ? 'high' : 'auto'}
                   />
                 ))}
               </div>
@@ -484,6 +485,8 @@ export function LeadershipTeamSection() {
                 alt={`${member.name}, ${member.role}`}
                 width={280}
                 height={280}
+                loading="lazy"
+                decoding="async"
               />
               <h3>{member.name}</h3>
               <p className="team-role">{member.role}</p>

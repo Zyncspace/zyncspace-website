@@ -120,7 +120,7 @@ export function CapabilityMatrixSection() {
           </div>
           <div className="node-grid">
             <div className="terminal-box">
-              <h4>Delivered Strategic Modules</h4>
+              <h3>Delivered Strategic Modules</h3>
               <ul>
                 {c.capabilityMatrix.modules.map((m) => (
                   <li key={m}>{m}</li>
@@ -207,11 +207,11 @@ export function CaseStudySection() {
           </div>
           <div className="case-study-body">
             <div>
-              <h4>{c.caseStudy.challenge.title}</h4>
+              <h3>{c.caseStudy.challenge.title}</h3>
               <p>{c.caseStudy.challenge.description}</p>
             </div>
             <div>
-              <h4>{c.caseStudy.solution.title}</h4>
+              <h3>{c.caseStudy.solution.title}</h3>
               <p>{c.caseStudy.solution.description}</p>
             </div>
           </div>
@@ -321,6 +321,8 @@ export function ProductShowcaseSection() {
                 alt="ZyncSpace workspace overview with chat, tasks, and collaboration"
                 width={640}
                 height={400}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

@@ -280,38 +280,6 @@
   line-height: var(--leading-normal);
 }
 
-/* ── CTA ── */
-.product-features-cta {
-  background: linear-gradient(135deg, #0d0d0c 0%, #1e1b4b 100%);
-  color: #fff;
-}
-
-.product-features-cta-inner {
-  text-align: center;
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.product-features-cta-inner h2 {
-  font-family: var(--font-serif);
-  font-size: var(--text-3xl);
-  margin-bottom: 1rem;
-}
-
-.product-features-cta-inner p {
-  color: #bbb;
-  font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
-  margin-bottom: 2rem;
-}
-
-.product-features-cta-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 900px) {
   .product-features-pillar-grid,
   .product-features-security-grid,
