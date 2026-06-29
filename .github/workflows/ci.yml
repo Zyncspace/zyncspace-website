@@ -19,6 +19,9 @@ jobs:
       NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL != '' && vars.SITE_URL || 'https://www.zyncspace.in' }}
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - uses: ./.github/actions/node-setup
 
       - name: Compress asset images
@@ -64,6 +67,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - uses: ./.github/actions/node-setup
       - uses: ./.github/actions/download-site
 
@@ -81,6 +87,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - uses: ./.github/actions/node-setup
       - uses: ./.github/actions/download-site
 
