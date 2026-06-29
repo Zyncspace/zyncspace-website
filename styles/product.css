@@ -388,6 +388,7 @@
   z-index: 2;
 }
 
+.case-study-body h3,
 .case-study-body h4 {
   font-family: var(--font-sans);
   color: #ccc;

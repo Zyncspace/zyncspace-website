@@ -45,13 +45,18 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <Link href="/" className="logo">
-              <img src="/assets/images/zyncspace-footer-logo.svg" alt="ZyncSpace" width={140} />
+              <img
+                src="/assets/images/zyncspace-footer-logo.svg"
+                alt="ZyncSpace"
+                width={140}
+                height={32}
+              />
             </Link>
             <p>{footer.brand.description}</p>
           </div>
           {columns.map((col) => (
             <div key={col.title} className="footer-col">
-              <h4>{col.title}</h4>
+              <h2 className="footer-col-title">{col.title}</h2>
               <ul>
                 {col.links.map((link) => (
                   <li key={link.href}>
@@ -62,7 +67,7 @@ export default function Footer() {
             </div>
           ))}
           <div className="footer-col">
-            <h4>{footer.newsletter.title}</h4>
+            <h2 className="footer-col-title">{footer.newsletter.title}</h2>
             <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 10 }}>
               {footer.newsletter.title}
             </p>

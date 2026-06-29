@@ -75,7 +75,9 @@ export default function FeaturesPageContent() {
                   alt={pillar.imageAlt}
                   width={720}
                   height={405}
-                  loading="lazy"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
                 />
               </div>
             </div>

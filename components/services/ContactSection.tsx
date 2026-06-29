@@ -60,7 +60,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
           ) : (
             <div className="office-list">
               <div className="office">
-                <h4>Email</h4>
+                <h3>Email</h3>
                 <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
                   <a href={`mailto:${siteContact.email}`} style={{ color: '#fff' }}>
                     {siteContact.email}
@@ -72,7 +72,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                 </p>
               </div>
               <div className="office">
-                <h4>{siteContact.location.city}</h4>
+                <h3>{siteContact.location.city}</h3>
                 <p style={{ color: '#ddd', fontSize: '0.95rem', lineHeight: 1.6 }}>
                   {siteContact.location.address}
                 </p>

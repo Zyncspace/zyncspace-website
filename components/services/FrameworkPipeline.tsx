@@ -77,7 +77,7 @@ export default function FrameworkPipeline({ embedded = false }: FrameworkPipelin
             </div>
           </div>
           <div className="framework-detail-deliverables">
-            <h4>Key Deliverables</h4>
+            <h3>Key Deliverables</h3>
             <ul className="framework-deliverables-list">
               {activeStage.deliverables.map((item) => (
                 <li key={item}>

@@ -141,6 +141,7 @@ textarea,
 }
 
 /* ── Footer & nav column titles ── */
+.footer-col h2,
 .footer-col h4,
 .nav-links {
   font-family: var(--font-sans);
