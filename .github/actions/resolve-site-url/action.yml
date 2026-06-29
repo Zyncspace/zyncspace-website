@@ -6,6 +6,10 @@ inputs:
     description: Optional override from workflow_dispatch
     required: false
     default: ''
+  var_site_url:
+    description: SITE_URL repository variable (pass vars.SITE_URL from the workflow)
+    required: false
+    default: ''
 
 outputs:
   url:
@@ -19,7 +23,7 @@ runs:
       shell: bash
       env:
         INPUT_SITE_URL: ${{ inputs.input_site_url }}
-        VAR_SITE_URL: ${{ vars.SITE_URL }}
+        VAR_SITE_URL: ${{ inputs.var_site_url }}
         REF_NAME: ${{ github.ref_name }}
       run: |
         if [ -n "$INPUT_SITE_URL" ]; then

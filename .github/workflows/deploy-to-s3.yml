@@ -31,6 +31,7 @@ jobs:
         id: site
         with:
           input_site_url: ${{ inputs.site_url }}
+          var_site_url: ${{ vars.SITE_URL }}
 
       - uses: ./.github/actions/node-setup
 
@@ -58,3 +59,8 @@ jobs:
       - uses: ./.github/actions/deploy-s3
         with:
           site_url: ${{ steps.site.outputs.url }}
+          cloudfront_distribution_id: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_REGION }}
+          s3_bucket_name: ${{ secrets.S3_BUCKET_NAME }}

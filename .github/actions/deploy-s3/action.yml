@@ -5,6 +5,22 @@ inputs:
   site_url:
     description: Public site URL for deploy summary
     required: true
+  cloudfront_distribution_id:
+    description: CloudFront distribution ID (pass vars.CLOUDFRONT_DISTRIBUTION_ID from the workflow)
+    required: false
+    default: ''
+  aws_access_key_id:
+    description: AWS access key (pass secrets.AWS_ACCESS_KEY_ID from the workflow)
+    required: true
+  aws_secret_access_key:
+    description: AWS secret key (pass secrets.AWS_SECRET_ACCESS_KEY from the workflow)
+    required: true
+  aws_region:
+    description: AWS region (pass secrets.AWS_REGION from the workflow)
+    required: true
+  s3_bucket_name:
+    description: S3 bucket name (pass secrets.S3_BUCKET_NAME from the workflow)
+    required: true
 
 runs:
   using: composite
@@ -33,14 +49,14 @@ runs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
+        aws-access-key-id: ${{ inputs.aws_access_key_id }}
+        aws-secret-access-key: ${{ inputs.aws_secret_access_key }}
+        aws-region: ${{ inputs.aws_region }}
 
     - name: Sync build output to S3
       shell: bash
       env:
-        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        S3_BUCKET_NAME: ${{ inputs.s3_bucket_name }}
       run: |
         aws s3 sync out/ "s3://${S3_BUCKET_NAME}/" \
           --delete \
@@ -51,13 +67,13 @@ runs:
     - name: Upload SEO files and cache static assets
       shell: bash
       env:
-        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        S3_BUCKET_NAME: ${{ inputs.s3_bucket_name }}
       run: chmod +x scripts/upload-seo-assets.sh && ./scripts/upload-seo-assets.sh "${S3_BUCKET_NAME}"
 
     - name: Set HTML cache headers
       shell: bash
       env:
-        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        S3_BUCKET_NAME: ${{ inputs.s3_bucket_name }}
       run: |
         aws s3 cp out/index.html "s3://${S3_BUCKET_NAME}/index.html" \
           --content-type "text/html; charset=utf-8" \
@@ -74,17 +90,17 @@ runs:
     - name: Configure S3 static website (index + error document)
       shell: bash
       env:
-        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        S3_BUCKET_NAME: ${{ inputs.s3_bucket_name }}
       run: |
         aws s3 website "s3://${S3_BUCKET_NAME}" \
           --index-document index.html \
           --error-document 404.html
 
     - name: Invalidate CloudFront cache
-      if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+      if: ${{ inputs.cloudfront_distribution_id != '' }}
       shell: bash
       env:
-        DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+        DISTRIBUTION_ID: ${{ inputs.cloudfront_distribution_id }}
       run: |
         aws cloudfront create-invalidation \
           --distribution-id "$DISTRIBUTION_ID" \
