@@ -25,6 +25,7 @@ coverage
 playwright-report
 test-results
 .lighthouseci
+*.report.html
 
 # Code quality reports
 .jscpd-report
