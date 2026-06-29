@@ -32,6 +32,7 @@ export default function Footer() {
       title: 'Company',
       links: [
         { label: 'Contact', href: serviceRoutes.contact },
+        { label: 'Trust Center', href: '/trust-center' },
         { label: 'Privacy Policy', href: '/privacy-policy' },
         { label: 'Terms of Service', href: '/terms-of-service' },
       ],

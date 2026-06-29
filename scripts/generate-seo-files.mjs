@@ -78,6 +78,7 @@ const STATIC_PAGES = [
   { path: '/pricing', name: 'Pricing', desc: 'Product pricing plans.' },
   { path: '/about', name: 'About', desc: 'Mission, team, and company story.' },
   { path: '/careers', name: 'Careers', desc: 'Open roles and culture.' },
+  { path: '/trust-center', name: 'Trust Center', desc: 'Security, privacy, and compliance posture.' },
   { path: '/contact', name: 'Contact', desc: 'Consulting, support, and partnership inquiries.' },
   { path: '/blogs', name: 'Blog', desc: 'Articles on AI, software engineering, communication, and productivity.' },
   { path: '/privacy-policy', name: 'Privacy Policy', desc: 'Data collection and privacy practices.' },

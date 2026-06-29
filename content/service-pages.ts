@@ -10,21 +10,22 @@ export const servicePageExtended: Record<string, ServicePageExtendedSection[]> =
     {
       title: 'End-to-End Digital Capability',
       paragraphs: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'ZyncSpace combines AI solutions, product engineering, cloud infrastructure, and UX design into one accountable delivery model. Instead of handing off between vendors, you get squads that own architecture, implementation, and production operations.',
+        'Whether you need a greenfield SaaS platform, an AI copilot on private data, or a legacy system migrated to the cloud, our teams work from documented reference architectures — not ad-hoc scripts.',
       ],
     },
     {
       title: 'How We Engage Enterprise Clients',
       paragraphs: [
-        'Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.',
-        'Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.',
+        'Every engagement starts with discovery: we audit your systems, quantify business impact, and align stakeholders on ROI before writing production code. Proof-of-concept sprints are available for AI and platform work when you need validation before scale.',
+        'Dedicated squads provide daily visibility through CI/CD pipelines, sprint demos, and written architecture decisions. Security reviews and compliance alignment are built into the delivery path — not bolted on at the end.',
       ],
     },
     {
       title: 'Capability Delivery Model',
       paragraphs: [
-        'Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus. Sed vel lectus. Donec facilisis laoreet ipsum. Aliquam erat volutpat.',
+        'Our eight-stage framework moves from strategy and architecture through design, development, testing, deployment, and continuous optimization. Each phase has quality gates, documentation deliverables, and clear handoff criteria.',
+        'Post-launch, managed services cover monitoring, patching, cost optimization, and quarterly innovation sprints so your platform keeps improving after go-live.',
       ],
     },
   ],

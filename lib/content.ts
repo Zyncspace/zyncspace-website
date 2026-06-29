@@ -1,10 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { blogIndexCards } from '@/content/blog-index';
 import { SITE_URL } from '@/lib/site-url';
 import type { BlogPost, PageContent } from './types';
 
 const ROOT = process.cwd();
+const indexBySlug = new Map(blogIndexCards.map((c) => [c.slug, c]));
 
 export function getPageContent(slug: string): PageContent {
   const file = path.join(ROOT, 'content/pages', `${slug}.json`);
@@ -20,6 +22,31 @@ export function getAllPageSlugs(): string[] {
     .map((f) => f.replace('.json', ''));
 }
 
+function parseBlogFile(slug: string): BlogPost {
+  const file = path.join(ROOT, 'content/blog', `${slug}.mdx`);
+  const raw = fs.readFileSync(file, 'utf8');
+  const { data, content } = matter(raw);
+  const card = indexBySlug.get(slug);
+  const aliases = Array.isArray(data.aliases) ? data.aliases.map(String) : [];
+
+  return {
+    slug,
+    title: String(data.title || card?.title || slug),
+    description: String(data.description || card?.excerpt || ''),
+    keywords: String(data.keywords || ''),
+    datePublished: String(card?.datePublished || data.datePublished || ''),
+    ogImage: String(data.ogImage || card?.thumbnail || `${SITE_URL}/assets/images/hero-dashboard.png`),
+    thumbnail: String(data.thumbnail || card?.thumbnail || data.ogImage || '/assets/images/hero-dashboard.png'),
+    category: String(card?.category || 'Team Communication'),
+    readTime: card?.readTime ?? null,
+    featured: card?.featured ?? false,
+    aliases,
+    jsonLd: (data.jsonLd as Record<string, unknown>) || null,
+    content,
+    styles: '',
+  };
+}
+
 export function getAllBlogPosts(): BlogPost[] {
   const dir = path.join(ROOT, 'content/blog');
   if (!fs.existsSync(dir)) return [];
@@ -27,34 +54,35 @@ export function getAllBlogPosts(): BlogPost[] {
   const posts = fs
     .readdirSync(dir)
     .filter((f) => f.endsWith('.mdx'))
-    .map((file) => {
-      const slug = file.replace('.mdx', '');
-      const raw = fs.readFileSync(path.join(dir, file), 'utf8');
-      const { data, content } = matter(raw);
-      return {
-        slug,
-        title: String(data.title || slug),
-        description: String(data.description || ''),
-        keywords: String(data.keywords || ''),
-        datePublished: String(data.datePublished || ''),
-        ogImage: String(data.ogImage || `${SITE_URL}/assets/images/hero-dashboard.png`),
-        jsonLd: (data.jsonLd as Record<string, unknown>) || null,
-        content,
-        styles: '',
-      } satisfies BlogPost;
-    });
+    .map((file) => parseBlogFile(file.replace('.mdx', '')));
 
   return posts.sort(
-    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
+    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
   );
 }
 
 export function getBlogPost(slug: string): BlogPost | null {
-  return getAllBlogPosts().find((p) => p.slug === slug) ?? null;
+  const direct = getAllBlogPosts().find((p) => p.slug === slug);
+  if (direct) return direct;
+  return getAllBlogPosts().find((p) => p.aliases.includes(slug)) ?? null;
+}
+
+export function getCanonicalBlogSlug(slug: string): string | null {
+  const post = getBlogPost(slug);
+  return post?.slug ?? null;
 }
 
 export function getAllBlogSlugs(): string[] {
   return getAllBlogPosts().map((p) => p.slug);
+}
+
+export function getAllBlogRoutes(): string[] {
+  const routes = new Set<string>();
+  for (const post of getAllBlogPosts()) {
+    routes.add(post.slug);
+    for (const alias of post.aliases) routes.add(alias);
+  }
+  return [...routes];
 }
 
 export { SITE_URL } from '@/lib/site-url';

@@ -4,6 +4,12 @@
 @import '../styles/product.css';
 @import '../styles/enterprise-sections.css';
 @import '../styles/tech-stack.css';
+@import '../styles/product-features.css';
+@import '../styles/product-pricing.css';
+@import '../styles/legal-pages.css';
+@import '../styles/services-page.css';
+@import '../styles/careers-page.css';
+@import '../styles/trust-center.css';
 
 /* Next.js font variables → design system stacks */
 :root {

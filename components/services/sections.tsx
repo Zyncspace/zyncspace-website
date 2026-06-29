@@ -103,25 +103,27 @@ export function CapabilitiesSection({ embedded = false }: { embedded?: boolean }
 
 export function CapabilityMatrixSection() {
   return (
-    <section className="container section-padding" style={{ paddingTop: 0 }}>
-      <div className="active-node">
-        <div className="node-header">
-          <span className="label" style={{ color: '#666' }}>{c.capabilityMatrix.label}</span>
-          <h2>{c.capabilityMatrix.title}</h2>
-          <p>{c.capabilityMatrix.description}</p>
-        </div>
-        <div className="node-grid">
-          <div className="terminal-box">
-            <h4>Delivered Strategic Modules</h4>
-            <ul>
-              {c.capabilityMatrix.modules.map((m) => <li key={m}>{m}</li>)}
-            </ul>
+    <section className="section-padding services-matrix-wrap" style={{ paddingTop: 0 }}>
+      <div className="container">
+        <div className="active-node services-matrix">
+          <div className="node-header">
+            <span className="label" style={{ color: '#666' }}>{c.capabilityMatrix.label}</span>
+            <h2>{c.capabilityMatrix.title}</h2>
+            <p>{c.capabilityMatrix.description}</p>
           </div>
-          <div className="terminal-box matrix-sla">
-            <span className="label">{c.capabilityMatrix.sla.label}</span>
-            <h3 className="sla-value">{c.capabilityMatrix.sla.value}</h3>
-            <p>{c.capabilityMatrix.sla.description}</p>
-            <Link href={serviceRoutes.contact} className="btn btn-white">{c.capabilityMatrix.sla.cta.label}</Link>
+          <div className="node-grid">
+            <div className="terminal-box">
+              <h4>Delivered Strategic Modules</h4>
+              <ul>
+                {c.capabilityMatrix.modules.map((m) => <li key={m}>{m}</li>)}
+              </ul>
+            </div>
+            <div className="terminal-box matrix-sla">
+              <span className="label">{c.capabilityMatrix.sla.label}</span>
+              <h3 className="sla-value">{c.capabilityMatrix.sla.value}</h3>
+              <p>{c.capabilityMatrix.sla.description}</p>
+              <Link href={serviceRoutes.contact} className="btn btn-white">{c.capabilityMatrix.sla.cta.label}</Link>
+            </div>
           </div>
         </div>
       </div>

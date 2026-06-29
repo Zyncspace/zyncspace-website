@@ -55,5 +55,6 @@ export const serviceRoutes = {
     blogs: '/blogs',
     about: '/about',
     careers: '/careers',
+    trustCenter: '/trust-center',
   },
 } as const;

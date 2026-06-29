@@ -28,6 +28,11 @@ export type BlogPost = {
   keywords: string;
   datePublished: string;
   ogImage: string;
+  thumbnail: string;
+  category: string;
+  readTime: string | null;
+  featured: boolean;
+  aliases: string[];
   jsonLd?: Record<string, unknown> | null;
   content: string;
   styles: string;

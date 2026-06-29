@@ -1,0 +1,247 @@
+/* Services hub page — alignment & mobile layout */
+
+.services-capabilities {
+  padding-top: 0;
+  background: var(--light-bg);
+}
+
+.services-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.services-capability-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.services-capability-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent-brand);
+  letter-spacing: 0.04em;
+}
+
+.services-capability-card h3 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.services-capability-card p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+/* Capability matrix — contained dark panel */
+.services-matrix-wrap {
+  background: var(--light-bg);
+}
+
+.services-matrix.active-node {
+  margin: 0;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 3.75rem);
+}
+
+.services-matrix .node-grid {
+  padding: 0;
+  gap: 1.25rem;
+}
+
+.services-matrix .matrix-sla .btn {
+  width: 100%;
+  max-width: 20rem;
+  margin: 0.5rem auto 0;
+}
+
+/* Extended copy blocks */
+.service-page-extended {
+  background: #fff;
+}
+
+.service-page-extended-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 2rem;
+  align-items: start;
+}
+
+.service-page-extended-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent-brand);
+  padding-top: 0.35rem;
+}
+
+.service-page-extended-block h2 {
+  grid-column: 2;
+  margin-top: 0;
+}
+
+.service-page-extended-block p {
+  grid-column: 2;
+  color: var(--muted-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 1rem;
+}
+
+.service-page-extended-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hub links */
+.services-hub-links {
+  background: var(--light-bg);
+  border-top: 1px solid var(--border-light);
+}
+
+.services-hub-links-header {
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+
+.services-hub-links-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.services-hub-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}
+
+.services-hub-link-card {
+  position: relative;
+  display: block;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 0;
+}
+
+.services-hub-link-card:hover {
+  border-color: var(--accent-brand);
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.08);
+}
+
+.services-hub-link-card h3 {
+  font-size: var(--text-lg);
+  margin: 0 2rem 0.5rem 0;
+  line-height: var(--leading-snug);
+}
+
+.services-hub-link-card p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--muted-text);
+  line-height: var(--leading-relaxed);
+}
+
+.services-hub-link-arrow {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.25rem;
+  color: var(--accent-brand);
+  font-size: 1.25rem;
+}
+
+/* Service page header — long titles */
+.service-page-header h1 {
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  line-height: 1.12;
+  word-break: break-word;
+  hyphens: auto;
+  padding: 0 0.5rem;
+}
+
+.service-page-desc {
+  padding: 0 0.25rem;
+}
+
+@media (max-width: 900px) {
+  .services-capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-page-extended-block {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .service-page-extended-num {
+    padding-top: 0;
+  }
+
+  .service-page-extended-block h2,
+  .service-page-extended-block p {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-matrix.active-node {
+    border-radius: 16px;
+    padding: 2rem 1rem;
+  }
+
+  .services-matrix .node-header {
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .services-matrix .node-header h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .services-matrix .terminal-box {
+    padding: 1.25rem;
+  }
+
+  .services-matrix .terminal-box ul li {
+    font-size: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .services-hub-links-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .service-page-header {
+    padding: 7rem 0 2.5rem;
+  }
+
+  .service-page-extended-inner {
+    padding: 0 0.25rem;
+  }
+
+  .service-page-extended-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-capability-card {
+    padding: 1.25rem;
+  }
+
+  .services-hub-link-card {
+    padding: 1.25rem;
+  }
+}

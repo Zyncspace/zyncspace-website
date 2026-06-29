@@ -28,6 +28,7 @@ const STATIC_PATHS = [
   '/pricing',
   '/about',
   '/careers',
+  '/trust-center',
   '/contact',
   '/privacy-policy',
   '/terms-of-service',
