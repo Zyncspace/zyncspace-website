@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { servicesContent as c } from '@/content/services';
-import { serviceRoutes, siteContact } from '@/content/site';
-import { finalCta } from '@/content/enterprise-sections';
 import FrameworkPipeline from '@/components/services/FrameworkPipeline';
 import PartnerLogo from '@/components/services/PartnerLogo';
+import { finalCta } from '@/content/enterprise-sections';
+import { servicesContent as c } from '@/content/services';
+import { serviceRoutes, siteContact } from '@/content/site';
 
 export function HeroSection() {
   return (
@@ -11,7 +11,11 @@ export function HeroSection() {
       <div className="hero-bg" />
       <div className="container hero-content">
         <span className="hero-label">{c.hero.label}</span>
-        <h1>{c.hero.title[0]}<br />{c.hero.title[1]}</h1>
+        <h1>
+          {c.hero.title[0]}
+          <br />
+          {c.hero.title[1]}
+        </h1>
         <p>{c.hero.description}</p>
         <div className="hero-btns">
           {c.hero.cta.map((btn) => (
@@ -39,16 +43,19 @@ export function HeroSection() {
 
 export function PartnersSection() {
   const { label, items } = c.partners;
-  const marqueeItems = [...items, ...items];
+  const marqueeItems = [
+    ...items.map((name) => ({ id: `first-${name}`, name })),
+    ...items.map((name) => ({ id: `second-${name}`, name })),
+  ];
 
   return (
     <section className="logo-wall">
       <div className="container">
         <span className="label partners-label">{label}</span>
-        <div className="partners-marquee" aria-label="Technology partners and platforms">
+        <div className="partners-marquee">
           <div className="partners-marquee-track">
-            {marqueeItems.map((name, index) => (
-              <span key={`${name}-${index}`} className="partners-marquee-item">
+            {marqueeItems.map(({ id, name }) => (
+              <span key={id} className="partners-marquee-item">
                 <PartnerLogo name={name} />
               </span>
             ))}
@@ -107,7 +114,7 @@ export function CapabilityMatrixSection() {
       <div className="container">
         <div className="active-node services-matrix">
           <div className="node-header">
-            <span className="label" style={{ color: '#666' }}>{c.capabilityMatrix.label}</span>
+            <span className="label">{c.capabilityMatrix.label}</span>
             <h2>{c.capabilityMatrix.title}</h2>
             <p>{c.capabilityMatrix.description}</p>
           </div>
@@ -115,14 +122,18 @@ export function CapabilityMatrixSection() {
             <div className="terminal-box">
               <h4>Delivered Strategic Modules</h4>
               <ul>
-                {c.capabilityMatrix.modules.map((m) => <li key={m}>{m}</li>)}
+                {c.capabilityMatrix.modules.map((m) => (
+                  <li key={m}>{m}</li>
+                ))}
               </ul>
             </div>
             <div className="terminal-box matrix-sla">
               <span className="label">{c.capabilityMatrix.sla.label}</span>
               <h3 className="sla-value">{c.capabilityMatrix.sla.value}</h3>
               <p>{c.capabilityMatrix.sla.description}</p>
-              <Link href={serviceRoutes.contact} className="btn btn-white">{c.capabilityMatrix.sla.cta.label}</Link>
+              <Link href={serviceRoutes.contact} className="btn btn-white">
+                {c.capabilityMatrix.sla.cta.label}
+              </Link>
             </div>
           </div>
         </div>
@@ -135,7 +146,10 @@ export function FrameworkSection({ embedded = false }: { embedded?: boolean }) {
   return <FrameworkPipeline embedded={embedded} />;
 }
 
-export { default as TechStackSection, TechStackPageCta } from '@/components/services/TechStackSection';
+export {
+  default as TechStackSection,
+  TechStackPageCta,
+} from '@/components/services/TechStackSection';
 
 export function IndustriesSection({ embedded = false }: { embedded?: boolean }) {
   return (
@@ -144,13 +158,21 @@ export function IndustriesSection({ embedded = false }: { embedded?: boolean }) 
         {!embedded ? (
           <div style={{ marginBottom: 60 }}>
             <span className="label">{c.industries.label}</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>{c.industries.title[0]}<br />{c.industries.title[1]}</h2>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
+              {c.industries.title[0]}
+              <br />
+              {c.industries.title[1]}
+            </h2>
             <p className="section-lead">{c.industries.description}</p>
           </div>
         ) : null}
         <div className="verticals-grid">
           {c.industries.items.map((v) => (
-            <div key={v.title} className="vertical-card" style={{ background: `url('${v.imageUrl}') center/cover` }}>
+            <div
+              key={v.title}
+              className="vertical-card"
+              style={{ background: `url('${v.imageUrl}') center/cover` }}
+            >
               <div>
                 <span className="label vertical-label">SECTOR ACTIVE</span>
                 <h3 className="vertical-title">{v.title}</h3>
@@ -215,17 +237,26 @@ export function ConsultingPricingSection({ embedded = false }: { embedded?: bool
         ) : null}
         <div className="pricing-grid">
           {c.consultingPricing.tiers.map((tier) => (
-            <div key={tier.name} className={`pricing-card${tier.recommended ? ' recommended' : ''}`}>
+            <div
+              key={tier.name}
+              className={`pricing-card${tier.recommended ? ' recommended' : ''}`}
+            >
               {tier.recommended && <span className="label recommended-badge">RECOMMENDED</span>}
               <h3>{tier.name}</h3>
               <div className="pricing-price">
-                {tier.price}{tier.period && <span className="pricing-period"> {tier.period}</span>}
+                {tier.price}
+                {tier.period && <span className="pricing-period"> {tier.period}</span>}
               </div>
               <p className="pricing-desc">{tier.description}</p>
               <ul className="pricing-features">
-                {tier.features.map((f) => <li key={f}>✓ {f}</li>)}
+                {tier.features.map((f) => (
+                  <li key={f}>✓ {f}</li>
+                ))}
               </ul>
-              <Link href={serviceRoutes.contact} className={`btn btn-full ${tier.recommended ? 'btn-white' : 'btn-outline-light'}`}>
+              <Link
+                href={serviceRoutes.contact}
+                className={`btn btn-full ${tier.recommended ? 'btn-white' : 'btn-outline-light'}`}
+              >
                 {tier.cta.label}
               </Link>
             </div>
@@ -246,15 +277,22 @@ export function InsightsSection({ limit }: { limit?: number }) {
             <span className="label">{c.insights.label}</span>
             <h2>{c.insights.title}</h2>
           </div>
-          <Link href={c.insights.viewAllCta.href} className="btn btn-outline-light">{c.insights.viewAllCta.label}</Link>
+          <Link href={c.insights.viewAllCta.href} className="btn btn-outline-light">
+            {c.insights.viewAllCta.label}
+          </Link>
         </div>
         <div className="insights-grid">
           {items.map((item) => (
             <div key={item.title} className="insight-card">
-              <div className="insight-meta"><span>{item.category}</span><span>{item.date}</span></div>
+              <div className="insight-meta">
+                <span>{item.category}</span>
+                <span>{item.date}</span>
+              </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <div className="insight-byline">By {item.author} • {item.readTime}</div>
+              <div className="insight-byline">
+                By {item.author} • {item.readTime}
+              </div>
             </div>
           ))}
         </div>
@@ -273,8 +311,12 @@ export function ProductShowcaseSection() {
             <h2>{c.productShowcase.title}</h2>
             <p>{c.productShowcase.description}</p>
             <div className="showcase-ctas">
-              <Link href={serviceRoutes.product.features} className="btn btn-dark">Explore the Platform ↗</Link>
-              <Link href={siteContact.signupUrl} className="btn btn-outline-light">Start for Free</Link>
+              <Link href={serviceRoutes.product.features} className="btn btn-dark">
+                Explore the Platform ↗
+              </Link>
+              <Link href={siteContact.signupUrl} className="btn btn-outline-light">
+                Start for Free
+              </Link>
             </div>
             <div className="product-showcase-visual">
               <img
@@ -311,8 +353,12 @@ export function ServicesCtaBand() {
           {finalCta.description}
         </p>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href={finalCta.primary.href} className="btn btn-dark">{finalCta.primary.label}</Link>
-          <Link href={finalCta.secondary.href} className="btn btn-outline-light">{finalCta.secondary.label}</Link>
+          <Link href={finalCta.primary.href} className="btn btn-dark">
+            {finalCta.primary.label}
+          </Link>
+          <Link href={finalCta.secondary.href} className="btn btn-outline-light">
+            {finalCta.secondary.label}
+          </Link>
         </div>
       </div>
     </section>

@@ -37,6 +37,15 @@ section {
 .section-padding { padding: var(--space-section) 0; border-bottom: 1px solid var(--border-light); }
 .label { color: var(--muted-text); margin-bottom: 15px; display: block; }
 
+.active-node .label,
+.case-study-banner .label,
+.pricing-card.recommended .label,
+.contact-section .label,
+.terminal-box .label,
+.services-matrix .label {
+  color: var(--muted-text-on-dark);
+}
+
 /* --- Navigation (Dynamic Glassmorphism) --- */
 .navbar {
     background-color: rgba(13, 13, 12, 0.92);
@@ -671,7 +680,7 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: #666;
+    color: var(--muted-text-on-dark);
     margin-bottom: 22px;
 }
 .contact-tech-logos {
