@@ -105,8 +105,7 @@ function TechStackFull({ embedded = false }: { embedded?: boolean }) {
   }, [activeCategory, query]);
 
   const grouped = useMemo(() => {
-    const categories =
-      activeCategory === 'All Technologies' ? CATEGORIES : [activeCategory];
+    const categories = activeCategory === 'All Technologies' ? CATEGORIES : [activeCategory];
 
     return categories
       .map((category) => ({
@@ -152,7 +151,12 @@ function TechStackFull({ embedded = false }: { embedded?: boolean }) {
               <span className="sr-only">Search technologies</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
                 <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path
+                  d="M20 20l-3-3"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               </svg>
               <input
                 type="search"

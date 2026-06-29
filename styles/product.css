@@ -184,7 +184,9 @@
   padding: 10px 16px;
   color: #ccc;
   font-size: 0.85rem;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .nav-dropdown-link:hover {
@@ -538,7 +540,9 @@
   border: 1px solid var(--border-light);
   border-radius: 16px;
   padding: 2rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .blog-card:hover {

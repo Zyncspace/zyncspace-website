@@ -131,7 +131,9 @@
   border-radius: 14px;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   min-width: 0;
 }
 

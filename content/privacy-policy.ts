@@ -52,7 +52,9 @@ export const privacyPolicyContent: LegalPageContent = {
     {
       id: 'sharing',
       title: '3. Sharing Your Information',
-      paragraphs: ["We believe in protecting your privacy. Here's our stance on sharing your data:"],
+      paragraphs: [
+        "We believe in protecting your privacy. Here's our stance on sharing your data:",
+      ],
       list: [
         {
           label: 'We do not sell your personal data',
@@ -80,9 +82,7 @@ export const privacyPolicyContent: LegalPageContent = {
     {
       id: 'your-rights',
       title: '6. Your Rights',
-      paragraphs: [
-        'You have control over your data. You have the right to:',
-      ],
+      paragraphs: ['You have control over your data. You have the right to:'],
       list: [
         'Access your personal information',
         'Correct inaccurate or incomplete data',
@@ -91,8 +91,7 @@ export const privacyPolicyContent: LegalPageContent = {
         'Opt-out of marketing communications at any time',
         'Restrict processing of your data in certain circumstances',
       ],
-      closing:
-        'To exercise any of these rights, please contact us using the information below.',
+      closing: 'To exercise any of these rights, please contact us using the information below.',
     },
     {
       id: 'cookies',

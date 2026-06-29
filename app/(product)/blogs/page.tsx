@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { blogCategories } from '@/content/blog-index';
-import { getAllBlogPosts } from '@/lib/content';
-import { buildMetadata, JsonLd, collectionPageSchema } from '@/lib/metadata';
 import { siteContact } from '@/content/site';
+import { getAllBlogPosts } from '@/lib/content';
+import { buildMetadata, collectionPageSchema, JsonLd } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
   title: 'Blog',
@@ -83,7 +83,9 @@ export default function BlogsPage() {
                 <div className="blog-meta">
                   <span className="blog-category">{featured.category}</span>
                   <span>•</span>
-                  <time dateTime={featured.datePublished}>{formatDate(featured.datePublished)}</time>
+                  <time dateTime={featured.datePublished}>
+                    {formatDate(featured.datePublished)}
+                  </time>
                   {featured.readTime ? (
                     <>
                       <span>•</span>

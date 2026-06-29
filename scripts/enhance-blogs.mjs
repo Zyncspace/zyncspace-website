@@ -2,10 +2,11 @@
  * Apply SEO enhancements, data callouts, and FAQs to all blog MDX files.
  * Run: node scripts/enhance-blogs.mjs
  */
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+
 import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { promisify } from 'node:util';
 import matter from 'gray-matter';
 
 const execFileAsync = promisify(execFile);
@@ -80,7 +81,10 @@ function injectEnhancements(bodyHtml, enhancement) {
 function updateImagePath(content, slug, title) {
   const imagePath = `${IMAGE_BASE}/${slug}.webp`;
   return content
-    .replace(/<img[^>]+class="blog-image"[^>]*>/, `<img src="${imagePath}" alt="${title.replace(/"/g, '&quot;')}" class="blog-image" width="1200" height="675" loading="lazy">`)
+    .replace(
+      /<img[^>]+class="blog-image"[^>]*>/,
+      `<img src="${imagePath}" alt="${title.replace(/"/g, '&quot;')}" class="blog-image" width="1200" height="675" loading="lazy">`,
+    )
     .replace(/src="\/assets\/images\/[^"]+"/g, (m) => {
       if (m.includes('blog-image') || m.includes('blog/')) return m;
       return `src="${imagePath}"`;
@@ -114,7 +118,9 @@ async function main() {
     }
 
     let newContent = content;
-    const bodyMatch = content.match(/<div class="blog-body">([\s\S]*?)<\/div>\s*<\/div>\s*<\/section>/);
+    const bodyMatch = content.match(
+      /<div class="blog-body">([\s\S]*?)<\/div>\s*<\/div>\s*<\/section>/,
+    );
     if (bodyMatch) {
       const enhancedBody = injectEnhancements(bodyMatch[1], enhancement);
       newContent = content.replace(bodyMatch[1], enhancedBody);

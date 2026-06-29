@@ -1,6 +1,6 @@
 import LegalPageContent from '@/components/product/LegalPageContent';
 import { privacyPolicyContent } from '@/content/privacy-policy';
-import { JsonLd, breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/metadata';
+import { breadcrumbSchema, buildMetadata, JsonLd, webPageSchema } from '@/lib/metadata';
 
 const title = 'Privacy Policy';
 const description =
@@ -18,12 +18,7 @@ export const metadata = buildMetadata({
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Privacy Policy' },
-        ])}
-      />
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Privacy Policy' }])} />
       <JsonLd data={webPageSchema({ title: `${title} - ZyncSpace`, description, path })} />
       <LegalPageContent {...privacyPolicyContent} />
     </>

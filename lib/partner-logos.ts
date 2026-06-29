@@ -1,4 +1,5 @@
 import {
+  type SimpleIcon,
   siAnthropic,
   siAtlassian,
   siCloudflare,
@@ -27,7 +28,6 @@ import {
   siTwilio,
   siVercel,
   siZoho,
-  type SimpleIcon,
 } from 'simple-icons';
 
 export type PartnerLogoData =

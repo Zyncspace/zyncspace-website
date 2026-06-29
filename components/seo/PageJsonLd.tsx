@@ -1,4 +1,4 @@
-import { JsonLd, breadcrumbSchema, webPageSchema, serviceSchema } from '@/lib/metadata';
+import { breadcrumbSchema, JsonLd, serviceSchema, webPageSchema } from '@/lib/metadata';
 
 type BreadcrumbItem = { name: string; path?: string };
 
@@ -10,7 +10,13 @@ type PageJsonLdProps = {
   serviceType?: string;
 };
 
-export function PageJsonLd({ title, description, path, breadcrumbs, serviceType }: PageJsonLdProps) {
+export function PageJsonLd({
+  title,
+  description,
+  path,
+  breadcrumbs,
+  serviceType,
+}: PageJsonLdProps) {
   return (
     <>
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
@@ -28,10 +34,7 @@ export function ServiceHubJsonLd({ title, description }: { title: string; descri
       title={title}
       description={description}
       path="/services"
-      breadcrumbs={[
-        { name: 'Home', path: '/' },
-        { name: title },
-      ]}
+      breadcrumbs={[{ name: 'Home', path: '/' }, { name: title }]}
       serviceType="Technology Consulting"
     />
   );

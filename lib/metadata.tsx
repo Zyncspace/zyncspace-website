@@ -1,28 +1,28 @@
 import type { Metadata } from 'next';
 import type {
-  WithContext,
-  Organization,
-  WebSite,
   Article,
   BreadcrumbList,
-  WebPage,
-  Service,
-  ProfessionalService,
   CollectionPage,
   FAQPage,
+  Organization,
+  ProfessionalService,
+  Service,
+  WebPage,
+  WebSite,
+  WithContext,
 } from 'schema-dts';
+import { siteContact } from '@/content/site';
 import {
-  SITE_URL,
-  SITE_NAME,
-  SITE_DESCRIPTION,
   DEFAULT_KEYWORDS,
   DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
   SOCIAL,
   THEME_COLOR,
 } from '@/lib/seo-config';
-import { siteContact } from '@/content/site';
 
-export { SITE_URL, SITE_NAME } from '@/lib/seo-config';
+export { SITE_NAME, SITE_URL } from '@/lib/seo-config';
 
 export type PageMetaInput = {
   title: string;
@@ -345,7 +345,9 @@ export function articleSchema(post: {
   };
 }
 
-export function breadcrumbSchema(items: { name: string; path?: string }[]): WithContext<BreadcrumbList> {
+export function breadcrumbSchema(
+  items: { name: string; path?: string }[],
+): WithContext<BreadcrumbList> {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

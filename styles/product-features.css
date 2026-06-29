@@ -10,7 +10,7 @@
 }
 
 .product-features-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -20%;
   right: -10%;
@@ -96,7 +96,10 @@
   color: #ccc;
   font-size: var(--text-sm);
   text-decoration: none;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
 }
 
 .product-features-jump-link:hover {
@@ -253,7 +256,9 @@
   border: 1px solid var(--border-light);
   border-radius: 14px;
   padding: 1.5rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .product-features-extra-card:hover {

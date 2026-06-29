@@ -10,7 +10,10 @@ export default function ProductPageShell({ page, children }: Props) {
   const rawTitle = page.metadata.og?.title || page.metadata.title;
   const title = rawTitle.includes(' - ')
     ? rawTitle.split(' - ')[0]
-    : rawTitle.replace(/^ZyncSpace$/i, page.slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()));
+    : rawTitle.replace(
+        /^ZyncSpace$/i,
+        page.slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+      );
   const subtitle = page.metadata.description;
 
   return (

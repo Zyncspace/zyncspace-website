@@ -71,8 +71,14 @@ export const productPricingContent = {
       { feature: 'AI assistant', values: ['full', 'addon', 'copilot', 'addon', 'none', 'none'] },
       { feature: 'File sharing', values: ['full', 'full', 'full', 'full', 'full', 'full'] },
       { feature: 'Multi-workspace', values: ['full', 'limited', 'none', 'none', 'none', 'none'] },
-      { feature: 'End-to-end encryption', values: ['full', 'business', 'full', 'none', 'none', 'full'] },
-      { feature: 'Free plan', values: ['full', 'limited', 'limited', 'limited', 'limited', 'full'] },
+      {
+        feature: 'End-to-end encryption',
+        values: ['full', 'business', 'full', 'none', 'none', 'full'],
+      },
+      {
+        feature: 'Free plan',
+        values: ['full', 'limited', 'limited', 'limited', 'limited', 'full'],
+      },
       {
         feature: 'Starting price (pro)',
         values: ['$1/user', '$7.25/user', '$5/user', '$5/user', '$4.10/user', 'Free'],
@@ -108,4 +114,13 @@ export const productPricingContent = {
   },
 };
 
-export type ComparisonCell = 'full' | 'basic' | 'limited' | 'paid' | 'addon' | 'soon' | 'copilot' | 'business' | 'none';
+export type ComparisonCell =
+  | 'full'
+  | 'basic'
+  | 'limited'
+  | 'paid'
+  | 'addon'
+  | 'soon'
+  | 'copilot'
+  | 'business'
+  | 'none';

@@ -4,7 +4,9 @@ import { trustCenterContent as c, type TrustControl } from '@/content/trust-cent
 function ControlCard({ control }: { control: TrustControl }) {
   return (
     <article className="trust-control-card">
-      <span className={`trust-control-category trust-control-category--${control.category === 'Baseline' ? 'baseline' : 'feature'}`}>
+      <span
+        className={`trust-control-category trust-control-category--${control.category === 'Baseline' ? 'baseline' : 'feature'}`}
+      >
         {control.category}
       </span>
       <h3>{control.securityPolicy}</h3>
@@ -51,11 +53,12 @@ export default function TrustCenterPageContent() {
               <span className="label">Security blueprint</span>
               <h2 id="trust-controls-title">Controls & standards</h2>
               <p className="section-lead">
-                Baseline infrastructure and privacy policies, plus feature-specific protections for chat, AI, and encryption.
+                Baseline infrastructure and privacy policies, plus feature-specific protections for
+                chat, AI, and encryption.
               </p>
             </div>
 
-            <div className="trust-controls-table-wrap" role="region" aria-label="Security controls table">
+            <section className="trust-controls-table-wrap" aria-label="Security controls table">
               <table className="trust-controls-table">
                 <thead>
                   <tr>
@@ -69,7 +72,9 @@ export default function TrustCenterPageContent() {
                   {c.controls.map((control) => (
                     <tr key={control.id}>
                       <td>
-                        <span className={`trust-control-category trust-control-category--${control.category === 'Baseline' ? 'baseline' : 'feature'}`}>
+                        <span
+                          className={`trust-control-category trust-control-category--${control.category === 'Baseline' ? 'baseline' : 'feature'}`}
+                        >
                           {control.category}
                         </span>
                       </td>
@@ -80,7 +85,7 @@ export default function TrustCenterPageContent() {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </section>
 
             <div className="trust-controls-cards">
               {c.controls.map((control) => (

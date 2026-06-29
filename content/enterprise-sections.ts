@@ -21,7 +21,8 @@ export const valueProposition = {
       stat: '40%',
       label: 'Target cost reduction',
       title: 'Operational efficiency',
-      context: 'Typical drivers: cloud resource right-sizing, legacy decommissioning, and workflow automation.',
+      context:
+        'Typical drivers: cloud resource right-sizing, legacy decommissioning, and workflow automation.',
       description:
         'Consolidate fragmented tooling and automate manual processes so teams ship faster with less overhead.',
     },
@@ -29,7 +30,8 @@ export const valueProposition = {
       stat: '3×',
       label: 'Faster delivery cycles',
       title: 'Engineering velocity',
-      context: 'Achieved through dedicated squads, CI/CD pipelines, and incremental migration — not big-bang rewrites.',
+      context:
+        'Achieved through dedicated squads, CI/CD pipelines, and incremental migration — not big-bang rewrites.',
       description:
         'Structured sprints, automated quality gates, and AI-assisted development shorten release windows.',
     },
@@ -37,7 +39,8 @@ export const valueProposition = {
       stat: '99.9%',
       label: 'Availability target',
       title: 'Platform reliability',
-      context: 'Cloud-native architecture with observability, auto-scaling, and documented runbooks.',
+      context:
+        'Cloud-native architecture with observability, auto-scaling, and documented runbooks.',
       description:
         'Design for resilience so applications stay online during traffic spikes and infrastructure events.',
     },
@@ -54,22 +57,26 @@ export const whyChoose = {
     {
       id: 'ai',
       title: 'AI-First Engineering',
-      description: 'Intelligent systems with zero-retention pipelines — your data never trains public models.',
+      description:
+        'Intelligent systems with zero-retention pipelines — your data never trains public models.',
     },
     {
       id: 'cloud',
       title: 'Cloud-Native Architecture',
-      description: 'AWS, GCP, Azure, and Kubernetes — built to scale without re-architecting every quarter.',
+      description:
+        'AWS, GCP, Azure, and Kubernetes — built to scale without re-architecting every quarter.',
     },
     {
       id: 'security',
       title: 'Enterprise Security',
-      description: 'IAM enforcement, isolated VPCs, and automated security scanning in every CI pipeline.',
+      description:
+        'IAM enforcement, isolated VPCs, and automated security scanning in every CI pipeline.',
     },
     {
       id: 'agile',
       title: 'Agile Delivery',
-      description: 'Two-week sprints, documented gates, and stakeholder demos — no black-box development.',
+      description:
+        'Two-week sprints, documented gates, and stakeholder demos — no black-box development.',
     },
     {
       id: 'scale',
@@ -79,7 +86,8 @@ export const whyChoose = {
     {
       id: 'partnership',
       title: 'Long-Term Partnership',
-      description: 'Retainer models, knowledge transfer, and runbooks so your team owns the outcome.',
+      description:
+        'Retainer models, knowledge transfer, and runbooks so your team owns the outcome.',
     },
   ],
 };
@@ -187,7 +195,13 @@ export const referenceArchitectures = {
       subtitle: 'RAG + orchestration layer',
       description:
         'Isolated VPC, vector store (pgvector or managed), API gateway with strict IAM, and agent workers that never persist client prompts to public model training.',
-      layers: ['Client Apps', 'API Gateway', 'Agent Orchestrator', 'Vector DB', 'LLM Provider (zero-retention)'],
+      layers: [
+        'Client Apps',
+        'API Gateway',
+        'Agent Orchestrator',
+        'Vector DB',
+        'LLM Provider (zero-retention)',
+      ],
     },
     {
       title: 'Cloud-Native SaaS Platform',
@@ -201,7 +215,13 @@ export const referenceArchitectures = {
       subtitle: 'Strangler fig incremental cutover',
       description:
         'Parallel run of legacy and new services, feature flags for routing, database sync with validation gates, and rollback plans documented before go-live.',
-      layers: ['Legacy Monolith', 'Anti-Corruption Layer', 'New Services', 'Event Bus', 'Cutover Gate'],
+      layers: [
+        'Legacy Monolith',
+        'Anti-Corruption Layer',
+        'New Services',
+        'Event Bus',
+        'Cutover Gate',
+      ],
     },
   ],
 };
@@ -275,12 +295,32 @@ export const trustCompliance = {
       'Your proprietary data never trains public models. Client prompts, documents, and embeddings stay in your isolated environment or approved private endpoints — with contractual data-handling terms.',
   },
   badges: [
-    { title: 'IAM & Least Privilege', description: 'Role-based access, MFA enforcement, and scoped service accounts across all environments.' },
-    { title: 'Network Isolation', description: 'VPC-isolated workloads, private subnets for data stores, and strict security group policies.' },
-    { title: 'CORS & Environment Controls', description: 'Explicit allowlists per environment — no wildcard origins in production.' },
-    { title: 'Secure SDLC', description: 'Semgrep, CodeQL, gitleaks, and Trivy in CI on every merge.' },
-    { title: 'GDPR-Aligned Privacy', description: 'Data minimization, consent flows, and documented retention policies.' },
-    { title: 'Audit-Ready Deliverables', description: 'Architecture diagrams, runbooks, change logs, and penetration test reports.' },
+    {
+      title: 'IAM & Least Privilege',
+      description:
+        'Role-based access, MFA enforcement, and scoped service accounts across all environments.',
+    },
+    {
+      title: 'Network Isolation',
+      description:
+        'VPC-isolated workloads, private subnets for data stores, and strict security group policies.',
+    },
+    {
+      title: 'CORS & Environment Controls',
+      description: 'Explicit allowlists per environment — no wildcard origins in production.',
+    },
+    {
+      title: 'Secure SDLC',
+      description: 'Semgrep, CodeQL, gitleaks, and Trivy in CI on every merge.',
+    },
+    {
+      title: 'GDPR-Aligned Privacy',
+      description: 'Data minimization, consent flows, and documented retention policies.',
+    },
+    {
+      title: 'Audit-Ready Deliverables',
+      description: 'Architecture diagrams, runbooks, change logs, and penetration test reports.',
+    },
   ],
   frameworksNote:
     'SOC 2 Type II and ISO 27001: we implement controls aligned to these frameworks; formal certification is pursued per client and organizational roadmap.',
@@ -323,9 +363,19 @@ export const engineeringPractice = {
   description:
     'Enterprises buy the people solving the problem — not just a logo. Our founders and engineers embed with your team: architects, AI engineers, platform engineers, and design systems specialists.',
   highlights: [
-    { title: 'Backend & Platform', description: 'Distributed systems, API design, database scaling, and cloud cost optimization.' },
-    { title: 'AI & Data', description: 'RAG pipelines, agent orchestration, MLOps, and responsible AI governance.' },
-    { title: 'Frontend & Design Systems', description: 'Next.js product surfaces, accessibility, and conversion-focused UX.' },
+    {
+      title: 'Backend & Platform',
+      description:
+        'Distributed systems, API design, database scaling, and cloud cost optimization.',
+    },
+    {
+      title: 'AI & Data',
+      description: 'RAG pipelines, agent orchestration, MLOps, and responsible AI governance.',
+    },
+    {
+      title: 'Frontend & Design Systems',
+      description: 'Next.js product surfaces, accessibility, and conversion-focused UX.',
+    },
   ],
   links: [
     { label: 'Engineering Blog', href: '/blogs' },
@@ -340,15 +390,18 @@ export const productLines = {
   items: [
     {
       title: 'AI Business Automation',
-      description: 'Automate repetitive workflows using AI agents and intelligent integrations — scoped to your data boundary.',
+      description:
+        'Automate repetitive workflows using AI agents and intelligent integrations — scoped to your data boundary.',
     },
     {
       title: 'Enterprise Analytics',
-      description: 'Transform operational data into actionable insights with pipelines you control.',
+      description:
+        'Transform operational data into actionable insights with pipelines you control.',
     },
     {
       title: 'ZyncSpace Workspace',
-      description: 'Custom SaaS team platform — chat, tasks, calendar, and AI in one place. Accelerates adoption after we build.',
+      description:
+        'Custom SaaS team platform — chat, tasks, calendar, and AI in one place. Accelerates adoption after we build.',
     },
   ],
 };
@@ -393,7 +446,8 @@ export const faq = {
 export const resources = {
   label: 'Resources',
   title: 'Insights & Engineering Reports',
-  description: 'Architecture guides, AI governance notes, and performance engineering — from our engineering blog.',
+  description:
+    'Architecture guides, AI governance notes, and performance engineering — from our engineering blog.',
   items: [
     {
       type: 'Guide',

@@ -37,7 +37,9 @@
   border: 1px solid var(--border-light);
   border-radius: 16px;
   background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .value-pillar-card:hover {
@@ -348,7 +350,7 @@
 }
 
 .case-arch-list li::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: 0;
   color: var(--accent-brand);
@@ -532,7 +534,7 @@
 }
 
 .feature-hub-visual::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -629,7 +631,7 @@
   }
 
   .feature-hub-scrolly-track.is-scrolly {
-    height: auto !important;
+    height: auto;
     margin-bottom: 0;
   }
 }
@@ -640,7 +642,7 @@
   }
 
   .feature-hub-scrolly-track.is-scrolly {
-    height: auto !important;
+    height: auto;
     margin-bottom: 0;
   }
 
@@ -760,7 +762,10 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
   color: var(--light-text);
-  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .process-step-line {

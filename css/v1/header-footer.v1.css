@@ -138,11 +138,11 @@
   .nav-list {
     display: none;
   }
-  
+
   .header-actions .btn {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: flex;
   }
@@ -234,26 +234,26 @@
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
-  
+
   .footer-brand {
     grid-column: 1 / -1;
     text-align: center;
   }
-  
+
   .footer-brand p {
     max-width: 100%;
   }
-  
+
   .footer-brand .logo {
     justify-content: center;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
     text-align: center;
   }
-  
+
   .footer-social {
     justify-content: center;
   }
@@ -265,12 +265,12 @@
     gap: 24px;
     text-align: center;
   }
-  
+
   .footer-links {
     align-items: center;
     gap: 8px;
   }
-  
+
   .footer-link {
     font-size: 13px;
     padding: 6px 0;
@@ -281,16 +281,16 @@
   .footer {
     padding: 48px 0 24px;
   }
-  
+
   .footer-grid {
     gap: 20px;
   }
-  
+
   .footer-title {
     font-size: 12px;
     margin-bottom: 12px;
   }
-  
+
   .footer-link {
     font-size: 13px;
   }

@@ -102,8 +102,7 @@ export const careersContent = {
       },
       {
         title: 'Real Projects',
-        description:
-          'Work on actual features used by real users, not just tutorials or exercises.',
+        description: 'Work on actual features used by real users, not just tutorials or exercises.',
       },
       {
         title: 'Flexible Work',

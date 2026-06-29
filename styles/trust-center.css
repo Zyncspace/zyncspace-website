@@ -171,7 +171,7 @@
   border-bottom: none;
 }
 
-.trust-controls-table tbody th[scope='row'] {
+.trust-controls-table tbody th[scope="row"] {
   font-weight: var(--weight-semibold);
   color: var(--light-text);
   min-width: 11rem;

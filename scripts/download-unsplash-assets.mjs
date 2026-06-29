@@ -1,7 +1,7 @@
 /**
  * One-time migration: download Unsplash images into assets/ and rewrite references.
  */
-import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import sharp from 'sharp';
 

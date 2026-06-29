@@ -2,9 +2,9 @@
 /**
  * Post-build SEO audit for static export in out/
  */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { getSiteUrl } from './site-url.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -80,14 +80,17 @@ function checkHtml(file) {
   const canonicalMatch = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
   if (canonicalMatch) {
     if (!canonicalMatch[1].includes(SITE_HOST)) {
-      errors.push(`${rel}: canonical points to wrong host (expected ${SITE_HOST}, got ${canonicalMatch[1]})`);
+      errors.push(
+        `${rel}: canonical points to wrong host (expected ${SITE_HOST}, got ${canonicalMatch[1]})`,
+      );
     }
   } else if (!/<meta[^>]+property=["']og:url["']/i.test(html)) {
     errors.push(`${rel}: missing canonical or og:url`);
   }
 
   if (!/<meta[^>]+property=["']og:title["']/i.test(html)) errors.push(`${rel}: missing og:title`);
-  if (!/<meta[^>]+property=["']og:description["']/i.test(html)) errors.push(`${rel}: missing og:description`);
+  if (!/<meta[^>]+property=["']og:description["']/i.test(html))
+    errors.push(`${rel}: missing og:description`);
   if (!/<meta[^>]+property=["']og:image["']/i.test(html)) errors.push(`${rel}: missing og:image`);
 
   if (!/<meta[^>]+name=["']twitter:card["']/i.test(html)) {
@@ -158,7 +161,9 @@ function checkStaticRoutesExist() {
 }
 
 if (!fs.existsSync(outDir)) {
-  console.error(`SEO audit failed: out/ not found — run npm run build first (SITE_URL=${SITE_URL})`);
+  console.error(
+    `SEO audit failed: out/ not found — run npm run build first (SITE_URL=${SITE_URL})`,
+  );
   process.exit(1);
 }
 
@@ -180,11 +185,11 @@ for (const file of walkHtml(outDir)) {
 }
 
 if (warnings.length) {
-  console.warn('SEO audit warnings:\n' + warnings.join('\n'));
+  console.warn(`SEO audit warnings:\n${warnings.join('\n')}`);
 }
 
 if (errors.length) {
-  console.error('SEO audit failed:\n' + errors.slice(0, 80).join('\n'));
+  console.error(`SEO audit failed:\n${errors.slice(0, 80).join('\n')}`);
   if (errors.length > 80) console.error(`... and ${errors.length - 80} more`);
   process.exit(1);
 }

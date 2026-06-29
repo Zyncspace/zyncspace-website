@@ -1,9 +1,6 @@
 import Link from 'next/link';
-import {
-  productPricingContent as c,
-  type ComparisonCell,
-} from '@/content/product-pricing';
 import PricingCalculator from '@/components/product/PricingCalculator';
+import { type ComparisonCell, productPricingContent as c } from '@/content/product-pricing';
 
 function ComparisonCellIcon({ value }: { value: ComparisonCell | string }) {
   if (typeof value === 'string' && value.startsWith('$')) {
@@ -36,7 +33,10 @@ function ComparisonCellIcon({ value }: { value: ComparisonCell | string }) {
 
   const cell = value as ComparisonCell;
   return (
-    <span className={`product-pricing-table-cell product-pricing-table-cell--${cell}`} title={labels[cell]}>
+    <span
+      className={`product-pricing-table-cell product-pricing-table-cell--${cell}`}
+      title={labels[cell]}
+    >
       <span aria-hidden="true">{icons[cell]}</span>
       <span className="sr-only">{labels[cell]}</span>
     </span>
@@ -91,7 +91,7 @@ export default function PricingPageContent() {
                 )}
                 <h2>{tier.name}</h2>
                 <div className="product-pricing-tier-price">
-                  <span className="product-pricing-tier-amount" aria-label={`$${tier.priceValue}`}>
+                  <span className="product-pricing-tier-amount">
                     <span className="product-pricing-tier-currency">$</span>
                     <span className="product-pricing-tier-value">{tier.priceValue}</span>
                   </span>
@@ -108,7 +108,9 @@ export default function PricingPageContent() {
                 <Link
                   href={tier.cta.href}
                   className={`btn ${tier.featured ? 'btn-dark' : 'btn-outline-light'} btn-full`}
-                  {...(tier.cta.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  {...(tier.cta.href.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                 >
                   {tier.cta.label}
                 </Link>
@@ -131,7 +133,11 @@ export default function PricingPageContent() {
                 <tr>
                   <th scope="col">Features</th>
                   {c.comparison.columns.map((col) => (
-                    <th key={col} scope="col" className={col === 'ZyncSpace' ? 'is-zync' : undefined}>
+                    <th
+                      key={col}
+                      scope="col"
+                      className={col === 'ZyncSpace' ? 'is-zync' : undefined}
+                    >
                       {col}
                     </th>
                   ))}

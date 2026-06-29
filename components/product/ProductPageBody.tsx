@@ -1,5 +1,5 @@
-import type { PageContent } from '@/lib/types';
 import ProductPageShell from '@/components/product/ProductPageShell';
+import type { PageContent } from '@/lib/types';
 
 export default function ProductPageBody({ page }: { page: PageContent }) {
   const content = stripDuplicateHero(page.content);

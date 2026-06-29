@@ -1,11 +1,11 @@
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAllBlogRoutes, getBlogPost, getCanonicalBlogSlug } from '@/lib/content';
-import { buildMetadata, JsonLd, articleSchema, breadcrumbSchema, faqSchema } from '@/lib/metadata';
-import { SITE_URL } from '@/lib/site-url';
+import { notFound } from 'next/navigation';
 import readingTime from 'reading-time';
 import BlogArticleBody from '@/components/blog/BlogArticleBody';
 import { blogEnhancements } from '@/content/blog-enhancements';
+import { getAllBlogRoutes, getBlogPost, getCanonicalBlogSlug } from '@/lib/content';
+import { articleSchema, breadcrumbSchema, buildMetadata, faqSchema, JsonLd } from '@/lib/metadata';
+import { SITE_URL } from '@/lib/site-url';
 
 type Props = { params: Promise<{ slug: string }> };
 

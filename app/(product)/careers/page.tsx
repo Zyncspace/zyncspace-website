@@ -1,6 +1,6 @@
 import CareersPageContent from '@/components/product/CareersPageContent';
 import { careersContent } from '@/content/careers';
-import { JsonLd, breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/metadata';
+import { breadcrumbSchema, buildMetadata, JsonLd, webPageSchema } from '@/lib/metadata';
 import { SITE_URL } from '@/lib/site-url';
 
 const title = 'Careers';
@@ -19,12 +19,7 @@ export const metadata = buildMetadata({
 export default function CareersPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Careers' },
-        ])}
-      />
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Careers' }])} />
       <JsonLd data={webPageSchema({ title: `${title} - ZyncSpace`, description, path })} />
       <JsonLd
         data={{

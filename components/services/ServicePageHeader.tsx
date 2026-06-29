@@ -7,7 +7,12 @@ type ServicePageHeaderProps = {
   children?: React.ReactNode;
 };
 
-export default function ServicePageHeader({ label, title, description, children }: ServicePageHeaderProps) {
+export default function ServicePageHeader({
+  label,
+  title,
+  description,
+  children,
+}: ServicePageHeaderProps) {
   return (
     <header className="service-page-header">
       <div className="container">

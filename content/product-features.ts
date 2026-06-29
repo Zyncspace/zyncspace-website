@@ -32,11 +32,13 @@ export const productFeaturesContent = {
         },
         {
           title: 'Threaded Replies',
-          description: 'Branch discussions without cluttering the main channel — decisions stay easy to follow.',
+          description:
+            'Branch discussions without cluttering the main channel — decisions stay easy to follow.',
         },
         {
           title: 'Reactions & @Mentions',
-          description: 'Acknowledge updates in one tap or pull the right person in without another meeting.',
+          description:
+            'Acknowledge updates in one tap or pull the right person in without another meeting.',
         },
         {
           title: 'Pinned Messages',
@@ -56,7 +58,8 @@ export const productFeaturesContent = {
       highlights: [
         {
           title: 'Workflow Columns',
-          description: 'Match your process — To Do, In Progress, Review, Done — or any stages your team uses.',
+          description:
+            'Match your process — To Do, In Progress, Review, Done — or any stages your team uses.',
         },
         {
           title: 'Drag-and-Drop',
@@ -64,11 +67,13 @@ export const productFeaturesContent = {
         },
         {
           title: 'Assignments & Due Dates',
-          description: 'Every card has an owner and deadline so accountability is visible to the whole team.',
+          description:
+            'Every card has an owner and deadline so accountability is visible to the whole team.',
         },
         {
           title: 'Attachments & Progress',
-          description: 'Files stay on the card. Completion indicators show how close the board is to done.',
+          description:
+            'Files stay on the card. Completion indicators show how close the board is to done.',
         },
       ],
     },
@@ -84,11 +89,13 @@ export const productFeaturesContent = {
       highlights: [
         {
           title: 'AI Rewrite',
-          description: 'Sharpen tone and clarity for client-facing or leadership messages in one click.',
+          description:
+            'Sharpen tone and clarity for client-facing or leadership messages in one click.',
         },
         {
           title: 'AI Summarize',
-          description: 'Catch up on lengthy threads with concise recaps — ideal after time off or across time zones.',
+          description:
+            'Catch up on lengthy threads with concise recaps — ideal after time off or across time zones.',
         },
         {
           title: 'Smart Suggestions',
@@ -120,7 +127,8 @@ export const productFeaturesContent = {
         },
         {
           title: 'Calendar Sync',
-          description: 'Google Calendar and Outlook events appear in one view alongside team tasks.',
+          description:
+            'Google Calendar and Outlook events appear in one view alongside team tasks.',
         },
         {
           title: 'Recordings & Reminders',
@@ -139,15 +147,18 @@ export const productFeaturesContent = {
     items: [
       {
         title: 'Encrypted Messaging',
-        description: 'Messages and files are protected in transit so only intended recipients can access them.',
+        description:
+          'Messages and files are protected in transit so only intended recipients can access them.',
       },
       {
         title: 'Role-Based Access',
-        description: 'Custom roles control who can create channels, invite guests, or manage workspace settings.',
+        description:
+          'Custom roles control who can create channels, invite guests, or manage workspace settings.',
       },
       {
         title: 'Privacy Controls',
-        description: 'Members choose notification and visibility preferences that fit how they work.',
+        description:
+          'Members choose notification and visibility preferences that fit how they work.',
       },
       {
         title: 'Data Ownership',
@@ -160,11 +171,13 @@ export const productFeaturesContent = {
     num: '06',
     label: 'And More',
     title: 'Everything Else Teams Expect',
-    description: 'The small details that make a chat app feel complete — not a bolt-on afterthought.',
+    description:
+      'The small details that make a chat app feel complete — not a bolt-on afterthought.',
     items: [
       {
         title: 'File Sharing',
-        description: 'Drop documents and images into channels with version history on shared files.',
+        description:
+          'Drop documents and images into channels with version history on shared files.',
       },
       {
         title: 'Powerful Search',

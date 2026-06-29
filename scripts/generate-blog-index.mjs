@@ -11,9 +11,13 @@ const blogsJson = JSON.parse(
 function extractCards(html) {
   const cards = [];
 
-  const featured = html.match(/<div class="featured-blog[\s\S]*?<h2><a href="blogs\/([^"]+)\.html">([^<]+)<\/a><\/h2>[\s\S]*?<p class="blog-excerpt">([^<]+)<\/p>/);
+  const featured = html.match(
+    /<div class="featured-blog[\s\S]*?<h2><a href="blogs\/([^"]+)\.html">([^<]+)<\/a><\/h2>[\s\S]*?<p class="blog-excerpt">([^<]+)<\/p>/,
+  );
   if (featured) {
-    const meta = html.match(/featured-blog[\s\S]*?<span class="blog-category">([^<]+)<\/span>[\s\S]*?<time datetime="([^"]+)">[^<]*<\/time>[\s\S]*?<span>(\d+ min read)<\/span>/);
+    const meta = html.match(
+      /featured-blog[\s\S]*?<span class="blog-category">([^<]+)<\/span>[\s\S]*?<time datetime="([^"]+)">[^<]*<\/time>[\s\S]*?<span>(\d+ min read)<\/span>/,
+    );
     const img = html.match(/featured-blog[\s\S]*?<img src="([^"]+)"/)?.[1];
     cards.push({
       slug: featured[1],
@@ -53,7 +57,8 @@ if (!cards.find((c) => c.slug === 'evolution-of-workplace-communication')) {
   cards.push({
     slug: 'evolution-of-workplace-communication',
     title: 'The Evolution of Workplace Communication',
-    excerpt: 'How workplace communication has transformed from memos to modern collaboration platforms.',
+    excerpt:
+      'How workplace communication has transformed from memos to modern collaboration platforms.',
     category: 'Team Communication',
     datePublished: '2025-12-10',
     readTime: null,

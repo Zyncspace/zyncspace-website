@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { assertSafeSlug } from '@/lib/safe-slug';
 import type { PageContent } from '@/lib/types';
 

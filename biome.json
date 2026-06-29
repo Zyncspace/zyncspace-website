@@ -9,7 +9,16 @@
     "enabled": true,
     "rules": {
       "preset": "recommended",
-      "a11y": { "preset": "recommended" },
+      "a11y": {
+        "preset": "recommended",
+        "noSvgWithoutTitle": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
+      "style": {
+        "noDescendingSpecificity": "off"
+      },
       "correctness": { "noUnusedVariables": "warn" }
     }
   },

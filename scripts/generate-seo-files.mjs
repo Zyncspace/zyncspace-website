@@ -2,9 +2,9 @@
 /**
  * Post-export SEO files: RSS feed + llms.txt with correct SITE_URL
  */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { getSiteUrl } from './site-url.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -14,7 +14,11 @@ const SITE_URL = getSiteUrl();
 const blogDir = path.join(ROOT, 'content/blog');
 
 function escapeXml(s) {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 function getPosts() {
@@ -66,22 +70,62 @@ ${items}
 }
 
 const STATIC_PAGES = [
-  { path: '/', name: 'Home', desc: 'AI consulting, software engineering, capabilities, framework, tech stack, and product showcase.' },
-  { path: '/services', name: 'Consulting Services', desc: 'Technology consulting — AI automation, cloud engineering, UX, custom SaaS.' },
-  { path: '/services/framework', name: 'Our Framework', desc: 'Consulting delivery framework and methodology.' },
-  { path: '/services/technology', name: 'Technology Stack', desc: 'Software engineering toolchain and cloud platform standards.' },
-  { path: '/services/industries', name: 'Industries', desc: 'Industry-specific consulting and platform solutions.' },
-  { path: '/services/case-studies', name: 'Case Studies', desc: 'Client outcomes from consulting and engineering engagements.' },
-  { path: '/services/pricing', name: 'Consulting Pricing', desc: 'Consulting engagement models and pricing.' },
+  {
+    path: '/',
+    name: 'Home',
+    desc: 'AI consulting, software engineering, capabilities, framework, tech stack, and product showcase.',
+  },
+  {
+    path: '/services',
+    name: 'Consulting Services',
+    desc: 'Technology consulting — AI automation, cloud engineering, UX, custom SaaS.',
+  },
+  {
+    path: '/services/framework',
+    name: 'Our Framework',
+    desc: 'Consulting delivery framework and methodology.',
+  },
+  {
+    path: '/services/technology',
+    name: 'Technology Stack',
+    desc: 'Software engineering toolchain and cloud platform standards.',
+  },
+  {
+    path: '/services/industries',
+    name: 'Industries',
+    desc: 'Industry-specific consulting and platform solutions.',
+  },
+  {
+    path: '/services/case-studies',
+    name: 'Case Studies',
+    desc: 'Client outcomes from consulting and engineering engagements.',
+  },
+  {
+    path: '/services/pricing',
+    name: 'Consulting Pricing',
+    desc: 'Consulting engagement models and pricing.',
+  },
   { path: '/features', name: 'Features', desc: 'Team workspace — chat, tasks, calendar, and AI.' },
   { path: '/use-cases', name: 'Use Cases', desc: 'How teams use ZyncSpace for collaboration.' },
   { path: '/pricing', name: 'Pricing', desc: 'Product pricing plans.' },
   { path: '/about', name: 'About', desc: 'Mission, team, and company story.' },
   { path: '/careers', name: 'Careers', desc: 'Open roles and culture.' },
-  { path: '/trust-center', name: 'Trust Center', desc: 'Security, privacy, and compliance posture.' },
+  {
+    path: '/trust-center',
+    name: 'Trust Center',
+    desc: 'Security, privacy, and compliance posture.',
+  },
   { path: '/contact', name: 'Contact', desc: 'Consulting, support, and partnership inquiries.' },
-  { path: '/blogs', name: 'Blog', desc: 'Articles on AI, software engineering, communication, and productivity.' },
-  { path: '/privacy-policy', name: 'Privacy Policy', desc: 'Data collection and privacy practices.' },
+  {
+    path: '/blogs',
+    name: 'Blog',
+    desc: 'Articles on AI, software engineering, communication, and productivity.',
+  },
+  {
+    path: '/privacy-policy',
+    name: 'Privacy Policy',
+    desc: 'Data collection and privacy practices.',
+  },
   { path: '/terms-of-service', name: 'Terms of Service', desc: 'Terms and conditions.' },
 ];
 

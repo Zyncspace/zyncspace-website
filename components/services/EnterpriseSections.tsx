@@ -1,24 +1,24 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import WhyChooseIcon from '@/components/services/WhyChooseIcons';
 import {
   aboutSection,
+  clientStories,
+  deliveryProcess,
+  engineeringPractice,
+  faq,
+  leadershipTeam,
+  mediaShowcase,
+  portfolio,
+  referenceArchitectures,
+  resources,
+  trustCompliance,
   valueProposition,
   whyChoose,
-  mediaShowcase,
-  deliveryProcess,
-  referenceArchitectures,
-  portfolio,
-  clientStories,
-  trustCompliance,
-  engineeringPractice,
-  leadershipTeam,
-  faq,
-  resources,
 } from '@/content/enterprise-sections';
 import { serviceRoutes } from '@/content/site';
-import WhyChooseIcon from '@/components/services/WhyChooseIcons';
 
 export function AboutSection() {
   return (
@@ -131,7 +131,7 @@ export function MediaShowcaseSection() {
   useEffect(() => {
     const id = window.requestAnimationFrame(updateMarker);
     return () => window.cancelAnimationFrame(id);
-  }, [activeFeature, updateMarker]);
+  }, [updateMarker]);
 
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -174,9 +174,11 @@ export function MediaShowcaseSection() {
       { root: null, rootMargin: '-42% 0px -42% 0px', threshold: [0, 0.15, 0.35, 0.55, 0.75, 1] },
     );
 
-    segments.forEach((segment) => observer.observe(segment));
+    for (const segment of segments) {
+      observer.observe(segment);
+    }
     return () => observer.disconnect();
-  }, [scrollScrollyEnabled, featureCount]);
+  }, [scrollScrollyEnabled]);
 
   const handleFeatureSelect = (index: number) => {
     setActiveFeature(index);
@@ -204,9 +206,7 @@ export function MediaShowcaseSection() {
 
         <div
           className={`feature-hub-scrolly-track${scrollScrollyEnabled ? ' is-scrolly' : ''}`}
-          style={
-            scrollScrollyEnabled ? { height: `${featureCount * 100}vh` } : undefined
-          }
+          style={scrollScrollyEnabled ? { height: `${featureCount * 100}vh` } : undefined}
         >
           <div className="feature-hub-scrolly-pin">
             <div className="feature-hub">
@@ -367,7 +367,7 @@ export function ReferenceArchitectureSection() {
               <span className="reference-arch-subtitle">{item.subtitle}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <div className="reference-arch-layers" aria-label={`${item.title} architecture layers`}>
+              <div className="reference-arch-layers">
                 {item.layers.map((layer, i) => (
                   <span key={layer} className="reference-arch-layer">
                     {layer}
@@ -482,7 +482,12 @@ export function LeadershipTeamSection() {
         <div className="team-grid">
           {leadershipTeam.members.map((member) => (
             <article key={member.name} className="team-card">
-              <img src={member.image} alt={`${member.name}, ${member.role}`} width={280} height={280} />
+              <img
+                src={member.image}
+                alt={`${member.name}, ${member.role}`}
+                width={280}
+                height={280}
+              />
               <h3>{member.name}</h3>
               <p className="team-role">{member.role}</p>
               <p className="team-bio">{member.bio}</p>
@@ -515,7 +520,9 @@ export function EngineeringPracticeSection() {
               key={link.label}
               href={link.href}
               className="btn btn-outline-light"
-              {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              {...(link.href.startsWith('http')
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
             >
               {link.label} ↗
             </Link>

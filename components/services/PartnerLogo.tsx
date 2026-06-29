@@ -9,7 +9,7 @@ export default function PartnerLogo({ name }: PartnerLogoProps) {
 
   if (logo.kind === 'wordmark') {
     return (
-      <span className="partner-logo partner-logo--wordmark" aria-label={logo.title} title={logo.title}>
+      <span className="partner-logo partner-logo--wordmark" title={logo.title}>
         {logo.label}
       </span>
     );

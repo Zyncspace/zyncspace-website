@@ -1,7 +1,7 @@
 /**
  * Sync blog MDX from live zyncspace.com HTML (body only — no site header/footer).
  */
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { assertSafeSlug } from './safe-path.mjs';
 
@@ -67,15 +67,16 @@ function extractBlogBody(html) {
     if (body) return body.trim().replace(/<header class="blog-header">[\s\S]*?<\/header>/gi, '');
   }
 
-  const postContent = html.match(/<div class="blog-post-content">([\s\S]*?)<\/div>\s*<div class="blog-post-tags"/i)?.[1];
+  const postContent = html.match(
+    /<div class="blog-post-content">([\s\S]*?)<\/div>\s*<div class="blog-post-tags"/i,
+  )?.[1];
   if (postContent) return postContent.trim();
 
   return null;
 }
 
 function extractHeroImage(html) {
-  const legacy =
-    html.match(/<section class="blog-content">[\s\S]*?<img[^>]+src="([^"]+)"/i)?.[1];
+  const legacy = html.match(/<section class="blog-content">[\s\S]*?<img[^>]+src="([^"]+)"/i)?.[1];
   if (legacy) return decodeHtml(legacy);
   const og = html.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i)?.[1];
   return og ? decodeHtml(og) : '';
@@ -150,11 +151,14 @@ async function syncSlug(slug) {
   }
   const html = await res.text();
   const title = extractTitle(html);
-  const description = extractMeta(html, 'description').replace(/\s*-\s*ZyncSpace.*$/i, '').trim();
+  const description = extractMeta(html, 'description')
+    .replace(/\s*-\s*ZyncSpace.*$/i, '')
+    .trim();
   const keywords = extractMeta(html, 'keywords');
   const datePublished = extractDate(html) || '2026-01-01';
   const heroImage = toLocalAsset(extractHeroImage(html));
-  const ogImage = toLocalAsset(extractMeta(html, 'og:image')) || heroImage || '/assets/images/hero-dashboard.png';
+  const ogImage =
+    toLocalAsset(extractMeta(html, 'og:image')) || heroImage || '/assets/images/hero-dashboard.png';
   let body = extractBlogBody(html);
   if (!body) {
     console.warn(`  skip ${slug}: no blog-body`);

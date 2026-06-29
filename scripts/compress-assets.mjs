@@ -94,7 +94,10 @@ async function compressFile(filePath) {
   if (shouldTryWebp) {
     const webpOutput = await encodeWebp(input, maxWidth);
     const webpImprovement = 1 - webpOutput.length / output.length;
-    if (webpOutput.length + MIN_SAVINGS_BYTES < output.length && webpImprovement >= WEBP_MIN_IMPROVEMENT) {
+    if (
+      webpOutput.length + MIN_SAVINGS_BYTES < output.length &&
+      webpImprovement >= WEBP_MIN_IMPROVEMENT
+    ) {
       output = webpOutput;
       finalPath = filePath.replace(/\.(png|jpe?g)$/i, '.webp');
       format = 'webp';
@@ -249,7 +252,10 @@ async function main() {
       }
       lines.push('');
     }
-    const top = rows.filter((r) => r.saved > 0).sort((a, b) => b.saved - a.saved).slice(0, 12);
+    const top = rows
+      .filter((r) => r.saved > 0)
+      .sort((a, b) => b.saved - a.saved)
+      .slice(0, 12);
     if (top.length) {
       lines.push('| File | Before | After | Saved |', '| --- | --- | --- | --- |');
       for (const row of top) {

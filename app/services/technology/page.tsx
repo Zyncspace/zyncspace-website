@@ -1,9 +1,9 @@
-import { buildMetadata } from '@/lib/metadata';
 import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
 import ServicePageHeader, { ServiceBreadcrumb } from '@/components/services/ServicePageHeader';
 import TechStackSection, { TechStackPageCta } from '@/components/services/TechStackSection';
 import { servicesContent as c } from '@/content/services';
 import { serviceRoutes } from '@/content/site';
+import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
   title: 'Technology Stack',

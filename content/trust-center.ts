@@ -23,15 +23,18 @@ export const trustCenterContent = {
   pillars: [
     {
       title: 'Infrastructure you can verify',
-      description: 'Hosted on AWS with ISO 27001 and SOC 2 Type II certified facilities for physical security and redundancy.',
+      description:
+        'Hosted on AWS with ISO 27001 and SOC 2 Type II certified facilities for physical security and redundancy.',
     },
     {
       title: 'Privacy by design',
-      description: 'GDPR and India DPDP-aligned practices with Standard Contractual Clauses for cross-border data handling.',
+      description:
+        'GDPR and India DPDP-aligned practices with Standard Contractual Clauses for cross-border data handling.',
     },
     {
       title: 'Your data stays yours',
-      description: 'Zero training on customer content for LLMs, encryption in transit and at rest, and E2EE for real-time communication.',
+      description:
+        'Zero training on customer content for LLMs, encryption in transit and at rest, and E2EE for real-time communication.',
     },
   ],
   controls: [

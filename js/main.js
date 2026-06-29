@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     html.setAttribute('data-theme', 'dark');
   }
 
-  let lastScrollY = window.scrollY;
+  let _lastScrollY = window.scrollY;
 
   function handleScroll() {
     const currentScrollY = window.scrollY;
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
 
-    lastScrollY = currentScrollY;
+    _lastScrollY = currentScrollY;
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
       link.addEventListener('click', () => {
         mobileNav.classList.remove('active');
         document.body.style.overflow = '';
@@ -56,17 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     const href = link.getAttribute('href');
-    if (href === currentPath ||
-        (href !== '/' && currentPath.startsWith(href)) ||
-        (href === '/' && currentPath === '/')) {
+    if (
+      href === currentPath ||
+      (href !== '/' && currentPath.startsWith(href)) ||
+      (href === '/' && currentPath === '/')
+    ) {
       link.classList.add('active');
     }
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
@@ -76,12 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
+  faqItems.forEach((item) => {
     const question = item.querySelector('.faq-question');
     if (question) {
       question.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        faqItems.forEach(i => i.classList.remove('active'));
+        for (const i of faqItems) {
+          i.classList.remove('active');
+        }
         if (!isActive) {
           item.classList.add('active');
         }
@@ -91,11 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
@@ -103,13 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  document.querySelectorAll('.fade-in, .slide-up, .slide-left, .slide-right, .scale-in').forEach(el => {
-    observer.observe(el);
-  });
+  document
+    .querySelectorAll('.fade-in, .slide-up, .slide-left, .slide-right, .scale-in')
+    .forEach((el) => {
+      observer.observe(el);
+    });
 
   const lazyImages = document.querySelectorAll('img[data-src]');
   const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         img.src = img.dataset.src;
@@ -119,5 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  lazyImages.forEach(img => imageObserver.observe(img));
+  for (const img of lazyImages) {
+    imageObserver.observe(img);
+  }
 });

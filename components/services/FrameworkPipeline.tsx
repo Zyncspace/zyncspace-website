@@ -15,7 +15,9 @@ export default function FrameworkPipeline({ embedded = false }: FrameworkPipelin
   const activeStage = framework.stages[activeIndex];
 
   return (
-    <section className={`framework-section section-padding${embedded ? ' framework-section-embedded' : ''}`}>
+    <section
+      className={`framework-section section-padding${embedded ? ' framework-section-embedded' : ''}`}
+    >
       <div className="container">
         {!embedded ? (
           <div className="framework-header">
@@ -33,11 +35,16 @@ export default function FrameworkPipeline({ embedded = false }: FrameworkPipelin
           </div>
         ) : null}
 
-        <div className="framework-detail" role="region" aria-label={`Stage ${activeStage.num}: ${activeStage.title}`}>
+        <section
+          className="framework-detail"
+          aria-label={`Stage ${activeStage.num}: ${activeStage.title}`}
+        >
           <div className="framework-detail-main">
             <div className="framework-detail-badges">
               <span className="framework-badge">Stage {activeStage.num}</span>
-              <span className="framework-badge framework-badge-outline">{activeStage.timeline}</span>
+              <span className="framework-badge framework-badge-outline">
+                {activeStage.timeline}
+              </span>
             </div>
             <h3 className="framework-detail-title">{activeStage.headline}</h3>
             <p className="framework-detail-desc">{activeStage.description}</p>
@@ -74,13 +81,15 @@ export default function FrameworkPipeline({ embedded = false }: FrameworkPipelin
             <ul className="framework-deliverables-list">
               {activeStage.deliverables.map((item) => (
                 <li key={item}>
-                  <span className="framework-check" aria-hidden="true">✓</span>
+                  <span className="framework-check" aria-hidden="true">
+                    ✓
+                  </span>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-        </div>
+        </section>
 
         {!embedded ? (
           <div className="framework-footer-cta">

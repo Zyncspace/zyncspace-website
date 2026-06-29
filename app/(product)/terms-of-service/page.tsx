@@ -1,6 +1,6 @@
 import LegalPageContent from '@/components/product/LegalPageContent';
 import { termsOfServiceContent } from '@/content/terms-of-service';
-import { JsonLd, breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/metadata';
+import { breadcrumbSchema, buildMetadata, JsonLd, webPageSchema } from '@/lib/metadata';
 
 const title = 'Terms of Service';
 const description =
@@ -19,10 +19,7 @@ export default function TermsOfServicePage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Terms of Service' },
-        ])}
+        data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Terms of Service' }])}
       />
       <JsonLd data={webPageSchema({ title: `${title} - ZyncSpace`, description, path })} />
       <LegalPageContent {...termsOfServiceContent} />

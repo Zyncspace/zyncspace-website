@@ -1,21 +1,21 @@
-@import '../styles/tokens.css';
-@import '../styles/typography.css';
-@import '../styles/aetheris.css';
-@import '../styles/product.css';
-@import '../styles/enterprise-sections.css';
-@import '../styles/tech-stack.css';
-@import '../styles/product-features.css';
-@import '../styles/product-pricing.css';
-@import '../styles/legal-pages.css';
-@import '../styles/services-page.css';
-@import '../styles/careers-page.css';
-@import '../styles/trust-center.css';
+@import "../styles/tokens.css";
+@import "../styles/typography.css";
+@import "../styles/aetheris.css";
+@import "../styles/product.css";
+@import "../styles/enterprise-sections.css";
+@import "../styles/tech-stack.css";
+@import "../styles/product-features.css";
+@import "../styles/product-pricing.css";
+@import "../styles/legal-pages.css";
+@import "../styles/services-page.css";
+@import "../styles/careers-page.css";
+@import "../styles/trust-center.css";
 
 /* Next.js font variables → design system stacks */
 :root {
-  --font-sans: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: var(--font-playfair), 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-mono: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
 }
 
 html {

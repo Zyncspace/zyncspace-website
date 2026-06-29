@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /** Copies content/pages/*.json to content/product/ and emits typed TS modules */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -31,7 +31,10 @@ export default page;
 
 const index = `${files
   .map((f) => f.replace(/\.json$/, ''))
-  .map((slug) => `export { default as ${slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase())}Page } from './${slug}';`)
+  .map(
+    (slug) =>
+      `export { default as ${slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase())}Page } from './${slug}';`,
+  )
   .join('\n')}\n`;
 fs.writeFileSync(path.join(dest, 'index.ts'), index);
 

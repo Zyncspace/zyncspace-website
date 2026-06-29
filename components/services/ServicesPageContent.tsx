@@ -1,16 +1,36 @@
 import Link from 'next/link';
-import { servicesContent as c } from '@/content/services';
-import { serviceRoutes } from '@/content/site';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
 import { CapabilityMatrixSection, ServicesCtaBand } from '@/components/services/sections';
 import { servicePageExtended } from '@/content/service-pages';
+import { servicesContent as c } from '@/content/services';
+import { serviceRoutes } from '@/content/site';
 
 const hubLinks = [
-  { title: 'Delivery Framework', description: 'Eight-stage model from discovery to optimization.', href: serviceRoutes.framework },
-  { title: 'Technology Stack', description: 'Cloud, AI, data, and frontend platforms we deploy.', href: serviceRoutes.technology },
-  { title: 'Industries', description: 'Sector playbooks for regulated and high-growth verticals.', href: serviceRoutes.industries },
-  { title: 'Case Studies', description: 'Representative outcomes from consulting engagements.', href: serviceRoutes.caseStudies },
-  { title: 'Consulting Pricing', description: 'Transparent tiers for discovery, build, and scale.', href: serviceRoutes.pricing },
+  {
+    title: 'Delivery Framework',
+    description: 'Eight-stage model from discovery to optimization.',
+    href: serviceRoutes.framework,
+  },
+  {
+    title: 'Technology Stack',
+    description: 'Cloud, AI, data, and frontend platforms we deploy.',
+    href: serviceRoutes.technology,
+  },
+  {
+    title: 'Industries',
+    description: 'Sector playbooks for regulated and high-growth verticals.',
+    href: serviceRoutes.industries,
+  },
+  {
+    title: 'Case Studies',
+    description: 'Representative outcomes from consulting engagements.',
+    href: serviceRoutes.caseStudies,
+  },
+  {
+    title: 'Consulting Pricing',
+    description: 'Transparent tiers for discovery, build, and scale.',
+    href: serviceRoutes.pricing,
+  },
 ];
 
 export default function ServicesPageContent() {
@@ -40,7 +60,8 @@ export default function ServicesPageContent() {
             <span className="label">Explore</span>
             <h2>Go deeper on how we deliver</h2>
             <p className="section-lead">
-              Framework, technology choices, industry patterns, and pricing — each with dedicated detail.
+              Framework, technology choices, industry patterns, and pricing — each with dedicated
+              detail.
             </p>
           </div>
           <div className="services-hub-links-grid">

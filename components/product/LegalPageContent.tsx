@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import type { LegalPageContent, LegalPageListItem } from '@/content/legal-page';
+import type {
+  LegalPageContent as LegalPageContentData,
+  LegalPageListItem,
+} from '@/content/legal-page';
 
 function LegalListItem({ item }: { item: LegalPageListItem }) {
   if (typeof item === 'string') {
@@ -19,7 +22,7 @@ export default function LegalPageContent({
   lastUpdated,
   intro,
   sections,
-}: LegalPageContent) {
+}: LegalPageContentData) {
   return (
     <>
       <header className="legal-page-hero">
@@ -50,13 +53,16 @@ export default function LegalPageContent({
             {sections.map((section) => (
               <section key={section.id} id={section.id} className="legal-page-section">
                 <h2>{section.title}</h2>
-                {section.paragraphs?.map((paragraph, i) => (
-                  <p key={`${section.id}-p-${i}`}>{paragraph}</p>
+                {section.paragraphs?.map((paragraph) => (
+                  <p key={`${section.id}-${paragraph.slice(0, 48)}`}>{paragraph}</p>
                 ))}
                 {section.list ? (
                   <ul>
                     {section.list.map((item) => (
-                      <LegalListItem key={typeof item === 'string' ? item : item.label} item={item} />
+                      <LegalListItem
+                        key={typeof item === 'string' ? item : item.label}
+                        item={item}
+                      />
                     ))}
                   </ul>
                 ) : null}

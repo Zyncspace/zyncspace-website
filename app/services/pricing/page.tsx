@@ -1,10 +1,10 @@
-import { buildMetadata } from '@/lib/metadata';
 import { ServiceDetailJsonLd } from '@/components/seo/PageJsonLd';
-import ServicePageHeader from '@/components/services/ServicePageHeader';
 import ServicePageExtended from '@/components/services/ServicePageExtended';
+import ServicePageHeader from '@/components/services/ServicePageHeader';
 import { ConsultingPricingSection } from '@/components/services/sections';
-import { servicesContent as c } from '@/content/services';
 import { servicePageExtended } from '@/content/service-pages';
+import { servicesContent as c } from '@/content/services';
+import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
   title: 'Consulting Pricing',

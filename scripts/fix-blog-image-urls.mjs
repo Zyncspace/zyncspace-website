@@ -51,10 +51,22 @@ async function main() {
     let text = await readFile(path, 'utf8');
     const original = text;
     text = text.replace(/https:\/\/images\.unsplash\.com\/[^"'\s)]+/g, (url) => localFromUrl(url));
-    text = text.replace(/ogImage: '[^']*hero-dashboard[^']*'/g, "ogImage: '/assets/images/hero-dashboard.png'");
-    text = text.replace(/thumbnail: '[^']*hero-dashboard[^']*'/g, "thumbnail: '/assets/images/hero-dashboard.png'");
-    text = text.replace(/ogImage: '\/assets\/images\/stock\/hero-dashboard\.png'/g, "ogImage: '/assets/images/hero-dashboard.png'");
-    text = text.replace(/thumbnail: '\/assets\/images\/stock\/hero-dashboard\.png'/g, "thumbnail: '/assets/images/hero-dashboard.png'");
+    text = text.replace(
+      /ogImage: '[^']*hero-dashboard[^']*'/g,
+      "ogImage: '/assets/images/hero-dashboard.png'",
+    );
+    text = text.replace(
+      /thumbnail: '[^']*hero-dashboard[^']*'/g,
+      "thumbnail: '/assets/images/hero-dashboard.png'",
+    );
+    text = text.replace(
+      /ogImage: '\/assets\/images\/stock\/hero-dashboard\.png'/g,
+      "ogImage: '/assets/images/hero-dashboard.png'",
+    );
+    text = text.replace(
+      /thumbnail: '\/assets\/images\/stock\/hero-dashboard\.png'/g,
+      "thumbnail: '/assets/images/hero-dashboard.png'",
+    );
     if (text !== original) {
       await writeFile(path, text);
       console.log('fixed', file);

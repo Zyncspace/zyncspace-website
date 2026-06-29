@@ -1,5 +1,5 @@
 import PricingPageContent from '@/components/product/PricingPageContent';
-import { JsonLd, breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/metadata';
+import { breadcrumbSchema, buildMetadata, JsonLd, webPageSchema } from '@/lib/metadata';
 import { SITE_URL } from '@/lib/site-url';
 
 const title = 'ZyncSpace Chat Pricing';
@@ -20,10 +20,7 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'ZyncSpace Chat Pricing' },
-        ])}
+        data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'ZyncSpace Chat Pricing' }])}
       />
       <JsonLd data={webPageSchema({ title: `${title} - ZyncSpace`, description, path })} />
       <JsonLd

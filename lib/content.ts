@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import matter from 'gray-matter';
 import { blogIndexCards } from '@/content/blog-index';
 import { assertSafeSlug } from '@/lib/safe-slug';
@@ -40,8 +40,12 @@ function parseBlogFile(slug: string): BlogPost {
     description: String(data.description || card?.excerpt || ''),
     keywords: String(data.keywords || ''),
     datePublished: String(card?.datePublished || data.datePublished || ''),
-    ogImage: String(data.ogImage || card?.thumbnail || `${SITE_URL}/assets/images/hero-dashboard.png`),
-    thumbnail: String(data.thumbnail || card?.thumbnail || data.ogImage || '/assets/images/hero-dashboard.png'),
+    ogImage: String(
+      data.ogImage || card?.thumbnail || `${SITE_URL}/assets/images/hero-dashboard.png`,
+    ),
+    thumbnail: String(
+      data.thumbnail || card?.thumbnail || data.ogImage || '/assets/images/hero-dashboard.png',
+    ),
     category: String(card?.category || 'Team Communication'),
     readTime: card?.readTime ?? null,
     featured: card?.featured ?? false,
@@ -90,6 +94,5 @@ export function getAllBlogRoutes(): string[] {
   return [...routes];
 }
 
-export { SITE_URL } from '@/lib/site-url';
-
 export { SEO_ROUTES as STATIC_ROUTES } from '@/lib/seo-config';
+export { SITE_URL } from '@/lib/site-url';

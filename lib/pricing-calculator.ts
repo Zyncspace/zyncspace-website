@@ -20,7 +20,10 @@ export type PricingEstimate = {
   zyncspaceMonthly: number;
   zyncspaceAnnual: number;
   planLabel: string;
-  competitors: Record<CompetitorKey, { monthly: number; annual: number; savingsMonthly: number; savingsAnnual: number }>;
+  competitors: Record<
+    CompetitorKey,
+    { monthly: number; annual: number; savingsMonthly: number; savingsAnnual: number }
+  >;
   bestSavingsMonthly: number;
   bestSavingsAnnual: number;
   savingsVsStackPercent: number;
@@ -45,7 +48,10 @@ export function estimatePricing(users: number): PricingEstimate {
   const competitors = {} as PricingEstimate['competitors'];
   let bestSavingsMonthly = 0;
 
-  for (const [key, rate] of Object.entries(PRICING_CONSTANTS.competitors) as [CompetitorKey, number][]) {
+  for (const [key, rate] of Object.entries(PRICING_CONSTANTS.competitors) as [
+    CompetitorKey,
+    number,
+  ][]) {
     const monthly = safeUsers * rate;
     const annual = monthly * 12;
     const savingsMonthly = monthly - zyncspaceMonthly;

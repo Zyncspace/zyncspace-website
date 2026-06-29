@@ -69,7 +69,13 @@ export default function FeaturesPageContent() {
                 </ul>
               </div>
               <div className="product-features-pillar-visual">
-                <img src={pillar.image} alt={pillar.imageAlt} width={720} height={405} loading="lazy" />
+                <img
+                  src={pillar.image}
+                  alt={pillar.imageAlt}
+                  width={720}
+                  height={405}
+                  loading="lazy"
+                />
               </div>
             </div>
           </section>

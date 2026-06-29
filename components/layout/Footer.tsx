@@ -63,9 +63,15 @@ export default function Footer() {
           ))}
           <div className="footer-col">
             <h4>{footer.newsletter.title}</h4>
-            <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 10 }}>{footer.newsletter.title}</p>
+            <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 10 }}>
+              {footer.newsletter.title}
+            </p>
             <div className="subscribe-input">
-              <input type="email" placeholder={footer.newsletter.placeholder} aria-label="Email for newsletter" />
+              <input
+                type="email"
+                placeholder={footer.newsletter.placeholder}
+                aria-label="Email for newsletter"
+              />
               <button type="button">{footer.newsletter.submitLabel}</button>
             </div>
           </div>
@@ -74,7 +80,15 @@ export default function Footer() {
           <p>{footer.copyright}</p>
           <div style={{ display: 'flex', gap: 16 }}>
             {footer.social.map((s) => (
-              <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: '#888' }}>{s.label}</a>
+              <a
+                key={s.href}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#888' }}
+              >
+                {s.label}
+              </a>
             ))}
           </div>
         </div>

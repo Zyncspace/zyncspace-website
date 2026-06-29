@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /** Fail fast if Node version does not match .nvmrc / package.json engines */
 import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const required = readFileSync(join(root, '.nvmrc'), 'utf8').trim();

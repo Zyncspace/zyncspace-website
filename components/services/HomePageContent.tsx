@@ -1,33 +1,33 @@
-import {
-  HeroSection,
-  PartnersSection,
-  CapabilitiesSection,
-  CapabilityMatrixSection,
-  FrameworkSection,
-  TechStackSection,
-  IndustriesSection,
-  CaseStudySection,
-  ConsultingPricingSection,
-  InsightsSection,
-  ProductShowcaseSection,
-  ServicesCtaBand,
-} from '@/components/services/sections';
+import ContactSection from '@/components/services/ContactSection';
 import {
   AboutSection,
-  ValuePropositionSection,
-  WhyChooseSection,
-  MediaShowcaseSection,
-  DeliveryProcessSection,
-  ReferenceArchitectureSection,
-  PortfolioSection,
   ClientStoriesSection,
-  TrustComplianceSection,
-  LeadershipTeamSection,
+  DeliveryProcessSection,
   EngineeringPracticeSection,
   FaqSection,
+  LeadershipTeamSection,
+  MediaShowcaseSection,
+  PortfolioSection,
+  ReferenceArchitectureSection,
   ResourcesSection,
+  TrustComplianceSection,
+  ValuePropositionSection,
+  WhyChooseSection,
 } from '@/components/services/EnterpriseSections';
-import ContactSection from '@/components/services/ContactSection';
+import {
+  CapabilitiesSection,
+  CapabilityMatrixSection,
+  CaseStudySection,
+  ConsultingPricingSection,
+  FrameworkSection,
+  HeroSection,
+  IndustriesSection,
+  InsightsSection,
+  PartnersSection,
+  ProductShowcaseSection,
+  ServicesCtaBand,
+  TechStackSection,
+} from '@/components/services/sections';
 
 /**
  * Enterprise homepage — trust-safe, outcome-focused flow:

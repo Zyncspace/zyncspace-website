@@ -16,12 +16,7 @@ module.exports = {
   ],
   options: {
     exclude: {
-      path: [
-        'node_modules',
-        '\\.next',
-        '^out',
-        'coverage',
-      ],
+      path: ['node_modules', '\\.next', '^out', 'coverage'],
     },
     tsPreCompilationDeps: true,
     tsConfig: { fileName: 'tsconfig.json' },

@@ -3,10 +3,10 @@
 import { useMemo, useState } from 'react';
 import { productPricingContent } from '@/content/product-pricing';
 import {
+  type CompetitorKey,
   estimatePricing,
   formatUsd,
   PRICING_CONSTANTS,
-  type CompetitorKey,
 } from '@/lib/pricing-calculator';
 
 const COMPETITOR_LABELS: Record<CompetitorKey, string> = {
@@ -53,7 +53,8 @@ export default function PricingCalculator() {
                 </output>
               </div>
             </div>
-            <div className="product-pricing-presets" role="group" aria-label="Team size presets">
+            <fieldset className="product-pricing-presets">
+              <legend className="sr-only">Team size presets</legend>
               {calculator.presets.map((preset) => (
                 <button
                   key={preset}
@@ -64,7 +65,7 @@ export default function PricingCalculator() {
                   {preset}
                 </button>
               ))}
-            </div>
+            </fieldset>
           </div>
 
           <div className="product-pricing-calculator-results">
@@ -72,7 +73,9 @@ export default function PricingCalculator() {
               <span className="product-pricing-result-label">ZyncSpace Chat</span>
               <span className="product-pricing-result-plan">{estimate.planLabel}</span>
               <div className="product-pricing-result-price-row">
-                <span className="product-pricing-result-price">{formatUsd(estimate.zyncspaceMonthly)}</span>
+                <span className="product-pricing-result-price">
+                  {formatUsd(estimate.zyncspaceMonthly)}
+                </span>
                 <span className="product-pricing-result-period">/month</span>
               </div>
               <p className="product-pricing-result-annual">

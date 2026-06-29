@@ -1,6 +1,6 @@
 import TrustCenterPageContent from '@/components/product/TrustCenterPageContent';
 import { trustCenterContent } from '@/content/trust-center';
-import { JsonLd, breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/metadata';
+import { breadcrumbSchema, buildMetadata, JsonLd, webPageSchema } from '@/lib/metadata';
 import { SITE_URL } from '@/lib/site-url';
 
 const title = 'Trust Center';
@@ -19,12 +19,7 @@ export const metadata = buildMetadata({
 export default function TrustCenterPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Trust Center' },
-        ])}
-      />
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Trust Center' }])} />
       <JsonLd data={webPageSchema({ title: `${title} - ZyncSpace`, description, path })} />
       <JsonLd
         data={{

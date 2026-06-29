@@ -352,8 +352,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
   'meeting-culture-problem': {
     description:
       'Fix meeting overload with async-first strategies. Data on meeting costs and practical ways to reclaim focus time without losing alignment.',
-    keywords:
-      'meeting culture, async communication, meeting fatigue, productivity, fewer meetings',
+    keywords: 'meeting culture, async communication, meeting fatigue, productivity, fewer meetings',
     dataPoints: [
       'The average manager spends 23 hours per week in meetings (Harvard Business Review).',
       '71% of senior managers say meetings are unproductive and inefficient.',

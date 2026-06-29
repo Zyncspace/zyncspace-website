@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/content';
-import { SEO_ROUTES } from '@/lib/seo-config';
 import { SITE_URL } from '@/lib/metadata';
+import { SEO_ROUTES } from '@/lib/seo-config';
 
 export const dynamic = 'force-static';
 
