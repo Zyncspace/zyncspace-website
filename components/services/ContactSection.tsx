@@ -93,7 +93,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                   {c.contact.form.step}
                 </span>
                 <h3 className="form-box-title">{c.contact.form.title}</h3>
-                <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 24 }}>
+                <p style={{ color: '#a3a3a3', fontSize: '0.95rem', marginBottom: 24 }}>
                   {c.contact.form.description}
                 </p>
                 <form
@@ -103,8 +103,14 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                 >
                   {c.contact.formOptions.map((option) => (
                     <label key={option} className="form-check">
-                      <input type="checkbox" name="objectives" value={option} />
-                      <span>{option}</span>
+                      <input
+                        type="checkbox"
+                        className="form-check-input"
+                        name="objectives"
+                        value={option}
+                      />
+                      <span className="form-check-box" aria-hidden="true" />
+                      <span className="form-check-label">{option}</span>
                     </label>
                   ))}
                   <div className="form-group" style={{ marginTop: 24 }}>

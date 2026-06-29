@@ -440,10 +440,10 @@
   margin-bottom: 1.25rem;
 }
 
-.aetheris-contact-form label {
+.aetheris-contact-form .form-group > label {
   display: block;
   font-size: 0.85rem;
-  color: #888;
+  color: #a3a3a3;
   margin-bottom: 6px;
 }
 
