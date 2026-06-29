@@ -146,10 +146,7 @@ export function FrameworkSection({ embedded = false }: { embedded?: boolean }) {
   return <FrameworkPipeline embedded={embedded} />;
 }
 
-export {
-  default as TechStackSection,
-  TechStackPageCta,
-} from '@/components/services/TechStackSection';
+export { default as TechStackSection } from '@/components/services/TechStackSection';
 
 export function IndustriesSection({ embedded = false }: { embedded?: boolean }) {
   return (

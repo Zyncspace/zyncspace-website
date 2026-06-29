@@ -10,13 +10,7 @@ type PageJsonLdProps = {
   serviceType?: string;
 };
 
-export function PageJsonLd({
-  title,
-  description,
-  path,
-  breadcrumbs,
-  serviceType,
-}: PageJsonLdProps) {
+function PageJsonLd({ title, description, path, breadcrumbs, serviceType }: PageJsonLdProps) {
   return (
     <>
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />

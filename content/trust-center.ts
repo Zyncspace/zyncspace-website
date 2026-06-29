@@ -1,6 +1,6 @@
 /** ZyncSpace Trust Center — security, privacy, and compliance posture */
 
-export type TrustControlCategory = 'Baseline' | 'Feature-Specific';
+type TrustControlCategory = 'Baseline' | 'Feature-Specific';
 
 export type TrustControl = {
   id: string;

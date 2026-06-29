@@ -22,8 +22,6 @@ import {
   THEME_COLOR,
 } from '@/lib/seo-config';
 
-export { SITE_NAME, SITE_URL } from '@/lib/seo-config';
-
 export type PageMetaInput = {
   title: string;
   description: string;
@@ -372,5 +370,3 @@ export function jsonLdGraph(...nodes: object[]): { '@context': string; '@graph':
 export function JsonLd({ data }: { data: object }) {
   return <script type="application/ld+json">{JSON.stringify(data)}</script>;
 }
-
-export { buildMetadata as buildPageMetadata };

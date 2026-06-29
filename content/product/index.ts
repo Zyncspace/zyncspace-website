@@ -1,9 +1,0 @@
-export { default as aboutPage } from './about';
-export { default as blogsPage } from './blogs';
-export { default as careersPage } from './careers';
-export { default as contactPage } from './contact';
-export { default as featuresPage } from './features';
-export { default as pricingPage } from './pricing';
-export { default as privacyPolicyPage } from './privacy-policy';
-export { default as termsOfServicePage } from './terms-of-service';
-export { default as useCasesPage } from './use-cases';

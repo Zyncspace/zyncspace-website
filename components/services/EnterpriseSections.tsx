@@ -351,9 +351,6 @@ export function DeliveryProcessSection() {
   );
 }
 
-/** @deprecated Use DeliveryProcessSection */
-export const CustomerJourneySection = DeliveryProcessSection;
-
 export function ReferenceArchitectureSection() {
   return (
     <section className="section-padding reference-arch-section" id="architectures">

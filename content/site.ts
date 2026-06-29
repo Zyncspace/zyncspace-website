@@ -31,14 +31,6 @@ export const siteContact = {
   ],
 } as const;
 
-export const siteCompany = {
-  tagline: 'AI-driven technology consulting & unified team workspace',
-  mission:
-    'ZyncSpace brings together chat, tasks, and scheduling into one seamless workspace — and helps teams modernize with AI-driven consulting when they need to build beyond the platform.',
-  productDescription:
-    'Unified collaboration where chat, Kanban boards, calendar sync, and built-in AI converge — so your teams stop switching apps and start shipping.',
-} as const;
-
 export const serviceRoutes = {
   home: '/',
   services: '/services',

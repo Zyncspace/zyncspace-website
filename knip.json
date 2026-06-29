@@ -1,11 +1,12 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
-  "entry": ["app/**/*.{ts,tsx}", "scripts/**/*.{mjs,js}"],
+  "entry": ["app/**/*.{ts,tsx}", "e2e/**/*.ts", "scripts/**/*.{mjs,js,ts}"],
   "project": [
     "app/**/*.{ts,tsx}",
     "components/**/*.{ts,tsx}",
     "lib/**/*.{ts,tsx}",
-    "content/**/*.ts"
+    "content/**/*.ts",
+    "e2e/**/*.ts"
   ],
-  "ignore": ["out/**", ".next/**"]
+  "ignoreDependencies": ["tsx"]
 }

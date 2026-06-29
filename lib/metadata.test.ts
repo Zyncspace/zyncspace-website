@@ -6,9 +6,9 @@ import {
   buildSiteMetadata,
   jsonLdGraph,
   organizationSchema,
-  SITE_URL,
   webPageSchema,
 } from '@/lib/metadata';
+import { SITE_URL } from '@/lib/site-url';
 
 describe('buildMetadata', () => {
   it('sets canonical, openGraph url, and twitter card', () => {

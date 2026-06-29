@@ -1,4 +1,4 @@
-export type PageMetadata = {
+type PageMetadata = {
   title: string;
   description: string;
   keywords?: string;

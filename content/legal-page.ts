@@ -1,6 +1,6 @@
 export type LegalPageListItem = string | { label: string; text: string };
 
-export type LegalPageSection = {
+type LegalPageSection = {
   id: string;
   title: string;
   paragraphs?: string[];

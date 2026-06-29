@@ -16,7 +16,7 @@ export function getProductPage(slug: string): PageContent {
   return JSON.parse(fs.readFileSync(file, 'utf8')) as PageContent;
 }
 
-export const PRODUCT_SLUGS = [
+const PRODUCT_SLUGS = [
   'features',
   'use-cases',
   'pricing',

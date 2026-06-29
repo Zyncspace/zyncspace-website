@@ -4,26 +4,10 @@ import matter from 'gray-matter';
 import { blogIndexCards } from '@/content/blog-index';
 import { assertSafeSlug } from '@/lib/safe-slug';
 import { SITE_URL } from '@/lib/site-url';
-import type { BlogPost, PageContent } from './types';
+import type { BlogPost } from './types';
 
 const ROOT = process.cwd();
 const indexBySlug = new Map(blogIndexCards.map((c) => [c.slug, c]));
-
-export function getPageContent(slug: string): PageContent {
-  const safeSlug = assertSafeSlug(slug, 'page slug');
-  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal
-  const file = path.join(ROOT, 'content/pages', `${safeSlug}.json`);
-  return JSON.parse(fs.readFileSync(file, 'utf8')) as PageContent;
-}
-
-export function getAllPageSlugs(): string[] {
-  const dir = path.join(ROOT, 'content/pages');
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith('.json'))
-    .map((f) => f.replace('.json', ''));
-}
 
 function parseBlogFile(slug: string): BlogPost {
   const safeSlug = assertSafeSlug(slug, 'blog slug');
@@ -81,10 +65,6 @@ export function getCanonicalBlogSlug(slug: string): string | null {
   return post?.slug ?? null;
 }
 
-export function getAllBlogSlugs(): string[] {
-  return getAllBlogPosts().map((p) => p.slug);
-}
-
 export function getAllBlogRoutes(): string[] {
   const routes = new Set<string>();
   for (const post of getAllBlogPosts()) {
@@ -93,6 +73,3 @@ export function getAllBlogRoutes(): string[] {
   }
   return [...routes];
 }
-
-export { SEO_ROUTES as STATIC_ROUTES } from '@/lib/seo-config';
-export { SITE_URL } from '@/lib/site-url';

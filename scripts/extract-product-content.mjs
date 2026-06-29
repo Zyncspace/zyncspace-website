@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Copies content/pages/*.json to content/product/ and emits typed TS modules */
+/** Copies content/pages/*.json to content/product/ for static product page loaders */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,24 +18,7 @@ fs.mkdirSync(dest, { recursive: true });
 const files = fs.readdirSync(src).filter((f) => f.endsWith('.json'));
 
 for (const file of files) {
-  const slug = file.replace(/\.json$/, '');
   fs.copyFileSync(path.join(src, file), path.join(dest, file));
-  const ts = `import type { PageContent } from '@/lib/types';
-import data from './${file}';
-
-const page = data as PageContent;
-export default page;
-`;
-  fs.writeFileSync(path.join(dest, `${slug}.ts`), ts);
 }
-
-const index = `${files
-  .map((f) => f.replace(/\.json$/, ''))
-  .map(
-    (slug) =>
-      `export { default as ${slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase())}Page } from './${slug}';`,
-  )
-  .join('\n')}\n`;
-fs.writeFileSync(path.join(dest, 'index.ts'), index);
 
 console.log(`Extracted ${files.length} product pages to content/product/`);

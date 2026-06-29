@@ -2,14 +2,7 @@
 
 import { SITE_URL } from '@/lib/site-url';
 
-export {
-  IS_PRODUCTION,
-  IS_STAGING,
-  PRODUCTION_SITE_URL,
-  SITE_URL,
-  STAGING_SITE_URL,
-} from '@/lib/site-url';
-
+export { SITE_URL };
 export const SITE_NAME = 'ZyncSpace';
 
 export const SITE_DESCRIPTION =

@@ -384,28 +384,6 @@ export const engineeringPractice = {
   ],
 };
 
-export const productLines = {
-  label: 'Products',
-  title: 'Platforms That Accelerate Services',
-  items: [
-    {
-      title: 'AI Business Automation',
-      description:
-        'Automate repetitive workflows using AI agents and intelligent integrations — scoped to your data boundary.',
-    },
-    {
-      title: 'Enterprise Analytics',
-      description:
-        'Transform operational data into actionable insights with pipelines you control.',
-    },
-    {
-      title: 'ZyncSpace Workspace',
-      description:
-        'Custom SaaS team platform — chat, tasks, calendar, and AI in one place. Accelerates adoption after we build.',
-    },
-  ],
-};
-
 export const faq = {
   label: 'FAQ',
   title: 'Common Questions',
