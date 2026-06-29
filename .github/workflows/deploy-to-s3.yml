@@ -1,10 +1,9 @@
-name: Deploy to S3
+name: Deploy to S3 (manual)
+
+# Automatic deploys run from the CI workflow after all checks pass.
+# Use this workflow only for manual redeploys without re-running CI.
 
 on:
-  push:
-    branches:
-      - main
-      - zyncspace_v2-website
   workflow_dispatch:
     inputs:
       site_url:
@@ -28,31 +27,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Resolve site URL
+      - uses: ./.github/actions/resolve-site-url
         id: site
-        env:
-          INPUT_SITE_URL: ${{ inputs.site_url }}
-          VAR_SITE_URL: ${{ vars.SITE_URL }}
-          REF_NAME: ${{ github.ref_name }}
-        run: |
-          if [ -n "$INPUT_SITE_URL" ]; then
-            echo "url=$INPUT_SITE_URL" >> "$GITHUB_OUTPUT"
-          elif [ -n "$VAR_SITE_URL" ]; then
-            echo "url=$VAR_SITE_URL" >> "$GITHUB_OUTPUT"
-          elif [ "$REF_NAME" = "main" ]; then
-            echo "url=https://www.zyncspace.com" >> "$GITHUB_OUTPUT"
-          else
-            echo "url=https://www.zyncspace.in" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: 22.13.1
-          cache: npm
+          input_site_url: ${{ inputs.site_url }}
 
-      - name: Install dependencies
-        run: npm ci
+      - uses: ./.github/actions/node-setup
 
       - name: Compress asset images
         run: npm run compress:assets
@@ -75,91 +55,6 @@ jobs:
       - name: SEO audit
         run: npm run check:seo
 
-      - name: Verify build output
-        env:
-          SITE_URL: ${{ steps.site.outputs.url }}
-        run: |
-          if [ ! -d out ]; then
-            echo "Error: out/ directory was not created by the build."
-            exit 1
-          fi
-          if [ ! -f out/index.html ]; then
-            echo "Error: out/index.html is missing."
-            exit 1
-          fi
-          for f in robots.txt sitemap.xml feed.xml llms.txt; do
-            if [ ! -f "out/$f" ]; then
-              echo "Error: out/$f is missing."
-              exit 1
-            fi
-          done
-          echo "Build OK - $(find out -type f | wc -l) files for ${SITE_URL}"
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: ./.github/actions/deploy-s3
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Sync build output to S3
-        env:
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-        run: |
-          aws s3 sync out/ "s3://${S3_BUCKET_NAME}/" \
-            --delete \
-            --only-show-errors \
-            --exclude "_next/*" \
-            --exclude "assets/*"
-
-      - name: Upload SEO files and cache static assets
-        env:
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-        run: chmod +x scripts/upload-seo-assets.sh && ./scripts/upload-seo-assets.sh "${S3_BUCKET_NAME}"
-
-      - name: Set HTML cache headers
-        env:
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-        run: |
-          aws s3 cp out/index.html "s3://${S3_BUCKET_NAME}/index.html" \
-            --content-type "text/html; charset=utf-8" \
-            --cache-control "public,max-age=0,must-revalidate" \
-            --only-show-errors
-
-          if [ -f out/404.html ]; then
-            aws s3 cp out/404.html "s3://${S3_BUCKET_NAME}/404.html" \
-              --content-type "text/html; charset=utf-8" \
-              --cache-control "public,max-age=0,must-revalidate" \
-              --only-show-errors
-          fi
-
-      - name: Configure S3 static website (index + error document)
-        env:
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-        run: |
-          aws s3 website "s3://${S3_BUCKET_NAME}" \
-            --index-document index.html \
-            --error-document 404.html
-
-      - name: Invalidate CloudFront cache
-        if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
-        env:
-          DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id "$DISTRIBUTION_ID" \
-            --paths "/*"
-
-      - name: Deploy summary
-        env:
-          SITE_URL: ${{ steps.site.outputs.url }}
-          REF_NAME: ${{ github.ref_name }}
-          SHA: ${{ github.sha }}
-        run: |
-          echo "### Deployed to S3" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Site URL:** \`${SITE_URL}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Branch:** \`${REF_NAME}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Commit:** \`${SHA}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "#### Production cutover" >> "$GITHUB_STEP_SUMMARY"
-          echo "Set GitHub repo variable \`SITE_URL\` to \`https://www.zyncspace.com\` or deploy from \`main\`." >> "$GITHUB_STEP_SUMMARY"
+          site_url: ${{ steps.site.outputs.url }}

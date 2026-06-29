@@ -1,0 +1,33 @@
+name: Resolve site URL
+description: Resolve SITE_URL from workflow input, repo variable, or branch default
+
+inputs:
+  input_site_url:
+    description: Optional override from workflow_dispatch
+    required: false
+    default: ''
+
+outputs:
+  url:
+    description: Resolved public site URL
+    value: ${{ steps.resolve.outputs.url }}
+
+runs:
+  using: composite
+  steps:
+    - id: resolve
+      shell: bash
+      env:
+        INPUT_SITE_URL: ${{ inputs.input_site_url }}
+        VAR_SITE_URL: ${{ vars.SITE_URL }}
+        REF_NAME: ${{ github.ref_name }}
+      run: |
+        if [ -n "$INPUT_SITE_URL" ]; then
+          echo "url=$INPUT_SITE_URL" >> "$GITHUB_OUTPUT"
+        elif [ -n "$VAR_SITE_URL" ]; then
+          echo "url=$VAR_SITE_URL" >> "$GITHUB_OUTPUT"
+        elif [ "$REF_NAME" = "main" ]; then
+          echo "url=https://www.zyncspace.com" >> "$GITHUB_OUTPUT"
+        else
+          echo "url=https://www.zyncspace.in" >> "$GITHUB_OUTPUT"
+        fi

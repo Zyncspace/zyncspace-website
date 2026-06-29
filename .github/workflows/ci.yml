@@ -10,17 +10,20 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   quality:
     name: Lint, Test & Build
     runs-on: ubuntu-latest
 
-    env:
-      NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL != '' && vars.SITE_URL || 'https://www.zyncspace.in' }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - uses: ./.github/actions/resolve-site-url
+        id: site
 
       - uses: ./.github/actions/node-setup
 
@@ -38,6 +41,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ steps.site.outputs.url }}
+          NEXT_PUBLIC_GA_ID: ${{ vars.GA_ID }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
 
       - name: SEO audit
         run: npm run check:seo
@@ -98,3 +105,33 @@ jobs:
         with:
           configPath: ./lighthouserc.cjs
           uploadArtifacts: true
+
+  deploy:
+    name: Deploy to S3
+    needs: [quality, e2e, lighthouse]
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/resolve-site-url
+        id: site
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: static-site
+          path: out/
+
+      - name: Print deploy environment
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          echo "Deploying commit ${GITHUB_SHA} to S3 for ${SITE_URL} (${REF_NAME})"
+
+      - uses: ./.github/actions/deploy-s3
+        with:
+          site_url: ${{ steps.site.outputs.url }}
