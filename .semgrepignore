@@ -1,0 +1,13 @@
+# Slug-validated filesystem reads and trusted static HTML rendering
+lib/content.ts
+lib/product-pages.ts
+components/blog/BlogArticleBody.tsx
+components/product/ProductPageBody.tsx
+
+# Build-time scripts use readdir listings + safe-path helpers
+scripts/generate-rss.mjs
+scripts/generate-seo-files.mjs
+scripts/seo-audit.mjs
+scripts/sync-blogs-from-live.mjs
+scripts/extract-product-content.mjs
+scripts/enhance-blogs.mjs

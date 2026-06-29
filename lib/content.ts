@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { blogIndexCards } from '@/content/blog-index';
+import { assertSafeSlug } from '@/lib/safe-slug';
 import { SITE_URL } from '@/lib/site-url';
 import type { BlogPost, PageContent } from './types';
 
@@ -9,7 +10,9 @@ const ROOT = process.cwd();
 const indexBySlug = new Map(blogIndexCards.map((c) => [c.slug, c]));
 
 export function getPageContent(slug: string): PageContent {
-  const file = path.join(ROOT, 'content/pages', `${slug}.json`);
+  const safeSlug = assertSafeSlug(slug, 'page slug');
+  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal
+  const file = path.join(ROOT, 'content/pages', `${safeSlug}.json`);
   return JSON.parse(fs.readFileSync(file, 'utf8')) as PageContent;
 }
 
@@ -23,7 +26,9 @@ export function getAllPageSlugs(): string[] {
 }
 
 function parseBlogFile(slug: string): BlogPost {
-  const file = path.join(ROOT, 'content/blog', `${slug}.mdx`);
+  const safeSlug = assertSafeSlug(slug, 'blog slug');
+  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal
+  const file = path.join(ROOT, 'content/blog', `${safeSlug}.mdx`);
   const raw = fs.readFileSync(file, 'utf8');
   const { data, content } = matter(raw);
   const card = indexBySlug.get(slug);

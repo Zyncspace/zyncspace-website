@@ -3,6 +3,7 @@
  */
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { assertSafeSlug } from './safe-path.mjs';
 
 const ROOT = join(process.cwd());
 const BLOG_DIR = join(ROOT, 'content/blog');
@@ -171,7 +172,8 @@ async function syncSlug(slug) {
     aliases,
   })}<section class="blog-content">\n  <div class="container">\n    ${heroImage ? `<img src="${heroImage}" alt="${title.replace(/"/g, '&quot;')}" class="blog-image">` : ''}\n    <div class="blog-body">\n${body}\n    </div>\n  </div>\n</section>\n`;
 
-  await writeFile(join(BLOG_DIR, `${slug}.mdx`), mdx, 'utf8');
+  const safeSlug = assertSafeSlug(slug);
+  await writeFile(join(BLOG_DIR, `${safeSlug}.mdx`), mdx, 'utf8');
   return true;
 }
 

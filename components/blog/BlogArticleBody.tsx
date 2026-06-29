@@ -7,6 +7,8 @@ export default function BlogArticleBody({ post }: { post: BlogPost }) {
     .replace(/<\/h1>/gi, '</h2>');
   return (
     <article className="blog-article-body">
+      {/* Trusted MDX body from repo content — not user-supplied at runtime */}
+      {/* nosemgrep: typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml */}
       <div className="container" dangerouslySetInnerHTML={{ __html: content }} />
     </article>
   );

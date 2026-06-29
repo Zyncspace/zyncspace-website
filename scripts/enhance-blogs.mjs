@@ -3,20 +3,21 @@
  * Run: node scripts/enhance-blogs.mjs
  */
 import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { join } from 'node:path';
 import matter from 'gray-matter';
+
+const execFileAsync = promisify(execFile);
 
 const BLOG_DIR = join(process.cwd(), 'content/blog');
 const IMAGE_BASE = '/assets/images/blog';
 
-// Dynamic import of TS file via transpile - read as text and eval JSON-like or use jiti
-// Simpler: inline read enhancements from compiled approach - read the ts file and extract
-const enhancementsPath = join(process.cwd(), 'content/blog-enhancements.ts');
-const enhancementsSrc = await readFile(enhancementsPath, 'utf8');
-const match = enhancementsSrc.match(/export const blogEnhancements[^=]*=\s*(\{[\s\S]*\});/);
-if (!match) throw new Error('Could not parse blog-enhancements.ts');
-// eslint-disable-next-line no-eval
-const blogEnhancements = eval(`(${match[1]})`);
+const { stdout } = await execFileAsync('npx', ['tsx', 'scripts/load-blog-enhancements.ts'], {
+  cwd: process.cwd(),
+  encoding: 'utf8',
+});
+const blogEnhancements = JSON.parse(stdout);
 
 function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

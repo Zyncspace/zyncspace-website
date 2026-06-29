@@ -1,12 +1,16 @@
 import fs from 'fs';
 import path from 'path';
+import { assertSafeSlug } from '@/lib/safe-slug';
 import type { PageContent } from '@/lib/types';
 
 const ROOT = process.cwd();
 
 export function getProductPage(slug: string): PageContent {
-  const tsPath = path.join(ROOT, 'content/product', `${slug}.json`);
-  const pagesPath = path.join(ROOT, 'content/pages', `${slug}.json`);
+  const safeSlug = assertSafeSlug(slug, 'product slug');
+  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal
+  const tsPath = path.join(ROOT, 'content/product', `${safeSlug}.json`);
+  // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal
+  const pagesPath = path.join(ROOT, 'content/pages', `${safeSlug}.json`);
   const file = fs.existsSync(tsPath) ? tsPath : pagesPath;
   if (!fs.existsSync(file)) throw new Error(`Product page not found: ${slug}`);
   return JSON.parse(fs.readFileSync(file, 'utf8')) as PageContent;

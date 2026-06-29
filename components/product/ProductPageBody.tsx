@@ -6,7 +6,10 @@ export default function ProductPageBody({ page }: { page: PageContent }) {
 
   return (
     <ProductPageShell page={page}>
+      {/* Trusted static product HTML from repo JSON — not user-supplied at runtime */}
+      {/* nosemgrep: typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml */}
       {page.styles ? <style dangerouslySetInnerHTML={{ __html: page.styles }} /> : null}
+      {/* nosemgrep: typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml */}
       <main dangerouslySetInnerHTML={{ __html: content }} />
     </ProductPageShell>
   );

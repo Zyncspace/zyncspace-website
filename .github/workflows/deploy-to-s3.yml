@@ -30,12 +30,16 @@ jobs:
 
       - name: Resolve site URL
         id: site
+        env:
+          INPUT_SITE_URL: ${{ inputs.site_url }}
+          VAR_SITE_URL: ${{ vars.SITE_URL }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
-          if [ -n "${{ inputs.site_url }}" ]; then
-            echo "url=${{ inputs.site_url }}" >> "$GITHUB_OUTPUT"
-          elif [ -n "${{ vars.SITE_URL }}" ]; then
-            echo "url=${{ vars.SITE_URL }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.ref_name }}" = "main" ]; then
+          if [ -n "$INPUT_SITE_URL" ]; then
+            echo "url=$INPUT_SITE_URL" >> "$GITHUB_OUTPUT"
+          elif [ -n "$VAR_SITE_URL" ]; then
+            echo "url=$VAR_SITE_URL" >> "$GITHUB_OUTPUT"
+          elif [ "$REF_NAME" = "main" ]; then
             echo "url=https://www.zyncspace.com" >> "$GITHUB_OUTPUT"
           else
             echo "url=https://www.zyncspace.in" >> "$GITHUB_OUTPUT"
@@ -54,9 +58,12 @@ jobs:
         run: npm run compress:assets
 
       - name: Print build environment
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
-          echo "NEXT_PUBLIC_SITE_URL=${{ steps.site.outputs.url }}"
-          echo "Branch: ${{ github.ref_name }}"
+          echo "NEXT_PUBLIC_SITE_URL=${SITE_URL}"
+          echo "Branch: ${REF_NAME}"
 
       - name: Build static site
         run: npm run build
@@ -69,6 +76,8 @@ jobs:
         run: npm run check:seo
 
       - name: Verify build output
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
         run: |
           if [ ! -d out ]; then
             echo "Error: out/ directory was not created by the build."
@@ -84,7 +93,7 @@ jobs:
               exit 1
             fi
           done
-          echo "Build OK — $(find out -type f | wc -l) files for ${{ steps.site.outputs.url }}"
+          echo "Build OK — $(find out -type f | wc -l) files for ${SITE_URL}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -94,33 +103,41 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync build output to S3
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 sync out/ "s3://${{ secrets.S3_BUCKET_NAME }}/" \
+          aws s3 sync out/ "s3://${S3_BUCKET_NAME}/" \
             --delete \
             --only-show-errors \
             --exclude "_next/*" \
             --exclude "assets/*"
 
       - name: Upload SEO files and cache static assets
-        run: chmod +x scripts/upload-seo-assets.sh && ./scripts/upload-seo-assets.sh "${{ secrets.S3_BUCKET_NAME }}"
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: chmod +x scripts/upload-seo-assets.sh && ./scripts/upload-seo-assets.sh "${S3_BUCKET_NAME}"
 
       - name: Set HTML cache headers
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 cp out/index.html "s3://${{ secrets.S3_BUCKET_NAME }}/index.html" \
+          aws s3 cp out/index.html "s3://${S3_BUCKET_NAME}/index.html" \
             --content-type "text/html; charset=utf-8" \
             --cache-control "public,max-age=0,must-revalidate" \
             --only-show-errors
 
           if [ -f out/404.html ]; then
-            aws s3 cp out/404.html "s3://${{ secrets.S3_BUCKET_NAME }}/404.html" \
+            aws s3 cp out/404.html "s3://${S3_BUCKET_NAME}/404.html" \
               --content-type "text/html; charset=utf-8" \
               --cache-control "public,max-age=0,must-revalidate" \
               --only-show-errors
           fi
 
       - name: Configure S3 static website (index + error document)
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 website "s3://${{ secrets.S3_BUCKET_NAME }}" \
+          aws s3 website "s3://${S3_BUCKET_NAME}" \
             --index-document index.html \
             --error-document 404.html
 
@@ -134,11 +151,15 @@ jobs:
             --paths "/*"
 
       - name: Deploy summary
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
+          REF_NAME: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
         run: |
           echo "### Deployed to S3" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Site URL:** \`${{ steps.site.outputs.url }}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Branch:** \`${{ github.ref_name }}\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **Commit:** \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Site URL:** \`${SITE_URL}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Branch:** \`${REF_NAME}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Commit:** \`${SHA}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "#### Production cutover" >> "$GITHUB_STEP_SUMMARY"
           echo "Set GitHub repo variable \`SITE_URL\` to \`https://www.zyncspace.com\` or deploy from \`main\`." >> "$GITHUB_STEP_SUMMARY"
