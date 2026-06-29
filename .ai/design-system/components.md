@@ -42,10 +42,10 @@
 
 ## Cards
 
-- `.pricing-card` — consulting pricing
-- `.insight-card` — blog previews
-- `.hero-stat-card` — metrics
-- `.terminal-box` — tech credibility blocks
+- `.pricing-card` - consulting pricing
+- `.insight-card` - blog previews
+- `.hero-stat-card` - metrics
+- `.terminal-box` - tech credibility blocks
 
 ## Forms (`ContactSection`)
 
@@ -62,19 +62,19 @@
 
 ## Service pages
 
-- `ServicePageHeader` — dark header, label + H1 + description
-- `ServicePageExtended` — long-form lorem/content sections
-- `PageJsonLd` — breadcrumbs + schema
+- `ServicePageHeader` - dark header, label + H1 + description
+- `ServicePageExtended` - long-form lorem/content sections
+- `PageJsonLd` - breadcrumbs + schema
 
 ## Product pages
 
-- `ProductPageShell` — hero from extracted HTML content
-- `ProductPage` — metadata + JSON-LD wrapper
+- `ProductPageShell` - hero from extracted HTML content
+- `ProductPage` - metadata + JSON-LD wrapper
 
 ## SEO components
 
-- `components/seo/Analytics.tsx` — GA4 when `NEXT_PUBLIC_GA_ID` set
-- `components/seo/PageJsonLd.tsx` — structured data helpers
+- `components/seo/Analytics.tsx` - GA4 when `NEXT_PUBLIC_GA_ID` set
+- `components/seo/PageJsonLd.tsx` - structured data helpers
 
 ## CTA placement rules
 

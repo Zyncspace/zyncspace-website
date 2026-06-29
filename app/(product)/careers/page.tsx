@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site-url';
 
 const title = 'Careers';
 const description =
-  'Careers at ZyncSpace — join our team and help build the future of team collaboration. Remote internships in development, design, and growth.';
+  'Careers at ZyncSpace - join our team and help build the future of team collaboration. Remote internships in development, design, and growth.';
 const path = '/careers';
 
 export const metadata = buildMetadata({

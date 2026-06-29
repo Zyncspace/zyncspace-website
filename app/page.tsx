@@ -11,7 +11,7 @@ import {
 
 const HOME_TITLE = 'ZyncSpace | AI-Driven Technology Consulting & Team Workspace';
 const HOME_DESCRIPTION =
-  'ZyncSpace combines AI-driven technology consulting with a unified team workspace — chat, tasks, calendar, and AI in one platform.';
+  'ZyncSpace combines AI-driven technology consulting with a unified team workspace - chat, tasks, calendar, and AI in one platform.';
 
 export const metadata = buildMetadata({
   title: HOME_TITLE,

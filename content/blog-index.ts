@@ -1,4 +1,4 @@
-/** Auto-generated from content/pages/blogs.json — run: node scripts/generate-blog-index.mjs */
+/** Auto-generated from content/pages/blogs.json - run: node scripts/generate-blog-index.mjs */
 export type BlogIndexCard = {
   slug: string;
   title: string;
@@ -48,7 +48,7 @@ export const blogIndexCards: BlogIndexCard[] = [
     slug: 'ai-in-workplace-communication',
     title: 'AI in Workplace Communication',
     excerpt:
-      'How AI is reshaping workplace communication in 2026: writing assistants, meeting intelligence, and governance guardrails—with data on adoption and ROI.',
+      'How AI is reshaping workplace communication in 2026: writing assistants, meeting intelligence, and governance guardrails-with data on adoption and ROI.',
     category: 'Future of Work',
     datePublished: '2026-02-07',
     readTime: null,
@@ -81,7 +81,7 @@ export const blogIndexCards: BlogIndexCard[] = [
     slug: 'feedback-frameworks-for-growth',
     title: 'Feedback Frameworks for Growth',
     excerpt:
-      'Feedback frameworks—SBI, COIN, and radical candor—explained with examples. Build a culture where feedback drives measurable performance gains.',
+      'Feedback frameworks-SBI, COIN, and radical candor-explained with examples. Build a culture where feedback drives measurable performance gains.',
     category: 'Professional Development',
     datePublished: '2026-01-28',
     readTime: null,
@@ -169,7 +169,7 @@ export const blogIndexCards: BlogIndexCard[] = [
     slug: 'top-communication-tools',
     title: 'Top Communication Tools Every Team Needs in 2026',
     excerpt:
-      'The essential communication tools every team needs in 2026: chat, video, docs, and AI—compared by use case with adoption benchmarks.',
+      'The essential communication tools every team needs in 2026: chat, video, docs, and AI-compared by use case with adoption benchmarks.',
     category: 'Tools',
     datePublished: '2026-01-03',
     readTime: null,
@@ -269,7 +269,7 @@ export const blogIndexCards: BlogIndexCard[] = [
     slug: 'communication-models-workplace',
     title: '8 Effective Communication Models Every Workplace Should Use in 2026',
     excerpt:
-      'Eight communication models every workplace should use in 2026—from SBAR and NVC to RACI and async DACI—for clarity, speed, and fewer conflicts.',
+      'Eight communication models every workplace should use in 2026-from SBAR and NVC to RACI and async DACI-for clarity, speed, and fewer conflicts.',
     category: 'Workplace Communication',
     datePublished: '2026-06-28',
     readTime: null,

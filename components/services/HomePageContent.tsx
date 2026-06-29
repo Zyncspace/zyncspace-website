@@ -30,7 +30,7 @@ import {
 } from '@/components/services/sections';
 
 /**
- * Enterprise homepage — trust-safe, outcome-focused flow:
+ * Enterprise homepage - trust-safe, outcome-focused flow:
  * Hero → Partners → About → Impact → Why Us → Services → Preview → Process →
  * Tech → Industries → Case Study → Portfolio → Architectures → Client Stories →
  * Security → Pricing → Product → Engineering Practice → Insights → Resources → FAQ → CTA → Contact

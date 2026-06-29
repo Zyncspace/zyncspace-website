@@ -1,5 +1,5 @@
 ---
-description: ZyncSpace enterprise website guidelines — read .ai folder before changes
+description: ZyncSpace enterprise website guidelines - read .ai folder before changes
 alwaysApply: true
 ---
 
@@ -9,10 +9,10 @@ Read `.ai/AGENTS.md` and `.ai/README.md` before making changes.
 
 ## Core rules
 
-- **Outcomes over features** — write for executives (see `.ai/content/messaging.md`)
+- **Outcomes over features** - write for executives (see `.ai/content/messaging.md`)
 - **Never fake** customers, metrics, testimonials, or certifications (see `.ai/content/ai-content-rules.md`)
-- **Products vs Services** — keep separate (see `.ai/content/products-vs-services.md`)
-- **Definition of done** — every page must pass `.ai/guidelines/definition-of-done.md`
+- **Products vs Services** - keep separate (see `.ai/content/products-vs-services.md`)
+- **Definition of done** - every page must pass `.ai/guidelines/definition-of-done.md`
 
 ## Site URLs
 

@@ -1,4 +1,4 @@
-/* Product pages — AETHERIS theme bridge for migrated HTML */
+/* Product pages - AETHERIS theme bridge for migrated HTML */
 
 .product-page-body {
   --primary: var(--accent-brand);
@@ -429,7 +429,7 @@
   font-family: var(--font-sans);
 }
 
-/* Contact form — AETHERIS dark form box */
+/* Contact form - AETHERIS dark form box */
 .aetheris-contact-form .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

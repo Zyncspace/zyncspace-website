@@ -1,4 +1,4 @@
-/** ZyncSpace product pricing math — used by the interactive calculator. */
+/** ZyncSpace product pricing math - used by the interactive calculator. */
 
 export const PRICING_CONSTANTS = {
   freeTierMaxUsers: 10,

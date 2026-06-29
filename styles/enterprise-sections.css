@@ -1,4 +1,4 @@
-/* Enterprise homepage sections — extends aetheris theme */
+/* Enterprise homepage sections - extends aetheris theme */
 
 .section-lead {
   color: var(--muted-text);
@@ -569,7 +569,7 @@
   pointer-events: auto;
 }
 
-/* Scrollytelling — sticky hub while scrolling (matches process section) */
+/* Scrollytelling - sticky hub while scrolling (matches process section) */
 .feature-hub-scrolly-track {
   position: relative;
 }

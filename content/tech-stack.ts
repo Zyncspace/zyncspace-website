@@ -37,7 +37,7 @@ const cards: TechStackCard[] = [
   t(
     'AWS',
     C.platform,
-    'Enterprise cloud — compute, storage, networking, and managed services at scale.',
+    'Enterprise cloud - compute, storage, networking, and managed services at scale.',
     {
       featured: true,
       outcome: 'Multi-region, high-availability architectures with predictable cost controls.',
@@ -95,7 +95,7 @@ const cards: TechStackCard[] = [
   t(
     'Cost Optimization',
     C.platform,
-    'FinOps — right-sizing, reserved capacity, and waste elimination.',
+    'FinOps - right-sizing, reserved capacity, and waste elimination.',
   ),
   t(
     'High Availability',
@@ -376,13 +376,13 @@ const cards: TechStackCard[] = [
   t(
     'AI SaaS Development',
     C.ai,
-    'Full-stack AI product builds — from MVP to multi-tenant production.',
+    'Full-stack AI product builds - from MVP to multi-tenant production.',
   ),
 
   // SaaS Development
   t('LMS', C.saas, 'Learning management systems with courses, assessments, and progress tracking.'),
   t('CRM', C.saas, 'Customer relationship management with pipelines, automation, and reporting.'),
-  t('HRMS', C.saas, 'Human resource management — payroll, attendance, and employee lifecycle.'),
+  t('HRMS', C.saas, 'Human resource management - payroll, attendance, and employee lifecycle.'),
   t(
     'Internal Tools',
     C.saas,
@@ -509,7 +509,7 @@ const cards: TechStackCard[] = [
   t(
     'React Three Fiber',
     C.uiux,
-    'React renderer for Three.js — declarative 3D in component trees.',
+    'React renderer for Three.js - declarative 3D in component trees.',
   ),
   t(
     'Blender Assets Integration',
@@ -524,7 +524,7 @@ const cards: TechStackCard[] = [
   t('3D Configurators', C.uiux, 'Real-time product customization with WebGL preview.'),
 
   // GTM & Marketing
-  t('GTM Strategy', C.gtm, 'Go-to-market planning — ICP, positioning, and launch sequencing.'),
+  t('GTM Strategy', C.gtm, 'Go-to-market planning - ICP, positioning, and launch sequencing.'),
   t('Product Positioning', C.gtm, 'Differentiated messaging that maps features to buyer outcomes.'),
   t('Sales Enablement', C.gtm, 'Decks, battlecards, and demo scripts for revenue teams.'),
   t('B2B Sales', C.gtm, 'Enterprise sales motions with long-cycle deal support.'),
@@ -645,7 +645,7 @@ export const techStackContent = {
   label: 'Production Engineering',
   title: 'Our Production Technology Stack',
   description:
-    'Cloud, backend, AI, SaaS, frontend, and go-to-market — a production-grade stack we use to design, build, and scale enterprise software for ambitious teams.',
+    'Cloud, backend, AI, SaaS, frontend, and go-to-market - a production-grade stack we use to design, build, and scale enterprise software for ambitious teams.',
   cta: {
     label: 'Explore Full Technology Stack ↗',
     href: '/services/technology',
@@ -668,10 +668,10 @@ export const techStackContent = {
     C.services,
   ],
   previewPillars: ['AWS', 'Platform Engineering', 'Node.js'],
-  /** Homepage — informative overview (no tool listing) */
+  /** Homepage - informative overview (no tool listing) */
   homepage: {
     intro:
-      'We standardize on proven cloud, backend, AI, and frontend technologies — chosen for uptime, security, and speed to production. Every engagement maps tools to business outcomes, not buzzwords.',
+      'We standardize on proven cloud, backend, AI, and frontend technologies - chosen for uptime, security, and speed to production. Every engagement maps tools to business outcomes, not buzzwords.',
     highlights: [
       {
         title: 'Platform & Cloud',
@@ -681,7 +681,7 @@ export const techStackContent = {
       {
         title: 'Backend & Data',
         description:
-          'Node.js, TypeScript, PostgreSQL, Redis, and API-first design — REST, GraphQL, OAuth, and enterprise SSO built in.',
+          'Node.js, TypeScript, PostgreSQL, Redis, and API-first design - REST, GraphQL, OAuth, and enterprise SSO built in.',
       },
       {
         title: 'AI & SaaS',
@@ -691,7 +691,7 @@ export const techStackContent = {
       {
         title: 'Frontend & Delivery',
         description:
-          'React, Next.js, design systems, and CI/CD with security gates — from landing pages to enterprise dashboards.',
+          'React, Next.js, design systems, and CI/CD with security gates - from landing pages to enterprise dashboards.',
       },
     ],
     stats: [

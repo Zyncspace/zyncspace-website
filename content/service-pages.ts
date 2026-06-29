@@ -1,4 +1,4 @@
-/** Extended copy for dedicated service pages — distinct from homepage summaries */
+/** Extended copy for dedicated service pages - distinct from homepage summaries */
 
 export type ServicePageExtendedSection = {
   title: string;
@@ -11,14 +11,14 @@ export const servicePageExtended: Record<string, ServicePageExtendedSection[]> =
       title: 'End-to-End Digital Capability',
       paragraphs: [
         'ZyncSpace combines AI solutions, product engineering, cloud infrastructure, and UX design into one accountable delivery model. Instead of handing off between vendors, you get squads that own architecture, implementation, and production operations.',
-        'Whether you need a greenfield SaaS platform, an AI copilot on private data, or a legacy system migrated to the cloud, our teams work from documented reference architectures — not ad-hoc scripts.',
+        'Whether you need a greenfield SaaS platform, an AI copilot on private data, or a legacy system migrated to the cloud, our teams work from documented reference architectures - not ad-hoc scripts.',
       ],
     },
     {
       title: 'How We Engage Enterprise Clients',
       paragraphs: [
         'Every engagement starts with discovery: we audit your systems, quantify business impact, and align stakeholders on ROI before writing production code. Proof-of-concept sprints are available for AI and platform work when you need validation before scale.',
-        'Dedicated squads provide daily visibility through CI/CD pipelines, sprint demos, and written architecture decisions. Security reviews and compliance alignment are built into the delivery path — not bolted on at the end.',
+        'Dedicated squads provide daily visibility through CI/CD pipelines, sprint demos, and written architecture decisions. Security reviews and compliance alignment are built into the delivery path - not bolted on at the end.',
       ],
     },
     {

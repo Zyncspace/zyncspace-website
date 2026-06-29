@@ -78,7 +78,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
   },
   'ai-in-workplace-communication': {
     description:
-      'How AI is reshaping workplace communication in 2026: writing assistants, meeting intelligence, and governance guardrails—with data on adoption and ROI.',
+      'How AI is reshaping workplace communication in 2026: writing assistants, meeting intelligence, and governance guardrails-with data on adoption and ROI.',
     keywords:
       'AI workplace communication, meeting transcription, AI writing assistant, enterprise AI governance, future of work',
     dataPoints: [
@@ -91,7 +91,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'Will AI replace human workplace communication?',
         answer:
-          'AI handles drafting, summarization, and triage—but trust, negotiation, empathy, and strategic decisions remain human-critical skills.',
+          'AI handles drafting, summarization, and triage-but trust, negotiation, empathy, and strategic decisions remain human-critical skills.',
       },
     ],
     imagePrompt:
@@ -141,7 +141,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
   },
   'feedback-frameworks-for-growth': {
     description:
-      'Feedback frameworks—SBI, COIN, and radical candor—explained with examples. Build a culture where feedback drives measurable performance gains.',
+      'Feedback frameworks-SBI, COIN, and radical candor-explained with examples. Build a culture where feedback drives measurable performance gains.',
     keywords:
       'feedback frameworks, SBI feedback model, radical candor, continuous feedback, employee development',
     dataPoints: [
@@ -154,7 +154,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'What is the SBI feedback model?',
         answer:
-          'Situation-Behavior-Impact: describe when and where, what happened objectively, and the effect on team or outcomes—removing personal judgment from the message.',
+          'Situation-Behavior-Impact: describe when and where, what happened objectively, and the effect on team or outcomes-removing personal judgment from the message.',
       },
     ],
     imagePrompt:
@@ -217,7 +217,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'Does non-verbal communication matter on video calls?',
         answer:
-          'Yes—camera framing, posture, nodding, and vocal tone carry most of the trust signal when body language is partially hidden.',
+          'Yes-camera framing, posture, nodding, and vocal tone carry most of the trust signal when body language is partially hidden.',
       },
     ],
     imagePrompt:
@@ -309,7 +309,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
   },
   'top-communication-tools': {
     description:
-      'The essential communication tools every team needs in 2026: chat, video, docs, and AI—compared by use case with adoption benchmarks.',
+      'The essential communication tools every team needs in 2026: chat, video, docs, and AI-compared by use case with adoption benchmarks.',
     keywords:
       'communication tools 2026, team collaboration software, Slack alternatives, workplace messaging, SaaS tools',
     dataPoints: [
@@ -322,7 +322,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'What communication tools do startups need first?',
         answer:
-          'Start with one real-time channel, one async doc system, video for sync, and a shared task board—add specialized tools only when pain is proven.',
+          'Start with one real-time channel, one async doc system, video for sync, and a shared task board-add specialized tools only when pain is proven.',
       },
     ],
     imagePrompt:
@@ -384,7 +384,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'What are the five steps of active listening?',
         answer:
-          'Pay full attention, show you are listening, provide feedback, defer judgment, and respond thoughtfully—often summarized as attend, reflect, clarify, summarize, respond.',
+          'Pay full attention, show you are listening, provide feedback, defer judgment, and respond thoughtfully-often summarized as attend, reflect, clarify, summarize, respond.',
       },
     ],
     imagePrompt:
@@ -426,7 +426,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'What is the biggest workplace communication trend in 2026?',
         answer:
-          'AI-assisted async workflows—where humans own decisions and AI handles summarization, routing, and first drafts—are becoming the default operating model.',
+          'AI-assisted async workflows-where humans own decisions and AI handles summarization, routing, and first drafts-are becoming the default operating model.',
       },
     ],
     imagePrompt:
@@ -447,7 +447,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'Why did ZyncSpace build a separate communication platform?',
         answer:
-          'Training workflows need cohort spaces, session scheduling, and learner context—not just channels and DMs—so coaches can focus on outcomes instead of tool juggling.',
+          'Training workflows need cohort spaces, session scheduling, and learner context-not just channels and DMs-so coaches can focus on outcomes instead of tool juggling.',
       },
     ],
     imagePrompt:
@@ -459,7 +459,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
     keywords:
       'free Slack alternative, training team software, team chat comparison, EdTech tools, collaboration pricing',
     dataPoints: [
-      'Slack free tier limits message history to 90 days—problematic for multi-month training programs.',
+      'Slack free tier limits message history to 90 days-problematic for multi-month training programs.',
       'Training organizations switch tools every 18 months on average due to scaling limits.',
       'Free tiers with unlimited history retain 2× more institutional knowledge for cohort programs.',
       'Teams under 50 save $4,000–$8,000 annually by choosing fit-for-purpose tools over per-seat chat stacks.',
@@ -468,7 +468,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'What is the best free Slack alternative for coaching teams?',
         answer:
-          'Look for unlimited history, cohort channels, calendar integration, and learner-friendly onboarding—generic chat rarely covers training-specific workflows.',
+          'Look for unlimited history, cohort channels, calendar integration, and learner-friendly onboarding-generic chat rarely covers training-specific workflows.',
       },
     ],
     imagePrompt:
@@ -497,7 +497,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
   },
   'communication-models-workplace': {
     description:
-      'Eight communication models every workplace should use in 2026—from SBAR and NVC to RACI and async DACI—for clarity, speed, and fewer conflicts.',
+      'Eight communication models every workplace should use in 2026-from SBAR and NVC to RACI and async DACI-for clarity, speed, and fewer conflicts.',
     keywords:
       'communication models, SBAR, nonviolent communication, RACI, workplace frameworks, team communication',
     dataPoints: [
@@ -523,7 +523,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       'evolution of workplace communication, history of business communication, digital transformation, collaboration history',
     dataPoints: [
       'Email volume grew 300% between 2000 and 2020 before chat began absorbing routine coordination.',
-      'Slack reached 10M daily users in 6 years—faster than email adoption in enterprises.',
+      'Slack reached 10M daily users in 6 years-faster than email adoption in enterprises.',
       'Gen Z workers send 3× more chat messages per day than email compared to Gen X colleagues.',
       'AI-assisted communication is the fastest-adopted workplace technology since cloud document editing.',
     ],
@@ -531,7 +531,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
       {
         question: 'What was the biggest shift in workplace communication?',
         answer:
-          'The move from hierarchical, asynchronous memos to real-time, horizontal chat—now evolving again toward AI-mediated async with human-owned decisions.',
+          'The move from hierarchical, asynchronous memos to real-time, horizontal chat-now evolving again toward AI-mediated async with human-owned decisions.',
       },
     ],
     imagePrompt:

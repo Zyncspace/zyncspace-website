@@ -49,7 +49,7 @@ const STATIC_PAGES = [
   {
     path: '/services',
     name: 'Consulting Services',
-    desc: 'Technology consulting — AI automation, cloud engineering, UX, custom SaaS.',
+    desc: 'Technology consulting - AI automation, cloud engineering, UX, custom SaaS.',
   },
   {
     path: '/services/framework',
@@ -76,7 +76,7 @@ const STATIC_PAGES = [
     name: 'Consulting Pricing',
     desc: 'Consulting engagement models and pricing.',
   },
-  { path: '/features', name: 'Features', desc: 'Team workspace — chat, tasks, calendar, and AI.' },
+  { path: '/features', name: 'Features', desc: 'Team workspace - chat, tasks, calendar, and AI.' },
   { path: '/use-cases', name: 'Use Cases', desc: 'How teams use ZyncSpace for collaboration.' },
   { path: '/pricing', name: 'Pricing', desc: 'Product pricing plans.' },
   { path: '/about', name: 'About', desc: 'Mission, team, and company story.' },
@@ -121,7 +121,7 @@ function generateLlms(posts) {
 > AI-driven technology consulting and unified team workspace platform.
 
 ## Overview
-ZyncSpace combines AI-driven technology consulting with a unified team workspace — chat, tasks, calendar, and AI in one platform.
+ZyncSpace combines AI-driven technology consulting with a unified team workspace - chat, tasks, calendar, and AI in one platform.
 
 ## Main Pages
 
@@ -168,7 +168,7 @@ function patchRobotsTxt() {
 }
 
 if (!fs.existsSync(OUT)) {
-  console.error('out/ not found — run next build first');
+  console.error('out/ not found - run next build first');
   process.exit(1);
 }
 

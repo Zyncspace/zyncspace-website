@@ -60,7 +60,7 @@ export default function ServicesPageContent() {
             <span className="label">Explore</span>
             <h2>Go deeper on how we deliver</h2>
             <p className="section-lead">
-              Framework, technology choices, industry patterns, and pricing — each with dedicated
+              Framework, technology choices, industry patterns, and pricing - each with dedicated
               detail.
             </p>
           </div>

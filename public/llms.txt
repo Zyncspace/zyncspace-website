@@ -3,7 +3,7 @@
 > AI-driven technology consulting and unified team workspace platform.
 
 ## Overview
-ZyncSpace combines AI-driven technology consulting with a unified team workspace — chat, tasks, calendar, and AI in one platform.
+ZyncSpace combines AI-driven technology consulting with a unified team workspace - chat, tasks, calendar, and AI in one platform.
 
 ## Main Pages
 
@@ -13,7 +13,7 @@ ZyncSpace combines AI-driven technology consulting with a unified team workspace
 
 ### Consulting Services
 - URL: https://www.zyncspace.com/services
-- Description: Technology consulting — AI automation, cloud engineering, UX, custom SaaS.
+- Description: Technology consulting - AI automation, cloud engineering, UX, custom SaaS.
 
 ### Our Framework
 - URL: https://www.zyncspace.com/services/framework
@@ -37,7 +37,7 @@ ZyncSpace combines AI-driven technology consulting with a unified team workspace
 
 ### Features
 - URL: https://www.zyncspace.com/features
-- Description: Team workspace — chat, tasks, calendar, and AI.
+- Description: Team workspace - chat, tasks, calendar, and AI.
 
 ### Use Cases
 - URL: https://www.zyncspace.com/use-cases

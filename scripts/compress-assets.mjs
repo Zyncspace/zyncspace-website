@@ -15,7 +15,7 @@ const MIN_SAVINGS_BYTES = 512;
 const WEBP_THRESHOLD_BYTES = 350_000;
 const WEBP_MIN_IMPROVEMENT = 0.25;
 
-/** Display images — cap width; favicons/logos stay native size. */
+/** Display images - cap width; favicons/logos stay native size. */
 const MAX_WIDTH = {
   default: 1536,
   favicon: null,

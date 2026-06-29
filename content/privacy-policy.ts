@@ -1,4 +1,4 @@
-/** ZyncSpace product privacy policy — synced with zyncspace.com/privacy-policy */
+/** ZyncSpace product privacy policy - synced with zyncspace.com/privacy-policy */
 
 import type { LegalPageContent } from '@/content/legal-page';
 

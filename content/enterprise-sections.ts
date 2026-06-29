@@ -1,5 +1,5 @@
 /**
- * Enterprise homepage sections — outcome-focused, trust-safe copy.
+ * Enterprise homepage sections - outcome-focused, trust-safe copy.
  * No unverified client logos, fake testimonials, or invented metrics.
  */
 
@@ -15,7 +15,7 @@ export const valueProposition = {
   label: 'Business Impact',
   title: ['FROM LEGACY FRICTION', 'TO MEASURABLE OUTCOMES.'],
   description:
-    'We translate engineering decisions into executive outcomes — reduced operational cost, faster time-to-market, and de-risked transformation. Every engagement ties technical work to business value.',
+    'We translate engineering decisions into executive outcomes - reduced operational cost, faster time-to-market, and de-risked transformation. Every engagement ties technical work to business value.',
   pillars: [
     {
       stat: '40%',
@@ -31,7 +31,7 @@ export const valueProposition = {
       label: 'Faster delivery cycles',
       title: 'Engineering velocity',
       context:
-        'Achieved through dedicated squads, CI/CD pipelines, and incremental migration — not big-bang rewrites.',
+        'Achieved through dedicated squads, CI/CD pipelines, and incremental migration - not big-bang rewrites.',
       description:
         'Structured sprints, automated quality gates, and AI-assisted development shorten release windows.',
     },
@@ -52,19 +52,19 @@ export const whyChoose = {
   label: 'Why Choose Us',
   title: 'Where Engineering Meets Business Outcomes',
   description:
-    'We combine AI-first delivery, cloud-native architecture, and enterprise-grade security to remove delivery risk — and help you ship products your stakeholders can trust.',
+    'We combine AI-first delivery, cloud-native architecture, and enterprise-grade security to remove delivery risk - and help you ship products your stakeholders can trust.',
   items: [
     {
       id: 'ai',
       title: 'AI-First Engineering',
       description:
-        'Intelligent systems with zero-retention pipelines — your data never trains public models.',
+        'Intelligent systems with zero-retention pipelines - your data never trains public models.',
     },
     {
       id: 'cloud',
       title: 'Cloud-Native Architecture',
       description:
-        'AWS, GCP, Azure, and Kubernetes — built to scale without re-architecting every quarter.',
+        'AWS, GCP, Azure, and Kubernetes - built to scale without re-architecting every quarter.',
     },
     {
       id: 'security',
@@ -76,7 +76,7 @@ export const whyChoose = {
       id: 'agile',
       title: 'Agile Delivery',
       description:
-        'Two-week sprints, documented gates, and stakeholder demos — no black-box development.',
+        'Two-week sprints, documented gates, and stakeholder demos - no black-box development.',
     },
     {
       id: 'scale',
@@ -96,13 +96,13 @@ export const mediaShowcase = {
   label: 'Platform Preview',
   title: 'See How Teams Work in ZyncSpace',
   description:
-    'One workspace for chat, tasks, voice, and AI — select a capability to preview how teams stay aligned without switching tools.',
+    'One workspace for chat, tasks, voice, and AI - select a capability to preview how teams stay aligned without switching tools.',
   features: [
     {
       id: 'team-chat',
       title: 'Team Chat',
       description:
-        'Organized channels and threads keep conversations searchable and actionable — context never gets lost in the scroll.',
+        'Organized channels and threads keep conversations searchable and actionable - context never gets lost in the scroll.',
       src: '/assets/images/platform-preview/platform-preview-team-chat.webp',
       alt: 'Team collaborating around ZyncSpace team chat with channels and threads',
     },
@@ -118,7 +118,7 @@ export const mediaShowcase = {
       id: 'huddles',
       title: 'Huddles',
       description:
-        'Start voice collaboration instantly without leaving the conversation — no separate meeting links.',
+        'Start voice collaboration instantly without leaving the conversation - no separate meeting links.',
       src: '/assets/images/platform-preview/platform-preview-huddles.webp',
       alt: 'Remote team in an instant voice huddle inside ZyncSpace',
     },
@@ -126,7 +126,7 @@ export const mediaShowcase = {
       id: 'ai-assistant',
       title: 'AI Assistant',
       description:
-        'Summarize threads and refine tone in context — your data stays within your workspace.',
+        'Summarize threads and refine tone in context - your data stays within your workspace.',
       src: '/assets/images/platform-preview/platform-preview-ai-assistant.webp',
       alt: 'Colleagues using the built-in AI assistant in ZyncSpace',
     },
@@ -137,7 +137,7 @@ export const deliveryProcess = {
   label: 'Our Process',
   title: 'How We Deliver',
   description:
-    'A structured path from first conversation to production — with clear gates, documentation, and stakeholder visibility at every stage.',
+    'A structured path from first conversation to production - with clear gates, documentation, and stakeholder visibility at every stage.',
   steps: [
     {
       num: '01',
@@ -186,7 +186,7 @@ export const deliveryProcess = {
 
 export const referenceArchitectures = {
   label: 'Reference Architectures',
-  title: 'How We Build — Not Just What We Use',
+  title: 'How We Build - Not Just What We Use',
   description:
     'High-level patterns we deploy for enterprise clients. Detailed diagrams and runbooks are shared during discovery and engagement.',
   items: [
@@ -228,7 +228,7 @@ export const referenceArchitectures = {
 
 export const portfolio = {
   label: 'Engagement Patterns',
-  title: 'Representative Work — Anonymized',
+  title: 'Representative Work - Anonymized',
   description:
     'Illustrative outcomes from consulting patterns we deliver. Client names withheld until approved for publication. Metrics vary by scope and baseline.',
   items: [
@@ -239,7 +239,7 @@ export const portfolio = {
       metric: 'Microservices',
       metricLabel: 'Migration pattern',
       description:
-        'Monolith decomposed into bounded contexts on AWS EKS — IAM roles per service, Terraform state locking, and blue-green deploys.',
+        'Monolith decomposed into bounded contexts on AWS EKS - IAM roles per service, Terraform state locking, and blue-green deploys.',
       tags: ['EKS', 'Terraform', 'PostgreSQL'],
     },
     {
@@ -249,7 +249,7 @@ export const portfolio = {
       metric: 'RAG Pipeline',
       metricLabel: 'HIPAA-aligned design',
       description:
-        'Private vector index, audit logging, and human-in-the-loop review — client data never used for public model training.',
+        'Private vector index, audit logging, and human-in-the-loop review - client data never used for public model training.',
       tags: ['FastAPI', 'RAG', 'Private VPC'],
     },
     {
@@ -278,7 +278,7 @@ export const portfolio = {
 
 export const clientStories = {
   label: 'Client Perspectives',
-  title: 'Verified Stories — Coming Soon',
+  title: 'Verified Stories - Coming Soon',
   description:
     'We do not publish anonymous or fabricated testimonials. As client engagements conclude with approval, verified quotes with names, titles, and LinkedIn profiles will appear here.',
   cta: { label: 'View Case Studies ↗', href: '/services/case-studies' },
@@ -292,7 +292,7 @@ export const trustCompliance = {
   aiPrivacy: {
     title: 'Zero-Retention AI Pipelines',
     description:
-      'Your proprietary data never trains public models. Client prompts, documents, and embeddings stay in your isolated environment or approved private endpoints — with contractual data-handling terms.',
+      'Your proprietary data never trains public models. Client prompts, documents, and embeddings stay in your isolated environment or approved private endpoints - with contractual data-handling terms.',
   },
   badges: [
     {
@@ -307,7 +307,7 @@ export const trustCompliance = {
     },
     {
       title: 'CORS & Environment Controls',
-      description: 'Explicit allowlists per environment — no wildcard origins in production.',
+      description: 'Explicit allowlists per environment - no wildcard origins in production.',
     },
     {
       title: 'Secure SDLC',
@@ -361,7 +361,7 @@ export const engineeringPractice = {
   label: 'Who Builds With You',
   title: 'Engineering-Led Delivery',
   description:
-    'Enterprises buy the people solving the problem — not just a logo. Our founders and engineers embed with your team: architects, AI engineers, platform engineers, and design systems specialists.',
+    'Enterprises buy the people solving the problem - not just a logo. Our founders and engineers embed with your team: architects, AI engineers, platform engineers, and design systems specialists.',
   highlights: [
     {
       title: 'Backend & Platform',
@@ -411,7 +411,7 @@ export const faq = {
     {
       question: 'Can we start with a pilot before a full contract?',
       answer:
-        'Yes — discovery audits and proof-of-concept sprints are available before Scale or Enterprise engagements.',
+        'Yes - discovery audits and proof-of-concept sprints are available before Scale or Enterprise engagements.',
     },
     {
       question: 'Where is your team located?',
@@ -425,7 +425,7 @@ export const resources = {
   label: 'Resources',
   title: 'Insights & Engineering Reports',
   description:
-    'Architecture guides, AI governance notes, and performance engineering — from our engineering blog.',
+    'Architecture guides, AI governance notes, and performance engineering - from our engineering blog.',
   items: [
     {
       type: 'Guide',
@@ -437,7 +437,7 @@ export const resources = {
     {
       type: 'Article',
       title: 'AI in Operations',
-      description: 'Multi-agent workflows for back-office automation — with governance guardrails.',
+      description: 'Multi-agent workflows for back-office automation - with governance guardrails.',
       href: '/blogs/ai-in-workplace-communication',
       image: '/assets/images/stock/office-meeting.webp',
     },
@@ -454,7 +454,7 @@ export const resources = {
 export const finalCta = {
   title: 'Ready to Accelerate Your Digital Transformation?',
   description:
-    'Whether you are building a new product, modernizing legacy systems, or adopting AI — we help you deliver secure, scalable, and future-ready technology solutions.',
+    'Whether you are building a new product, modernizing legacy systems, or adopting AI - we help you deliver secure, scalable, and future-ready technology solutions.',
   primary: { label: 'Schedule a Discovery Call ↗', href: '/contact' },
   secondary: { label: 'View Case Studies', href: '/services/case-studies' },
 };

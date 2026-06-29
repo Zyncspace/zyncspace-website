@@ -1,4 +1,4 @@
-/* Services hub page — alignment & mobile layout */
+/* Services hub page - alignment & mobile layout */
 
 .services-capabilities {
   padding-top: clamp(2.5rem, 5vw, 4rem);
@@ -42,7 +42,7 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Capability matrix — contained dark panel */
+/* Capability matrix - contained dark panel */
 .services-matrix-wrap {
   background: var(--light-bg);
 }
@@ -163,7 +163,7 @@
   font-size: 1.25rem;
 }
 
-/* Service page header — long titles */
+/* Service page header - long titles */
 .service-page-header h1 {
   font-size: clamp(1.75rem, 4.5vw, 3.25rem);
   line-height: 1.12;

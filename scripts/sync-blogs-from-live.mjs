@@ -1,5 +1,5 @@
 /**
- * Sync blog MDX from live zyncspace.com HTML (body only — no site header/footer).
+ * Sync blog MDX from live zyncspace.com HTML (body only - no site header/footer).
  */
 import { readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';

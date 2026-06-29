@@ -162,7 +162,7 @@ function checkStaticRoutesExist() {
 
 if (!fs.existsSync(outDir)) {
   console.error(
-    `SEO audit failed: out/ not found — run npm run build first (SITE_URL=${SITE_URL})`,
+    `SEO audit failed: out/ not found - run npm run build first (SITE_URL=${SITE_URL})`,
   );
   process.exit(1);
 }

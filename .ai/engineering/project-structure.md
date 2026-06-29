@@ -48,7 +48,7 @@ zyncspace-website/
 
 ## Node.js & runtime
 
-- **Node.js:** `22.13.1` (`.nvmrc` — run `nvm use` locally)
+- **Node.js:** `22.13.1` (`.nvmrc` - run `nvm use` locally)
 - **Next.js:** 16.x (latest)
 - **React:** 19
 
@@ -73,6 +73,6 @@ See `.ai/content/products-vs-services.md` for Products vs Services routes.
 
 ## Legacy (do not extend)
 
-- `css/` at repo root — legacy static site
-- `blogs/*.html` — removed; use Next.js `/blogs`
-- `js/main.js` — legacy
+- `css/` at repo root - legacy static site
+- `blogs/*.html` - removed; use Next.js `/blogs`
+- `js/main.js` - legacy

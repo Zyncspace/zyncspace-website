@@ -18,7 +18,7 @@ export const servicesContent = {
     ],
   },
 
-  /** Technology platforms we build on — not unverified client logos */
+  /** Technology platforms we build on - not unverified client logos */
   partners: {
     label: 'Powered by Industry-Leading Platforms',
     items: [
@@ -59,13 +59,13 @@ export const servicesContent = {
     label: 'Services',
     title: 'OUTCOMES-DRIVEN CAPABILITIES',
     description:
-      'Every service line maps to a business outcome — reduced cost, faster delivery, lower risk, or new revenue — not just a technology deliverable.',
+      'Every service line maps to a business outcome - reduced cost, faster delivery, lower risk, or new revenue - not just a technology deliverable.',
     items: [
       {
         num: '01',
         title: 'AI Solutions',
         description:
-          'Build intelligent systems using Generative AI, LLMs, AI agents, RAG, and workflow automation — with zero-retention data handling by default.',
+          'Build intelligent systems using Generative AI, LLMs, AI agents, RAG, and workflow automation - with zero-retention data handling by default.',
       },
       {
         num: '02',
@@ -77,19 +77,19 @@ export const servicesContent = {
         num: '03',
         title: 'Cloud & DevOps',
         description:
-          'AWS, Azure, GCP, Kubernetes, CI/CD, observability, and infrastructure automation — so your application stays online during traffic spikes.',
+          'AWS, Azure, GCP, Kubernetes, CI/CD, observability, and infrastructure automation - so your application stays online during traffic spikes.',
       },
       {
         num: '04',
         title: 'Digital Transformation',
         description:
-          'Modernize legacy systems, automate business processes, and improve operational efficiency using incremental migration — not risky big-bang cutovers.',
+          'Modernize legacy systems, automate business processes, and improve operational efficiency using incremental migration - not risky big-bang cutovers.',
       },
       {
         num: '05',
         title: 'UI/UX Design',
         description:
-          'Intuitive, accessible digital experiences focused on usability, conversion, and business outcomes — not decoration.',
+          'Intuitive, accessible digital experiences focused on usability, conversion, and business outcomes - not decoration.',
       },
       {
         num: '06',
@@ -155,7 +155,7 @@ export const servicesContent = {
         headline: 'Strategic Architecture & Prioritization',
         timeline: 'Weeks 3 – 4',
         description:
-          'We translate audit findings into a prioritized transformation roadmap — sequencing AI integrations, platform migrations, and growth initiatives by ROI, risk, and time-to-value.',
+          'We translate audit findings into a prioritized transformation roadmap - sequencing AI integrations, platform migrations, and growth initiatives by ROI, risk, and time-to-value.',
         leadRole: 'Principal Solution Architect & Strategy Lead',
         deliverables: [
           'Executive Transformation Roadmap',
@@ -171,7 +171,7 @@ export const servicesContent = {
         headline: 'UX/UI Systems & Technical Architecture',
         timeline: 'Weeks 5 – 8',
         description:
-          'Our design and engineering leads co-create system architecture diagrams, API contracts, Figma design systems, and data models — ensuring every build decision is validated before code is written.',
+          'Our design and engineering leads co-create system architecture diagrams, API contracts, Figma design systems, and data models - ensuring every build decision is validated before code is written.',
         leadRole: 'Creative Director & Systems Architect',
         deliverables: [
           'Full Figma Design System & Component Library',
@@ -187,7 +187,7 @@ export const servicesContent = {
         headline: 'Agile Engineering & AI Integration',
         timeline: 'Weeks 9 – 16',
         description:
-          'Dedicated engineering squads execute in two-week sprints — shipping production-grade code, integrating LLM pipelines, configuring CI/CD, and maintaining full test coverage with daily standups.',
+          'Dedicated engineering squads execute in two-week sprints - shipping production-grade code, integrating LLM pipelines, configuring CI/CD, and maintaining full test coverage with daily standups.',
         leadRole: 'Engineering Lead & MLOps Specialist',
         deliverables: [
           'Production-Ready Codebase with CI/CD Pipeline',
@@ -203,7 +203,7 @@ export const servicesContent = {
         headline: 'Controlled Rollout & Validation',
         timeline: 'Weeks 17 – 18',
         description:
-          'We orchestrate staged rollouts with canary deployments, load testing, security hardening, and real-user validation — ensuring zero-downtime migration from legacy systems.',
+          'We orchestrate staged rollouts with canary deployments, load testing, security hardening, and real-user validation - ensuring zero-downtime migration from legacy systems.',
         leadRole: 'DevOps Lead & Release Manager',
         deliverables: [
           'Production Deployment Runbook',
@@ -235,7 +235,7 @@ export const servicesContent = {
         headline: 'Performance Engineering & Conversion Optimization',
         timeline: 'Weeks 23 – 26',
         description:
-          'We analyze production metrics, A/B test UX flows, optimize database queries, refine AI model accuracy, and eliminate conversion friction — driving measurable ROI improvements.',
+          'We analyze production metrics, A/B test UX flows, optimize database queries, refine AI model accuracy, and eliminate conversion friction - driving measurable ROI improvements.',
         leadRole: 'Performance Engineer & Data Analyst',
         deliverables: [
           'Performance Audit & Optimization Report',
@@ -251,7 +251,7 @@ export const servicesContent = {
         headline: 'Continuous Innovation & Iteration',
         timeline: 'Ongoing Retainer',
         description:
-          'Our retainer model ensures your platform never stagnates — quarterly innovation sprints, emerging tech evaluations, feature roadmaps, and dedicated engineering hours keep you ahead of the market.',
+          'Our retainer model ensures your platform never stagnates - quarterly innovation sprints, emerging tech evaluations, feature roadmaps, and dedicated engineering hours keep you ahead of the market.',
         leadRole: 'Innovation Lead & Account Director',
         deliverables: [
           'Quarterly Innovation Roadmap',
@@ -331,7 +331,7 @@ export const servicesContent = {
     challenge: {
       title: 'The Legacy Challenge',
       description:
-        'Manual warehouse routing relied on spreadsheets and batch jobs — 22-hour latency caused missed SLAs and penalty fees. Network segmentation was flat; no audit trail for routing decisions.',
+        'Manual warehouse routing relied on spreadsheets and batch jobs - 22-hour latency caused missed SLAs and penalty fees. Network segmentation was flat; no audit trail for routing decisions.',
     },
     solution: {
       title: 'The Architecture Response',
@@ -437,17 +437,17 @@ export const servicesContent = {
   productShowcase: {
     title: "Your Team's Digital Command Center",
     description:
-      'ZyncSpace delivers unified collaboration platforms where chat, Kanban boards, calendar sync, and built-in AI converge — so your teams stop switching apps and start shipping.',
+      'ZyncSpace delivers unified collaboration platforms where chat, Kanban boards, calendar sync, and built-in AI converge - so your teams stop switching apps and start shipping.',
     features: [
       {
         title: 'Team Chat, Reimagined',
         description:
-          'Organized channels, threads, and instant huddles. Conversations that stay searchable and actionable — never lost in the scroll.',
+          'Organized channels, threads, and instant huddles. Conversations that stay searchable and actionable - never lost in the scroll.',
       },
       {
         title: 'Built-in AI Assistant',
         description:
-          'Summarize long threads, rewrite messages with the right tone, and draft updates in seconds — right where you work.',
+          'Summarize long threads, rewrite messages with the right tone, and draft updates in seconds - right where you work.',
       },
       {
         title: 'Kanban Per Channel',

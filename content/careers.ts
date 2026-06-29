@@ -1,4 +1,4 @@
-/** ZyncSpace careers — synced with zyncspace.com/careers */
+/** ZyncSpace careers - synced with zyncspace.com/careers */
 
 export type JobListing = {
   id: string;
@@ -44,7 +44,7 @@ export const careersContent = {
     },
     {
       id: 'frontend-intern',
-      title: 'Frontend Intern — React.js',
+      title: 'Frontend Intern - React.js',
       type: 'Internship',
       location: 'Remote',
       department: 'Development',
@@ -60,7 +60,7 @@ export const careersContent = {
     },
     {
       id: 'backend-intern',
-      title: 'Backend Intern — Node.js',
+      title: 'Backend Intern - Node.js',
       type: 'Internship',
       location: 'Remote',
       department: 'Development',

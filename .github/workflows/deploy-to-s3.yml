@@ -93,7 +93,7 @@ jobs:
               exit 1
             fi
           done
-          echo "Build OK — $(find out -type f | wc -l) files for ${SITE_URL}"
+          echo "Build OK - $(find out -type f | wc -l) files for ${SITE_URL}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4

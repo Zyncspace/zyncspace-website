@@ -1,17 +1,17 @@
-# Agent Instructions — ZyncSpace Website
+# Agent Instructions - ZyncSpace Website
 
 You are working on the **ZyncSpace** B2B marketing site (Next.js 16 static export): **Products + Services** for an enterprise technology company.
 
 ## Runtime
 
-- **Node.js 22.13.1** — use `nvm use` (see `.nvmrc`)
+- **Node.js 22.13.1** - use `nvm use` (see `.nvmrc`)
 - **Next.js 16.x** (latest)
 
 ## Before you code
 
 1. Read `.ai/guidelines/definition-of-done.md` for page requirements.
 2. Read `.ai/design-system/typography.md` before changing fonts or headings.
-3. Read `.ai/content/ai-content-rules.md` — never invent customers, metrics, or certifications.
+3. Read `.ai/content/ai-content-rules.md` - never invent customers, metrics, or certifications.
 
 ## Non-negotiables
 

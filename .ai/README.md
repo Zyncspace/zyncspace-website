@@ -44,12 +44,12 @@ This folder is the **single source of truth** for how we design, write, build, a
 
 ## Design principles (summary)
 
-1. **Sell outcomes, not technology** — business value for executives.
-2. **Trust over hype** — evidence-backed claims only; placeholders until real data exists.
-3. **Products + Services** — clearly separated; show how products accelerate services.
-4. **Consistent typography** — serif for display/H1/H2; sans for UI and body; mono for code.
-5. **Every page has a CTA** — discovery call, demo, contact, or case studies.
-6. **SEO + accessibility + performance** — non-negotiable on every ship.
+1. **Sell outcomes, not technology** - business value for executives.
+2. **Trust over hype** - evidence-backed claims only; placeholders until real data exists.
+3. **Products + Services** - clearly separated; show how products accelerate services.
+4. **Consistent typography** - serif for display/H1/H2; sans for UI and body; mono for code.
+5. **Every page has a CTA** - discovery call, demo, contact, or case studies.
+6. **SEO + accessibility + performance** - non-negotiable on every ship.
 
 ## Code locations
 

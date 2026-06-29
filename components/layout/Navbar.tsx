@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { serviceRoutes } from '@/content/site';
 
 /**
- * Nav menus removed temporarily — add links back one at a time in nav-links when ready.
+ * Nav menus removed temporarily - add links back one at a time in nav-links when ready.
  */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

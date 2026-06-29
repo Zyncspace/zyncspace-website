@@ -1,4 +1,4 @@
-/* ── Tech stack — premium dark atlas + index (Linear / Vercel inspired) ── */
+/* ── Tech stack - premium dark atlas + index (Linear / Vercel inspired) ── */
 
 .sr-only {
   position: absolute;
@@ -60,7 +60,7 @@
   max-width: 640px;
 }
 
-/* Homepage informative brief — no tool listing */
+/* Homepage informative brief - no tool listing */
 .stack-atlas-brief .stack-atlas-header {
   margin-bottom: var(--space-10);
 }

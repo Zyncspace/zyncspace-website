@@ -1,4 +1,4 @@
-# Gitleaks config — extends defaults and allowlists known false positives.
+# Gitleaks config - extends defaults and allowlists known false positives.
 # See: https://github.com/gitleaks/gitleaks#configuration
 
 [extend]

@@ -4,8 +4,8 @@
 
 ### Backgrounds
 
-- **Light page**: `--light-bg` (#f3f2eb) — default body
-- **Dark sections**: `--dark-bg` (#0d0d0c) — hero, nav (scrolled), footer
+- **Light page**: `--light-bg` (#f3f2eb) - default body
+- **Dark sections**: `--dark-bg` (#0d0d0c) - hero, nav (scrolled), footer
 
 ### Text
 
@@ -20,7 +20,7 @@
 
 ### Brand
 
-- **Accent**: `--accent-brand` (#4f46e5) — CTAs, links, focus rings
+- **Accent**: `--accent-brand` (#4f46e5) - CTAs, links, focus rings
 - **Theme color** (PWA): same as accent
 
 ## Spacing scale
@@ -61,5 +61,5 @@
 ## Adding new tokens
 
 1. Add to `styles/tokens.css`
-2. Use in CSS — never hardcode hex in components
+2. Use in CSS - never hardcode hex in components
 3. Document here if it's a new semantic color (e.g. `--success`, `--error`)

@@ -1,4 +1,4 @@
-/** ZyncSpace Trust Center — security, privacy, and compliance posture */
+/** ZyncSpace Trust Center - security, privacy, and compliance posture */
 
 type TrustControlCategory = 'Baseline' | 'Feature-Specific';
 
@@ -14,10 +14,10 @@ export const trustCenterContent = {
   label: 'Trust & Security',
   title: 'Trust Center',
   description:
-    'How ZyncSpace protects your data — infrastructure, privacy, encryption, and AI practices for the chat product and our consulting delivery.',
+    'How ZyncSpace protects your data - infrastructure, privacy, encryption, and AI practices for the chat product and our consulting delivery.',
   lastUpdated: 'March 2026',
   intro:
-    'Trust is earned through transparency. As a startup building ZyncSpace Chat and enterprise consulting services, we publish our security posture openly — what we implement today, the standards we align with, and how we handle your data.',
+    'Trust is earned through transparency. As a startup building ZyncSpace Chat and enterprise consulting services, we publish our security posture openly - what we implement today, the standards we align with, and how we handle your data.',
   startupNote:
     'We inherit physical and infrastructure controls from AWS-certified data centers. Product-level controls below apply to ZyncSpace Chat and client engagements. Formal third-party audits (SOC 2 Type II for ZyncSpace) are on our roadmap as we scale.',
   pillars: [

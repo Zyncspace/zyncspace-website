@@ -543,7 +543,7 @@ export function FaqSection() {
           <span className="label">{faq.label}</span>
           <h2>{faq.title}</h2>
           <p className="section-lead">
-            Procurement, security, and engagement questions — answered directly.
+            Procurement, security, and engagement questions - answered directly.
           </p>
           <Link href={serviceRoutes.contact} className="btn btn-dark">
             Schedule a Discovery Call ↗

@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site-url';
 
 const title = 'Trust Center';
 const description =
-  'ZyncSpace Trust Center — AWS infrastructure, GDPR/DPDP compliance, zero LLM training policy, E2EE, and AES-256/TLS 1.3 encryption for the chat product.';
+  'ZyncSpace Trust Center - AWS infrastructure, GDPR/DPDP compliance, zero LLM training policy, E2EE, and AES-256/TLS 1.3 encryption for the chat product.';
 const path = '/trust-center';
 
 export const metadata = buildMetadata({

@@ -52,7 +52,7 @@ function extractCards(html) {
 
 const cards = extractCards(blogsJson.content);
 
-// evolution post exists in MDX but not blogs.json — add if missing
+// evolution post exists in MDX but not blogs.json - add if missing
 if (!cards.find((c) => c.slug === 'evolution-of-workplace-communication')) {
   cards.push({
     slug: 'evolution-of-workplace-communication',
@@ -67,7 +67,7 @@ if (!cards.find((c) => c.slug === 'evolution-of-workplace-communication')) {
   });
 }
 
-const out = `/** Auto-generated from content/pages/blogs.json — run: node scripts/generate-blog-index.mjs */
+const out = `/** Auto-generated from content/pages/blogs.json - run: node scripts/generate-blog-index.mjs */
 export type BlogIndexCard = {
   slug: string;
   title: string;

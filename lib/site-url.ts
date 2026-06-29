@@ -1,4 +1,4 @@
-/** Build-time site URL — set NEXT_PUBLIC_SITE_URL before `next build` */
+/** Build-time site URL - set NEXT_PUBLIC_SITE_URL before `next build` */
 
 const PRODUCTION_SITE_URL = 'https://www.zyncspace.com';
 const STAGING_SITE_URL = 'https://www.zyncspace.in';

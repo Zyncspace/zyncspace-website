@@ -4,7 +4,7 @@
 
 **Routes:** `/features`, `/use-cases`, `/pricing`, `/about`, `/careers`, `/blogs`
 
-**What we sell:** SaaS team workspace — chat, tasks, calendar, AI.
+**What we sell:** SaaS team workspace - chat, tasks, calendar, AI.
 
 **Messaging focus:**
 

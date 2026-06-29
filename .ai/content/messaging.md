@@ -3,9 +3,9 @@
 ## Voice
 
 - **Confident**, not arrogant
-- **Executive-friendly** — lead with business impact
-- **Precise** — specific outcomes over vague superlatives
-- **Evidence-based** — metrics and proof when available
+- **Executive-friendly** - lead with business impact
+- **Precise** - specific outcomes over vague superlatives
+- **Evidence-based** - metrics and proof when available
 
 ## Outcomes-first formula
 

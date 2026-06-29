@@ -1,5 +1,5 @@
 #!/bin/bash
-# ZyncSpace Deployment Script — deploys Next.js static export (out/) to S3 + CloudFront
+# ZyncSpace Deployment Script - deploys Next.js static export (out/) to S3 + CloudFront
 
 set -e
 

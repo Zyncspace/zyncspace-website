@@ -224,7 +224,7 @@ export function TechStackPageCta() {
           <span className="label">Architecture Review</span>
           <h2>Your stack should earn its place.</h2>
           <p>
-            We map what you run today, what it costs, and what to consolidate — with a roadmap your
+            We map what you run today, what it costs, and what to consolidate - with a roadmap your
             engineering and procurement teams can both sign off on.
           </p>
         </div>

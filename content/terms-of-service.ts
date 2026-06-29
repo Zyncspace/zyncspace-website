@@ -1,4 +1,4 @@
-/** ZyncSpace product terms of service — synced with zyncspace.com/terms-of-service */
+/** ZyncSpace product terms of service - synced with zyncspace.com/terms-of-service */
 
 import type { LegalPageContent } from '@/content/legal-page';
 

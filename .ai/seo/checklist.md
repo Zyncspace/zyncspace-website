@@ -50,12 +50,12 @@ All canonical, sitemap, robots, JSON-LD, and llms.txt URLs must match the build 
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.zyncspace.in npm run build
-# Includes SEO audit — must pass before deploy
+# Includes SEO audit - must pass before deploy
 ```
 
 ## Optional env vars
 
-- `NEXT_PUBLIC_GA_ID` — Google Analytics
+- `NEXT_PUBLIC_GA_ID` - Google Analytics
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
 - `NEXT_PUBLIC_BING_SITE_VERIFICATION`
 
@@ -70,7 +70,7 @@ Deploy script `scripts/upload-seo-assets.sh` sets:
 
 ## Code references
 
-- `lib/metadata.tsx` — `buildMetadata()`, schema helpers
-- `lib/seo-config.ts` — routes, keywords, social
-- `lib/site-url.ts` — URL resolution
-- `scripts/seo-audit.mjs` — post-build validation
+- `lib/metadata.tsx` - `buildMetadata()`, schema helpers
+- `lib/seo-config.ts` - routes, keywords, social
+- `lib/site-url.ts` - URL resolution
+- `scripts/seo-audit.mjs` - post-build validation

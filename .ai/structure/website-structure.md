@@ -10,7 +10,7 @@ How the ZyncSpace site is organized, what each section feels like, and where con
 ZyncSpace Website
 ├── HOME (/)                    ← Full enterprise journey (this doc)
 ├── SERVICES
-│   ├── /services               Hub — capabilities + matrix
+│   ├── /services               Hub - capabilities + matrix
 │   ├── /services/framework     8-phase delivery framework
 │   ├── /services/technology    Tech stack filter grid
 │   ├── /services/industries    Vertical cards with metrics
@@ -36,19 +36,19 @@ The homepage follows the **enterprise customer journey** from `.ai/guidelines/en
 
 | # | Section | Feel | Content source |
 |---|---------|------|----------------|
-| 1 | **Hero** | Dark cinematic, large serif headline, glass stat cards | `content/services.ts` — real |
-| 2 | **Partners marquee** | Light band, infinite scroll enterprise names | Placeholder names — verify before legal use |
-| 3 | **Value proposition** | 3 white cards, outcome stats (40%, 3×, 99.9%) | `content/enterprise-sections.ts` — lorem |
+| 1 | **Hero** | Dark cinematic, large serif headline, glass stat cards | `content/services.ts` - real |
+| 2 | **Partners marquee** | Light band, infinite scroll enterprise names | Placeholder names - verify before legal use |
+| 3 | **Value proposition** | 3 white cards, outcome stats (40%, 3×, 99.9%) | `content/enterprise-sections.ts` - lorem |
 | 4 | **Capabilities** | Split grid, numbered feature list | Real service copy |
 | 5 | **Capability matrix** | Terminal-style dark boxes, SLA 99.99% | Real |
-| 6 | **Media showcase** | Dark section — video poster + product screenshots | Real product PNGs + placeholder video |
+| 6 | **Media showcase** | Dark section - video poster + product screenshots | Real product PNGs + placeholder video |
 | 7 | **Framework pipeline** | Interactive 8-phase detail panel | Real stages |
 | 8 | **Customer journey** | 6-step visual path (Problem → Contact) | Lorem descriptions |
 | 9 | **Tech stack** | Filterable card grid | Real toolchain |
 | 10 | **Industries** | Full-bleed image cards with metrics | Unsplash + real copy |
 | 11 | **Case study** | Before/after banner, AeroGlobal story | Narrative placeholder client |
 | 12 | **Portfolio grid** | 2×2 project cards with tags | Lorem + mixed images |
-| 13 | **Testimonials** | 3 quote cards with avatars | **Placeholder** — disclaimer shown |
+| 13 | **Testimonials** | 3 quote cards with avatars | **Placeholder** - disclaimer shown |
 | 14 | **Trust & security** | Dark grid of 6 practice badges | Real practices, no fake certs |
 | 15 | **Consulting pricing** | 3 tier cards, Scale recommended | Real pricing structure |
 | 16 | **Product showcase** | Split layout + hero screenshot | Real ZyncSpace product copy |
@@ -86,16 +86,16 @@ LIGHT ░░░░ CTA band
 DARK  ████ Contact
 ```
 
-Alternating **dark anchor sections** (hero, media, trust, contact) with **light content bands** creates enterprise pacing — breathing room, premium contrast, clear section breaks.
+Alternating **dark anchor sections** (hero, media, trust, contact) with **light content bands** creates enterprise pacing - breathing room, premium contrast, clear section breaks.
 
 ---
 
 ## Typography feel
 
-- **Serif headlines** (Playfair) on H1/H2 — editorial, established
-- **Sans body & H3+** (Inter) — modern, readable
-- **Mono accents** (JetBrains) — tech credibility in stack/terminal blocks
-- **Uppercase labels** — enterprise overlines on every major section
+- **Serif headlines** (Playfair) on H1/H2 - editorial, established
+- **Sans body & H3+** (Inter) - modern, readable
+- **Mono accents** (JetBrains) - tech credibility in stack/terminal blocks
+- **Uppercase labels** - enterprise overlines on every major section
 
 See `.ai/design-system/typography.md`.
 
@@ -109,7 +109,7 @@ See `.ai/design-system/typography.md`.
 | Hero dashboard | `hero-dashboard.png` | Video poster, OG image |
 | Industry photos | Unsplash URLs | Industries, portfolio |
 | Team/testimonial avatars | Unsplash URLs | Placeholder people |
-| Demo video | YouTube embed (placeholder) | Media showcase — **replace** |
+| Demo video | YouTube embed (placeholder) | Media showcase - **replace** |
 
 ---
 
@@ -122,11 +122,11 @@ See `.ai/design-system/typography.md`.
 | Consulting pricing tiers | ✅ Real structure |
 | Blog insights titles | ✅ Editorial (verify authors) |
 | Partner marquee logos | ⚠️ Visual placeholders |
-| Case study client name | ⚠️ Fictional — replace or anonymize |
+| Case study client name | ⚠️ Fictional - replace or anonymize |
 | Testimonials | ⚠️ Lorem + placeholder companies |
 | Team bios | ⚠️ Placeholder names/photos |
-| Office addresses (contact) | ⚠️ Placeholder — use real or remove |
-| Portfolio project names | ⚠️ Lorem — replace with approved case studies |
+| Office addresses (contact) | ⚠️ Placeholder - use real or remove |
+| Portfolio project names | ⚠️ Lorem - replace with approved case studies |
 | Resources downloads | ⚠️ Links to /blogs until PDFs exist |
 
 ---

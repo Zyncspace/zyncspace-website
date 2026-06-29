@@ -31,7 +31,7 @@ Applied to `<html className={inter.variable + playfair.variable + jetbrains.vari
 1. **One place for font-family roles** → `styles/typography.css`
 2. **One place for sizes** → `styles/tokens.css` (`--text-*`)
 3. **Component CSS** → only layout/color/spacing; not font-family overrides (exceptions: already in typography.css)
-4. **No inline typography** in TSX — use classes like `.form-box-title`, `.label`
+4. **No inline typography** in TSX - use classes like `.form-box-title`, `.label`
 
 ## Migrating legacy CSS
 

@@ -18,7 +18,7 @@ module.exports = {
         'categories:accessibility': ['error', { minScore: 0.9 }],
         'categories:best-practices': ['warn', { minScore: 0.85 }],
         'categories:seo': ['error', { minScore: 0.9 }],
-        // Static Next export — structural limits, not regressions
+        // Static Next export - structural limits, not regressions
         'offscreen-images': 'off',
         'unused-css-rules': 'off',
         'unused-javascript': 'off',

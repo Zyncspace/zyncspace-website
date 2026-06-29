@@ -4,7 +4,7 @@
 
 Build a world-class B2B website that combines **Products + Services** and creates the perception of an established, trusted, enterprise technology company.
 
-The website must communicate credibility, expertise, execution capability, and measurable business outcomes—not just attractive visuals.
+The website must communicate credibility, expertise, execution capability, and measurable business outcomes-not just attractive visuals.
 
 ---
 

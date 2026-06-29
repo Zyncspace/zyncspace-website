@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-/** Google Analytics 4 — only loads when NEXT_PUBLIC_GA_ID is set at build time */
+/** Google Analytics 4 - only loads when NEXT_PUBLIC_GA_ID is set at build time */
 export default function Analytics() {
   if (!GA_ID) return null;
 

@@ -4,7 +4,7 @@
 
 Do **not** generate or imply fake:
 
-- Customer names or logos (unless in `content/services.ts` partners list as aspirational — mark clearly)
+- Customer names or logos (unless in `content/services.ts` partners list as aspirational - mark clearly)
 - Client testimonials or quotes
 - Review scores
 - Certifications (SOC 2, ISO 27001) unless confirmed
@@ -19,9 +19,9 @@ Do **not** generate or imply fake:
 When real data is missing:
 
 ```
-[Client name] — pending approval
-Metric — to be confirmed with leadership
-Testimonial — placeholder until client sign-off
+[Client name] - pending approval
+Metric - to be confirmed with leadership
+Testimonial - placeholder until client sign-off
 ```
 
 Or use clearly generic copy:
@@ -31,7 +31,7 @@ Or use clearly generic copy:
 
 ## Approved metrics (hero stats)
 
-From `content/services.ts` — only use these unless updated by stakeholder:
+From `content/services.ts` - only use these unless updated by stakeholder:
 
 - 250+ Projects Delivered
 - 98% Client Satisfaction

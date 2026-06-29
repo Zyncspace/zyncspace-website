@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site-url';
 
 const title = 'ZyncSpace Chat Pricing';
 const description =
-  'ZyncSpace Chat app pricing: free team workspace for up to 10 users during beta. Paid plans from $1/user/month. Not consulting or custom development — compare with Slack and Teams.';
+  'ZyncSpace Chat app pricing: free team workspace for up to 10 users during beta. Paid plans from $1/user/month. Not consulting or custom development - compare with Slack and Teams.';
 const path = '/pricing';
 
 export const metadata = buildMetadata({

@@ -1,4 +1,4 @@
-# Environments — Staging vs Production
+# Environments - Staging vs Production
 
 ## URLs
 
@@ -71,4 +71,4 @@ curl -sI https://www.zyncspace.in/sitemap.xml | grep content-type
 
 ## Product app (separate)
 
-Team workspace signup lives at `https://chat.zyncspace.com` — not environment-switched; always production app URL in CTAs.
+Team workspace signup lives at `https://chat.zyncspace.com` - not environment-switched; always production app URL in CTAs.

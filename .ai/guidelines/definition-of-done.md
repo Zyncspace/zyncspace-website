@@ -1,4 +1,4 @@
-# Definition of Done — Page Checklist
+# Definition of Done - Page Checklist
 
 A page is **complete** only when all items below are satisfied.
 
@@ -10,7 +10,7 @@ A page is **complete** only when all items below are satisfied.
 - [ ] Has a **primary CTA** above the fold or end of section
 - [ ] Claims are **evidence-backed** or marked as placeholder
 - [ ] Products vs Services distinction is clear (if applicable)
-- [ ] Copy targets executives — outcomes, ROI, risk reduction
+- [ ] Copy targets executives - outcomes, ROI, risk reduction
 
 ## Trust & social proof
 
@@ -20,7 +20,7 @@ A page is **complete** only when all items below are satisfied.
 
 ## Design & UX
 
-- [ ] Uses design tokens (`styles/tokens.css`) — no random spacing/colors
+- [ ] Uses design tokens (`styles/tokens.css`) - no random spacing/colors
 - [ ] Typography follows system (see `design-system/typography.md`)
 - [ ] Mobile responsive (test 375px and 1440px)
 - [ ] Sticky nav does not obscure content (`scroll-margin-top`)

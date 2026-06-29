@@ -1,4 +1,4 @@
-/** Central SEO constants — single source for metadata, sitemap, and audits */
+/** Central SEO constants - single source for metadata, sitemap, and audits */
 
 import { SITE_URL } from '@/lib/site-url';
 
@@ -6,7 +6,7 @@ export { SITE_URL };
 export const SITE_NAME = 'ZyncSpace';
 
 export const SITE_DESCRIPTION =
-  'AI-driven technology consulting and unified team workspace — chat, tasks, calendar, and AI in one platform.';
+  'AI-driven technology consulting and unified team workspace - chat, tasks, calendar, and AI in one platform.';
 
 export const DEFAULT_KEYWORDS = [
   'technology consulting',

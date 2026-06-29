@@ -73,19 +73,19 @@ Defined in `styles/typography.css`:
 ## Examples
 
 ```tsx
-{/* Hero — serif display */}
+{/* Hero - serif display */}
 <h1>We Build Digital Businesses That Scale.</h1>
 
-{/* Section title — serif */}
+{/* Section title - serif */}
 <h2>Comprehensive Digital Architecture</h2>
 
-{/* Card title — sans */}
+{/* Card title - sans */}
 <h3>AI & Cognitive Automation</h3>
 
-{/* Overline — sans label */}
+{/* Overline - sans label */}
 <span className="label">Software Engineering & AI Consulting</span>
 
-{/* Form heading — sans */}
+{/* Form heading - sans */}
 <h3 className="form-box-title">Tell us about your project</h3>
 ```
 

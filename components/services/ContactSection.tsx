@@ -44,7 +44,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
           <p className="contact-lead">
             {isPartner
               ? c.contact.description
-              : 'Whether you need consulting, a custom build, or help with the ZyncSpace platform — reach our team directly.'}
+              : 'Whether you need consulting, a custom build, or help with the ZyncSpace platform - reach our team directly.'}
           </p>
           {isPartner ? (
             <div className="contact-tech-strip">
@@ -207,7 +207,7 @@ export function ContactPageContent() {
           <span className="label">Contact</span>
           <h1>Contact Us</h1>
           <p className="service-page-desc">
-            Connect with our consulting team, product support, or partnership desk — we respond
+            Connect with our consulting team, product support, or partnership desk - we respond
             within one business day.
           </p>
         </div>
@@ -228,7 +228,7 @@ export function ContactPageContent() {
             </div>
             <div className="contact-info-card">
               <h3>Start Free</h3>
-              <p>Try the ZyncSpace workspace — free during beta</p>
+              <p>Try the ZyncSpace workspace - free during beta</p>
               <Link href={siteContact.signupUrl} className="btn btn-dark" style={{ marginTop: 12 }}>
                 Sign up ↗
               </Link>

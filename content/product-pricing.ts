@@ -1,10 +1,10 @@
-/** ZyncSpace chat product pricing — not consulting services. */
+/** ZyncSpace chat product pricing - not consulting services. */
 export const productPricingContent = {
   hero: {
-    label: 'ZyncSpace Chat — Product Pricing',
+    label: 'ZyncSpace Chat - Product Pricing',
     title: ['Simple, Transparent', 'Workspace Pricing'],
     description:
-      'Pricing for the ZyncSpace chat application — team messaging, Kanban boards, calendar sync, and AI in one workspace. Not consulting or custom development.',
+      'Pricing for the ZyncSpace chat application - team messaging, Kanban boards, calendar sync, and AI in one workspace. Not consulting or custom development.',
     badge: 'ZyncSpace Chat app · No credit card required',
   },
 
@@ -90,7 +90,7 @@ export const productPricingContent = {
   calculator: {
     title: 'Estimate Your Chat App Monthly Cost',
     description:
-      'Based on ZyncSpace Chat seat pricing — slide to your team size and compare with buying Slack, Teams, or Trello separately.',
+      'Based on ZyncSpace Chat seat pricing - slide to your team size and compare with buying Slack, Teams, or Trello separately.',
     presets: [5, 10, 25, 50, 100],
     minUsers: 1,
     maxUsers: 250,
@@ -102,13 +102,13 @@ export const productPricingContent = {
   valueProps: [
     { value: '3-in-1', label: 'Chat + tasks + calendar in one app' },
     { value: '60%', label: 'Potential savings vs. separate tools' },
-    { value: '1', label: 'App — less context switching' },
+    { value: '1', label: 'App - less context switching' },
   ],
 
   cta: {
     title: 'Start Free on ZyncSpace Chat',
     description:
-      'Sign up for the team workspace app — free during beta for up to 10 users. No credit card required.',
+      'Sign up for the team workspace app - free during beta for up to 10 users. No credit card required.',
     primary: { label: 'Get Started Free ↗', href: 'https://chat.zyncspace.com/signup' },
     secondary: { label: 'Book a Product Demo', href: 'https://forms.gle/QVfnCHigc7NS3Z2K6' },
   },

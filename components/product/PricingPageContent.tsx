@@ -17,7 +17,7 @@ function ComparisonCellIcon({ value }: { value: ComparisonCell | string }) {
     soon: 'Coming soon',
     copilot: 'Copilot',
     business: 'Business tier',
-    none: '—',
+    none: '-',
   };
 
   const icons: Record<ComparisonCell, string> = {
@@ -29,7 +29,7 @@ function ComparisonCellIcon({ value }: { value: ComparisonCell | string }) {
     soon: '◇',
     copilot: 'AI',
     business: '✓',
-    none: '—',
+    none: '-',
   };
 
   const cell = value as ComparisonCell;

@@ -80,7 +80,7 @@ const defaultOpenGraph: Metadata['openGraph'] = {
       url: DEFAULT_OG_IMAGE,
       width: 1200,
       height: 630,
-      alt: `${SITE_NAME} — AI-driven technology consulting and team workspace`,
+      alt: `${SITE_NAME} - AI-driven technology consulting and team workspace`,
     },
   ],
 };

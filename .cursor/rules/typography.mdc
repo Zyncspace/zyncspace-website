@@ -1,5 +1,5 @@
 ---
-description: Typography and font system — serif/sans/mono roles
+description: Typography and font system - serif/sans/mono roles
 globs: "{styles/**/*.css,app/globals.css,**/*.tsx}"
 alwaysApply: false
 ---
@@ -18,10 +18,10 @@ Full spec: `.ai/design-system/typography.md`
 
 ## Rules
 
-- Use `var(--font-serif|sans|mono)` — never hardcode font names
+- Use `var(--font-serif|sans|mono)` - never hardcode font names
 - Use `--text-*` tokens from `styles/tokens.css` for sizes
 - H3+ must be **sans**; H1/H2 must be **serif**
-- No inline `fontFamily` / `fontSize` in TSX — use CSS classes (e.g. `.form-box-title`, `.label`)
+- No inline `fontFamily` / `fontSize` in TSX - use CSS classes (e.g. `.form-box-title`, `.label`)
 - Add new text styles to `styles/typography.css`, not component files
 
 ## CSS import order

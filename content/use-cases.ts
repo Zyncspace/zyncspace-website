@@ -1,4 +1,4 @@
-/** ZyncSpace Chat — industry use cases and vertical solutions */
+/** ZyncSpace Chat - industry use cases and vertical solutions */
 
 type UseCaseHighlight = {
   title: string;
@@ -32,7 +32,7 @@ export const useCasesContent = {
     label: 'Industry Solutions',
     title: ['Built for', 'Every Industry'],
     description:
-      'ZyncSpace Chat adapts to how your team works — whether you are a lean startup, a classroom, an agency, or a growing enterprise.',
+      'ZyncSpace Chat adapts to how your team works - whether you are a lean startup, a classroom, an agency, or a growing enterprise.',
     primaryCta: { label: 'Get Started Free ↗', href: 'https://chat.zyncspace.com/signup' },
     secondaryCta: { label: 'Explore Solutions', href: '#startups' },
   },
@@ -44,7 +44,7 @@ export const useCasesContent = {
       label: 'For Startups',
       title: 'Move Fast, Stay Connected',
       description:
-        'A clutter-free workspace built for lean teams to plan, execute, and communicate — all in one place. Perfect for startups that need to move fast without sacrificing collaboration.',
+        'A clutter-free workspace built for lean teams to plan, execute, and communicate - all in one place. Perfect for startups that need to move fast without sacrificing collaboration.',
       highlights: [
         {
           title: 'Rapid Team Onboarding',
@@ -86,7 +86,7 @@ export const useCasesContent = {
         ],
       },
       checklist: [
-        'Free during beta — no credit card required',
+        'Free during beta - no credit card required',
         'Up to 10 users on free plan',
         'Real-time task tracking with Kanban boards',
         'Built-in video conferencing',
@@ -250,7 +250,7 @@ export const useCasesContent = {
   cta: {
     title: 'Ready to Transform Your Team?',
     description:
-      'Join teams already using ZyncSpace Chat. Free during beta — no credit card required.',
+      'Join teams already using ZyncSpace Chat. Free during beta - no credit card required.',
     primary: { label: 'Get Started Free ↗', href: 'https://chat.zyncspace.com/signup' },
     secondary: { label: 'Book a Demo', href: 'https://forms.gle/QVfnCHigc7NS3Z2K6' },
   },

@@ -1,5 +1,5 @@
 ---
-description: Design tokens — colors, spacing, no hardcoded values
+description: Design tokens - colors, spacing, no hardcoded values
 globs: "styles/**/*.css"
 alwaysApply: false
 ---
@@ -18,7 +18,7 @@ Full spec: `.ai/design-system/colors-spacing.md`
 ## Do not
 
 - Add new hex colors inline in components
-- Hardcode `120px` section padding — use `--space-section`
+- Hardcode `120px` section padding - use `--space-section`
 - Redefine `--font-*` outside `app/globals.css`
 
 ## Whitespace
