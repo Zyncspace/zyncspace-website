@@ -23,12 +23,6 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <link
-        rel="preload"
-        as="image"
-        href="/assets/images/platform-preview/platform-preview-team-chat.webp"
-        fetchPriority="high"
-      />
       <JsonLd
         data={jsonLdGraph(
           webPageSchema({ title: HOME_TITLE, description: HOME_DESCRIPTION, path: '/' }),

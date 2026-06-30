@@ -89,6 +89,18 @@ section {
 .section-padding {
   padding: var(--space-section) 0;
   border-bottom: 1px solid var(--border-light);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
+}
+
+.hero,
+.product-features-hero,
+.product-pricing-hero,
+.use-cases-hero,
+.service-page-header,
+.contact-section {
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
 }
 .label {
   color: var(--muted-text);
