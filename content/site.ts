@@ -1,6 +1,6 @@
 /** Shared company info synced from product pages */
 export const siteContact = {
-  email: 'atul.zync@gmail.com',
+  email: 'support@zyncspace.com',
   supportEmail: 'support@zyncspace.com',
   formAction: 'https://eovbhnii1d0xrft.m.pipedream.net',
   salesFormUrl: 'https://forms.gle/QVfnCHigc7NS3Z2K6',

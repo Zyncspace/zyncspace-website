@@ -138,7 +138,7 @@ ${blogSection}
 
 ## Contact
 - Website: ${SITE_URL}
-- Consulting: atul.zync@gmail.com
+- Consulting: support@zyncspace.com
 - Support: support@zyncspace.com
 
 ## Last Updated
