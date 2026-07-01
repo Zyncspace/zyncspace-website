@@ -11,9 +11,9 @@ export const productPricingContent = {
   productNotice: {
     title: 'This page is for the ZyncSpace Chat product',
     description:
-      'Plans below cover seats for our team collaboration app at chat.zyncspace.com. For technology consulting, AI builds, or custom software development, see consulting pricing instead.',
-    consultingLabel: 'View consulting & development pricing',
-    consultingHref: '/services/pricing',
+      'Plans below cover seats for our team collaboration app at chat.zyncspace.com. For technology consulting, AI builds, or custom software development, contact our team.',
+    consultingLabel: 'Contact consulting & development',
+    consultingHref: '/contact',
   },
 
   tiers: [

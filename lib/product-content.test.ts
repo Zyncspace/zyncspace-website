@@ -7,7 +7,7 @@ describe('productPricingContent', () => {
     expect(productPricingContent.hero.label).toMatch(/Chat/i);
     expect(productPricingContent.tiers).toHaveLength(2);
     expect(productPricingContent.tiers[0].priceValue).toBe('0');
-    expect(productPricingContent.productNotice.consultingHref).toBe('/services/pricing');
+    expect(productPricingContent.productNotice.consultingHref).toBe('/contact');
   });
 
   it('includes calculator config for team sizes', () => {

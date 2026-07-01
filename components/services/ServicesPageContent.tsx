@@ -26,11 +26,6 @@ const hubLinks = [
     description: 'Representative outcomes from consulting engagements.',
     href: serviceRoutes.caseStudies,
   },
-  {
-    title: 'Consulting Pricing',
-    description: 'Transparent tiers for discovery, build, and scale.',
-    href: serviceRoutes.pricing,
-  },
 ];
 
 export default function ServicesPageContent() {
@@ -60,8 +55,7 @@ export default function ServicesPageContent() {
             <span className="label">Explore</span>
             <h2>Go deeper on how we deliver</h2>
             <p className="section-lead">
-              Framework, technology choices, industry patterns, and pricing - each with dedicated
-              detail.
+              Framework, technology choices, and industry patterns - each with dedicated detail.
             </p>
           </div>
           <div className="services-hub-links-grid">

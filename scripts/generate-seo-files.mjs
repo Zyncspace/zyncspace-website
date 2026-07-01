@@ -71,11 +71,6 @@ const STATIC_PAGES = [
     name: 'Case Studies',
     desc: 'Client outcomes from consulting and engineering engagements.',
   },
-  {
-    path: '/services/pricing',
-    name: 'Consulting Pricing',
-    desc: 'Consulting engagement models and pricing.',
-  },
   { path: '/features', name: 'Features', desc: 'Team workspace - chat, tasks, calendar, and AI.' },
   { path: '/use-cases', name: 'Use Cases', desc: 'How teams use ZyncSpace for collaboration.' },
   { path: '/pricing', name: 'Pricing', desc: 'Product pricing plans.' },

@@ -31,10 +31,6 @@ ZyncSpace combines AI-driven technology consulting with a unified team workspace
 - URL: https://www.zyncspace.com/services/case-studies
 - Description: Client outcomes from consulting and engineering engagements.
 
-### Consulting Pricing
-- URL: https://www.zyncspace.com/services/pricing
-- Description: Consulting engagement models and pricing.
-
 ### Features
 - URL: https://www.zyncspace.com/features
 - Description: Team workspace - chat, tasks, calendar, and AI.
@@ -164,4 +160,4 @@ ZyncSpace combines AI-driven technology consulting with a unified team workspace
 - Support: support@zyncspace.com
 
 ## Last Updated
-2026-06-30
+2026-07-01

@@ -45,7 +45,6 @@ export const SEO_ROUTES: SeoRoute[] = [
   { path: '/services/technology', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/services/industries', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/services/case-studies', priority: 0.85, changeFrequency: 'monthly' },
-  { path: '/services/pricing', priority: 0.85, changeFrequency: 'monthly' },
   { path: '/features', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/use-cases', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/pricing', priority: 0.9, changeFrequency: 'weekly' },

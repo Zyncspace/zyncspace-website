@@ -114,32 +114,6 @@ export const servicePageExtended: Record<string, ServicePageExtendedSection[]> =
       ],
     },
   ],
-  pricing: [
-    {
-      title: 'Flexible Pricing',
-      paragraphs: [
-        'Pay only for what your team needs.',
-        "Whether you're a startup, growing business, or enterprise, ZyncSpace offers flexible plans that scale with your organization. Start with the features you need today and upgrade anytime as your team grows.",
-        'Every plan includes secure messaging, channels, file sharing, audio & video meetings, and enterprise-grade security with no hidden fees.',
-      ],
-    },
-    {
-      title: 'Custom Enterprise Solutions',
-      paragraphs: [
-        'Built for organizations with unique requirements.',
-        'Need dedicated infrastructure, custom integrations, advanced security, or compliance support? Our Enterprise plan is designed for organizations that require tailored deployments, SSO/SAML authentication, admin controls, priority onboarding, and personalized support.',
-        "We'll work with your team to build a solution that matches your business needs.",
-      ],
-    },
-    {
-      title: 'Support & Service Commitment',
-      paragraphs: [
-        'Reliable support when your business depends on it.',
-        'Every customer receives access to our knowledge base and customer support. Premium and Enterprise customers benefit from faster response times, dedicated onboarding assistance, priority issue resolution, and service level commitments to keep their teams productive.',
-        'Our team is committed to helping you get the most out of ZyncSpace from day one.',
-      ],
-    },
-  ],
   contact: [
     {
       title: 'Global Infrastructure',

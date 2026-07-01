@@ -14,7 +14,6 @@ export default function Footer() {
         { label: 'Technology Stack', href: serviceRoutes.technology },
         { label: 'Industries', href: serviceRoutes.industries },
         { label: 'Case Studies', href: serviceRoutes.caseStudies },
-        { label: 'Consulting Pricing', href: serviceRoutes.pricing },
       ],
     },
     {

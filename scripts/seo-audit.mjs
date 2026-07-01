@@ -22,7 +22,6 @@ const STATIC_PATHS = [
   '/services/technology',
   '/services/industries',
   '/services/case-studies',
-  '/services/pricing',
   '/features',
   '/use-cases',
   '/pricing',

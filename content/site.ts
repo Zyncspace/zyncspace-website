@@ -38,7 +38,6 @@ export const serviceRoutes = {
   technology: '/services/technology',
   industries: '/services/industries',
   caseStudies: '/services/case-studies',
-  pricing: '/services/pricing',
   contact: '/contact',
   product: {
     features: '/features',
