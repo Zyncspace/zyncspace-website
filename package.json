@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node scripts/check-node.mjs && node scripts/prepare-dev.mjs && next dev",
     "compress:assets": "node scripts/compress-assets.mjs",
-    "build": "node scripts/check-node.mjs && node scripts/extract-product-content.mjs && next build && node scripts/generate-seo-files.mjs && node scripts/seo-audit.mjs",
+    "build": "node scripts/check-node.mjs && node scripts/extract-product-content.mjs && next build && node scripts/generate-seo-files.mjs && node scripts/generate-seo-redirects.mjs && node scripts/seo-audit.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . && biome check .",

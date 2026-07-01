@@ -65,11 +65,17 @@ export function getCanonicalBlogSlug(slug: string): string | null {
   return post?.slug ?? null;
 }
 
+/** Canonical blog slugs only — alias paths are 301 redirect pages generated at build time. */
 export function getAllBlogRoutes(): string[] {
-  const routes = new Set<string>();
+  return getAllBlogPosts().map((post) => post.slug);
+}
+
+export function getBlogAliasRedirects(): { alias: string; canonical: string }[] {
+  const redirects: { alias: string; canonical: string }[] = [];
   for (const post of getAllBlogPosts()) {
-    routes.add(post.slug);
-    for (const alias of post.aliases) routes.add(alias);
+    for (const alias of post.aliases) {
+      redirects.push({ alias, canonical: post.slug });
+    }
   }
-  return [...routes];
+  return redirects;
 }

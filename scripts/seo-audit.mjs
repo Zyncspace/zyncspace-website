@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import matter from 'gray-matter';
 import { getSiteUrl } from './site-url.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -63,7 +64,23 @@ function extractSitemapUrls(xml) {
 function checkHtml(file) {
   const rel = path.relative(outDir, file);
   const is404 = rel === '404.html';
+  const isBlogAliasRedirect =
+    (/^blogs\/[^/]+\.html$/.test(rel) ||
+      /^blog\/[^/]+\.html$/.test(rel) ||
+      /^blogss\/[^/]+\.html$/.test(rel) ||
+      rel === 'blog.html' ||
+      rel === 'blogss.html') &&
+    /noindex/i.test(fs.readFileSync(file, 'utf8').slice(0, 500));
   const html = fs.readFileSync(file, 'utf8');
+
+  if (isBlogAliasRedirect) {
+    if (!/noindex/i.test(html)) errors.push(`${rel}: alias redirect must include noindex`);
+    const canonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
+    if (!canonical?.[1]?.includes('/blogs')) {
+      errors.push(`${rel}: alias redirect missing canonical target`);
+    }
+    return;
+  }
 
   if (!/<html[^>]*\slang=["']en["']/i.test(html)) {
     errors.push(`${rel}: missing lang="en" on <html>`);
@@ -115,6 +132,95 @@ function checkHtml(file) {
   const imgs = html.match(/<img[^>]*>/gi) || [];
   for (const img of imgs) {
     if (!/alt=["'][^"']+["']/i.test(img)) errors.push(`${rel}: img missing meaningful alt`);
+  }
+}
+
+function getBlogAliasSlugs(root) {
+  const blogDir = path.join(root, 'content/blog');
+  if (!fs.existsSync(blogDir)) return [];
+  const aliases = [];
+  for (const file of fs.readdirSync(blogDir).filter((name) => name.endsWith('.mdx'))) {
+    const raw = fs.readFileSync(path.join(blogDir, file), 'utf8');
+    const { data } = matter(raw);
+    if (Array.isArray(data.aliases)) {
+      for (const alias of data.aliases) aliases.push(String(alias));
+    }
+  }
+  return aliases;
+}
+
+function checkHomepageCanonical() {
+  const indexPath = path.join(outDir, 'index.html');
+  if (!fs.existsSync(indexPath)) return;
+  const html = fs.readFileSync(indexPath, 'utf8');
+  const canonicalMatch = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
+  const expected = SITE_URL;
+  if (canonicalMatch && canonicalMatch[1] !== expected) {
+    errors.push(`index.html: homepage canonical should be ${expected}, got ${canonicalMatch[1]}`);
+  }
+}
+
+function checkBlogAliasRedirects(aliasSlugs) {
+  for (const alias of aliasSlugs) {
+    const file = path.join(outDir, 'blogs', `${alias}.html`);
+    if (!fs.existsSync(file)) {
+      errors.push(`Missing blog alias redirect page: blogs/${alias}.html`);
+      continue;
+    }
+    const html = fs.readFileSync(file, 'utf8');
+    if (!/noindex/i.test(html)) {
+      errors.push(`blogs/${alias}.html: alias redirect must include noindex`);
+    }
+    const canonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
+    if (!canonical?.[1]?.includes('/blogs')) {
+      errors.push(`blogs/${alias}.html: missing canonical target for alias redirect`);
+    }
+  }
+}
+
+function checkLegacyBlogPathRedirects() {
+  const samples = [
+    { path: 'blog.html', target: '/blogs' },
+    { path: 'blogss.html', target: '/blogs' },
+    {
+      path: 'blog/email-writing-that-get-results.html',
+      target: '/blogs/email-writing-that-get-results',
+    },
+    {
+      path: 'blogss/the-future-of-workplace-messaging.html',
+      target: '/blogs/the-future-of-workplace-messaging',
+    },
+    {
+      path: 'blogs/why-we-built-zyncspace-a-smarter-communication-tool-for-training-teams-copy.html',
+      target: '/blogs/why-we-built-zyncspace',
+    },
+  ];
+
+  for (const sample of samples) {
+    const file = path.join(outDir, sample.path);
+    if (!fs.existsSync(file)) {
+      errors.push(`Missing legacy redirect page: ${sample.path}`);
+      continue;
+    }
+    const html = fs.readFileSync(file, 'utf8');
+    if (!/noindex/i.test(html)) {
+      errors.push(`${sample.path}: legacy redirect must include noindex`);
+    }
+    const canonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
+    if (!canonical?.[1]?.includes(sample.target)) {
+      errors.push(`${sample.path}: expected canonical target containing ${sample.target}`);
+    }
+  }
+}
+
+function checkSitemapNoAliasUrls(aliasSlugs) {
+  const sitemapPath = path.join(outDir, 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) return;
+  const xml = fs.readFileSync(sitemapPath, 'utf8');
+  for (const alias of aliasSlugs) {
+    if (xml.includes(`/blogs/${alias}<`)) {
+      errors.push(`sitemap.xml: must not list blog alias /blogs/${alias}`);
+    }
   }
 }
 
@@ -174,8 +280,14 @@ checkGlobalFile('feed.xml', 'RSS feed');
 checkGlobalFile('llms.txt', 'llms.txt');
 checkGlobalFile('manifest.webmanifest', 'web manifest');
 
+const aliasSlugs = getBlogAliasSlugs(root);
+
 checkStaticRoutesExist();
+checkHomepageCanonical();
+checkBlogAliasRedirects(aliasSlugs);
+checkLegacyBlogPathRedirects();
 checkSitemapCoverage();
+checkSitemapNoAliasUrls(aliasSlugs);
 checkRobotsTxt();
 checkLlmsTxt();
 

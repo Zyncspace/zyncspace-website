@@ -232,7 +232,7 @@ export const blogIndexCards: BlogIndexCard[] = [
     featured: false,
   },
   {
-    slug: 'the-best-free-slack-alternative-for-training-teams-in-2025-and-why-we-built-zyncspace-copy',
+    slug: 'why-we-built-zyncspace',
     title: 'Why We Built ZyncSpace: A Smarter Communication Tool for Training Teams',
     excerpt:
       'Why we built ZyncSpace for training and coaching teams: the gaps in generic chat tools and how purpose-built platforms improve learner engagement.',

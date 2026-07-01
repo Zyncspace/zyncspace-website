@@ -50,6 +50,7 @@ describe('buildMetadata', () => {
 describe('buildSiteMetadata', () => {
   it('includes RSS alternate and default robots', () => {
     const meta = buildSiteMetadata();
+    expect(meta.alternates?.canonical).toBe(SITE_URL);
     expect(meta.alternates?.types?.['application/rss+xml']).toBe(`${SITE_URL}/feed.xml`);
     const robots = meta.robots as Metadata['robots'] & {
       googleBot?: { 'max-image-preview'?: string };

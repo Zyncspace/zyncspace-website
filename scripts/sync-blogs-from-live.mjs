@@ -32,8 +32,9 @@ const SLUG_ALIASES = {
   'navigating-difficult-conversations': ['difficult-conversations-guide'],
   'future-workplace-communication': ['workplace-communication-trends-2026'],
   'evolution-of-workplace-communication': ['workplace-communication-evolution'],
-  'the-best-free-slack-alternative-for-training-teams-in-2025-and-why-we-built-zyncspace-copy': [
-    'why-we-built-zyncspace',
+  'why-we-built-zyncspace': [
+    'the-best-free-slack-alternative-for-training-teams-in-2025-and-why-we-built-zyncspace-copy',
+    'why-we-built-zyncspace-a-smarter-communication-tool-for-training-teams-copy',
   ],
   'top-free-alternatives-for-slack': ['slack-alternative-training-teams'],
   'the-future-of-workplace-messaging': ['workplace-messaging-future'],

@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const buildTime = new Date();
   const staticEntries = SEO_ROUTES.map((route) => ({
-    url: `${SITE_URL}${route.path === '/' ? '' : route.path}`,
+    url: route.path === '/' ? SITE_URL : `${SITE_URL}${route.path}`,
     lastModified: buildTime,
     changeFrequency: route.changeFrequency,
     priority: route.priority,

@@ -432,7 +432,7 @@ export const blogEnhancements: Record<string, BlogEnhancement> = {
     imagePrompt:
       'Futuristic hybrid office with professionals using AR glasses and laptops, blend of physical and digital collaboration, sleek modern design, 16:9, no text',
   },
-  'the-best-free-slack-alternative-for-training-teams-in-2025-and-why-we-built-zyncspace-copy': {
+  'why-we-built-zyncspace': {
     description:
       'Why we built ZyncSpace for training and coaching teams: the gaps in generic chat tools and how purpose-built platforms improve learner engagement.',
     keywords:
