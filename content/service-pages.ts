@@ -116,42 +116,50 @@ export const servicePageExtended: Record<string, ServicePageExtendedSection[]> =
   ],
   pricing: [
     {
-      title: 'Investment Philosophy',
+      title: 'Flexible Pricing',
       paragraphs: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.',
-        'Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod.',
+        'Pay only for what your team needs.',
+        "Whether you're a startup, growing business, or enterprise, ZyncSpace offers flexible plans that scale with your organization. Start with the features you need today and upgrade anytime as your team grows.",
+        'Every plan includes secure messaging, channels, file sharing, audio & video meetings, and enterprise-grade security with no hidden fees.',
       ],
     },
     {
-      title: 'Custom Enterprise Scoping',
+      title: 'Custom Enterprise Solutions',
       paragraphs: [
-        'Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo.',
+        'Built for organizations with unique requirements.',
+        'Need dedicated infrastructure, custom integrations, advanced security, or compliance support? Our Enterprise plan is designed for organizations that require tailored deployments, SSO/SAML authentication, admin controls, priority onboarding, and personalized support.',
+        "We'll work with your team to build a solution that matches your business needs.",
       ],
     },
     {
-      title: 'SLA & Support Tiers',
+      title: 'Support & Service Commitment',
       paragraphs: [
-        'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam.',
+        'Reliable support when your business depends on it.',
+        'Every customer receives access to our knowledge base and customer support. Premium and Enterprise customers benefit from faster response times, dedicated onboarding assistance, priority issue resolution, and service level commitments to keep their teams productive.',
+        'Our team is committed to helping you get the most out of ZyncSpace from day one.',
       ],
     },
   ],
   contact: [
     {
-      title: 'Global Delivery Network',
+      title: 'Global Infrastructure',
       paragraphs: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our distributed team operates across multiple time zones to provide continuous coverage for enterprise engagements.',
+        'Built for speed, reliability, and scale.',
+        'ZyncSpace is powered by a globally distributed cloud infrastructure to deliver fast, secure, and reliable collaboration for teams worldwide. With high availability, intelligent content delivery, and enterprise-grade security, your workspace remains accessible whenever your team needs it.',
       ],
     },
     {
-      title: 'Response & Escalation Policy',
+      title: 'Customer Support & Response',
       paragraphs: [
-        'Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Standard inquiries receive a response within one business day; critical production issues are escalated immediately.',
+        "We're here whenever your team needs us.",
+        'Our support team is committed to resolving issues quickly and efficiently. Standard customers receive timely assistance during business hours, while Enterprise customers benefit from priority support, dedicated account management, and accelerated response times for critical business needs.',
       ],
     },
     {
-      title: 'Partnership Opportunities',
+      title: 'Partner & Enterprise Programs',
       paragraphs: [
-        'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. We welcome technology partnerships, referral arrangements, and co-delivery models with aligned agencies.',
+        "Let's build the future of collaboration together.",
+        "Whether you're a technology partner, reseller, system integrator, or enterprise customer, ZyncSpace offers flexible partnership opportunities, custom deployments, API integrations, and dedicated onboarding to help you deliver exceptional collaboration experiences.",
       ],
     },
   ],
