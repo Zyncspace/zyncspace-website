@@ -1,4 +1,5 @@
 /** ZyncSpace Chat - industry use cases and vertical solutions */
+import { contactFormSources, contactHref } from '@/lib/contact';
 
 type UseCaseHighlight = {
   title: string;
@@ -252,6 +253,13 @@ export const useCasesContent = {
     description:
       'Join teams already using ZyncSpace Chat. Free during beta - no credit card required.',
     primary: { label: 'Get Started Free ↗', href: 'https://chat.zyncspace.com/signup' },
-    secondary: { label: 'Book a Demo', href: 'https://forms.gle/QVfnCHigc7NS3Z2K6' },
+    secondary: {
+      label: 'Book a Demo',
+      href: contactHref({
+        source: contactFormSources.useCasesDemo,
+        intent: 'demo',
+        subject: 'sales',
+      }),
+    },
   },
 };

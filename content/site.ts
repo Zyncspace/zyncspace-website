@@ -2,8 +2,8 @@
 export const siteContact = {
   email: 'support@zyncspace.com',
   supportEmail: 'support@zyncspace.com',
+  /** Pipedream webhook — see lib/contact.ts for POST field schema. */
   formAction: 'https://eovbhnii1d0xrft.m.pipedream.net',
-  salesFormUrl: 'https://forms.gle/QVfnCHigc7NS3Z2K6',
   signupUrl: 'https://chat.zyncspace.com/signup',
   responseTime: 'We typically respond within 24–48 hours during business days.',
   location: {

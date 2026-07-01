@@ -1,3 +1,5 @@
+import { contactFormSources, contactHref } from '@/lib/contact';
+
 /** ZyncSpace chat product pricing - not consulting services. */
 export const productPricingContent = {
   hero: {
@@ -44,7 +46,14 @@ export const productPricingContent = {
       description: 'For growing teams that need unlimited seats on ZyncSpace Chat.',
       featured: false,
       comingSoon: true,
-      cta: { label: 'Join Waitlist', href: 'https://forms.gle/QVfnCHigc7NS3Z2K6' },
+      cta: {
+        label: 'Join Waitlist',
+        href: contactHref({
+          source: contactFormSources.pricingWaitlist,
+          intent: 'waitlist',
+          subject: 'sales',
+        }),
+      },
       features: [
         'Everything in Free',
         'Unlimited users',
@@ -110,7 +119,14 @@ export const productPricingContent = {
     description:
       'Sign up for the team workspace app - free during beta for up to 10 users. No credit card required.',
     primary: { label: 'Get Started Free ↗', href: 'https://chat.zyncspace.com/signup' },
-    secondary: { label: 'Book a Product Demo', href: 'https://forms.gle/QVfnCHigc7NS3Z2K6' },
+    secondary: {
+      label: 'Book a Product Demo',
+      href: contactHref({
+        source: contactFormSources.pricingDemo,
+        intent: 'demo',
+        subject: 'sales',
+      }),
+    },
   },
 };
 

@@ -1,14 +1,40 @@
 import Link from 'next/link';
+import ContactFormHiddenFields from '@/components/services/ContactFormHiddenFields';
 import PartnerLogo from '@/components/services/PartnerLogo';
 import { servicesContent as c } from '@/content/services';
 import { siteContact } from '@/content/site';
+import {
+  type ContactIntent,
+  contactFormSources,
+  contactFormTypes,
+  contactIntentLabel,
+} from '@/lib/contact';
 
 type ContactSectionProps = {
   variant?: 'partner' | 'compact' | 'page';
+  source?: string;
+  defaultSubject?: string;
+  intent?: ContactIntent;
+  pagePath?: string;
 };
 
-export default function ContactSection({ variant = 'compact' }: ContactSectionProps) {
+function resolveSource(variant: ContactSectionProps['variant'], source?: string): string {
+  if (source) return source;
+  if (variant === 'partner') return contactFormSources.homePartner;
+  if (variant === 'page') return contactFormSources.contactPage;
+  return contactFormSources.homeCompact;
+}
+
+export default function ContactSection({
+  variant = 'compact',
+  source,
+  defaultSubject,
+  intent,
+  pagePath = '/contact',
+}: ContactSectionProps) {
   const isPartner = variant === 'partner';
+  const formSource = resolveSource(variant, source);
+  const intentHeading = contactIntentLabel(intent);
 
   return (
     <section
@@ -101,6 +127,12 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                   action={siteContact.formAction}
                   method="POST"
                 >
+                  <ContactFormHiddenFields
+                    source={formSource}
+                    formType={contactFormTypes.partnerConsulting}
+                    pagePath={pagePath}
+                    intent={intent}
+                  />
                   {c.contact.formOptions.map((option) => (
                     <label key={option} className="form-check">
                       <input
@@ -113,7 +145,28 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                       <span className="form-check-label">{option}</span>
                     </label>
                   ))}
-                  <div className="form-group" style={{ marginTop: 24 }}>
+                  <div className="form-row" style={{ marginTop: 24 }}>
+                    <div className="form-group">
+                      <label htmlFor="partner-name">Full Name</label>
+                      <input
+                        type="text"
+                        id="partner-name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="partner-company">Company</label>
+                      <input
+                        type="text"
+                        id="partner-company"
+                        name="company"
+                        placeholder="Company name"
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group">
                     <label htmlFor="partner-email">Work Email</label>
                     <input
                       type="email"
@@ -121,6 +174,14 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                       name="email"
                       placeholder="you@company.com"
                       required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="partner-message">Additional context</label>
+                    <textarea
+                      id="partner-message"
+                      name="message"
+                      placeholder="Timeline, team size, or goals (optional)…"
                     />
                   </div>
                   <button type="submit" className="btn btn-white btn-full">
@@ -133,7 +194,7 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                 <span className="label" style={{ color: '#888' }}>
                   Send a message
                 </span>
-                <h3 className="form-box-title">How can we help?</h3>
+                <h3 className="form-box-title">{intentHeading ?? 'How can we help?'}</h3>
                 <p style={{ color: '#888', fontSize: '0.95rem', marginBottom: 24 }}>
                   Fill out the form and we&apos;ll get back to you as soon as possible.
                 </p>
@@ -142,6 +203,12 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                   action={siteContact.formAction}
                   method="POST"
                 >
+                  <ContactFormHiddenFields
+                    source={formSource}
+                    formType={contactFormTypes.contactFull}
+                    pagePath={pagePath}
+                    intent={intent}
+                  />
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="contact-name">Full Name</label>
@@ -164,9 +231,35 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
                       />
                     </div>
                   </div>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="contact-company">Company</label>
+                      <input
+                        type="text"
+                        id="contact-company"
+                        name="company"
+                        placeholder="Company name"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="contact-phone">Phone</label>
+                      <input
+                        type="tel"
+                        id="contact-phone"
+                        name="phone"
+                        placeholder="+1 (555) 000-0000"
+                        autoComplete="tel"
+                      />
+                    </div>
+                  </div>
                   <div className="form-group">
                     <label htmlFor="contact-subject">Subject</label>
-                    <select id="contact-subject" name="subject" required defaultValue="">
+                    <select
+                      id="contact-subject"
+                      name="subject"
+                      required
+                      defaultValue={defaultSubject ?? ''}
+                    >
                       <option value="" disabled>
                         Select a subject
                       </option>
@@ -199,7 +292,17 @@ export default function ContactSection({ variant = 'compact' }: ContactSectionPr
   );
 }
 
-export function ContactPageContent() {
+type ContactPageContentProps = {
+  source?: string;
+  defaultSubject?: string;
+  intent?: ContactIntent;
+};
+
+export function ContactPageContent({
+  source,
+  defaultSubject,
+  intent,
+}: ContactPageContentProps = {}) {
   return (
     <>
       <header className="service-page-header">
@@ -212,7 +315,13 @@ export function ContactPageContent() {
           </p>
         </div>
       </header>
-      <ContactSection variant="page" />
+      <ContactSection
+        variant="page"
+        source={source}
+        defaultSubject={defaultSubject}
+        intent={intent}
+        pagePath="/contact"
+      />
       <section className="section-padding" style={{ background: '#fff', paddingTop: 0 }}>
         <div className="container">
           <div className="contact-cards-grid">

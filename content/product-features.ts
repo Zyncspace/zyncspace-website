@@ -1,4 +1,6 @@
 /** ZyncSpace chat application - product features (not consulting services). */
+import { contactFormSources, contactHref } from '@/lib/contact';
+
 export const productFeaturesContent = {
   hero: {
     label: 'Product Features',
@@ -207,6 +209,13 @@ export const productFeaturesContent = {
     description:
       'Start with ZyncSpace free during beta. Chat, tasks, calendar, and AI - finally in one place.',
     primary: { label: 'Start Free ↗', href: 'https://chat.zyncspace.com/signup' },
-    secondary: { label: 'Talk to Sales', href: 'https://forms.gle/QVfnCHigc7NS3Z2K6' },
+    secondary: {
+      label: 'Talk to Sales',
+      href: contactHref({
+        source: contactFormSources.featuresSales,
+        intent: 'sales',
+        subject: 'sales',
+      }),
+    },
   },
 };

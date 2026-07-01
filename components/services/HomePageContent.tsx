@@ -63,7 +63,7 @@ export default function HomePageContent() {
       <ResourcesSection />
       <FaqSection />
       <ServicesCtaBand />
-      <ContactSection variant="partner" />
+      <ContactSection variant="partner" pagePath="/" />
     </>
   );
 }
