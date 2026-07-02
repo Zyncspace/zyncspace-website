@@ -18,14 +18,10 @@ import {
   siMistralai,
   siMongodb,
   siNvidia,
-  siOpenai,
   siPostgresql,
   siRedis,
-  siSalesforce,
-  siSlack,
   siStripe,
   siSupabase,
-  siTwilio,
   siVercel,
   siZoho,
 } from 'simple-icons';
@@ -36,7 +32,6 @@ export type PartnerLogoData =
 
 const PARTNER_ICONS: Record<string, SimpleIcon> = {
   'Google Cloud': siGooglecloud,
-  OpenAI: siOpenai,
   Anthropic: siAnthropic,
   'Google Gemini': siGooglegemini,
   'Hugging Face': siHuggingface,
@@ -57,18 +52,19 @@ const PARTNER_ICONS: Record<string, SimpleIcon> = {
   Grafana: siGrafana,
   Figma: siFigma,
   Atlassian: siAtlassian,
-  Slack: siSlack,
   Zoho: siZoho,
   HubSpot: siHubspot,
   Stripe: siStripe,
-  Twilio: siTwilio,
-  Salesforce: siSalesforce,
 };
 
-/** AWS and Microsoft Azure are not available in simple-icons v15+ */
+/** Brands not available in simple-icons v16+ use text wordmarks instead. */
 const PARTNER_WORDMARKS: Record<string, { label: string; title: string }> = {
   AWS: { label: 'AWS', title: 'Amazon Web Services' },
   'Microsoft Azure': { label: 'Azure', title: 'Microsoft Azure' },
+  OpenAI: { label: 'OpenAI', title: 'OpenAI' },
+  Slack: { label: 'Slack', title: 'Slack' },
+  Twilio: { label: 'Twilio', title: 'Twilio' },
+  Salesforce: { label: 'Salesforce', title: 'Salesforce' },
 };
 
 export function getPartnerLogo(name: string): PartnerLogoData {
