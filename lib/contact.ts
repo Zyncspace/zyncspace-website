@@ -11,7 +11,7 @@ export const contactFormSources = {
   useCasesDemo: 'use-cases-demo',
 } as const;
 
-export type ContactFormSource = (typeof contactFormSources)[keyof typeof contactFormSources];
+type ContactFormSource = (typeof contactFormSources)[keyof typeof contactFormSources];
 
 export const contactFormTypes = {
   contactFull: 'contact-full',
@@ -20,7 +20,7 @@ export const contactFormTypes = {
 
 export type ContactFormType = (typeof contactFormTypes)[keyof typeof contactFormTypes];
 
-export const contactIntents = {
+const contactIntents = {
   demo: 'demo',
   waitlist: 'waitlist',
   sales: 'sales',
@@ -91,7 +91,7 @@ export function contactIntentLabel(intent?: ContactIntent): string | undefined {
  * contact-full: name, email, company, phone, subject, message
  * partner-consulting: name, email, company, objectives (multi), message (optional)
  */
-export const contactFormFieldDocs = {
+const contactFormFieldDocs = {
   shared: ['source', 'form_type', 'intent', 'page_path', 'website'],
   contactFull: ['name', 'email', 'company', 'phone', 'subject', 'message'],
   partnerConsulting: ['name', 'email', 'company', 'objectives', 'message'],
